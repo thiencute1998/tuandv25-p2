@@ -27,7 +27,7 @@ class UserController extends Controller
         return view('admin.pages.user.create');
     }
 
-    public function store(CreateUserRequest $request) {
+    public function store(Request $request) {
         $params = $request->only('name', 'email', 'password');
         $this->repository->store($params);
         return redirect()->back()->with('add-success', 'Add user success !!!');
@@ -38,7 +38,7 @@ class UserController extends Controller
         return view('admin.pages.user.edit', compact('user'));
     }
 
-    public function update(EditUserRequest $request, $id) {
+    public function update(Request $request, $id) {
         $params = $request->only('name', 'email');
         $this->repository->update($params, $id);
         return redirect()->back()->with('edit-success', 'Edit user success !!!');

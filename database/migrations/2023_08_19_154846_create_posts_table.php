@@ -17,8 +17,8 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('slug')->unique();
-            $table->string('image')->unique()->comment('Anh bai viet');
-            $table->longText('content')->unique()->comment('Noi dung');
+            $table->string('image')->nullable()->comment('Anh bai viet');
+            $table->longText('content')->nullable()->comment('Noi dung');
             $table->integer('category_id')->nullable()->comment('ID danh muc');
             $table->integer('status')->nullable()->comment('1: Hoat dong, 0: Ko hoat dong');
             $table->tinyInteger('is_slide')->nullable()->comment('Co phai slide?');

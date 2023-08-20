@@ -10,7 +10,11 @@ class Post extends Model
     use HasFactory;
 
     // Table tin tuc
-    protected $table = 'post';
+    protected $table = 'posts';
+
+    protected $fillable = ['name', 'slug', 'status', 'content', 'image', 'category_id', 'views', 'author'];
+
+    public $timestamps = true;
     public function category() {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }

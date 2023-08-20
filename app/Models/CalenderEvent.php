@@ -11,4 +11,8 @@ class CalenderEvent extends Model
 
     // Table lich phung vu
     protected $table = 'calender_events';
+
+    protected $fillable = ['name', 'content', 'slug', 'd_date', 'status', 'views', 'image', 'address'];
+
+    public $timestamps = true;
 }

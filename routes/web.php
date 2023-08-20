@@ -17,6 +17,11 @@ use App\Http\Controllers\Admin\HowToWorkController;
 use App\Http\Controllers\Admin\Service\ServiceIntroduceController;
 use App\Http\Controllers\Admin\AdminContactUsController;
 
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\CalendarController;
+
 use App\Http\Controllers\Viewer\HomeController;
 use App\Http\Controllers\PhotoEditingViewerController;
 use App\Http\Controllers\VirtualStagingViewerController;
@@ -173,12 +178,44 @@ Route::prefix('admin')->group(function () {
 
     //
     Route::prefix('category')->group(function() {
-        Route::get('/', [HowToWorkController::class, 'index'])->name('admin-category');
-        Route::get('/create', [HowToWorkController::class, 'create'])->name('admin-category-create');
-        Route::post('/store', [HowToWorkController::class, 'store'])->name('admin-category-store');
-        Route::get('/edit/{id}', [HowToWorkController::class, 'edit'])->name('admin-category-edit');
-        Route::post('/update/{id}', [HowToWorkController::class, 'update'])->name('admin-category-update');
-        Route::get('/delete/{id}', [HowToWorkController::class, 'delete'])->name('admin-category-delete');
+        Route::get('/', [CategoryController::class, 'index'])->name('admin-category');
+        Route::get('/create', [CategoryController::class, 'create'])->name('admin-category-create');
+        Route::post('/store', [CategoryController::class, 'store'])->name('admin-category-store');
+        Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('admin-category-edit');
+        Route::post('/update/{id}', [CategoryController::class, 'update'])->name('admin-category-update');
+        Route::get('/delete/{id}', [CategoryController::class, 'delete'])->name('admin-category-delete');
+        Route::post('/get-parent', [CategoryController::class, 'getParent'])->name('admin-category-get-parent');
+    });
+
+    Route::prefix('tag')->group(function() {
+        Route::get('/', [TagController::class, 'index'])->name('admin-tag');
+        Route::get('/create', [TagController::class, 'create'])->name('admin-tag-create');
+        Route::post('/store', [TagController::class, 'store'])->name('admin-tag-store');
+        Route::get('/edit/{id}', [TagController::class, 'edit'])->name('admin-tag-edit');
+        Route::post('/update/{id}', [TagController::class, 'update'])->name('admin-tag-update');
+        Route::get('/delete/{id}', [TagController::class, 'delete'])->name('admin-tag-delete');
+        Route::post('/get-all', [TagController::class, 'getALl'])->name('admin-tag-get-all');
+    });
+
+    Route::prefix('post')->group(function() {
+        Route::get('/', [PostController::class, 'index'])->name('admin-post');
+        Route::get('/create', [PostController::class, 'create'])->name('admin-post-create');
+        Route::post('/store', [PostController::class, 'store'])->name('admin-post-store');
+        Route::get('/edit/{id}', [PostController::class, 'edit'])->name('admin-post-edit');
+        Route::post('/update/{id}', [PostController::class, 'update'])->name('admin-post-update');
+        Route::get('/delete/{id}', [PostController::class, 'delete'])->name('admin-post-delete');
+        Route::post('/get-parent', [PostController::class, 'getParent'])->name('admin-post-get-parent');
+        Route::post('/ckeditor/image_upload', [PostController::class, 'ckeditorUpload'])->name('admin-post-ckeditor-upload');
+    });
+
+    Route::prefix('calendar')->group(function() {
+        Route::get('/', [CalendarController::class, 'index'])->name('admin-calendar');
+        Route::get('/create', [CalendarController::class, 'create'])->name('admin-calendar-create');
+        Route::post('/store', [CalendarController::class, 'store'])->name('admin-calendar-store');
+        Route::get('/edit/{id}', [CalendarController::class, 'edit'])->name('admin-calendar-edit');
+        Route::post('/update/{id}', [CalendarController::class, 'update'])->name('admin-calendar-update');
+        Route::get('/delete/{id}', [CalendarController::class, 'delete'])->name('admin-calendar-delete');
+        Route::post('/ckeditor/image_upload', [CalendarController::class, 'ckeditorUpload'])->name('admin-calendar-ckeditor-upload');
     });
 
 });

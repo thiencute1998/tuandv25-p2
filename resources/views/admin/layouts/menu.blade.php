@@ -13,31 +13,23 @@
                         <a href="#" aria-expanded="true"><i class="ti-dashboard"></i><span>Introduce</span></a>
                     </li>
                     <li>
-                        <a href="admin/services" aria-expanded="true"><i class="ti-dashboard"></i><span>Services</span></a>
-                        <ul class="collapse">
-                            <li><a href="{{ route('service-introduce') }}">Introduce</a></li>
-                            <li><a href="{{ route('photo-editing') }}">Photo Editing</a></li>
-                            <li><a href="{{ route('virtual-staging') }}">Virtual staging</a></li>
-                            <li><a href="{{ route('floor-plan') }}">Floor plan</a></li>
-                            <li><a href="{{ route('video-slideshow') }}">Video slideshow</a></li>
-                        </ul>
-                    </li>
-                    <li>
                         <a href="admin/banners" aria-expanded="true"><i class="ti-dashboard"></i><span>Banners</span></a>
                         <ul class="collapse">
                             <li><a href="{{route('logos')}}">Logo</a></li>
                             <li><a href="{{route('slides')}}">Slides</a></li>
-                            <li><a href="{{route('contacts')}}">Contact</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="{{route('admin-contact-us')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Contact us</span></a>
-                    </li>
-                    <li>
-                        <a href="{{route('works')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>How to work</span></a>
-                    </li>
-                    <li>
                         <a href="{{route('admin-category')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý danh mục</span></a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin-tag')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý tag</span></a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin-post')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý bài viết</span></a>
+                    </li>
+                    <li>
+                        <a href="{{route('admin-calendar')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý lịch phụng vụ</span></a>
                     </li>
                     <li>
                         <a href="admin/banners" aria-expanded="true"><i class="ti-dashboard"></i><span>Admin</span></a>

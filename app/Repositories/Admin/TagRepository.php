@@ -2,37 +2,23 @@
 
 namespace App\Repositories\Admin;
 
-use App\Models\Category;
+use App\Models\Tag;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class CategoryRepository extends BaseRepository {
+class TagRepository extends BaseRepository {
 
     public function model()
     {
-        return Category::class;
+        return Tag::class;
     }
 
     public function index($searchParams) {
         $query = $this->model->query();
-        if (isset($searchParams['search'])) {
-            $search = $searchParams['search'];
-            $query->where('content', 'like', "$search%");
-        }
         $query->orderBy('updated_at', 'desc');
-        $categories = $query->paginate(10);
-        $categories->getCollection()->transform(function ($item) {
-            $item->parent_name = "";
-            if ($item->parent_id) {
-                $parentCate = $this->model->where('id', $item->parent_id)->first();
-                if ($parentCate) {
-                    $item->parent_name = $parentCate->name;
-                }
-            }
-            return $item;
-        });
-        return view('admin.pages.category.index', compact('categories'));
+        $tags = $query->paginate(10);
+        return view('admin.pages.tag.index', compact('tags'));
     }
 
     /**
@@ -41,17 +27,10 @@ class CategoryRepository extends BaseRepository {
     public function store($params) {
         DB::beginTransaction();
         try {
-            $category = new $this->model;
-            $params['level'] = 1;
-            if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->first();
-                if ($parent) {
-                    $params['level'] = $parent->level + 1;
-                }
-            }
+            $tag = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
-            $category->fill($params);
-            $category->save();
+            $tag->fill($params);
+            $tag->save();
 
             DB::commit();
         } catch (\Exception $exception) {
@@ -66,19 +45,12 @@ class CategoryRepository extends BaseRepository {
     }
 
     public function update($params, $id) {
-        $category = $this->model->findOrFail($id);
+        $tag = $this->model->findOrFail($id);
         DB::beginTransaction();
         try {
-            $params['level'] = 1;
-            if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->first();
-                if ($parent) {
-                    $params['level'] = $parent->level + 1;
-                }
-            }
             $params['slug'] = Str::slug($params['name'], '-');
-            $category->fill($params);
-            $category->save();
+            $tag->fill($params);
+            $tag->save();
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
@@ -97,23 +69,17 @@ class CategoryRepository extends BaseRepository {
         }
     }
 
-    public function getParent($params) {
+    public function getAll($params) {
         $query = $this->model->where('status', 1);
         if (isset($params['name'])) {
             $name = $params['name'];
             $query->where('name', 'like', "%$name%");
         }
-        if (isset($params['self_id'])) {
-            $query->where('id', '!=', $params['self_id']);
-        }
         return $query->get();
     }
 
-    public function findCategory($id) {
-        if ($id) {
-            return $this->model->where('id', $id)->first();
-        }
-        return "";
+    public function getAllExceptSelf($id) {
+        return $this->model->where('id', '!=', $id)->where('status', 1)->get();
     }
 
     public function generateRandomString($length = 10) {

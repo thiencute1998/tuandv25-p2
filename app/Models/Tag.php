@@ -10,7 +10,11 @@ class Tag extends Model
     use HasFactory;
 
     // Table QL tag
-    protected $table = 'tag';
+    protected $table = 'tags';
+
+    protected $fillable = ['name', 'slug', 'link', 'status'];
+
+    public $timestamps = true;
 
     public function posts() {
         return $this->belongsToMany(Post::class, 'post_tags', 'tag_id', 'post_id');

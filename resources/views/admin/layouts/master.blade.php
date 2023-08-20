@@ -27,6 +27,18 @@
         .main-content .filter-with {
             cursor: pointer;
         }
+        .select2 {
+            width:100%!important;
+        }
+        .select2-selection__rendered {
+            line-height: 38px !important;
+        }
+        .select2-container .select2-selection--single {
+            height: 42px !important;
+        }
+        .select2-selection__arrow {
+            height: 38px !important;
+        }
     </style>
 </head>
 <body>

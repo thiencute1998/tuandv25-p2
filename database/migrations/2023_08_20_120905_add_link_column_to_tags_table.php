@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePostTagsTable extends Migration
+class AddLinkColumnToTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreatePostTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('post_tags', function (Blueprint $table) {
-            $table->id();
-            $table->integer('post_id')->nullable();
-            $table->integer('tag_id')->nullable();
+        Schema::table('tags', function (Blueprint $table) {
+            //
+            $table->string('link')->nullable()->comment('Link tag');
         });
     }
 
@@ -27,6 +26,8 @@ class CreatePostTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tags');
+        Schema::table('tags', function (Blueprint $table) {
+            //
+        });
     }
 }
