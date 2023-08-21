@@ -3,14 +3,12 @@
 namespace App\Repositories\Admin;
 
 use App\Models\CalenderEvent;
-use App\Models\PostTag;
-use App\Models\Tag;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
-class CalendarRepositor extends BaseRepository {
+class CalendarRepository extends BaseRepository {
 
     private $pathCkeditor = "upload/admin/calendar/ckeditor";
     private $pathImage = "upload/admin/calendar/image";

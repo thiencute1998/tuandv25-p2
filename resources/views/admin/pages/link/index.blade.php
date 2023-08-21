@@ -6,8 +6,9 @@
             color: darkred;
         }
         .td-img{
-            max-width: 125px;
-            max-height: 200px;
+            display: block;
+            max-width: 325px;
+            max-height: 158px;
             overflow: hidden;
             margin: auto;
         }
@@ -24,13 +25,13 @@
                         <div class="row form-group justify-content-between">
                             <div >
                                 @if (session('delete-success'))
-                                    <h5 class="contact-message mb-2 text-success">{{ session('delete-success') }}</h5>
+                                    <h5 class="work-message mb-2 text-success">{{ session('delete-success') }}</h5>
                                 @endif
-                                <h4 class="header-title">List Contact Banner</h4>
+                                <h4 class="header-title">Danh sách liên kết</h4>
                             </div>
                             <div>
-                                <a class="btn btn-primary" href="{{route('contacts-create')}}">
-                                    <i class="ti-plus"></i><span>Add</span>
+                                <a class="btn btn-primary" href="{{route('admin-link-create')}}">
+                                    <i class="ti-plus"></i><span>Thêm liên kết</span>
                                 </a>
                             </div>
                         </div>
@@ -39,35 +40,30 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase">
                                     <tr>
-                                        <th scope="col">Link</th>
-                                        <th scope="col">Contact image</th>
-                                        <th>Status</th>
-                                        <th scope="col">Action</th>
+                                        <th scope="col">Liên kết</th>
+                                        <th>Trạng thái</th>
+                                        <th scope="col">Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($contacts as $contact)
+                                    @foreach($links as $link)
                                         <tr>
-                                            <td style="vertical-align: middle">{{$contact->link}}</td>
-                                            <td >
-                                                <div class="td-img">
-                                                    <img class="contact-img" width="325" height="158"
-                                                         src=" {{asset('upload/admin/banner/contact/' . $contact->file_name)}}" alt="">
-                                                </div>
+                                            <td style="vertical-align: middle;">
+                                                <a href="{{$link->link}}" target="_blank">{{$link->name}}</a>
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($contact->status)
-                                                    <span class="text-success">Active</span>
+                                                @if($link->status)
+                                                    <span class="text-success">Hoạt động</span>
                                                 @else
-                                                    <span class="text-danger">Nonactive</span>
+                                                    <span class="text-danger">Không hoạt động</span>
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                <a href="{{ route('contacts-edit', ['id'=> $contact->id]) }}">
+                                                <a href="{{ route('admin-link-edit', ['id'=> $link->id]) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a class="product-remove" href="{{ route('contacts-delete', ['id'=> $contact->id]) }}"
-                                                   onclick="return confirm('Are you sure to delete?' )"
+                                                <a class="product-remove" href="{{ route('admin-link-delete', ['id'=> $link->id]) }}"
+                                                   onclick="return confirm('Bạn có muốn xóa liên kết ?' )"
                                                 >
                                                     <i class="ti-trash"></i>
                                                 </a>
@@ -80,7 +76,7 @@
                             </div>
                         </div>
                         <div class="row" style="justify-content: flex-end;">
-                            {{ $contacts->onEachSide(1)->links() }}
+                            {{ $links->onEachSide(1)->links() }}
                         </div>
                     </div>
                 </div>
@@ -91,7 +87,7 @@
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $('.contact-message').delay(5000).fadeOut();
+            $('.work-message').delay(5000).fadeOut();
         })
     </script>
 @endsection

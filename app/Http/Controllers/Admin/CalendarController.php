@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\Admin\CalendarRepositor;
+use App\Repositories\Admin\CalendarRepository;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
 {
     //
     private $repository;
-    public function __construct(CalendarRepositor $repository)
+    public function __construct(CalendarRepository $repository)
     {
         $this->repository = $repository;
     }

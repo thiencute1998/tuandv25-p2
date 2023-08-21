@@ -10,4 +10,11 @@ class Banner extends Model
     use HasFactory;
 
     // Quan ly banner
+
+    protected $table = 'banners';
+
+    protected $fillable = ['image', 'status'];
+
+    public $timestamps = true;
+
 }

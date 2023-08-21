@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Admin;
 
-use App\Models\Category;
 use App\Models\Post;
 use App\Models\PostTag;
 use App\Models\Tag;
@@ -43,7 +42,6 @@ class PostRepository extends BaseRepository {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
             $post->fill($params);
-            $post->save();
 
             if ($post->save()) {
                 if (isset($params['tags'])) {
@@ -76,8 +74,6 @@ class PostRepository extends BaseRepository {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
             $post->fill($params);
-            $post->save();
-
             if ($post->save()) {
                 $post->tags()->detach();
                 if (isset($params['tags'])) {
