@@ -25,7 +25,16 @@
                                         </div>
                                     @endif
                                     <input type="hidden" id="tag_id" value="{{$tag->id}}">
-                                    <h4 class="header-title product-add-title">Sửa tag</h4>
+                                    <div class="row form-group justify-content-between">
+                                        <div>
+                                            <h4 class="header-title product-add-title">Sửa tag</h4>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" href="{{route('admin-tag')}}">
+                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Tên (*)</label>

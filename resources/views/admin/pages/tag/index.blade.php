@@ -49,13 +49,13 @@
                                     <tbody>
                                     @foreach($tags as $tag)
                                         <tr>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$tag->name}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$tag->parent_name}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 <a href="{{"http://" . request()->getHttpHost() . "/tag/" . $tag->slug}}" target="_blank">{{"http://" . request()->getHttpHost() . "/tag/" . $tag->slug}}</a>
                                             </td>
                                             <td style="vertical-align: middle;">

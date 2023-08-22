@@ -48,7 +48,7 @@
                                     <tbody>
                                     @foreach($links as $link)
                                         <tr>
-                                            <td style="vertical-align: middle;">
+                                            <td class="text-left" style="vertical-align: middle;">
                                                 <a href="{{$link->link}}" target="_blank">{{$link->name}}</a>
                                             </td>
                                             <td style="vertical-align: middle;">

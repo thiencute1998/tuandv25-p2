@@ -23,7 +23,16 @@
                                         <h5 class="action-message mb-2 text-success">{{ session('edit-success') }}</h5>
                                     @endif
                                     <input type="hidden" id="category_id" value="{{$category->id}}">
-                                    <h4 class="header-title product-add-title">Sửa danh mục</h4>
+                                    <div class="row form-group justify-content-between">
+                                        <div>
+                                            <h4 class="header-title product-add-title">Sửa danh mục</h4>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" href="{{route('admin-category')}}">
+                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Tên (*)</label>

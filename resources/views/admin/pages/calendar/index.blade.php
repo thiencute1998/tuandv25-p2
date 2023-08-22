@@ -50,13 +50,13 @@
                                     <tbody>
                                     @foreach($calendars as $calendar)
                                         <tr>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$calendar->name}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 <div class="td-img">
                                                     @if($calendar->image)
-                                                    <img class="work-img" width="325" height="158"
+                                                    <img class="work-img" width="" height="100"
                                                          src="{{asset('upload/admin/calendar/image/' . $calendar->image)}}" alt="">
                                                     @endif
                                                 </div>
@@ -68,8 +68,10 @@
                                                 {{$calendar->views}}
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($calendar->status)
+                                                @if($calendar->status==1)
                                                     <span class="text-success">Hoạt động</span>
+                                                @elseif($post->status==2)
+                                                    <span class="text-success" style="color: #28a745">Nổi bật</span>
                                                 @else
                                                     <span class="text-danger">Không hoạt động</span>
                                                 @endif

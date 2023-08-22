@@ -48,7 +48,7 @@
                                     <tbody>
                                     @foreach($banners as $banner)
                                         <tr>
-                                            <td class="td-img">
+                                            <td class="td-img text-left">
                                                 @if($banner->image)
                                                     <img class="work-img" width="325" height="158"
                                                          src="{{asset('upload/admin/banner/image/' . $banner->image)}}" alt="">

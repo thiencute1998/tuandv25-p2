@@ -23,7 +23,16 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <h4 class="header-title product-add-title">Thêm liên kết</h4>
+                                    <div class="row form-group justify-content-between">
+                                        <div>
+                                            <h4 class="header-title product-add-title">Thêm liên kết</h4>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" href="{{route('admin-link')}}">
+                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col-md-4">
                                             <label for="services" class="col-form-label">Tên liên kết</label>

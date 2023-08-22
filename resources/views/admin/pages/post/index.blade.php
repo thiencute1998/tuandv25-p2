@@ -49,13 +49,13 @@
                                     <tbody>
                                     @foreach($posts as $post)
                                         <tr>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$post->name}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$post->category ? $post->category->name : ""}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 @if($post->tags)
                                                     @foreach($post->tags as $tag)
                                                         <div>
@@ -65,10 +65,12 @@
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($post->status)
+                                                @if($post->status==1)
                                                     <span class="text-success">Hoạt động</span>
+                                                @elseif($post->status==2)
+                                                    <span class="text-success">Nổi bật</span>
                                                 @else
-                                                    <span class="text-danger">Không hoạt động</span>
+                                                    <span class="text-danger" style="color: #28a745">Không hoạt động</span>
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">

@@ -25,7 +25,16 @@
                                         </div>
                                     @endif
                                     <input type="hidden" id="banner_id" value="{{$banner->id}}">
-                                    <h4 class="header-title product-add-title">Sửa banner</h4>
+                                    <div class="row form-group justify-content-between">
+                                        <div>
+                                            <h4 class="header-title product-add-title">Sửa banner</h4>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" href="{{route('admin-banner')}}">
+                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Hinh anh</label>

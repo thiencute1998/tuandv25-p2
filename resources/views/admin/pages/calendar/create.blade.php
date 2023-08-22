@@ -36,7 +36,16 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <h4 class="header-title product-add-title">Thêm lịch phụng vụ</h4>
+                                    <div class="row form-group justify-content-between">
+                                        <div>
+                                            <h4 class="header-title product-add-title">Thêm lịch phụng vụ</h4>
+                                        </div>
+                                        <div>
+                                            <a class="btn btn-primary" href="{{route('admin-calendar')}}">
+                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                            </a>
+                                        </div>
+                                    </div>
                                     <div class="row form-group">
                                         <div class="col-md-8">
                                             <label for="services" class="col-form-label">Tên(*)</label>
@@ -46,6 +55,7 @@
                                             <label for="services" class="col-form-label">Trạng thái</label>
                                             <select class="form-control" name="status">
                                                 <option value="1" selected>Hoạt động</option>
+                                                <option value="2">Nổi bật</option>
                                                 <option value="0">Không hoạt động</option>
                                             </select>
                                         </div>
