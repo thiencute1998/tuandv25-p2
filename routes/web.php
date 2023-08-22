@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\LinkController;
+use App\Http\Controllers\Viewer\IndexController;
 
 use App\Http\Controllers\Viewer\HomeController;
 use App\Http\Controllers\PhotoEditingViewerController;
@@ -134,9 +135,7 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/', function(){
-   return view('viewer.pages.index');
-});
+Route::get('/', [IndexController::class, 'index'])->name('index');
 
 
 
