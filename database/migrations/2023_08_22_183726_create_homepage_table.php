@@ -16,7 +16,6 @@ class CreateHomepageTable extends Migration
         Schema::create('homepage', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->integer('category_id')->nullable();
             $table->integer('post_id')->nullable();
             $table->integer('order')->nullable()->comment('STT hien thi');
             $table->tinyInteger('status')->nullable();

@@ -1,0 +1,120 @@
+/* CSS Document */
+body {
+    background: #FFF;
+    color: #333;
+    font-family: Arial;
+    font-size: 13px;
+}
+/* Make div class="youtube-responsive" */
+.youtube-responsive{
+overflow:hidden;
+padding-bottom:56.25%;
+position:relative;
+height:0;
+}
+.youtube-responsive iframe{
+left:0;
+top:0;
+height:100%;
+width:100%;
+position:absolute;
+}
+/*youtube*/
+#main-nav ul ul a, #main-nav .mega-menu-block a
+{
+	    color: #fff;
+}
+#theme-footer {
+    background-color: #f4f5ff !important;
+	    color: #337ab7;
+	border-top-color: #ffffff;
+}
+.footer-bottom {
+	    background: #dadbe4;
+}
+.footer-widget-top h4 {
+    color: #337ab7;
+}
+#topcontrol{
+	background: #258101;
+}
+#theme-footer a {
+    color: #337ab7;
+}
+#main-nav {
+    margin: 0 auto;
+	background: #258101;
+	border-bottom-color: #258101;
+}
+#main-nav .menu-sub-content{
+	    border-top: 2px solid #258101;
+    background: #258101;
+}
+#main-nav, .cat-box-content, #sidebar .widget-container, .post-listing, #commentform {
+    border-bottom-color: #f4f5ff;
+}
+.breaking-news span.breaking-news-title {
+    background: #258101;
+}
+a.more-link{
+	    background-color: #258101;
+}
+.flex-control-paging li a.flex-active{
+	background-color: #258101;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #258101;
+}
+ #theme-header {
+    border-top-color: #258101;
+}
+#main-nav ul li.current-menu-item a{
+	    background-color: #ffffff91;
+}
+.widget {
+    clear: both;
+    /* margin-bottom: 25px; */
+    margin-top: -20px;
+}
+#wrapper.boxed-all #main-content {
+    width: 997px;
+    margin-top: -10px;
+    padding: 0;
+    background: transparent;
+}
+.slider-caption h2 a, .slider-caption h2, .full-width .content .slider-caption h2 {
+    color: #ffffff;
+    font-size: 20px;
+    font-family: BebasNeueRegular, arial, Georgia, serif;
+}
+
+.slider-caption {
+    background: #267290d9;
+    color: #FFF;
+}
+
+.ei-title h2, .content .ei-title h2, .content .slider-caption h2 a, .content .slider-caption h2, .slider-caption h2 a, .slider-caption h2, .full-width .content .slider-caption h2 {
+    font-size: 20px;}
+
+.no-js img.lazyload { display: none; }
+figure.wp-block-image img.lazyloading { min-width: 150px; }
+.lazyload, .lazyloading { opacity: 0; }
+.lazyloaded {
+	opacity: 1;
+	transition: opacity 400ms;
+	transition-delay: 0ms;
+}
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+	
