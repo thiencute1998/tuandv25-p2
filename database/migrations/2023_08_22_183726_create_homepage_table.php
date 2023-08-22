@@ -19,6 +19,7 @@ class CreateHomepageTable extends Migration
             $table->integer('category_id')->nullable();
             $table->integer('post_id')->nullable();
             $table->integer('order')->nullable()->comment('STT hien thi');
+            $table->tinyInteger('status')->nullable();
             $table->timestamps();
         });
     }
