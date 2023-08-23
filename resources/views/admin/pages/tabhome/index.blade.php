@@ -6,7 +6,6 @@
             color: darkred;
         }
         .td-img{
-            display: block;
             max-width: 325px;
             max-height: 158px;
             overflow: hidden;
@@ -27,11 +26,11 @@
                                 @if (session('delete-success'))
                                     <h5 class="work-message mb-2 text-success">{{ session('delete-success') }}</h5>
                                 @endif
-                                <h4 class="header-title">Danh sách liên kết</h4>
+                                <h4 class="header-title">Danh sách danh mục</h4>
                             </div>
                             <div>
-                                <a class="btn btn-primary" href="{{route('admin-link-create')}}">
-                                    <i class="ti-plus"></i><span>Thêm liên kết</span>
+                                <a class="btn btn-primary" href="{{route('admin-tabhome-create')}}">
+                                    <i class="ti-plus"></i><span>Thêm danh mục</span>
                                 </a>
                             </div>
                         </div>
@@ -40,30 +39,38 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase">
                                     <tr>
-                                        <th scope="col">Liên kết</th>
+                                        <th scope="col">Tên danh mục</th>
+                                        <th scope="col">Danh sach bai viet</th>
+                                        <th scope="col">Link menu</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($links as $link)
+                                    @foreach($tabhome as $tabhome)
                                         <tr>
-                                            <td class="text-left" style="vertical-align: middle;">
-                                                <a href="{{$link->link}}" target="_blank">{{$link->name}}</a>
+                                            <td class="text-left">
+                                                {{$tabhome->name}}
+                                            </td>
+                                            <td class="text-left">
+                                                {{$tabhome->parent_name}}
+                                            </td>
+                                            <td class="text-left">
+                                                <a href="{{"http://" . request()->getHttpHost() . "/tabhome/" . $tabhome->slug}}" target="_blank">{{"http://" . request()->getHttpHost() . "/tabhome/" . $tabhome->slug}}</a>
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($link->status)
+                                                @if($tabhome->status)
                                                     <span class="text-success">Hoạt động</span>
                                                 @else
                                                     <span class="text-danger">Không hoạt động</span>
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                <a href="{{ route('admin-link-edit', ['id'=> $link->id]) }}">
+                                                <a href="{{ route('admin-tabhome-edit', ['id'=> $tabhome->id]) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a class="product-remove" href="{{ route('admin-link-delete', ['id'=> $link->id]) }}"
-                                                   onclick="return confirm('Bạn có muốn xóa liên kết ?' )"
+                                                <a class="product-remove" href="{{ route('admin-tabhome-delete', ['id'=> $tabhome->id]) }}"
+                                                   onclick="return confirm('Bạn có muốn xóa menu ?' )"
                                                 >
                                                     <i class="ti-trash"></i>
                                                 </a>
@@ -76,7 +83,7 @@
                             </div>
                         </div>
                         <div class="row" style="justify-content: flex-end;">
-                            {{ $links->onEachSide(1)->links() }}
+                            {{ $tabhome->onEachSide(1)->links() }}
                         </div>
                     </div>
                 </div>

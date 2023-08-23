@@ -19,7 +19,7 @@
             <div class="col-lg-12 col-ml-12">
                 <div class="row">
                     <!-- Textual inputs start -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <form id="product-form" name="product-form" action="{{ route('admin-calendar-update', ['id'=> $calendar->id]) }}" enctype="multipart/form-data" method="POST">
@@ -92,24 +92,28 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>--}}
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
     <script src=
                 "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer>
     </script>
+    <link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />
+    <script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>
+    <script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>
     <script type="text/javascript">
-        ClassicEditor
-            .create( document.querySelector( '#content' ), {
-                ckfinder: {
-                    uploadUrl: "{{route('admin-calendar-ckeditor-upload', ['_token' => csrf_token() ])}}"
-                }
-            } )
-            .then( editor => {
-                editor.ui.view.editable.element.style.height = '500px';
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
+        var editor = new RichTextEditor("#content");
+        {{--ClassicEditor--}}
+        {{--    .create( document.querySelector( '#content' ), {--}}
+        {{--        ckfinder: {--}}
+        {{--            uploadUrl: "{{route('admin-calendar-ckeditor-upload', ['_token' => csrf_token() ])}}"--}}
+        {{--        }--}}
+        {{--    } )--}}
+        {{--    .then( editor => {--}}
+        {{--        editor.ui.view.editable.element.style.height = '500px';--}}
+        {{--    } )--}}
+        {{--    .catch( error => {--}}
+        {{--        console.error( error );--}}
+        {{--    } );--}}
 
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();

@@ -31,7 +31,7 @@
             width:100%!important;
         }
         .select2-selection__rendered {
-            line-height: 38px !important;
+            line-height: 30px !important;
         }
         .select2-container .select2-selection--single {
             height: 42px !important;

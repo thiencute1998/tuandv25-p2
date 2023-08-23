@@ -14,7 +14,7 @@
             <div class="col-lg-12 col-ml-12">
                 <div class="row">
                     <!-- Textual inputs start -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <form id="product-form" name="product-form" action="{{ route('admin-post-update', ['id'=> $post->id]) }}" enctype="multipart/form-data" method="POST">
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
-                                            <label for="product-content" class="col-form-label">Content</label>
+                                            <label for="product-content" class="col-form-label">Nội dung</label>
                                             <textarea class="form-control" name="content" type="text" id="content">
                                                 {{$post->content}}
                                             </textarea>
@@ -97,25 +97,29 @@
         </div>
     </div>
     {{--    <script src="//cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>--}}
-    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>
+{{--    <script src="https://cdn.ckeditor.com/ckeditor5/23.0.0/classic/ckeditor.js"></script>--}}
 
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
             integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
             crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />
+    <script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>
+    <script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>
     <script type="text/javascript">
-        ClassicEditor
-            .create( document.querySelector( '#content' ), {
-                ckfinder: {
-                    uploadUrl: "{{route('admin-post-ckeditor-upload', ['_token' => csrf_token() ])}}"
-                }
-            } )
-            .then( editor => {
-                editor.ui.view.editable.element.style.height = '500px';
-            } )
-            .catch( error => {
-                console.error( error );
-            } );
+        var editor = new RichTextEditor("#content");
+        {{--ClassicEditor--}}
+        {{--    .create( document.querySelector( '#content' ), {--}}
+        {{--        ckfinder: {--}}
+        {{--            uploadUrl: "{{route('admin-post-ckeditor-upload', ['_token' => csrf_token() ])}}"--}}
+        {{--        }--}}
+        {{--    } )--}}
+        {{--    .then( editor => {--}}
+        {{--        editor.ui.view.editable.element.style.height = '500px';--}}
+        {{--    } )--}}
+        {{--    .catch( error => {--}}
+        {{--        console.error( error );--}}
+        {{--    } );--}}
 
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();

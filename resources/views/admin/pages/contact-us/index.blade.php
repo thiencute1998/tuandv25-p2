@@ -42,7 +42,7 @@
     <div class="main-content-inner">
         <div class="row">
             <!-- basic table start -->
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-3">
                 <div class="card">
                     <div class="card-body">
                         <form action="{{route('admin-contact-us-delete-files')}}" method="POST" onsubmit="return confirm('Are you sure to delete contacts ?' )">

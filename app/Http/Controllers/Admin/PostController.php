@@ -16,7 +16,8 @@ class PostController extends Controller
     }
 
     public function index(Request $request) {
-        $searchParams = $request->only('search');
+        //$searchParams = $request->only('search');
+        $searchParams = $request->all();
         return $this->repository->index($searchParams);
     }
 

@@ -396,7 +396,7 @@
 /*-------------------- 2.2 Header Area -------------------*/
 
 .header-area {
-    padding: 15px 30px;
+    padding: 10px 30px;
     background: #fff;
     border-bottom: 1px solid #d8e3e7;
 }
@@ -719,7 +719,7 @@ ul.breadcrumbs {
         flex-wrap: wrap;
     background: -webkit-linear-gradient(left, #8914fe 0%, #8063f5 100%);
     background: linear-gradient(to right, #8914fe 0%, #8063f5 100%);
-    padding: 17px 38px;
+    padding: 10px 38px;
     position: relative;
     border-radius: 26px !important;
 }
@@ -2837,5 +2837,11 @@ table.dataTable thead td {
 button.button-search {
     border-radius: 24px;
     margin-left: 15px;
+}
+select.form-control{
+    height: calc(2.65rem + 2px) !important;
+}
+.form-group{
+    margin-bottom: 0.5rem !important;
 }
 /*-------------------- END Offset Sidebar ------------------- */

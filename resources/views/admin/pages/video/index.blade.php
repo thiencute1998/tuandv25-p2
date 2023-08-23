@@ -6,7 +6,6 @@
             color: darkred;
         }
         .td-img{
-            display: block;
             max-width: 325px;
             max-height: 158px;
             overflow: hidden;
@@ -27,11 +26,11 @@
                                 @if (session('delete-success'))
                                     <h5 class="work-message mb-2 text-success">{{ session('delete-success') }}</h5>
                                 @endif
-                                <h4 class="header-title">Danh sách liên kết</h4>
+                                <h4 class="header-title">Danh sách Video</h4>
                             </div>
                             <div>
-                                <a class="btn btn-primary" href="{{route('admin-link-create')}}">
-                                    <i class="ti-plus"></i><span>Thêm liên kết</span>
+                                <a class="btn btn-primary" href="{{route('admin-video-create')}}">
+                                    <i class="ti-plus"></i><span>Thêm Video</span>
                                 </a>
                             </div>
                         </div>
@@ -40,30 +39,49 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase">
                                     <tr>
-                                        <th scope="col">Liên kết</th>
+                                        <th scope="col">Tên Video</th>
+{{--                                        <th scope="col">Hình ảnh</th>--}}
+                                        <th scope="col">Link</th>
+                                        <th>Số lượt xem</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($links as $link)
+                                    @foreach($videos as $video)
                                         <tr>
-                                            <td class="text-left" style="vertical-align: middle;">
-                                                <a href="{{$link->link}}" target="_blank">{{$link->name}}</a>
+                                            <td class="text-left">
+                                                {{$video->name}}
+                                            </td>
+{{--                                            <td class="text-left">--}}
+{{--                                                <div class="td-img">--}}
+{{--                                                    @if($video->image)--}}
+{{--                                                    <img class="work-img" width="" height="100"--}}
+{{--                                                         src="{{asset('upload/admin/video/image/' . $video->image)}}" alt="">--}}
+{{--                                                    @endif--}}
+{{--                                                </div>--}}
+{{--                                            </td>--}}
+                                            <td>
+                                                {{$video->link}}
+                                            </td>
+                                            <td>
+                                                {{$video->view_count}}
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($link->status)
+                                                @if($video->status==1)
                                                     <span class="text-success">Hoạt động</span>
+                                                @elseif($post->status==2)
+                                                    <span class="text-success" style="color: #28a745">Nổi bật</span>
                                                 @else
                                                     <span class="text-danger">Không hoạt động</span>
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                <a href="{{ route('admin-link-edit', ['id'=> $link->id]) }}">
+                                                <a href="{{ route('admin-video-edit', ['id'=> $video->id]) }}">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a class="product-remove" href="{{ route('admin-link-delete', ['id'=> $link->id]) }}"
-                                                   onclick="return confirm('Bạn có muốn xóa liên kết ?' )"
+                                                <a class="product-remove" href="{{ route('admin-video-delete', ['id'=> $video->id]) }}"
+                                                   onclick="return confirm('Bạn có muốn xóa Video?' )"
                                                 >
                                                     <i class="ti-trash"></i>
                                                 </a>
@@ -76,7 +94,7 @@
                             </div>
                         </div>
                         <div class="row" style="justify-content: flex-end;">
-                            {{ $links->onEachSide(1)->links() }}
+                            {{ $videos->onEachSide(1)->links() }}
                         </div>
                     </div>
                 </div>

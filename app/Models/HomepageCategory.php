@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class HomepageCategory extends Model
 {
     use HasFactory;
+    protected $table = 'homepage_categories';
 }

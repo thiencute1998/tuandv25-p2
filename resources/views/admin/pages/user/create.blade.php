@@ -20,7 +20,7 @@
             <div class="col-lg-12 col-ml-12">
                 <div class="row">
                     <!-- Textual inputs start -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <form id="user-form" name="user-form" action="{{ route('users-store') }}" method="POST">

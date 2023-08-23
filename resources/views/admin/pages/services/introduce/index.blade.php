@@ -40,7 +40,7 @@
 <div class="main-content-inner">
     <div class="row">
         <!-- basic table start -->
-        <div class="col-12 mt-5">
+        <div class="col-12 mt-3">
             <div class="card">
                 <div class="card-body">
                     <div class="row form-group justify-content-between">

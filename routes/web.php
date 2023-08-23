@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\CalendarController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\Viewer\IndexController;
+use App\Http\Controllers\Admin\VideoController;
+use App\Http\Controllers\Admin\TabHomeController;
 
 use App\Http\Controllers\Viewer\HomeController;
 use App\Http\Controllers\PhotoEditingViewerController;
@@ -131,6 +133,26 @@ Route::prefix('admin')->group(function () {
         Route::get('/edit/{id}', [LinkController::class, 'edit'])->name('admin-link-edit');
         Route::post('/update/{id}', [LinkController::class, 'update'])->name('admin-link-update');
         Route::get('/delete/{id}', [LinkController::class, 'delete'])->name('admin-link-delete');
+    });
+
+    Route::prefix('video')->group(function() {
+        Route::get('/', [VideoController::class, 'index'])->name('admin-video');
+        Route::get('/create', [VideoController::class, 'create'])->name('admin-video-create');
+        Route::post('/store', [VideoController::class, 'store'])->name('admin-video-store');
+        Route::get('/edit/{id}', [VideoController::class, 'edit'])->name('admin-video-edit');
+        Route::post('/update/{id}', [VideoController::class, 'update'])->name('admin-video-update');
+        Route::get('/delete/{id}', [VideoController::class, 'delete'])->name('admin-video-delete');
+        Route::post('/ckeditor/image_upload', [VideoController::class, 'ckeditorUpload'])->name('admin-video-ckeditor-upload');
+    });
+
+    Route::prefix('tabhome')->group(function() {
+        Route::get('/', [TabHomeController::class, 'index'])->name('admin-tabhome');
+        Route::get('/create', [TabHomeController::class, 'create'])->name('admin-tabhome-create');
+        Route::post('/store', [TabHomeController::class, 'store'])->name('admin-tabhome-store');
+        Route::get('/edit/{id}', [TabHomeController::class, 'edit'])->name('admin-tabhome-edit');
+        Route::post('/update/{id}', [TabHomeController::class, 'update'])->name('admin-tabhome-update');
+        Route::get('/delete/{id}', [TabHomeController::class, 'delete'])->name('admin-tabhome-delete');
+        Route::post('/ckeditor/image_upload', [TabHomeController::class, 'ckeditorUpload'])->name('admin-tabhome-ckeditor-upload');
     });
 
 });

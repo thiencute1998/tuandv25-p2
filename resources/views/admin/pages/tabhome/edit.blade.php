@@ -10,7 +10,7 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <form id="product-form" name="product-form" action="{{ route('admin-tag-update', ['id'=> $tag->id]) }}" method="POST">
+                                <form id="product-form" name="product-form" action="{{ route('admin-tabhome-update', ['id'=> $tabhome->id]) }}" method="POST">
                                     @csrf
                                     @if (session('edit-success'))
                                         <h5 class="action-message mb-2 text-success">{{ session('edit-success') }}</h5>
@@ -24,13 +24,13 @@
                                             </ul>
                                         </div>
                                     @endif
-                                    <input type="hidden" id="tag_id" value="{{$tag->id}}">
+                                    <input type="hidden" id="tag_id" value="{{$tabhome->id}}">
                                     <div class="row form-group justify-content-between">
                                         <div>
-                                            <h4 class="header-title product-add-title">Sửa tag</h4>
+                                            <h4 class="header-title product-add-title">Sửa danh mục</h4>
                                         </div>
                                         <div>
-                                            <a class="btn btn-primary" href="{{route('admin-tag')}}">
+                                            <a class="btn btn-primary" href="{{route('admin-tabhome')}}">
                                                 <i class="ti-plus"></i><span>Danh sách</span>
                                             </a>
                                         </div>
@@ -38,11 +38,11 @@
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Tên (*)</label>
-                                            <input type="text" class="form-control" name="name" placeholder="Nhập tên tag" value="{{$tag->name}}" required>
+                                            <input type="text" class="form-control" name="name" placeholder="Nhập tên menu" value="{{$tabhome->name}}" required>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Trạng thái</label>
-                                            <select class="form-control tag-status" name="status" data-value="{{ $tag->status }}">
+                                            <select class="form-control tag-status" name="status" data-value="{{ $tabhome->status }}">
                                                 <option value="1">Hoạt động</option>
                                                 <option value="0">Không hoạt động</option>
                                             </select>

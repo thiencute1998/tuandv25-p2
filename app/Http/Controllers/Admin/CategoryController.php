@@ -25,7 +25,7 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('name', 'parent_id', 'link', 'status');
+        $params = $request->only('name', 'parent_id', 'link', 'status', 'order');
         $this->repository->store($params);
         return redirect()->back()->with('add-success', 'Thêm danh mục thành công !!!');
     }
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('name', 'parent_id', 'link', 'status');
+        $params = $request->only('name', 'parent_id', 'link', 'status', 'order');
         $this->repository->update($params, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật danh mục thành công !!!');
     }

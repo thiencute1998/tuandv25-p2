@@ -22,7 +22,7 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <form id="product-form" name="product-form" action="{{ route('admin-calendar-store') }}" enctype="multipart/form-data" method="POST">
+                                <form id="product-form" name="product-form" action="{{ route('admin-video-update', ['id'=> $video->id]) }}" enctype="multipart/form-data" method="POST">
                                     @csrf
                                     @if (session('add-success'))
                                         <h5 class="action-message mb-2 text-success">{{ session('add-success') }}</h5>
@@ -38,10 +38,10 @@
                                     @endif
                                     <div class="row form-group justify-content-between">
                                         <div>
-                                            <h4 class="header-title product-add-title">Thêm lịch phụng vụ</h4>
+                                            <h4 class="header-title product-add-title">Sửa Video</h4>
                                         </div>
                                         <div>
-                                            <a class="btn btn-primary" href="{{route('admin-calendar')}}">
+                                            <a class="btn btn-primary" href="{{route('admin-video')}}">
                                                 <i class="ti-plus"></i><span>Danh sách</span>
                                             </a>
                                         </div>
@@ -49,11 +49,11 @@
                                     <div class="row form-group">
                                         <div class="col-md-8">
                                             <label for="services" class="col-form-label">Tên(*)</label>
-                                            <input type="text" class="form-control" name="name" placeholder="Nhập tên lịch phụng vụ" required>
+                                            <input type="text" class="form-control" name="name" placeholder="Nhập tên Video" required value="{{$video->name}}">
                                         </div>
                                         <div class="col-md-4">
                                             <label for="services" class="col-form-label">Trạng thái</label>
-                                            <select class="form-control" name="status">
+                                            <select class="form-control item-status" name="status" data-value="{{ $video->status }}">
                                                 <option value="1" selected>Hoạt động</option>
                                                 <option value="2">Nổi bật</option>
                                                 <option value="0">Không hoạt động</option>
@@ -61,27 +61,24 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Ngày</label>
-                                            <input type="text" id="my-date" name="d_date" class="form-control" placeholder="Ngày">
+                                        <div class="col-md-8">
+                                            <label for="services" class="col-form-label">Link Youtube</label>
+                                            <input type="text" class="form-control" name="link" placeholder="Link Youtube" value="{{$video->link}}">
                                         </div>
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Địa chỉ</label>
-                                            <input type="text" class="form-control" name="address" placeholder="Địa chỉ">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label for="services" class="col-form-label">Hinh ảnh</label>
-                                            <input type="file" name="image" class="form-control">
-                                        </div>
+{{--                                        <div class="col-md-4">--}}
+{{--                                            <label for="services" class="col-form-label">Hinh ảnh</label>--}}
+{{--                                            <input type="file" name="image" class="form-control">--}}
+{{--                                        </div>--}}
                                     </div>
-                                    <div class="row form-group">
-                                        <div class="col-md-12">
-                                            <label for="product-content" class="col-form-label">Nội dung</label>
-                                            <textarea class="form-control" name="content" type="text" id="content">
-                                        </textarea>
-                                        </div>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Thêm</button>
+{{--                                    <div class="row form-group">--}}
+{{--                                        <div class="col-md-12">--}}
+{{--                                            <label for="product-content" class="col-form-label">Nội dung</label>--}}
+{{--                                            <textarea class="form-control" name="content" type="text" id="content">--}}
+{{--                                                {{$video->content}}--}}
+{{--                                        </textarea>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+                                    <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Sửa</button>
                                 </form>
                             </div>
                         </div>
@@ -103,7 +100,7 @@
         {{--ClassicEditor--}}
         {{--    .create( document.querySelector( '#content' ), {--}}
         {{--        ckfinder: {--}}
-        {{--            uploadUrl: "{{route('admin-calendar-ckeditor-upload', ['_token' => csrf_token() ])}}"--}}
+        {{--            uploadUrl: "{{route('admin-video-ckeditor-upload', ['_token' => csrf_token() ])}}"--}}
         {{--        }--}}
         {{--    } )--}}
         {{--    .then( editor => {--}}
@@ -115,6 +112,9 @@
 
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();
+
+            let status = $('.item-status').data('value');
+            $('.item-status').val(status);
 
             $( "#my-date" ).datepicker({
             });

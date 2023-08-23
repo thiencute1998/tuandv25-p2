@@ -13,7 +13,7 @@ class Category extends Model
 
     protected $table = 'categories';
 
-    protected $fillable = ['name', 'link', 'parent_id', 'status', 'slug', 'level', 'path_parent'];
+    protected $fillable = ['name', 'link', 'parent_id', 'status', 'slug', 'level', 'path_parent', 'order'];
 
     public $timestamps = true;
 

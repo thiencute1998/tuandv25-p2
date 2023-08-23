@@ -14,7 +14,7 @@
             <div class="col-lg-12 col-ml-12">
                 <div class="row">
                     <!-- Textual inputs start -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <form id="product-form" name="product-form" action="{{ route('admin-category-update', ['id'=> $category->id]) }}" method="POST">
@@ -52,7 +52,11 @@
                                             <label for="services" class="col-form-label">Link</label>
                                             <input type="text" class="form-control" name="link" placeholder="Nhập link hoặc tag bài viết" value="{{$category->link}}" >
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
+                                            <label for="services" class="col-form-label">Thứ tự</label>
+                                            <input type="text" class="form-control" name="order" placeholder="Nhập thứ tự" value="{{$category->order}}" >
+                                        </div>
+                                        <div class="col-md-3">
                                             <label for="services" class="col-form-label">Trạng thái</label>
                                             <select class="form-control category-status" name="status" data-value="{{ $category->status }}">
                                                 <option value="1">Hoạt động</option>

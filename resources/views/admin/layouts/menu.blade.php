@@ -21,6 +21,9 @@
                     <li class="{{str_contains(Request::path(), 'admin/category') ? 'active' : ''}}">
                         <a href="{{route('admin-category')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý danh mục</span></a>
                     </li>
+                    <li class="{{str_contains(Request::path(), 'admin/tabhome') ? 'active' : ''}}">
+                        <a href="{{route('admin-tabhome')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý Tab home</span></a>
+                    </li>
                     <li class="{{str_contains(Request::path(), 'admin/tag') ? 'active' : ''}}">
                         <a href="{{route('admin-tag')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý tag</span></a>
                     </li>
@@ -29,6 +32,9 @@
                     </li>
                     <li class="{{str_contains(Request::path(), 'admin/calendar') ? 'active' : ''}}">
                         <a href="{{route('admin-calendar')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý lịch phụng vụ</span></a>
+                    </li>
+                    <li class="{{str_contains(Request::path(), 'admin/video') ? 'active' : ''}}">
+                        <a href="{{route('admin-video')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý Video</span></a>
                     </li>
                     <li class="{{str_contains(Request::path(), 'admin/link') ? 'active' : ''}}">
                         <a href="{{route('admin-link')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý liên kết website</span></a>

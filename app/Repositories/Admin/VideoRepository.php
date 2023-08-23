@@ -2,41 +2,30 @@
 
 namespace App\Repositories\Admin;
 
-use App\Models\Post;
-use App\Models\PostTag;
-use App\Models\Tag;
+use App\Models\Video;
 use App\Repositories\BaseRepository;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
-class PostRepository extends BaseRepository {
+class VideoRepository extends BaseRepository {
 
-    private $pathCkeditor = "upload/admin/post/ckeditor";
-    private $pathImage = "upload/admin/post/image";
+    private $pathCkeditor = "upload/admin/video/ckeditor";
+    private $pathImage = "upload/admin/video/image";
     public function model()
     {
-        return Post::class;
+        return Video::class;
     }
 
     public function index($searchParams) {
         $query = $this->model->query();
-        if (isset($searchParams['search'])) {
-            $name = $searchParams['search'];
+        if (isset($searchParams['name'])) {
+            $name = $searchParams['name'];
             $query->where('name', 'like', "$name%");
         }
-        if (isset($searchParams['category_id'])) {
-            $id = $searchParams['category_id'];
-            $query->where('category_id', '=', "$id");
-        }
-        if (isset($searchParams['status'])) {
-            $status = $searchParams['status'];
-            $query->where('status', '=', "$status");
-        }
-        $query->with('category')->with('tags');
         $query->orderBy('updated_at', 'desc');
-        $posts = $query->paginate(10);
-        return view('admin.pages.post.index', compact('posts'));
+        $videos = $query->paginate(10);
+        return view('admin.pages.video.index', compact('videos'));
     }
 
     /**
@@ -45,20 +34,16 @@ class PostRepository extends BaseRepository {
     public function store($params, $request) {
         DB::beginTransaction();
         try {
-            $post = new $this->model;
+            $video = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
+            if (isset($params['d_date'])) {
+                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
+            }
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
-            $post->fill($params);
-
-            if ($post->save()) {
-                if (isset($params['tags'])) {
-                    foreach ($params['tags'] as $data) {
-                        $post->tags()->attach($data);
-                    }
-                }
-            }
+            $video->fill($params);
+            $video->save();
 
             DB::commit();
         } catch (\Exception $exception) {
@@ -68,29 +53,23 @@ class PostRepository extends BaseRepository {
     }
 
     public function edit($id) {
-        $query = $this->model->where('id', $id)
-            ->with('category')
-            ->with('tags');
+        $query = $this->model->where('id', $id);
         return $query->first();
     }
 
     public function update($params, $request, $id) {
-        $post = $this->model->findOrFail($id);
+        $video = $this->model->findOrFail($id);
         DB::beginTransaction();
         try {
             $params['slug'] = Str::slug($params['name'], '-');
+            if (isset($params['d_date'])) {
+                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
+            }
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
-            $post->fill($params);
-            if ($post->save()) {
-                $post->tags()->detach();
-                if (isset($params['tags'])) {
-                    foreach ($params['tags'] as $data) {
-                        $post->tags()->attach($data);
-                    }
-                }
-            }
+            $video->fill($params);
+            $video->save();
 
             DB::commit();
         } catch (\Exception $exception) {
@@ -103,31 +82,12 @@ class PostRepository extends BaseRepository {
         DB::beginTransaction();
         try {
             $this->model->where('id', $id)->delete();
-            PostTag::where('post_id', $id)->delete();
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();
             throw $exception;
         }
     }
-
-    public function getParent($params) {
-        $query = $this->model->where('status', 1);
-        if (isset($params['name'])) {
-            $name = $params['name'];
-            $query->where('name', 'like', "%$name%");
-        }
-        if (isset($params['self_id'])) {
-            $query->where('id', '!=', $params['self_id']);
-        }
-        return $query->get();
-    }
-
-    public function getAllExceptSelf($id) {
-        return $this->model->where('id', '!=', $id)->where('status', 1)->get();
-    }
-
-
     public function saveFile($file, $path) {
         //get filename with extension
         $filenamewithextension = $file->getClientOriginalName();
@@ -166,10 +126,6 @@ class PostRepository extends BaseRepository {
                 'fileName'=> $fileNameStore, 'uploaded'=> 1, 'url'=> $url
             ]);
         }
-    }
-
-    public function getTag() {
-        return Tag::where('status', 1)->get();
     }
     public function generateRandomString($length = 10) {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';

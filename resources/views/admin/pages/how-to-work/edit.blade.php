@@ -26,7 +26,7 @@
             <div class="col-lg-12 col-ml-12">
                 <div class="row">
                     <!-- Textual inputs start -->
-                    <div class="col-12 mt-5">
+                    <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
                                 <form id="product-form" name="product-form" action="{{ route('works-update', ['id'=> $work->id]) }}" method="POST" enctype="multipart/form-data" class="dropzone border-0">
