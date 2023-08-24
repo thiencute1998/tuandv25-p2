@@ -70,7 +70,7 @@
                                             <td style="vertical-align: middle;">
                                                 @if($calendar->status==1)
                                                     <span class="text-success">Hoạt động</span>
-                                                @elseif($post->status==2)
+                                                @elseif($calendar->status==2)
                                                     <span class="text-success" style="color: #28a745">Nổi bật</span>
                                                 @else
                                                     <span class="text-danger">Không hoạt động</span>
