@@ -18,7 +18,7 @@
     <div class="main-content-inner">
         <div class="row">
             <!-- basic table start -->
-            <div class="col-12 mt-5">
+            <div class="col-12 mt-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row form-group justify-content-between">
@@ -42,6 +42,7 @@
                                         <th scope="col">Tên danh mục</th>
                                         <th scope="col">Danh mục cha</th>
                                         <th scope="col">Cấp</th>
+                                        <th scope="col">Thứ tự</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
@@ -49,14 +50,17 @@
                                     <tbody>
                                     @foreach($categories as $category)
                                         <tr>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$category->name}}
                                             </td>
-                                            <td>
+                                            <td class="text-left">
                                                 {{$category->parent_name}}
                                             </td>
                                             <td>
                                                 {{$category->level}}
+                                            </td>
+                                            <td>
+                                                {{$category->order}}
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 @if($category->status)

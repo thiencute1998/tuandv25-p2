@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\AddTabHomeRequest;
-use App\Http\Requests\Admin\EditTabHomeRequest;
 use App\Repositories\Admin\TabHomeRepository;
 use Illuminate\Http\Request;
 
@@ -26,7 +24,7 @@ class TabHomeController extends Controller
         return view('admin.pages.tabhome.create');
     }
 
-    public function store(AddTabHomeRequest $request) {
+    public function store(Request $request) {
         $params = $request->only('name', 'status');
         $this->repository->store($params);
         return redirect()->back()->with('add-success', 'Thêm danh muc thành công !!!');
@@ -38,7 +36,7 @@ class TabHomeController extends Controller
         return view('admin.pages.tabhome.edit', compact('tabhome','parent'));
     }
 
-    public function update(EditTabHomeRequest $request, $id) {
+    public function update(Request $request, $id) {
         $params = $request->only('name','status');
         $this->repository->update($params, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật danh muc thành công !!!');

@@ -17,7 +17,7 @@ class TabHome extends Model
     public $timestamps = true;
 
     public function posts() {
-        return $this->belongsToMany(Post::class, 'post_tags', 'tag_id', 'post_id');
+        return $this->belongsToMany(Post::class, 'homepage_categories', 'tag_id', 'post_id');
     }
     public function tags(){
         return $this->belongsToMany(HomepageCategory::class, 'homepage_categories', 'post_id', 'tag_id');

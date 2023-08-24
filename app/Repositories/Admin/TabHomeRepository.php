@@ -17,8 +17,8 @@ class TabHomeRepository extends BaseRepository {
     public function index($searchParams) {
         $query = $this->model->query();
         $query->orderBy('updated_at', 'desc');
-        $tabhome = $query->paginate(10);
-        return view('admin.pages.tabhome.index', compact('tabhome'));
+        $tabhomes = $query->paginate(10);
+        return view('admin.pages.tabhome.index', compact('tabhomes'));
     }
 
     /**

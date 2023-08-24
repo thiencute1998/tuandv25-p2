@@ -40,23 +40,15 @@
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">Tên danh mục</th>
-                                        <th scope="col">Danh sach bai viet</th>
-                                        <th scope="col">Link menu</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($tabhome as $tabhome)
+                                    @foreach($tabhomes as $tabhome)
                                         <tr>
                                             <td class="text-left">
                                                 {{$tabhome->name}}
-                                            </td>
-                                            <td class="text-left">
-                                                {{$tabhome->parent_name}}
-                                            </td>
-                                            <td class="text-left">
-                                                <a href="{{"http://" . request()->getHttpHost() . "/tabhome/" . $tabhome->slug}}" target="_blank">{{"http://" . request()->getHttpHost() . "/tabhome/" . $tabhome->slug}}</a>
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 @if($tabhome->status)
@@ -83,7 +75,7 @@
                             </div>
                         </div>
                         <div class="row" style="justify-content: flex-end;">
-                            {{ $tabhome->onEachSide(1)->links() }}
+                            {{ $tabhomes->onEachSide(1)->links() }}
                         </div>
                     </div>
                 </div>
