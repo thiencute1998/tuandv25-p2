@@ -3,11 +3,11 @@
 
 :root {
     --calendar-bg-color: #FFF;
-    --calendar-font-color: #999;
+    --calendar-font-color: #000;
     --weekdays-border-bottom-color: #404040;
     --calendar-date-hover-color: #505050;
     --calendar-current-date-color: #FFF;
-    --calendar-today-color: linear-gradient(to bottom, #03a9f4, #2196f3);
+    --calendar-today-color: linear-gradient(to bottom, #258101, #f4f5ff);
     --calendar-today-innerborder-color: transparent;
     --calendar-nextprev-bg-color: transparent;
     --next-prev-arrow-color : #000;
@@ -24,7 +24,7 @@
     font-family: 'IBM Plex Sans', sans-serif;
     position: relative;
     max-width: 400px; /*change as per your design need */
-    min-width: 320px;
+    min-width: 298px;
     background: var(--calendar-bg-color);
     color: var(--calendar-font-color);
     margin: 20px auto;
@@ -97,7 +97,7 @@
 
 .calendar .calendar-inner .calendar-controls .calendar-year-month {
     display: flex;
-    min-width: 100px;
+    min-width: 160px;
     justify-content: space-evenly;
     align-items: center;
 }
