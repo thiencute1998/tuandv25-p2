@@ -6,6 +6,7 @@ use App\Models\CalenderEvent;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class CalendarRepository extends BaseRepository {
@@ -22,6 +23,14 @@ class CalendarRepository extends BaseRepository {
         if (isset($searchParams['name'])) {
             $name = $searchParams['name'];
             $query->where('name', 'like', "$name%");
+        }
+        if (isset($searchParams['status'])) {
+            $status = $searchParams['status'];
+            $query->where('status', '=', "$status");
+        }
+        if (isset($searchParams['d_date'])) {
+            $d_date = Carbon::createFromFormat('m/d/Y', $searchParams['d_date'])->format('Y-m-d');
+            $query->where('d_date', '=', "$d_date");
         }
         $query->orderBy('updated_at', 'desc');
         $calendars = $query->paginate(10);

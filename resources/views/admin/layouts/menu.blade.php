@@ -42,7 +42,7 @@
                     <li class="{{str_contains(Request::path(), 'admin/manage') ? 'active' : ''}}">
                         <a href="admin/banners" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản trị</span></a>
                         <ul class="collapse">
-                            <li ><a href="{{route('configs')}}">Cấu hình</a></li>
+                            <li ><a href="{{route('admin-configs')}}">Cấu hình</a></li>
                             <li class="{{str_contains(Request::path(), 'admin/manage/users') ? 'active' : ''}}"><a href="{{route('users')}}">Người dùng</a></li>
                         </ul>
                     </li>

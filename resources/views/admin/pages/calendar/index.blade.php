@@ -1,5 +1,8 @@
 @extends('admin.layouts.master')
 @section('admin-css')
+    <link href=
+          'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+          rel='stylesheet'>
     <style type="text/css">
         .product-remove{
             cursor: pointer;
@@ -14,6 +17,47 @@
     </style>
 @endsection
 @section('main-content-inner')
+    <div class="page-title-area collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="row align-items-center" style="padding: 1.6rem 0;">
+            <div class="col-md-12 col-sm-10">
+                <div class="search-box pull-left w-100">
+                    <form action="{{ route('admin-calendar') }}" method="GET" >
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-4">
+                                <span> Tên: </span>
+                                <input type="text" name="search" placeholder="Search..." value="{{ request()->input('search') }}">
+                            </div>
+                            <div class="col-md-4">
+                                <span> Ngày tháng: </span>
+                                <input type="text" id="my-date" name="d_date" class="form-control" placeholder="Ngày">
+                            </div>
+                            <div class="col-md-3">
+                                <span> Trạng thái: </span>
+                                <select class="form-control" name="status">
+                                    <option value="">Chọn trạng thái</option>
+                                    <option value="1">Hoạt động</option>
+                                    <option value="2">Nổi bật</option>
+                                    <option value="0">Không hoạt động</option>
+                                </select>
+                            </div>
+                            {{--                            <div class="col-md-4">--}}
+                            {{--                            <span> Tags: </span>--}}
+                            {{--                            <select id="tag-link" class="tag-link form-control" name="tag_id" multiple>--}}
+                            {{--                            </select>--}}
+                            {{--                           </div>--}}
+                            <div class="col-md-1">
+                                <span> &acute;<i class="ti-search"></i></span>
+                                <button type="submit" class="btn btn-primary button-search">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 clearfix">
+
+            </div>
+        </div>
+    </div>
     <!-- page title area end -->
     <div class="main-content-inner">
         <div class="row">
@@ -103,9 +147,14 @@
         </div>
     </div>
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
+    <script src=
+            "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer>
+    </script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.work-message').delay(5000).fadeOut();
+            $( "#my-date" ).datepicker({
+            });
         })
     </script>
 @endsection

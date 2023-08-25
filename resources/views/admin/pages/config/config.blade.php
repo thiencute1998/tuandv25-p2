@@ -15,7 +15,8 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <form id="user-form" name="user-form" action="{{ route('configs-update') }}" method="POST">
+
+                                <form id="user-form" name="user-form" action="{{ route('admin-configs-update') }}" method="POST">
                                     @csrf
                                     @if (session('edit-success'))
                                         <h5 class="config-message mb-2 text-success">{{ session('edit-success') }}</h5>
@@ -66,10 +67,6 @@
                                         <input class="form-control" name="facebook" type="text" value="{{ $config->facebook }}">
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-form-label">Facebook page</label>
-                                        <input class="form-control" name="facebook_page" type="text" value="{{ $config->facebook_page }}">
-                                    </div>
-                                    <div class="form-group">
                                         <label class="col-form-label">Twitter</label>
                                         <input class="form-control" name="twitter" type="text" value="{{ $config->twitter }}">
                                     </div>
@@ -81,10 +78,7 @@
                                         <label class="col-form-label">Instagram</label>
                                         <input class="form-control" name="instagram" type="text" value="{{ $config->instagram }}">
                                     </div>
-                                    <div class="form-group">
-                                        <label class="col-form-label">Whatsapp</label>
-                                        <input class="form-control" name="whatsapp" type="text" value="{{ $config->whatsapp }}">
-                                    </div>
+
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Submit</button>
                                 </form>
                             </div>

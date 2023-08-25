@@ -155,6 +155,11 @@ Route::prefix('admin')->group(function () {
         Route::post('/ckeditor/image_upload', [TabHomeController::class, 'ckeditorUpload'])->name('admin-tabhome-ckeditor-upload');
     });
 
+    Route::prefix('configs')->group(function () {
+        Route::get('/', [ConfigController::class, 'index'])->name('admin-configs');
+        Route::post('/update', [ConfigController::class, 'update'])->name('admin-configs-update');
+    });
+
 });
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
