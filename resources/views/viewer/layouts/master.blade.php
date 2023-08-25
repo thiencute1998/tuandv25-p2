@@ -109,8 +109,10 @@
                 </script>
 
             </div> <!-- .breaking-news -->
-
-            @yield('main-content')
+            <div id="main-content" class="container">
+                @yield('main-content')
+                @include('viewer.layouts.right')
+            </div>
 
             @include('viewer.layouts.footer')
 

@@ -158,6 +158,10 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
+Route::get('category/{cate}', [IndexController::class, 'getCate'])->name('get-cate');
+Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
+Route::get('event/{event}', [IndexController::class, 'getEventCalendar'])->name('get-event-calendar');
+Route::post('get-event', [IndexController::class, 'getEvent'])->name('get-event');
 
 
 
