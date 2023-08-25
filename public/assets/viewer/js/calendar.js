@@ -3,6 +3,7 @@
 //Fixed day highlight
 //Added previous month and next month view
 
+
 function CalendarControl() {
     const calendar = new Date();
     const calendarControl = {
@@ -10,18 +11,18 @@ function CalendarControl() {
       prevMonthLastDate: null,
       calWeekDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       calMonthName: [
-        "Jan",
-        "Feb",
-        "Mar",
-        "Apr",
-        "May",
-        "Jun",
-        "Jul",
-        "Aug",
-        "Sep",
-        "Oct",
-        "Nov",
-        "Dec"
+		 "Tháng Một",
+		 "Tháng Hai",
+		 "Tháng Ba",
+		 "Tháng Tư",
+		 "Tháng Năm",
+		 "Tháng Sáu",
+		 "Tháng Bảy",
+		 "Tháng Tám",
+		 "Tháng Chín",
+		 "Tháng Mười",
+		 "Tháng Mười Một",
+		 "Tháng Mười Hai"
       ],
       daysInMonth: function (month, year) {
         return new Date(year, month, 0).getDate();
@@ -90,12 +91,12 @@ function CalendarControl() {
           </div>
           <div class="calendar-next"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128"><path fill="#666" d="M38.8 124.2l52.4-52.42L99 64l-7.77-7.78-52.4-52.4-9.8 7.77L81.44 64 29 116.42z"/></svg></a></div>
           </div>
-          <div class="calendar-today-date">Today: 
-            ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]}, 
-            ${calendarControl.localDate.getDate()}, 
-            ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]} 
+          <!--<div class="calendar-today-date">Today:
+            ${calendarControl.calWeekDays[calendarControl.localDate.getDay()]},
+            ${calendarControl.localDate.getDate()},
+            ${calendarControl.calMonthName[calendarControl.localDate.getMonth()]}
             ${calendarControl.localDate.getFullYear()}
-          </div>
+          </div>-->
           <div class="calendar-body"></div></div>`;
       },
       plotDayNames: function () {
@@ -112,13 +113,15 @@ function CalendarControl() {
         calendarControl.displayYear();
         let count = 1;
         let prevDateCount = 0;
-  
+
         calendarControl.prevMonthLastDate = calendarControl.getPreviousMonthLastDate();
         let prevMonthDatesArray = [];
         let calendarDays = calendarControl.daysInMonth(
           calendar.getMonth() + 1,
           calendar.getFullYear()
         );
+		let isMonth = calendar.getMonth() + 1;
+		let isFullYear = calendar.getFullYear();
         // dates of current month
         for (let i = 1; i < calendarDays; i++) {
           if (i < calendarControl.firstDayNumber()) {
@@ -130,14 +133,14 @@ function CalendarControl() {
           } else {
             document.querySelector(
               ".calendar .calendar-body"
-            ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+            ).innerHTML += `<div class="number-item colored" data-num=${count}><a class="dateNumber" onclick=showCalendarPopup('${count}/${isMonth}/${isFullYear}')>${count++}</a></div>`;
           }
         }
         //remaining dates after month dates
         for (let j = 0; j < prevDateCount + 1; j++) {
           document.querySelector(
             ".calendar .calendar-body"
-          ).innerHTML += `<div class="number-item" data-num=${count}><a class="dateNumber" href="#">${count++}</a></div>`;
+          ).innerHTML += `<div class="number-item colored" data-num=${count}><a class="dateNumber" onclick=showCalendarPopup('${count}/${isMonth}/${isFullYear}') >${count++}</a></div>`;
         }
         calendarControl.highlightToday();
         calendarControl.plotPrevMonthDates(prevMonthDatesArray);
@@ -218,9 +221,57 @@ function CalendarControl() {
         calendarControl.plotSelectors();
         calendarControl.plotDates();
         calendarControl.attachEvents();
-      }
+      },
     };
     calendarControl.init();
   }
-  
+
   const calendarControl = new CalendarControl();
+
+function showCalendarPopup(date) {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    console.log(eventRoute)
+    $.ajax({
+        url: eventRoute.name,
+        type: "post",
+        data: {
+            date: date
+        },
+        success: function(data){
+            $('#myModal').addClass('active');
+            $('.em-modal-popup').addClass('active');
+            if (data.length) {
+                let vm = this;
+                data.forEach(value=> {
+                    console.log(value)
+                    $('.em-full-date').text(value.full_date);
+                    $('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
+                    $('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
+
+                    let otherEvent = $('.event-none').clone();
+                    let imgEvent = $(otherEvent).find('.em-item-name')
+                    imgEvent.find('span').text(value.name);
+                    let href = eventRoute.nameEvent.replace("/ccalendar",  value.slug);
+                    imgEvent.find('a').attr('href', href);
+                    $(otherEvent).removeClass('event-none');
+                    $(otherEvent).find('.em-date').text(value.d_date);
+                    $(otherEvent).find('.em-address').text(value.address);
+                    $('.em-modal-content').append(otherEvent);
+                });
+            }
+        }
+    })
+
+
+}
+// Get the modal
+
+
+// When the user clicks on the button, open the modal
+
+
+

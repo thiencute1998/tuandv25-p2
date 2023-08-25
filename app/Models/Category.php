@@ -20,4 +20,8 @@ class Category extends Model
     public function homepagePost() {
         return $this->belongsTo(HomepagePost::class, 'homepage_post_id', 'id');
     }
+
+    public function posts() {
+        return $this->hasMany(Post::class, 'category_id', 'id');
+    }
 }
