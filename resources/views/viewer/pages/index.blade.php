@@ -369,7 +369,7 @@
                                     @if($keyPost == 0)
                                         <li class="first-news">
 
-                                            <div class="post-thumbnail">
+                                            <div class="post-thumbnail em-list-img">
                                                 <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                                    rel="bookmark">
                                                     <img width="310" height="165" alt="" loading="lazy"
@@ -404,7 +404,7 @@
                                     @else
                                         <li class="other-news">
 
-                                            <div class="post-thumbnail">
+                                            <div class="post-thumbnail em-side-img">
                                                 <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                                    rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
                                                                        data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
@@ -448,7 +448,7 @@
                                 @foreach($category->posts as $keyPost=> $post)
                                     @if($keyPost == 0)
                                         <li class="first-news">
-                                            <div class="post-thumbnail">
+                                            <div class="post-thumbnail em-list-img">
                                                 <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                                    rel="bookmark">
                                                     <img width="310" height="165" alt="" loading="lazy"
@@ -480,7 +480,7 @@
                                         </li><!-- .first-news -->
                                     @else
                                         <li>
-                                            <div class="post-thumbnail">
+                                            <div class="post-thumbnail em-side-img">
                                                 <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                                    rel="bookmark"><img width="110" height="75"
                                                                        alt="" loading="lazy"
@@ -529,7 +529,7 @@
                 <ul>
                     <li class="first-news">
 
-                        <div class="post-thumbnail">
+                        <div class="post-thumbnail em-list-img">
                             <a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">
                                 <img width="310" height="165" alt="" loading="lazy"
                                      data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/AddChua-01-310x165.jpg"
@@ -561,7 +561,7 @@
                     </li><!-- .first-news -->
                     <li class="other-news">
 
-                        <div class="post-thumbnail">
+                        <div class="post-thumbnail em-side-img">
                             <a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/" rel="bookmark"><img
                                     width="110" height="75" alt="" loading="lazy"
                                     data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddCongdan-01-01-110x75.jpg"

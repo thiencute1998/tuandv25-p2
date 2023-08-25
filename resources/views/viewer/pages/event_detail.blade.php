@@ -6,11 +6,9 @@
                                                                                                    property="v:title"
                                                                                                    class="crumbs-home"
                                                                                                    href="{{route('index')}}">Home</a></span>
-            @if($post->category)
                 <span class="delimiter">/</span> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
-                                                                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}">{{$post->category->name}}</a></span>
-            @endif
-            <span class="delimiter">/</span> <span class="current">{{$post->name}}</span></div>
+                                                                                href="{{route('events')}}">Event</a></span>
+            <span class="delimiter">/</span> <span class="current">{{$event->name}}</span></div>
 
         <article
             class="post-listing post-47177 post type-post status-publish format-standard has-post-thumbnail hentry category-giao-hoi-hoan-cau category-gia-dinh-bac-ninh-hoa-ky category-uncategorized"
@@ -19,30 +17,19 @@
             <div class="post-inner">
 
                 <h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope=""
-                    itemtype="http://schema.org/Thing"><span itemprop="name">{{$post->name}}</span></h1>
+                    itemtype="http://schema.org/Thing"><span itemprop="name">{{$event->name}}</span></h1>
 
                 <p class="post-meta">
 
                         <span class="post-meta-author"><i class="fa fa-user"></i><a
-                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$post->author}} </a></span>
+                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$event->author}} </a></span>
 
                     <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>
-
-                    @if($post->category)
-                        <span class="post-cats"><i class="fa fa-folder"></i><a
-                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>
-    {{--                                , <a--}}
-                            {{--                                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
-                            {{--                                rel="category tag">Tin tức</a>--}}
-                            {{--                                , <a--}}
-                            {{--                                href="https://giaophanbacninh.org/category/uncategorized/" rel="category tag">Uncategorized</a>--}}
-                            </span>
-                    @endif
 
                     <span class="post-comments"><i class="fa fa-comments"></i><a
                             href="#">Leave a comment</a></span>
 
-                    <span class="post-views"><i class="fa fa-eye"></i>{{$post->views}} Views</span>
+                    <span class="post-views"><i class="fa fa-eye"></i>{{$event->views}} Views</span>
 
                 </p>
 
@@ -50,7 +37,7 @@
 
 
                 <div class="entry">
-                    {!! $post->content !!}
+                    {!! $event->content !!}
                 </div><!-- .entry /-->
 
 
@@ -186,7 +173,7 @@
 
             <div class="post-listing">
 
-                @foreach ($postRelated as $related)
+                @foreach ($eventRelated as $related)
                     <div class="related-item">
 
                         <div class="post-thumbnail tie-appear em-related-img">

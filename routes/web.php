@@ -50,7 +50,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('login-auth');
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout-auth');
 
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
     Route::get('/', function() {
         return view('admin.index');
     })->name('admin-index');
@@ -164,9 +164,11 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('category/{cate}', [IndexController::class, 'getCate'])->name('get-cate');
-Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
+Route::get('post/{post}', [IndexController::class, 'getPost'])->name('get-post');
 Route::get('event/{event}', [IndexController::class, 'getEventCalendar'])->name('get-event-calendar');
 Route::post('get-event', [IndexController::class, 'getEvent'])->name('get-event');
+Route::get('/events', [IndexController::class, 'events'])->name('events');
+Route::get('/tag/{post}', [IndexController::class, 'getTag'])->name('tag');
 
 
 

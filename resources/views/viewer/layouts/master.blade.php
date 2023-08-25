@@ -47,7 +47,35 @@
     <link rel="icon" href="{{ asset('assets/viewer/style/images/cropped-icon-192x192.png') }}" sizes="192x192" />
     <link rel="apple-touch-icon" href="{{ asset('assets/viewer/style/images/cropped-icon-180x180.png') }}" />
     <meta name="msapplication-TileImage" content="{{ asset('assets/viewer/style/images/cropped-icon-270x270.png') }}" />
+    <style type="text/css">
+        .em-list-img{
+            width: 310px !important;
+            height: 165px !important;
+            overflow: hidden;
+        }
 
+        .em-side-img {
+            width: 90px !important;
+            height: 50.69px !important;
+            overflow: hidden;
+        }
+
+        .em-related-img {
+            height: 110px;
+            overflow: hidden;
+        }
+
+        @media only screen and (max-width: 500px) {
+            .em-list-img{
+                width: 100% !important;
+                height: 200px !important;
+            }
+            .em-related-img {
+                height: 145px;
+                overflow: hidden;
+            }
+        }
+    </style>
 </head>
 <body id="top" class="home page-template-default page page-id-35237 lazy-enabled">
 

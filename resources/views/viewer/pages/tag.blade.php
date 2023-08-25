@@ -5,12 +5,12 @@
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a
                     rel="v:url" property="v:title" class="crumbs-home"
                     href="{{route('index')}}">Home</a></span> <span class="delimiter">/</span> <span
-                class="current">{{$category->name}}</span></div>
+                class="current">{{$tag->name}}</span></div>
 
         <div class="page-head">
 
             <h1 class="page-title">
-                {{$category->name}} </h1>
+                Tag Archives: {{$tag->name}} </h1>
 
             <a class="rss-cat-icon ttip"
                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/feed/"
@@ -34,12 +34,9 @@
                         <span class="post-cats"><i class="fa fa-folder"></i>
                                 @if($post->category)
                                 <a
-                                    href="{{route('get-cate', ['cate'=> $category->slug])}}" rel="category tag">{{$post->category->name}}
+                                    href="{{route('get-cate', ['cate'=> $tag->slug])}}" rel="category tag">{{$post->category->name}}
                                     </a>
                             @endif
-                            {{--                                    , <a--}}
-                            {{--                                    href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
-                            {{--                                    rel="category tag">Tin tức</a>--}}
 
                             <span class="post-comments"><i class="fa fa-comments"></i><a
                                     href="#">0</a></span>

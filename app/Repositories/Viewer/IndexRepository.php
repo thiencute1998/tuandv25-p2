@@ -6,6 +6,7 @@ use App\Models\CalenderEvent;
 use App\Models\Category;
 use App\Models\Homepage;
 use App\Models\Post;
+use App\Models\Tag;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 
@@ -55,6 +56,18 @@ class IndexRepository extends BaseRepository {
         return $query->limit(3)->get();
     }
 
+    public function getEventCalendar($event) {
+        $query = CalenderEvent::where('status', 1);
+        $query->where('slug', $event);
+        return $query->firstOrFail();
+    }
+
+    public function getEventRelated() {
+        $query = Post::where('status', 1);
+        $query->orderBy('created_at', 'desc');
+        return $query->limit(3)->get();
+    }
+
     public function getEvent($params) {
         $query = CalenderEvent::query();
         $query->where('status', 1);
@@ -68,6 +81,29 @@ class IndexRepository extends BaseRepository {
             $value->d_date = $this->formatVNDate($value->d_date);
             return $value;
         });
+    }
+
+    public function events() {
+        $query = CalenderEvent::where('status', 1);
+        $query->orderBy('created_at', 'asc');
+        return $query->paginate(10);
+    }
+
+    public function getTag($tag) {
+        $query = Tag::where('status', 1);
+        $query->where('slug', $tag);
+        $query->with('posts');
+        $tag = $query->firstOrFail();
+        $posts = collect();
+        if($tag) {
+            $queryPost = Post::where('status', 1);
+            $queryPost->whereHas('tags', function($q) use($tag){
+                $q->where('tag_id', $tag->id);
+            });
+            $queryPost->with('category');
+            $posts = $queryPost->paginate(10);
+        }
+        return ['tag'=> $tag, 'posts'=> $posts];
     }
 
     public function formatVNDate($date) {

@@ -229,12 +229,13 @@ function CalendarControl() {
   const calendarControl = new CalendarControl();
 
 function showCalendarPopup(date) {
+    $('.event-calendar').remove();
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
-    console.log(eventRoute)
     $.ajax({
         url: eventRoute.name,
         type: "post",
@@ -247,12 +248,12 @@ function showCalendarPopup(date) {
             if (data.length) {
                 let vm = this;
                 data.forEach(value=> {
-                    console.log(value)
                     $('.em-full-date').text(value.full_date);
                     $('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
                     $('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
 
                     let otherEvent = $('.event-none').clone();
+                    $(otherEvent).addClass('event-calendar');
                     let imgEvent = $(otherEvent).find('.em-item-name')
                     imgEvent.find('span').text(value.name);
                     let href = eventRoute.nameEvent.replace("/ccalendar",  value.slug);

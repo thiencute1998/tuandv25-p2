@@ -202,7 +202,6 @@
 </aside><!-- #sidebar /-->
 <div class="clear"></div>
 <!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
 
 <!-- The Modal -->
 {{--<div id="myModal" class="modal">--}}

@@ -34,10 +34,24 @@ class IndexController extends Controller
     }
 
     public function getEventCalendar($event) {
-        return $event;
+        $event = $this->repository->getEventCalendar($event);
+        $eventRelated = $this->repository->getEventRelated();
+        return view('viewer.pages.event_detail', compact('event', 'eventRelated'));
     }
 
     public function getEvent(Request $request){
         return $this->repository->getEvent($request->only('date'));
+    }
+
+    public function events() {
+        $events = $this->repository->events();
+        return view('viewer.pages.events', compact('events'));
+    }
+
+    public function getTag($tag) {
+        $data = $this->repository->getTag($tag);
+        $tag = $data['tag'];
+        $posts = $data['posts'];
+        return view('viewer.pages.tag', compact('tag', 'posts'));
     }
 }
