@@ -18,7 +18,15 @@ class CategoryRepository extends BaseRepository {
         $query = $this->model->query();
         if (isset($searchParams['search'])) {
             $search = $searchParams['search'];
-            $query->where('content', 'like', "$search%");
+            $query->where('name', 'like', "$search%");
+        }
+        if (isset($searchParams['status'])) {
+            $status = $searchParams['status'];
+            $query->where('status', '=', "$status");
+        }
+        if (isset($searchParams['level'])) {
+            $level = $searchParams['level'];
+            $query->where('level', '=', "$level");
         }
         $query->orderBy('updated_at', 'desc');
         $categories = $query->paginate(10);

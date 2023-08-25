@@ -16,6 +16,7 @@ class TabHomeRepository extends BaseRepository {
 
     public function index($searchParams) {
         $query = $this->model->query();
+        $query->with('categories');
         $query->orderBy('updated_at', 'desc');
         $tabhomes = $query->paginate(10);
         return view('admin.pages.tabhome.index', compact('tabhomes'));
@@ -30,7 +31,14 @@ class TabHomeRepository extends BaseRepository {
             $tabhome = new $this->model;
             //$params['slug'] = Str::slug($params['name'], '-');
             $tabhome->fill($params);
-            $tabhome->save();
+            //$tabhome->save();
+            if ($tabhome->save()) {
+                if (isset($params['tabhome'])) {
+                    foreach ($params['tabhome'] as $data) {
+                        $tabhome->categories()->attach($data);
+                    }
+                }
+            }
 
             DB::commit();
         } catch (\Exception $exception) {
@@ -40,8 +48,8 @@ class TabHomeRepository extends BaseRepository {
     }
 
     public function edit($id) {
-        $query = $this->model->where('id', $id);
-        return $query->first();
+        $query = $this->model->where('id', $id)->with('categories');
+        return $query->firstOrFail();
     }
 
     public function update($params, $id) {
@@ -50,7 +58,15 @@ class TabHomeRepository extends BaseRepository {
         try {
             //$params['slug'] = Str::slug($params['name'], '-');
             $tabhome->fill($params);
-            $tabhome->save();
+            //$tabhome->save();
+            if ($tabhome->save()) {
+                $tabhome->categories()->detach();
+                if (isset($params['tabhome'])) {
+                    foreach ($params['tabhome'] as $data) {
+                        $tabhome->categories()->attach($data);
+                    }
+                }
+            }
             DB::commit();
         } catch (\Exception $exception) {
             DB::rollBack();

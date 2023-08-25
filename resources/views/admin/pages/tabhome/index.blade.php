@@ -39,6 +39,7 @@
                                 <table class="table text-center">
                                     <thead class="text-uppercase">
                                     <tr>
+                                        <th scope="col">Tên Tab Home</th>
                                         <th scope="col">Tên danh mục</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
@@ -49,6 +50,15 @@
                                         <tr>
                                             <td class="text-left">
                                                 {{$tabhome->name}}
+                                            </td>
+                                            <td class="text-left">
+                                                @if($tabhome->categories)
+                                                    @foreach($tabhome->categories as $tag)
+                                                        <div>
+                                                            {{$tag->name}}
+                                                        </div>
+                                                    @endforeach
+                                                @endif
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 @if($tabhome->status)

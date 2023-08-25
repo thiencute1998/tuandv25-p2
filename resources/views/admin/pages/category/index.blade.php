@@ -14,6 +14,51 @@
     </style>
 @endsection
 @section('main-content-inner')
+    <div class="page-title-area collapse show" id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="row align-items-center" style="padding: 1.6rem 0;">
+            <div class="col-md-12 col-sm-10">
+                <div class="search-box pull-left w-100">
+                    <form action="{{ route('admin-category') }}" method="GET" >
+                        <div class="row form-group justify-content-between">
+                            <div class="col-md-4">
+                                <span> Tên: </span>
+                                <input type="text" name="search" placeholder="Search..." value="{{ request()->input('search') }}">
+                            </div>
+                            <div class="col-md-4">
+                                <span> Cấp danh mục: </span>
+                                <select class="form-control" name="level">
+                                    <option value="">Chọn cấp</option>
+                                    <option value="1">Cấp 1</option>
+                                    <option value="2">Cấp 2</option>
+                                    <option value="3">Cấp 3</option>
+                                </select>
+                            </div>
+                            <div class="col-md-3">
+                                <span> Trạng thái: </span>
+                                <select class="form-control" name="status">
+                                    <option value="">Chọn trạng thái</option>
+                                    <option value="1">Hoạt động</option>
+                                    <option value="0">Không hoạt động</option>
+                                </select>
+                            </div>
+                            {{--                            <div class="col-md-4">--}}
+                            {{--                            <span> Tags: </span>--}}
+                            {{--                            <select id="tag-link" class="tag-link form-control" name="tag_id" multiple>--}}
+                            {{--                            </select>--}}
+                            {{--                           </div>--}}
+                            <div class="col-md-1">
+                                <span> &acute;<i class="ti-search"></i></span>
+                                <button type="submit" class="btn btn-primary button-search">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6 clearfix">
+
+            </div>
+        </div>
+    </div>
     <!-- page title area end -->
     <div class="main-content-inner">
         <div class="row">

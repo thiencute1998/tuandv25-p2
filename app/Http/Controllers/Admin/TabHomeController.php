@@ -25,7 +25,7 @@ class TabHomeController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('name', 'status');
+        $params = $request->only('name', 'status', 'tabhome');
         $this->repository->store($params);
         return redirect()->back()->with('add-success', 'Thêm danh muc thành công !!!');
     }
@@ -37,7 +37,7 @@ class TabHomeController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('name','status');
+        $params = $request->only('name','status', 'tabhome');
         $this->repository->update($params, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật danh muc thành công !!!');
     }

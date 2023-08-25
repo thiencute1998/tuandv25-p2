@@ -1,5 +1,8 @@
 @extends('admin.layouts.master')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+          integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 @section('main-content-inner')
     <!-- page title area end -->
     <div class="main-content-inner">
@@ -48,6 +51,18 @@
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Tên danh mục</label>
+                                            <select id="category-link" class="category-link form-control" name="tabhome[]" multiple>
+                                                @if($tabhome->categories)
+                                                    @foreach($tabhome->categories as $tag)
+                                                        <option value="{{$tag->id}}" selected>{{$tag->name}}</option>
+                                                    @endforeach
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Sửa</button>
                                 </form>
                             </div>
@@ -58,12 +73,43 @@
         </div>
     </div>
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+            integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();
 
             let status = $('.tag-status').data('value');
             $('.tag-status').val(status);
+
+            $('#category-link').select2({
+                multiple: true,
+                allowClear: true,
+                placeholder: "Chọn danh mục",
+                ajax: {
+                    url: "{{route('admin-category-get-parent')}}",
+                    type: 'post',
+                    delay: 250,
+                    dataType: 'json',
+                    data: function(params) {
+                        return {
+                            name: params.term,
+                            "_token":"{{csrf_token()}}"
+                        }
+                    },
+                    processResults: function(data) {
+                        return {
+                            results: $.map(data, function(item) {
+                                return {
+                                    id: item.id,
+                                    text: item.name
+                                }
+                            })
+                        }
+                    }
+                }
+            });
         });
     </script>
 @endsection
