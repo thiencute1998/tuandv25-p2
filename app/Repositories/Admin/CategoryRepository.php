@@ -51,10 +51,13 @@ class CategoryRepository extends BaseRepository {
         try {
             $category = new $this->model;
             $params['level'] = 1;
+            $params['detail'] = 1;
             if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->first();
+                $parent = $this->model->where('id', $params['parent_id'])->firstOrFail();
                 if ($parent) {
                     $params['level'] = $parent->level + 1;
+                    $parent->detail = 0;
+                    $parent->save();
                 }
             }
             $params['slug'] = Str::slug($params['name'], '-');
@@ -79,7 +82,7 @@ class CategoryRepository extends BaseRepository {
         try {
             $params['level'] = 1;
             if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->first();
+                $parent = $this->model->where('id', $params['parent_id'])->firstOrFail();
                 if ($parent) {
                     $params['level'] = $parent->level + 1;
                 }
