@@ -164,13 +164,13 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
 Route::get('category/{cate}', [IndexController::class, 'getCate'])->name('get-cate');
-Route::get('post/{post}', [IndexController::class, 'getPost'])->name('get-post');
 Route::get('event/{event}', [IndexController::class, 'getEventCalendar'])->name('get-event-calendar');
-Route::post('get-event', [IndexController::class, 'getEvent'])->name('get-event');
+Route::post('/get-event', [IndexController::class, 'getEvent'])->name('get-event');
 Route::get('/events', [IndexController::class, 'events'])->name('events');
 Route::get('/tag/{post}', [IndexController::class, 'getTag'])->name('tag');
 Route::get('/tim-nha-tho-gan-day', [IndexController::class, 'findChurch'])->name('find-church');
 Route::get('/video/{video}', [IndexController::class, 'getVideo'])->name('get-video');
+Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
 
 
 
