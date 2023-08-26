@@ -796,7 +796,7 @@ blockquote:before,
 	z-index: 2;
 	right: 30px;
 	border: 4px solid transparent;
-	border-right-color: #F88C00;
+	border-right-color: #258101;
 }
 
 .search-block #s-header {
@@ -807,7 +807,7 @@ blockquote:before,
 	width: 90px;
 	color: #C5C5C5;
 	border: 0 none;
-	border: 1px solid #ececec;
+	border: 1px solid #258101;
 	border-width: 0 0 0 1px;
 	-webkit-transition: width .7s, color .4s;
 	   -moz-transition: width .7s, color .4s;
@@ -825,7 +825,7 @@ blockquote:before,
 }
 
 .search-block .search-button {
-	background: #f88c00;
+	background: #258101;
 	cursor: pointer;
 	float: right;
 	height: 30px;
@@ -2145,18 +2145,30 @@ a.more-link {
 	padding: 0 20px 20px;
 }
 
+.cat-tabs-title{
+    float: left;
+    padding: 10px 0;
+    overflow: hidden;
+}
+.cat-tabs-title h2{
+    margin-right: 10px;
+    font-size: 22px;
+    font-family: BebasNeueRegular, arial, Georgia, serif;
+    color: #258101;
+}
 .cat-tabs-header {
 	background: #F7F7F7;
 	height: 46px;
 	border-bottom: 3px solid #EAEAEA;
 	padding: 8px 10px 0;
+    overflow: hidden;
 }
 
 .cat-tabs-header li {
-	float: left;
-	margin-right: 10px;
+	float: right;
+	margin-right: 0px;
 	line-height: 30px;
-	padding: 4px 15px;
+	padding: 4px 6px;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12pt;
 	-webkit-border-top-left-radius : 2px;
@@ -3563,6 +3575,7 @@ blockquote p {
 	margin-right: 10px;
 	font-size: 20px;
 	font-family: BebasNeueRegular, arial, Georgia, serif;
+    color: #258101;
 }
 
 .widget-top h4 a {
@@ -3714,6 +3727,8 @@ span.post-views-widget {
 
 .facebook-box {
 	text-align: center;
+    height: 100px;
+    overflow: hidden;
 }
 
 .facebook-box iframe {

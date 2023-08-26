@@ -1,40 +1,47 @@
 <header id="theme-header" class="theme-header">
 
-    <div id="top-nav" class="top-nav">
+{{--    <div id="top-nav" class="top-nav">--}}
 
-        <div class="container">
-
-
-            <div class="top-menu">
-                <ul id="menu-linh-muc-da-qua-doi" class="menu">
-                    <li id="menu-item-51422"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51422"><a
-                            href="https://giaophanbacninh.org/tim-nha-tho-gan-day/">Tìm nhà thờ gần đây</a></li>
-                </ul>
-            </div>
-            <div class="search-block">
-                <form method="get" id="searchform-header" action="https://giaophanbacninh.org/">
-                    <button class="search-button" type="submit" value="Search"><i class="fa fa-search"></i></button>
-                    <input class="search-live" type="text" id="s-header" name="s" title="Search" value="Search"
-                           onfocus="if (this.value == 'Search') {this.value = '';}"
-                           onblur="if (this.value == '') {this.value = 'Search';}"/>
-                </form>
-            </div><!-- .search-block /-->
-
-            <div class="social-icons">
-
-                <a class="ttip-none" title="Rss" href="https://giaophanbacninh.org/feed/" target="_blank"><i
-                        class="fa fa-rss"></i></a>
+{{--        <div class="container">--}}
 
 
-            </div>
-        </div><!-- .container /-->
+{{--            <div class="top-menu">--}}
+{{--                <ul id="menu-linh-muc-da-qua-doi" class="menu">--}}
+{{--                    <li id="menu-item-51422"--}}
+{{--                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51422"><a--}}
+{{--                            href="https://giaophanbacninh.org/tim-nha-tho-gan-day/">Tìm nhà thờ gần đây</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+{{--            <div class="search-block">--}}
+{{--                <form method="get" id="searchform-header" action="https://giaophanbacninh.org/">--}}
+{{--                    <button class="search-button" type="submit" value="Search"><i class="fa fa-search"></i></button>--}}
+{{--                    <input class="search-live" type="text" id="s-header" name="s" title="Search" value="Search"--}}
+{{--                           onfocus="if (this.value == 'Search') {this.value = '';}"--}}
+{{--                           onblur="if (this.value == '') {this.value = 'Search';}"/>--}}
+{{--                </form>--}}
+{{--            </div><!-- .search-block /-->--}}
 
-    </div><!-- .top-menu /-->
+{{--            <div class="social-icons">--}}
+
+{{--                <a class="ttip-none" title="Rss" href="https://giaophanbacninh.org/feed/" target="_blank"><i--}}
+{{--                        class="fa fa-rss"></i></a>--}}
 
 
-    <div class="header-content" style="padding:0px;">
+{{--            </div>--}}
+{{--        </div><!-- .container /-->--}}
 
+{{--    </div><!-- .top-menu /-->--}}
+
+
+    <div class="header-content" style="padding:0px; position: relative;">
+        <div class="search-block" style="position: absolute; right: 10px; bottom: 22px;">
+            <form method="get" id="searchform-header" action="https://giaophanbacninh.org/">
+                <button class="search-button" type="submit" value="Search"><i class="fa fa-search"></i></button>
+                <input class="search-live" type="text" id="s-header" name="search" title="Tìm kiếm" value="Tìm kiếm..."
+                       onfocus="if (this.value == 'Tìm kiếm...') {this.value = '';}"
+                       onblur="if (this.value == '') {this.value = 'Tìm kiếm... ';}"/>
+            </form>
+        </div><!-- .search-block /-->
         <a id="slide-out-open" class="slide-out-open" href="#"><span></span></a>
 
         <div class="logo" style=" margin-top:15px; margin-bottom:15px;">

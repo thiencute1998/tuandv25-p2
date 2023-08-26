@@ -41,6 +41,7 @@
                                     <tr>
                                         <th scope="col">Tên Tab Home</th>
                                         <th scope="col">Tên danh mục</th>
+                                        <th scope="col">Thứ tự</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
@@ -59,6 +60,9 @@
                                                         </div>
                                                     @endforeach
                                                 @endif
+                                            </td>
+                                            <td>
+                                                {{$tabhome->order}}
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 @if($tabhome->status)

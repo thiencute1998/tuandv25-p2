@@ -31,20 +31,6 @@
                                    sizes="(max-width: 300px) 100vw, 300px"/></noscript>
                 </a></div>
         </div><!-- .widget /-->
-        <div id="video-widget-10" class="widget video-widget">
-            <div class="widget-top"><h4>Tâm tình của Đức cha Cosma</h4>
-                <div class="stripe-line"></div>
-            </div>
-            <div class="widget-container">
-                <iframe title="Tất cả là hồng ân | Đức cha Cosma Hoàng Văn Đạt" width="320" height="180"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                        data-src="https://www.youtube.com/embed/OCpPaom8VMc?feature=oembed"
-                        class="lazyload"
-                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
-            </div>
-        </div><!-- .widget /-->
 
         <div id="em_calendar-2" class="widget widget_em_calendar">
             <div class="widget-top"><h4>Lịch phụng vụ</h4>
@@ -66,24 +52,98 @@
                     integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
                     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script type='text/javascript' src="{{ asset('assets/viewer/js/calendar.js') }}"></script>
+        </div><!-- .widget /-->
 
+        <div id="categort-posts-widget-2" class="widget categort-posts">
+            <div class="widget-top"><h4>Tin mới </h4>
+                <div class="stripe-line"></div>
+            </div>
+            <div class="widget-container">
+                <ul>
+                    <li>
+                        <div class="post-thumbnail">
+                            <a href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/"
+                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                <noscript><img width="110" height="75"
+                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                               class="attachment-tie-small size-tie-small wp-post-image"
+                                               alt="" loading="lazy"/></noscript>
+                                <span class="fa overlay-icon"></span></a>
+                        </div><!-- post-thumbnail /-->
+                        <h3><a
+                                href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/">Thông
+                                báo lễ quan thầy bảo trợ ông bà cố</a></h3>
+
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>16 giờ ago</span>
+                    </li>
+                    <li>
+                        <div class="post-thumbnail">
+                            <a href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/"
+                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
+                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                <noscript><img width="110" height="75"
+                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
+                                               class="attachment-tie-small size-tie-small wp-post-image"
+                                               alt="" loading="lazy"/></noscript>
+                                <span class="fa overlay-icon"></span></a>
+                        </div><!-- post-thumbnail /-->
+                        <h3><a
+                                href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/">Thông
+                                báo tập huấn về truyền thông cấp giáo xứ &#8211; giáo hạt 2023</a></h3>
+
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>9 Tháng Bảy, 2023</span>
+                    </li>
+                    <li>
+                        <div class="post-thumbnail">
+                            <a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/"
+                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
+                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                <noscript><img width="110" height="75"
+                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
+                                               class="attachment-tie-small size-tie-small wp-post-image"
+                                               alt="" loading="lazy"/></noscript>
+                                <span class="fa overlay-icon"></span></a>
+                        </div><!-- post-thumbnail /-->
+                        <h3><a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/">Cáo
+                                phó cha Giuse Trần Đăng Can</a></h3>
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2023</span>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div><!-- .widget /-->
+
+        <div id="video-widget-10" class="widget video-widget">
+{{--            <div class="widget-top"><h4>Tâm tình của Đức cha Cosma</h4>--}}
+{{--                <div class="stripe-line"></div>--}}
+{{--            </div>--}}
+            <div class="widget-container">
+                <iframe title="Tất cả là hồng ân | Đức cha Cosma Hoàng Văn Đạt" width="320" height="180"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        data-src="https://www.youtube.com/embed/OCpPaom8VMc?feature=oembed"
+                        class="lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+            </div>
         </div><!-- .widget /-->
 
         <div class="widget categort-posts">
-
-
             <div id="categort-posts-widget-3" class="widget categort-posts">
                 <div class="widget-top"><h4>Thông Báo </h4>
                     <div class="stripe-line"></div>
                 </div>
                 <div class="widget-container">
                     <ul>
-
                         <li>
-
-
                             <div class="post-thumbnail">
-
                                 <a href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/"
                                    rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
                                                        data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
@@ -94,23 +154,15 @@
                                                    class="attachment-tie-small size-tie-small wp-post-image"
                                                    alt="" loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span></a>
-
                             </div><!-- post-thumbnail /-->
-
-
                             <h3><a
                                     href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/">Thông
                                     báo lễ quan thầy bảo trợ ông bà cố</a></h3>
 
                             <span class="tie-date"><i class="fa fa-clock-o"></i>16 giờ ago</span>
                         </li>
-
-
                         <li>
-
-
                             <div class="post-thumbnail">
-
                                 <a href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/"
                                    rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
                                                        data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
@@ -121,23 +173,15 @@
                                                    class="attachment-tie-small size-tie-small wp-post-image"
                                                    alt="" loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span></a>
-
                             </div><!-- post-thumbnail /-->
-
-
                             <h3><a
                                     href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/">Thông
                                     báo tập huấn về truyền thông cấp giáo xứ &#8211; giáo hạt 2023</a></h3>
 
                             <span class="tie-date"><i class="fa fa-clock-o"></i>9 Tháng Bảy, 2023</span>
                         </li>
-
-
                         <li>
-
-
                             <div class="post-thumbnail">
-
                                 <a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/"
                                    rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
                                                        data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
@@ -148,17 +192,11 @@
                                                    class="attachment-tie-small size-tie-small wp-post-image"
                                                    alt="" loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span></a>
-
                             </div><!-- post-thumbnail /-->
-
-
                             <h3><a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/">Cáo
                                     phó cha Giuse Trần Đăng Can</a></h3>
-
                             <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2023</span>
                         </li>
-
-
                     </ul>
                     <div class="clear"></div>
                 </div>

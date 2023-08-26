@@ -27,7 +27,7 @@
     min-width: 298px;
     background: var(--calendar-bg-color);
     color: var(--calendar-font-color);
-    margin: 20px auto;
+    margin: 10px auto;
     box-sizing: border-box;
     overflow: hidden;
     font-weight: normal;
@@ -35,7 +35,7 @@
 }
 
 .calendar-inner {
-    padding: 10px 10px;
+    padding: 0px 5px;
 }
 
 .calendar .calendar-inner .calendar-body {

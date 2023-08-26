@@ -43,7 +43,11 @@
                                             <label for="services" class="col-form-label">Tên (*)</label>
                                             <input type="text" class="form-control" name="name" placeholder="Nhập tên menu" value="{{$tabhome->name}}" required>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
+                                            <label for="services" class="col-form-label">Thứ tự</label>
+                                            <input type="text" class="form-control" name="order" placeholder="Nhập thứ tự" value="{{$tabhome->order}}" >
+                                        </div>
+                                        <div class="col-md-3">
                                             <label for="services" class="col-form-label">Trạng thái</label>
                                             <select class="form-control tag-status" name="status" data-value="{{ $tabhome->status }}">
                                                 <option value="1">Hoạt động</option>

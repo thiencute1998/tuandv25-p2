@@ -359,7 +359,7 @@
                 <section class="cat-box list-box tie-cat-13">
                     <div class="cat-box-title">
                         @foreach($home->categories as $category)
-                            <h2><a href="{{route('get-cate', ['cate'=> $category->slug])}}">{{$category->name}}</a></h2>
+                            <h2><a href="{{route('get-cate', ['cate'=> $category->slug])}}" style="color: #258101">{{$category->name}}</a></h2>
                         @endforeach
                         <div class="stripe-line"></div>
                     </div>
@@ -435,6 +435,9 @@
                 </section><!-- List Box -->
             @else
                 <div class="cat-box-content clear cat-box">
+                    <div class="cat-tabs-title">
+                        <h2> Tin giáo hội ...</h2>
+                    </div>
                     <div class="cat-tabs-header">
                         <ul>
                         @foreach($home->categories as $keyCate=> $category)
@@ -524,7 +527,7 @@
 
         <section class="cat-box list-box tie-cat-184">
             <div class="cat-box-title">
-                <h2><a href="https://giaophanbacninh.org/category/video/">Video</a></h2>
+                <h2><a href="https://giaophanbacninh.org/category/video/" style="color: #258101">Video</a></h2>
                 <div class="stripe-line"></div>
             </div>
             <div class="cat-box-content">

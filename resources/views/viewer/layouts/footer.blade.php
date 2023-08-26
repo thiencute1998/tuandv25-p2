@@ -2,7 +2,7 @@
     <div id="footer-widget-area" class="footer-3c">
 
         <div id="footer-first" class="footer-widgets-box">
-            <div id="text-8" class="footer-widget widget_text"><div class="footer-widget-top"><h4>Phụ trách</h4></div>
+            <div id="text-8" class="footer-widget widget_text"><div class="footer-widget-top"><h4>Liên hệ</h4></div>
                 <div class="footer-widget-container">			<div class="textwidget"><p align="left">Tòa Giám Mục Bắc Ninh</p>
                         <p align="left">Địa chỉ: 537 Ngô Gia Tự, phường Tiền An, Tp. Bắc Ninh,</p>
                         <p align="left">Tỉnh Bắc Ninh, Việt Nam</p>
@@ -13,7 +13,7 @@
                 </div></div><!-- .widget /-->		</div>
 
         <div id="footer-second" class="footer-widgets-box">
-            <div id="facebook-widget-4" class="footer-widget facebook-widget"><div class="footer-widget-top"><h4>Nối kết		</h4></div>
+            <div id="facebook-widget-4" class="footer-widget facebook-widget"><div class="footer-widget-top"><h4>Kết nối		</h4></div>
                 <div class="footer-widget-container">			<div class="facebook-box">
                         <iframe  scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:300px; height:250px;" allowTransparency="true" data-src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/gpbacninh/?eid=ARCjSgUuTfExaFbPsWXrkPEnCJwi0tPRU1Sn8pJ6x0uH6b-TJ88VjShClPqyDDZ0gw197uYzqdn7ofYt&amp;width=300&amp;height=125&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
                     </div>
@@ -30,9 +30,9 @@
                         <p><a href="http://vietnamese.rvasia.org" target="_blank" rel="noopener">Radio Veritas</a></p>
                         <p><a href="https://hdgmvietnam.com" target="_blank" rel="noopener">Hội Đồng Giám mục Việt Nam</a></p>
                         <p><a href="http://giadinhhiepnhat.com/" target="_blank" rel="noopener">Hội Dòng Đức Mẹ Hiệp Nhất</a></p>
-                        <p>&nbsp;</p>
                     </div>
-                </div></div><!-- .widget /--><div id="text-4" class="footer-widget widget_text"><div class="footer-widget-top"><h4> </h4></div>
+                </div></div><!-- .widget /--><div id="text-4" class="footer-widget widget_text">
+{{--                <div class="footer-widget-top"><h4> </h4></div>--}}
                 <div class="footer-widget-container">			<div class="textwidget"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img  height="60" width="154" data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif" height="60" width="154"/></noscript> </a>
 
 
@@ -44,3 +44,6 @@
     </div><!-- #footer-widget-area -->
     <div class="clear"></div>
 </footer><!-- .Footer /-->
+<style type="text/css">
+    .fluid-width-video-wrapper{ padding-top: 10% !important;}
+</style>

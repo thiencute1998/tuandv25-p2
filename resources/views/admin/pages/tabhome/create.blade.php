@@ -42,8 +42,11 @@
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Tên(*)</label>
                                             <input type="text" class="form-control" name="name" placeholder="Nhập tên menu" required>
+                                        </div><div class="col-md-3">
+                                            <label for="services" class="col-form-label">Thứ tự</label>
+                                            <input type="text" class="form-control" name="order" placeholder="Nhập thứ tự">
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <label for="services" class="col-form-label">Trạng thái</label>
                                             <select class="form-control" name="status">
                                                 <option value="1" selected>Hoạt động</option>
