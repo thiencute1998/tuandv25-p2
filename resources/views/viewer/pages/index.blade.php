@@ -352,10 +352,9 @@
             });
 
         </script>
-
+        <?php $liTab = 1 ?>
+        <?php $idTab = 1 ?>
         @foreach($homes as $home)
-                <?php $liTab = 1 ?>
-                <?php $idTab = 1 ?>
         @if(count($home->categories) == 1)
                 <section class="cat-box list-box tie-cat-13">
                     <div class="cat-box-title">
