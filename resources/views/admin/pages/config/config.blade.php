@@ -38,12 +38,14 @@
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Code google analytics</label>
-                                        <textarea class="form-control" name="code_google" type="text" value="{{ $config->code_google }}">
+                                        <textarea class="form-control" name="code_google" type="text">
+                                            {{ $config->code_google }}
                                         </textarea>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-form-label">Code facebook analytics</label>
-                                        <textarea class="form-control" name="code_facebook" type="text" value="{{ $config->code_facebook }}">
+                                        <textarea class="form-control" name="code_facebook" type="text" >
+                                            {{ $config->code_facebook }}
                                         </textarea>
                                     </div>
                                     <div class="form-group">

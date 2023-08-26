@@ -78,6 +78,24 @@
                                         </textarea>
                                         </div>
                                     </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Title</label>
+                                            <input type="text" class="form-control" name="title" placeholder="Nhập title" required>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Keywords</label>
+                                            <textarea rows="3" cols="200" type="text" class="form-control" name="keywords" placeholder="Nhập keywords" required ></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Description</label>
+                                            <textarea rows="3" cols="200" type="text" class="form-control" name="description" placeholder="Nhập description" required ></textarea>
+                                        </div>
+                                    </div>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Thêm</button>
                                 </form>
                             </div>
