@@ -19,19 +19,19 @@
                 <h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope=""
                     itemtype="http://schema.org/Thing"><span itemprop="name">{{$event->name}}</span></h1>
 
-                <p class="post-meta">
+{{--                <p class="post-meta">--}}
 
-                        <span class="post-meta-author"><i class="fa fa-user"></i><a
-                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$event->author}} </a></span>
+{{--                        <span class="post-meta-author"><i class="fa fa-user"></i><a--}}
+{{--                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$event->author}} </a></span>--}}
 
-                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>
+{{--                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>--}}
 
-                    <span class="post-comments"><i class="fa fa-comments"></i><a
-                            href="#">Leave a comment</a></span>
+{{--                    <span class="post-comments"><i class="fa fa-comments"></i><a--}}
+{{--                            href="#">Leave a comment</a></span>--}}
 
-                    <span class="post-views"><i class="fa fa-eye"></i>{{$event->views}} Views</span>
+{{--                    <span class="post-views"><i class="fa fa-eye"></i>{{$event->views}} Views</span>--}}
 
-                </p>
+{{--                </p>--}}
 
                 <div class="clear"></div>
 
@@ -106,46 +106,46 @@
         </article><!-- .post-listing -->
 
 
-        <section id="author-box">
+{{--        <section id="author-box">--}}
 
-            <div class="block-head">
+{{--            <div class="block-head">--}}
 
-                <h3>About nguyen </h3>
-                <div class="stripe-line"></div>
+{{--                <h3>About nguyen </h3>--}}
+{{--                <div class="stripe-line"></div>--}}
 
-            </div>
+{{--            </div>--}}
 
-            <div class="post-listing">
-
-
-                <div class="author-bio">
-
-                    <div class="author-avatar">
+{{--            <div class="post-listing">--}}
 
 
-                    </div><!-- #author-avatar -->
+{{--                <div class="author-bio">--}}
+
+{{--                    <div class="author-avatar">--}}
 
 
-                    <div class="author-description">
+{{--                    </div><!-- #author-avatar -->--}}
 
 
-                    </div><!-- #author-description -->
+{{--                    <div class="author-description">--}}
 
 
-                    <div class="author-social flat-social">
+{{--                    </div><!-- #author-description -->--}}
 
 
-                    </div>
+{{--                    <div class="author-social flat-social">--}}
 
 
-                    <div class="clear"></div>
-
-                </div>
+{{--                    </div>--}}
 
 
-            </div>
+{{--                    <div class="clear"></div>--}}
 
-        </section><!-- #author-box -->
+{{--                </div>--}}
+
+
+{{--            </div>--}}
+
+{{--        </section><!-- #author-box -->--}}
 
 
         {{--            <div class="post-navigation">--}}
@@ -166,7 +166,7 @@
 
             <div class="block-head">
 
-                <h3>Related Articles</h3>
+                <h3>Tin liên quan</h3>
                 <div class="stripe-line"></div>
 
             </div>

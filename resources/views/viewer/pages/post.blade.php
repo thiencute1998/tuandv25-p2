@@ -21,30 +21,30 @@
                 <h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope=""
                     itemtype="http://schema.org/Thing"><span itemprop="name">{{$post->name}}</span></h1>
 
-                <p class="post-meta">
+{{--                <p class="post-meta">--}}
 
-                        <span class="post-meta-author"><i class="fa fa-user"></i><a
-                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$post->author}} </a></span>
+{{--                        <span class="post-meta-author"><i class="fa fa-user"></i><a--}}
+{{--                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$post->author}} </a></span>--}}
 
-                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>
+{{--                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>--}}
 
-                    @if($post->category)
-                        <span class="post-cats"><i class="fa fa-folder"></i><a
-                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>
-    {{--                                , <a--}}
-                            {{--                                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
-                            {{--                                rel="category tag">Tin tức</a>--}}
-                            {{--                                , <a--}}
-                            {{--                                href="https://giaophanbacninh.org/category/uncategorized/" rel="category tag">Uncategorized</a>--}}
-                            </span>
-                    @endif
+{{--                    @if($post->category)--}}
+{{--                        <span class="post-cats"><i class="fa fa-folder"></i><a--}}
+{{--                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>--}}
+{{--    --}}{{--                                , <a--}}
+{{--                            --}}{{--                                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
+{{--                            --}}{{--                                rel="category tag">Tin tức</a>--}}
+{{--                            --}}{{--                                , <a--}}
+{{--                            --}}{{--                                href="https://giaophanbacninh.org/category/uncategorized/" rel="category tag">Uncategorized</a>--}}
+{{--                            </span>--}}
+{{--                    @endif--}}
 
-                    <span class="post-comments"><i class="fa fa-comments"></i><a
-                            href="#">Leave a comment</a></span>
+{{--                    <span class="post-comments"><i class="fa fa-comments"></i><a--}}
+{{--                            href="#">Leave a comment</a></span>--}}
 
-                    <span class="post-views"><i class="fa fa-eye"></i>{{$post->views}} Views</span>
+{{--                    <span class="post-views"><i class="fa fa-eye"></i>{{$post->views}} Views</span>--}}
 
-                </p>
+{{--                </p>--}}
 
                 <div class="clear"></div>
 
@@ -119,46 +119,46 @@
         </article><!-- .post-listing -->
 
 
-        <section id="author-box">
+{{--        <section id="author-box">--}}
 
-            <div class="block-head">
+{{--            <div class="block-head">--}}
 
-                <h3>About nguyen </h3>
-                <div class="stripe-line"></div>
+{{--                <h3>About nguyen </h3>--}}
+{{--                <div class="stripe-line"></div>--}}
 
-            </div>
+{{--            </div>--}}
 
-            <div class="post-listing">
-
-
-                <div class="author-bio">
-
-                    <div class="author-avatar">
+{{--            <div class="post-listing">--}}
 
 
-                    </div><!-- #author-avatar -->
+{{--                <div class="author-bio">--}}
+
+{{--                    <div class="author-avatar">--}}
 
 
-                    <div class="author-description">
+{{--                    </div><!-- #author-avatar -->--}}
 
 
-                    </div><!-- #author-description -->
+{{--                    <div class="author-description">--}}
 
 
-                    <div class="author-social flat-social">
+{{--                    </div><!-- #author-description -->--}}
 
 
-                    </div>
+{{--                    <div class="author-social flat-social">--}}
 
 
-                    <div class="clear"></div>
-
-                </div>
+{{--                    </div>--}}
 
 
-            </div>
+{{--                    <div class="clear"></div>--}}
 
-        </section><!-- #author-box -->
+{{--                </div>--}}
+
+
+{{--            </div>--}}
+
+{{--        </section><!-- #author-box -->--}}
 
 
         {{--            <div class="post-navigation">--}}
@@ -179,7 +179,7 @@
 
             <div class="block-head">
 
-                <h3>Related Articles</h3>
+                <h3>Tin liên quan</h3>
                 <div class="stripe-line"></div>
 
             </div>
