@@ -354,7 +354,9 @@
         </script>
 
         @foreach($homes as $home)
-            @if(count($home->categories) == 1)
+                <?php $liTab = 1 ?>
+                <?php $idTab = 1 ?>
+        @if(count($home->categories) == 1)
                 <section class="cat-box list-box tie-cat-13">
                     <div class="cat-box-title">
                         @foreach($home->categories as $category)
@@ -436,14 +438,12 @@
                 <div class="cat-box-content clear cat-box">
                     <div class="cat-tabs-header">
                         <ul>
-                        <?php $liTab = 1 ?>
                         @foreach($home->categories as $keyCate=> $category)
                                 <li><a href="{{"#catab" . $liTab}}">{{$category->name}}</a></li>
                                     <?php $liTab ++ ?>
-                            @endforeach
+                        @endforeach
                         </ul>
                     </div>
-                    <?php $idTab = 1 ?>
                     @foreach($home->categories as $keyCate=> $category)
                         <div id="{{"catab" . $idTab}}" class="cat-tabs-wrap cat-tabs-wrap1">
 
