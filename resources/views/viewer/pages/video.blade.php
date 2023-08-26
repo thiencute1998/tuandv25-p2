@@ -33,10 +33,16 @@
 
                 <div class="clear"></div>
 
-
+                <?php
+                $linkVideo = explode("=", $video->link);
+                if (!isset($linkImg[1])) {
+                    $linkVideo = explode("/", $video->link);
+                }
+                $idVideo = end($linkVideo);
+                ?>
                 <div class="entry">
                     <iframe width="420" height="315"
-                            src="{{$video->link}}">
+                            src="{{"https://www.youtube.com/embed/" . $idVideo}}">
                     </iframe>
                 </div><!-- .entry /-->
 
@@ -174,7 +180,13 @@
             <div class="post-listing">
 
                 @foreach ($videoRelated as $related)
-                        <?php $linkImg = explode("=", $related->link) ?>
+                        <?php
+                            $linkImg = explode("=", $related->link);
+                            if (!isset($linkImg[1])) {
+                                $linkImg = explode("/", $related->link);
+                            }
+                            $srcImg = end($linkImg);
+                        ?>
                     <div class="related-item">
 
                         <div class="post-thumbnail tie-appear em-related-img">
@@ -182,11 +194,11 @@
                             <a href="{{route('get-video', ['video'=> $related->slug])}}">
 
                                 <img width="310" height="165" alt=""
-                                     data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                     data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                      class="attachment-tie-medium size-tie-medium wp-post-image ls-is-cached lazyloaded tie-appear"
-                                     src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg">
+                                     src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg">
                                 <noscript><img width="310" height="165"
-                                               src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                               src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                                class="attachment-tie-medium size-tie-medium wp-post-image" alt=""/>
                                 </noscript>
                                 <span class="fa overlay-icon"></span>
