@@ -436,13 +436,16 @@
                 <div class="cat-box-content clear cat-box">
                     <div class="cat-tabs-header">
                         <ul>
-                            @foreach($home->categories as $keyCate=> $category)
-                                <li><a href="{{"#catab" . $keyCate}}">{{$category->name}}</a></li>
+                        <?php $liTab = 1 ?>
+                        @foreach($home->categories as $keyCate=> $category)
+                                <li><a href="{{"#catab" . $liTab}}">{{$category->name}}</a></li>
+                                    <?php $liTab ++ ?>
                             @endforeach
                         </ul>
                     </div>
+                    <?php $idTab = 1 ?>
                     @foreach($home->categories as $keyCate=> $category)
-                        <div id="{{"catab" . $keyCate}}" class="cat-tabs-wrap cat-tabs-wrap1">
+                        <div id="{{"catab" . $idTab}}" class="cat-tabs-wrap cat-tabs-wrap1">
 
                             <ul>
                                 @foreach($category->posts as $keyPost=> $post)
@@ -514,6 +517,7 @@
                             </ul>
                             <div class="clear"></div>
                         </div>
+                        <?php $idTab++ ?>
                     @endforeach
                 </div><!-- #cats-tabs-box /-->
             @endif
@@ -527,136 +531,67 @@
             <div class="cat-box-content">
 
                 <ul>
-                    <li class="first-news">
+                    @foreach($videos as $key=> $video)
+                        <?php $linkImg = explode("=", $video->link) ?>
+                        @if($key == 0)
+                            <li class="first-news">
 
-                        <div class="post-thumbnail em-list-img">
-                            <a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">
-                                <img width="310" height="165" alt="" loading="lazy"
-                                     data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/AddChua-01-310x165.jpg"
-                                     class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
-                                     src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="310" height="165"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/08/AddChua-01-310x165.jpg"
-                                               class="attachment-tie-medium size-tie-medium wp-post-image" alt=""
-                                               loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span>
-                            </a>
-                        </div><!-- post-thumbnail /-->
+                            <div class="post-thumbnail em-list-img">
+                                <a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">
+                                    <img width="310" height="165" alt="" loading="lazy"
+                                         data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                         class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
+                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                    <noscript><img width="310" height="165"
+                                                   src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                                   class="attachment-tie-medium size-tie-medium wp-post-image" alt=""
+                                                   loading="lazy"/></noscript>
+                                    <span class="fa overlay-icon"></span>
+                                </a>
+                            </div><!-- post-thumbnail /-->
 
-                        <h2 class="post-box-title"><a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">Chúa
-                                ở đâu?</a></h2>
-
-
-                        <p class="post-meta">
-
-
-                        </p>
+                            <h2 class="post-box-title"><a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">{{$video->name}}</a></h2>
 
 
-                        <div class="entry">
-                            <p></p>
-                            <a class="more-link" href="https://giaophanbacninh.org/chua-o-dau/">Read More
-                                &raquo;</a>
-                        </div>
-                    </li><!-- .first-news -->
-                    <li class="other-news">
-
-                        <div class="post-thumbnail em-side-img">
-                            <a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/" rel="bookmark"><img
-                                    width="110" height="75" alt="" loading="lazy"
-                                    data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddCongdan-01-01-110x75.jpg"
-                                    class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddCongdan-01-01-110x75.jpg"
-                                               class="attachment-tie-small size-tie-small wp-post-image" alt=""
-                                               loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
-
-                        <h3 class="post-box-title"><a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/"
-                                                      rel="bookmark">Công dân Nước Trời</a></h3>
-
-                        <p class="post-meta">
+                            <p class="post-meta">
 
 
-                        </p>
-
-                    </li>
-                    <li class="other-news">
-
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/tam-tinh-cua-duc-cha-giuse/" rel="bookmark"><img
-                                    width="110" height="75" alt="" loading="lazy"
-                                    data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddTamtinh-110x75.webp"
-                                    class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddTamtinh-110x75.webp"
-                                               class="attachment-tie-small size-tie-small wp-post-image" alt=""
-                                               loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
-
-                        <h3 class="post-box-title"><a href="https://giaophanbacninh.org/tam-tinh-cua-duc-cha-giuse/"
-                                                      rel="bookmark">Tâm tình của Đức cha Giuse</a></h3>
-
-                        <p class="post-meta">
+                            </p>
 
 
-                        </p>
+                            <div class="entry">
+                                <p></p>
+                                <a class="more-link" href="https://giaophanbacninh.org/chua-o-dau/">Read More
+                                    &raquo;</a>
+                            </div>
+                        </li><!-- .first-news -->
+                        @else
+                        <li class="other-news">
 
-                    </li>
-                    <li class="other-news">
+                            <div class="post-thumbnail em-side-img">
+                                <a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/" rel="bookmark"><img
+                                        width="110" height="75" alt="" loading="lazy"
+                                        data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                        class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                    <noscript><img width="110" height="75"
+                                                   src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                                   class="attachment-tie-small size-tie-small wp-post-image" alt=""
+                                                   loading="lazy"/></noscript>
+                                    <span class="fa overlay-icon"></span></a>
+                            </div><!-- post-thumbnail /-->
 
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/viec-chua-lam-tren-manh-dat-quan-ho/"
-                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddViecChualam-01-110x75.jpg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddViecChualam-01-110x75.jpg"
-                                               class="attachment-tie-small size-tie-small wp-post-image" alt=""
-                                               loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
+                            <h3 class="post-box-title"><a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/"
+                                                          rel="bookmark">{{$video->name}}</a></h3>
 
-                        <h3 class="post-box-title"><a
-                                href="https://giaophanbacninh.org/viec-chua-lam-tren-manh-dat-quan-ho/"
-                                rel="bookmark">Việc Chúa làm trên mảnh đất Quan họ</a></h3>
-
-                        <p class="post-meta">
-
-
-                        </p>
-
-                    </li>
-                    <li class="other-news">
-
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/chon-song-hien-lanh-khiem-nhuong/"
-                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/Add-hien-lanh-01-110x75.jpg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/Add-hien-lanh-01-110x75.jpg"
-                                               class="attachment-tie-small size-tie-small wp-post-image" alt=""
-                                               loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
-
-                        <h3 class="post-box-title"><a
-                                href="https://giaophanbacninh.org/chon-song-hien-lanh-khiem-nhuong/" rel="bookmark">Chọn
-                                sống hiền lành &#038; khiêm nhường</a></h3>
-
-                        <p class="post-meta">
+                            <p class="post-meta">
 
 
-                        </p>
+                            </p>
 
-                    </li>
+                        </li>
+                        @endif
+                    @endforeach
                 </ul>
                 <div class="clear"></div>
 

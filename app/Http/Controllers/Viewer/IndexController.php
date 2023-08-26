@@ -54,4 +54,12 @@ class IndexController extends Controller
         $posts = $data['posts'];
         return view('viewer.pages.tag', compact('tag', 'posts'));
     }
+
+    public function findChurch() {
+        return view('viewer.pages.find_church');
+    }
+
+    public function getVideo($video) {
+
+    }
 }

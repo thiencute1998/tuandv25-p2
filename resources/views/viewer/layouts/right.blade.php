@@ -184,7 +184,7 @@
                 <div class="widget-top"><h4></h4>
                     <div class="stripe-line"></div>
                 </div>
-                <div class="widget-container"><a href="https://giaophanbacninh.org/tim-nha-tho/"><img
+                <div class="widget-container"><a href="{{route('find-church')}}"><img
                             width="300" height="51" alt="" style="max-width: 100%; height: auto;"
                             data-srcset="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-500x85.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01.jpg 654w"
                             data-src="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg"

@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Homepage;
 use App\Models\Post;
 use App\Models\Tag;
+use App\Models\Video;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 
@@ -22,7 +23,14 @@ class IndexRepository extends BaseRepository {
         $query->with('categories.posts');
         $query->orderBy('order', 'asc');
         $homes = $query->get();
-        return view('viewer.pages.index', compact('homes'));
+        $videos = $this->getVideoIndex();
+        return view('viewer.pages.index', compact('homes', 'videos'));
+    }
+
+    public function getVideoIndex() {
+        $query = Video::where('status', 1);
+        $query->orderBy('created_at', 'desc');
+        return $query->take(4)->get();
     }
     public function getCate($cate) {
         $query = Category::where('status', 1);
@@ -104,6 +112,10 @@ class IndexRepository extends BaseRepository {
             $posts = $queryPost->paginate(10);
         }
         return ['tag'=> $tag, 'posts'=> $posts];
+    }
+
+    public function getVideo($video) {
+
     }
 
     public function formatVNDate($date) {
