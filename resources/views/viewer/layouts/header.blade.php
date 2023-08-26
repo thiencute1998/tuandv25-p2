@@ -69,12 +69,21 @@
                                 @foreach($cates2 as $cate2)
                                     @if($cate1->id == $cate2->parent_id)
                                         <li
-                                            class="{{$cate2->detail == 0 ? "menu-item-has-children" : "" }} menu-item menu-item-type-taxonomy menu-item-object-category  menu-item-22">
+                                            <?php $detail = 1;?>
+                                        @foreach($cates3 as $cate3)
+                                            @if($cate2->id == $cate3->parent_id)
+                                                    <?php $detail = 0;?>
+                                                @break
+                                            @endif
+                                        @endforeach
+
+                                            class="{{$detail == 0 ? "menu-item-has-children" : "" }} menu-item menu-item-type-taxonomy menu-item-object-category  menu-item-22">
                                             <a href="{{$cate2->link ?  : route('get-cate', ['cate'=> $cate2->slug])}}">{{$cate2->name}}</a>
-                                            @if($cate2->detail == 0)
+                                            @if($detail == 0)
                                                 <ul class="sub-menu menu-sub-content">
                                                     @foreach($cates3 as $cate3)
                                                         @if($cate2->id == $cate3->parent_id)
+                                                        <?php $detail = 0;?>
                                                         <li
                                                         class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48095">
                                                         <a href="{{$cate3->link ?  : route('get-cate', ['cate'=> $cate3->slug])}}">{{$cate3->name}}</a></li>
