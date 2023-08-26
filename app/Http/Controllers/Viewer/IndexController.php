@@ -60,6 +60,8 @@ class IndexController extends Controller
     }
 
     public function getVideo($video) {
-
+        $video = $this->repository->getVideo($video);
+        $videoRelated = $this->repository->getVideoRelated($video);
+        return view('viewer.pages.video', compact('video', 'videoRelated'));
     }
 }

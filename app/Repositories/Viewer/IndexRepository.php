@@ -115,7 +115,15 @@ class IndexRepository extends BaseRepository {
     }
 
     public function getVideo($video) {
+        $query = Video::where('slug', $video);
+        return $query->firstOrFail();
+    }
 
+    public function getVideoRelated($video) {
+        $query = Video::where('status', 1);
+        $query->where('id', '!=',$video->id);
+        $query->orderBy('created_at', 'desc');
+        return $query->limit(3)->get();
     }
 
     public function formatVNDate($date) {

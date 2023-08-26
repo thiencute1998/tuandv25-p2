@@ -536,7 +536,7 @@
                             <li class="first-news">
 
                             <div class="post-thumbnail em-list-img">
-                                <a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">
+                                <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">
                                     <img width="310" height="165" alt="" loading="lazy"
                                          data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
                                          class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
@@ -549,7 +549,7 @@
                                 </a>
                             </div><!-- post-thumbnail /-->
 
-                            <h2 class="post-box-title"><a href="https://giaophanbacninh.org/chua-o-dau/" rel="bookmark">{{$video->name}}</a></h2>
+                            <h2 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">{{$video->name}}</a></h2>
 
 
                             <p class="post-meta">
@@ -560,7 +560,7 @@
 
                             <div class="entry">
                                 <p></p>
-                                <a class="more-link" href="https://giaophanbacninh.org/chua-o-dau/">Read More
+                                <a class="more-link" href="{{route('get-video', ['video'=> $video->slug])}}">Read More
                                     &raquo;</a>
                             </div>
                         </li><!-- .first-news -->

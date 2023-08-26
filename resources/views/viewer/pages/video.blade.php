@@ -6,9 +6,7 @@
                                                                                                    property="v:title"
                                                                                                    class="crumbs-home"
                                                                                                    href="{{route('index')}}">Home</a></span>
-            <span class="delimiter">/</span> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
-                                                                            href="{{route('events')}}">Event</a></span>
-            <span class="delimiter">/</span> <span class="current">{{$event->name}}</span></div>
+            <span class="delimiter">/</span> <span class="current">{{$video->name}}</span></div>
 
         <article
             class="post-listing post-47177 post type-post status-publish format-standard has-post-thumbnail hentry category-giao-hoi-hoan-cau category-gia-dinh-bac-ninh-hoa-ky category-uncategorized"
@@ -17,19 +15,19 @@
             <div class="post-inner">
 
                 <h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope=""
-                    itemtype="http://schema.org/Thing"><span itemprop="name">{{$event->name}}</span></h1>
+                    itemtype="http://schema.org/Thing"><span itemprop="name">{{$video->name}}</span></h1>
 
                 {{--                <p class="post-meta">--}}
 
                 {{--                        <span class="post-meta-author"><i class="fa fa-user"></i><a--}}
-                {{--                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$event->author}} </a></span>--}}
+                {{--                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$video->author}} </a></span>--}}
 
                 {{--                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>--}}
 
                 {{--                    <span class="post-comments"><i class="fa fa-comments"></i><a--}}
                 {{--                            href="#">Leave a comment</a></span>--}}
 
-                {{--                    <span class="post-views"><i class="fa fa-eye"></i>{{$event->views}} Views</span>--}}
+                {{--                    <span class="post-views"><i class="fa fa-eye"></i>{{$video->views}} Views</span>--}}
 
                 {{--                </p>--}}
 
@@ -37,7 +35,9 @@
 
 
                 <div class="entry">
-                    {!! $event->content !!}
+                    <iframe width="420" height="315"
+                            src="{{$video->link}}">
+                    </iframe>
                 </div><!-- .entry /-->
 
 
@@ -173,19 +173,20 @@
 
             <div class="post-listing">
 
-                @foreach ($eventRelated as $related)
+                @foreach ($videoRelated as $related)
+                        <?php $linkImg = explode("=", $related->link) ?>
                     <div class="related-item">
 
                         <div class="post-thumbnail tie-appear em-related-img">
 
-                            <a href="{{route('get-post', ['post'=> $related->slug])}}">
+                            <a href="{{route('get-video', ['video'=> $related->slug])}}">
 
                                 <img width="310" height="165" alt=""
-                                     data-src="{{asset("upload/admin/post/image/" . $related->image)}}"
+                                     data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
                                      class="attachment-tie-medium size-tie-medium wp-post-image ls-is-cached lazyloaded tie-appear"
-                                     src="{{asset("upload/admin/post/image/" . $related->image)}}">
+                                     src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg">
                                 <noscript><img width="310" height="165"
-                                               src="{{asset("upload/admin/post/image/" . $related->image)}}"
+                                               src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
                                                class="attachment-tie-medium size-tie-medium wp-post-image" alt=""/>
                                 </noscript>
                                 <span class="fa overlay-icon"></span>
@@ -195,7 +196,7 @@
                         </div><!-- post-thumbnail /-->
 
                         <h3>
-                            <a href="{{route('get-post', ['post'=> $related->slug])}}"
+                            <a href="{{route('get-video', ['video'=> $related->slug])}}"
                                rel="bookmark">{{$related->name}}</a>
                         </h3>
 

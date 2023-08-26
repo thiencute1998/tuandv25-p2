@@ -12,7 +12,7 @@ class Video extends Model
     // Table lich phung Videos
     protected $table = 'videos';
 
-    protected $fillable = ['name', 'link', 'updated_at', 'status', 'view_count', 'created_at'];
+    protected $fillable = ['name', 'link', 'updated_at', 'status', 'view_count', 'created_at', 'slug'];
 
     public $timestamps = true;
 }
