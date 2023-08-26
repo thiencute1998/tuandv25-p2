@@ -531,18 +531,24 @@
 
                 <ul>
                     @foreach($videos as $key=> $video)
-                        <?php $linkImg = explode("=", $video->link) ?>
+                        <?php
+                            $linkImg = explode("=", $video->link);
+                            if (!isset($linkImg[1])) {
+                                $linkImg = explode("/", $video->link);
+                            }
+                            $srcImg = end($linkImg);
+                            ?>
                         @if($key == 0)
                             <li class="first-news">
 
                             <div class="post-thumbnail em-list-img">
                                 <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">
                                     <img width="310" height="165" alt="" loading="lazy"
-                                         data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                         data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                          class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
                                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                                     <noscript><img width="310" height="165"
-                                                   src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                                   src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                                    class="attachment-tie-medium size-tie-medium wp-post-image" alt=""
                                                    loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span>
@@ -570,11 +576,11 @@
                             <div class="post-thumbnail em-side-img">
                                 <a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/" rel="bookmark"><img
                                         width="110" height="75" alt="" loading="lazy"
-                                        data-src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                        data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                         class="attachment-tie-small size-tie-small wp-post-image lazyload"
                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                                     <noscript><img width="110" height="75"
-                                                   src="https://img.youtube.com/vi/{{$linkImg[1]}}/0.jpg"
+                                                   src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                                    class="attachment-tie-small size-tie-small wp-post-image" alt=""
                                                    loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span></a>
