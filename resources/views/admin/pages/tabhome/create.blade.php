@@ -34,7 +34,7 @@
                                         </div>
                                         <div>
                                             <a class="btn btn-primary" href="{{route('admin-tabhome')}}">
-                                                <i class="ti-plus"></i><span>Danh sách</span>
+                                                <i class="ti-list"></i><span>Danh sách</span>
                                             </a>
                                         </div>
                                     </div>

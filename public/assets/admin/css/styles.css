@@ -443,13 +443,15 @@
 
 .search-box input {
     width: 350px;
-    border-radius: 33px;
+    /*border-radius: 33px;*/
     border: none;
     height: 40px;
     padding-left: 20px;
     padding-right: 40px;
     letter-spacing: 0;
-    background: #f3eeff;
+    /*background: #f3eeff;*/
+    border: 1px solid #aaa;
+    border-radius: 4px;
 }
 
 .search-box input::-webkit-input-placeholder {
@@ -470,8 +472,9 @@
     top: 14px;
     font-size: 14px;
     color: #b1a7a7;
+    display: none;
 }
-
+.search-box button{ margin-left: 0px !important;}
 
 /* notification-area */
 
@@ -2843,5 +2846,13 @@ select.form-control{
 }
 .form-group{
     margin-bottom: 0.5rem !important;
+}
+.btn-primary .ti-list {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.btn-primary .ti-plus{
+    margin-right: 5px;
+    vertical-align: middle;
 }
 /*-------------------- END Offset Sidebar ------------------- */
