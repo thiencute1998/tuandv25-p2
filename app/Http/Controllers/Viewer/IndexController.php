@@ -69,4 +69,13 @@ class IndexController extends Controller
         $map = $this->repository->getMap();
         return view('viewer.pages.map', compact('map'));
     }
+
+    public function searchPost(Request $request) {
+        return $this->repository->searchPost($request->only('post'));
+    }
+
+    public function searchAllPost($post) {
+        $posts = $this->repository->searchAllPost($post);
+        return view('viewer.pages.find_post', compact('posts'));
+    }
 }

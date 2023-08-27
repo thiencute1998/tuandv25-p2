@@ -780,7 +780,7 @@ blockquote:before,
 
 .search-block {
 	height: 30px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	float: right;
 	margin-left: 5px;
 	position: relative;

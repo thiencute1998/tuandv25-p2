@@ -37,7 +37,9 @@
     <script type='text/javascript' src="{{ asset('assets/viewer/js/button.min.js') }}" id='jquery-ui-button-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/dialog.min.js') }}" id='jquery-ui-dialog-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/events-manager.js') }}" id='events-manager-js'></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+            integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="canonical" href="https://giaophanbacninh.org/" />
     <link rel='shortlink' href='https://giaophanbacninh.org/' />
     <link rel="shortcut icon" href="{{ asset('assets/viewer/favicon.ico') }}" title="Favicon" />
@@ -98,51 +100,7 @@
 
             <div class="clear"></div>
 
-            <div id="breaking-news" class="breaking-news">
-
-                <span class="breaking-news-title"><i class="fa fa-bolt"></i> <span>Bài viết mới</span></span>
-                <ul>
-
-
-                    <li><a href="https://giaophanbacninh.org/cu-dieu-dat-no-hoa/" title="Cử điệu: Đất nở hoa">Cử điệu: Đất nở hoa</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/giao-xu-bao-son-mung-ky-niem-10-nam-thanh-lap-doan-tntt/" title="Giáo xứ Bảo Sơn: Mừng kỷ niệm 10 năm thành lập Đoàn TNTT">Giáo xứ Bảo Sơn: Mừng kỷ niệm 10 năm thành lập Đoàn TNTT</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/giao-xu-tieu-le-don-thanh-gia-dai-hoi-gioi-tre/" title="Giáo xứ Tiểu Lễ đón Thánh giá Đại hội Giới trẻ">Giáo xứ Tiểu Lễ đón Thánh giá Đại hội Giới trẻ</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/suy-niem-tin-mung-le-chua-ba-ngoi-4/" title="Suy niệm Tin Mừng Lễ Chúa Ba Ngôi">Suy niệm Tin Mừng Lễ Chúa Ba Ngôi</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/song-mau-nhiem-phuc-sinh-nhu-the-nao/" title="Sống mầu nhiệm Phục sinh như thế nào?">Sống mầu nhiệm Phục sinh như thế nào?</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/rao-bao-truyen-chuc-linh-muc-3/" title="Rao báo: Truyền chức Phó tế &#038; Linh mục">Rao báo: Truyền chức Phó tế &#038; Linh mục</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/tre-nga-so-11-phan-1/" title="Tre Ngà số 11, phần 1">Tre Ngà số 11, phần 1</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/su-diep-mua-chay-nam-2023-cua-duc-thanh-cha-phanxico/" title="Sứ điệp Mùa Chay năm 2023 của Đức Thánh Cha Phanxicô">Sứ điệp Mùa Chay năm 2023 của Đức Thánh Cha Phanxicô</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/tim-nha-tho-gan-day/" title="Tìm Nhà thờ gần đây">Tìm Nhà thờ gần đây</a></li>
-
-
-                    <li><a href="https://giaophanbacninh.org/thang-muoi-hai-2023/" title="Tháng Mười Hai &#8211; 2023">Tháng Mười Hai &#8211; 2023</a></li>
-
-
-                </ul>
-
-                <script type="text/javascript">
-                    jQuery(document).ready(function(){
-                        jQuery('#breaking-news ul').innerFade({animationType: 'fade', speed: 750 , timeout: 3500});
-                    });
-                </script>
-
-            </div> <!-- .breaking-news -->
+            @include('viewer.layouts.breaking_news')
             <div id="main-content" class="container full-width">
                 @yield('main-content')
             </div>

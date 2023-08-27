@@ -178,6 +178,8 @@ Route::get('/tim-nha-tho-gan-day', [IndexController::class, 'findChurch'])->name
 Route::get('/video/{video}', [IndexController::class, 'getVideo'])->name('get-video');
 Route::get('/danh-sach-giao-hat-xu-ho', [IndexController::class, 'getMap'])->name('get-map');
 Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
+Route::post('/search-post', [IndexController::class, 'searchPost'])->name('search-post');
+Route::get('/search-all-post/{post}', [IndexController::class, 'searchAllPost'])->name('search-all-post');
 
 
 

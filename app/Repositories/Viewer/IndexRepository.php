@@ -137,11 +137,11 @@ class IndexRepository extends BaseRepository {
         return $date;
     }
 
-    public function formatVNFullDate($date) {
+    public function formatVNFullDate($date, $format = 'Y-m-d') {
         if ($date) {
-            $day = Carbon::createFromFormat('Y-m-d',$date)->format('d');
-            $month = Carbon::createFromFormat('Y-m-d',$date)->format('m');
-            $year = Carbon::createFromFormat('Y-m-d',$date)->format('Y');
+            $day = Carbon::createFromFormat($format,$date)->format('d');
+            $month = Carbon::createFromFormat($format,$date)->format('m');
+            $year = Carbon::createFromFormat($format,$date)->format('Y');
             $date = $day . " " . $this->getMonth($month) . ", " . $year;
         }
         return $date;
@@ -192,5 +192,40 @@ class IndexRepository extends BaseRepository {
 
     public function getMap() {
         return About::first();
+    }
+
+    public function searchPost($params) {
+        $query = Post::where('status', 1);
+        if (isset($params['post'])) {
+            $post = $params['post'];
+            $query->where('name', 'like', "%$post%");
+        }
+        $query->orderBy('created_at', 'desc');
+        return $query->take(3)->get()->map(function($value) {
+            $value->fullDate = $value->created_at;
+            if ($value->created_at) {
+                $value->fullDate = $this->formatVNFullDate($value->created_at, 'Y-m-d H:i:s');
+            }
+            $value->slug_path = route('get-post', $value->slug);
+            $value->image_path = asset('upload/admin/post/image/' . $value->image);
+            return $value;
+        });
+    }
+
+    public function searchAllPost($post) {
+        $query = Post::where('status', 1);
+        if (isset($post)) {
+            $query->where('name', 'like', "%$post%");
+        }
+        $query->with('category');
+        $query->orderBy('created_at', 'desc');
+        $data = $query->paginate(10);
+        return $data->through(function ($value) {
+            $value->fullDate = $value->created_at;
+            if ($value->created_at) {
+                $value->fullDate = getDateDiff($value->created_at);
+            }
+            return $value;
+        });
     }
 }

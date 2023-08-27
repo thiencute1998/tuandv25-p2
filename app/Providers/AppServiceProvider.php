@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\About;
+use App\Models\Banner;
 use App\Models\Category;
 use App\Models\Link;
 use App\Models\Post;
@@ -34,6 +35,15 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrap();
         View::composer('*', function ($view) {
             $user = auth()->user();
+
+            // banner
+            $bannerWebsite = Banner::where('status', 1)->first();
+
+            // breaking news
+            $breakNews = Post::where('status', 1)
+                ->orderBy('created_at', 'desc')
+                ->take(10)->get();
+
             // menu
             $cates1 = Category::where('status', 1)->where('level', 1)->orderBy('order', 'asc')->get();
             $cates2 = Category::where('status', 1)->where('level', 2)->orderBy('order', 'asc')->get();
@@ -52,13 +62,16 @@ class AppServiceProvider extends ServiceProvider
 
             // Thong bao
             $postNotify = Post::where('status', 1)
-                ->where('slug', 'thong-bao')
+                ->with('category', function($q) {
+                    $q->where('slug', 'thong-bao');
+                })
                 ->orderBy('created_at', 'desc')
                 ->take(3)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
                 });
+
 
             // Lien he
             $contactWebsite = About::first();
@@ -67,6 +80,8 @@ class AppServiceProvider extends ServiceProvider
             $linkWebsites = Link::where('status', 1)->get();
             $data = [
                 'userLogin'=> $user,
+                'bannerWebsite'=> $bannerWebsite,
+                'breakNews'=> $breakNews,
                 'cates1'=>$cates1,
                 'cates2'=>$cates2,
                 'cates3'=>$cates3,
