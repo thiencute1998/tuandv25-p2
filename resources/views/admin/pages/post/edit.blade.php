@@ -63,7 +63,7 @@
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Danh mục</label>
                                             <select id="category-link" class="category-link form-control" name="category_id" multiple>
-                                                @if($post->category_id)
+                                                @if($post->category)
                                                     <option value="{{$post->category_id}}">{{$post->category->name}}</option>
                                                 @endif
                                             </select>
@@ -90,19 +90,19 @@
                                     <div class="row form-group">
                                         <div class="col-md-12">
                                             <label for="services" class="col-form-label">Title</label>
-                                            <input type="text" class="form-control" name="title" placeholder="Nhập title" required value="{{$post->title}}">
+                                            <input type="text" class="form-control" name="title" placeholder="Nhập title"  value="{{$post->title}}" required>
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
                                             <label for="services" class="col-form-label">Keywords</label>
-                                            <textarea rows="3" cols="200" type="text" class="form-control" name="keywords" placeholder="Nhập keywords" required > value="{{$post->keywords}}"</textarea>
+                                            <textarea rows="3" cols="200" type="text" class="form-control" name="keywords" placeholder="Nhập keywords"  > {{$post->keywords}}</textarea>
                                         </div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col-md-12">
                                             <label for="services" class="col-form-label">Description</label>
-                                            <textarea rows="3" cols="200" type="text" class="form-control" name="description" placeholder="Nhập description" required > value="{{$post->description}}"</textarea>
+                                            <textarea rows="3" cols="200" type="text" class="form-control" name="description" placeholder="Nhập description"  > {{$post->description}}</textarea>
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Sửa</button>

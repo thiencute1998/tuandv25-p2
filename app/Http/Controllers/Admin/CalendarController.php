@@ -26,7 +26,7 @@ class CalendarController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('name', 'image', 'd_date', 'content', 'status', 'address');
+        $params = $request->only('name', 'image', 'd_date', 'content', 'status', 'address', 'title', 'keywords', 'description');
         $this->repository->store($params, $request);
         return redirect()->back()->with('add-success', 'Thêm  lịch phụng vụ thành công !!!');
     }
@@ -37,7 +37,7 @@ class CalendarController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('name', 'image', 'd_date', 'content', 'status', 'address');
+        $params = $request->only('name', 'image', 'd_date', 'content', 'status', 'address', 'title', 'keywords', 'description');
         $this->repository->update($params, $request, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật  lịch phụng vụ thành công !!!');
     }

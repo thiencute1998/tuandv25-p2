@@ -61,6 +61,10 @@ class CategoryRepository extends BaseRepository {
                 }
             }
             $params['slug'] = Str::slug($params['name'], '-');
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            if($slugs){
+                $params['slug'] = $params['slug'].'-1';
+            }
             $category->fill($params);
             $category->save();
 
