@@ -78,7 +78,7 @@ class VideoSlideShowRepository extends BaseRepository {
     public function edit($id) {
         $query = Product::query();
         $query->where('id', $id);
-        return $query->with('productVideos')->first();
+        return $query->with('productVideos')->firstOrFail();
     }
 
     public function update($params, $id) {

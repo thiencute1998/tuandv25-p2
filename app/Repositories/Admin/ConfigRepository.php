@@ -13,12 +13,12 @@ class ConfigRepository extends BaseRepository {
 
     public function index($searchParams) {
         $query = $this->model->query();
-        $config = $query->where('id', 1)->first();
+        $config = $query->where('id', 1)->firstOrFail();
         return view('admin.pages.config.config', compact('config'));
     }
 
     public function update($params) {
-        $config = $this->model->where('id', 1)->first();
+        $config = $this->model->where('id', 1)->firstOrFail();
         $config->fill($params);
         $config->save();
     }

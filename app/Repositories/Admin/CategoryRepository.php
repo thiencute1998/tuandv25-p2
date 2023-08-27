@@ -33,7 +33,7 @@ class CategoryRepository extends BaseRepository {
         $categories->getCollection()->transform(function ($item) {
             $item->parent_name = "";
             if ($item->parent_id) {
-                $parentCate = $this->model->where('id', $item->parent_id)->first();
+                $parentCate = $this->model->where('id', $item->parent_id)->firstOrFail();
                 if ($parentCate) {
                     $item->parent_name = $parentCate->name;
                 }
@@ -73,7 +73,7 @@ class CategoryRepository extends BaseRepository {
 
     public function edit($id) {
         $query = $this->model->where('id', $id);
-        return $query->first();
+        return $query->firstOrFail();
     }
 
     public function update($params, $id) {
@@ -122,7 +122,7 @@ class CategoryRepository extends BaseRepository {
 
     public function findCategory($id) {
         if ($id) {
-            return $this->model->where('id', $id)->first();
+            return $this->model->where('id', $id)->firstOrFail();
         }
         return "";
     }

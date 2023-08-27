@@ -40,7 +40,7 @@ class LinkRepository extends BaseRepository {
 
     public function edit($id) {
         $query = $this->model->where('id', $id);
-        return $query->first();
+        return $query->firstOrFail();
     }
 
     public function update($params, $id) {

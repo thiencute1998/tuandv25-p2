@@ -13,12 +13,12 @@ class AboutRepository extends BaseRepository {
 
     public function index($searchParams) {
         $query = $this->model->query();
-        $about = $query->where('id', 1)->first();
+        $about = $query->where('id', 1)->firstOrFail();
         return view('admin.pages.about.about', compact('about'));
     }
 
     public function update($params) {
-        $config = $this->model->where('id', 1)->first();
+        $config = $this->model->where('id', 1)->firstOrFail();
         $config->fill($params);
         $config->save();
     }

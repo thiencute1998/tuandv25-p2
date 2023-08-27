@@ -33,7 +33,7 @@ class UserRepository extends BaseRepository {
     }
 
     public function edit($id) {
-        return $this->model->select('id', 'name', 'email')->where('id', $id)->first();
+        return $this->model->select('id', 'name', 'email')->where('id', $id)->firstOrFail();
     }
 
     public function update($params, $id) {

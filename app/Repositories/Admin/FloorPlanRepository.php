@@ -88,7 +88,7 @@ class FloorPlanRepository extends BaseRepository {
     public function edit($id) {
         $query = Product::query();
         $query->where('id', $id);
-        return $query->with('productImages')->first();
+        return $query->with('productImages')->firstOrFail();
     }
 
     public function update($params, $id) {

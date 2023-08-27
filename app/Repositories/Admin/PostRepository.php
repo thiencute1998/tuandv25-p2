@@ -71,7 +71,7 @@ class PostRepository extends BaseRepository {
         $query = $this->model->where('id', $id)
             ->with('category')
             ->with('tags');
-        return $query->first();
+        return $query->firstOrFail();
     }
 
     public function update($params, $request, $id) {
