@@ -436,7 +436,7 @@
             @else
                 <div class="cat-box-content clear cat-box">
                     <div class="cat-tabs-title">
-                        <h2> Tin giáo hội ...</h2>
+                        <h2> {{$home->name}}</h2>
                     </div>
                     <div class="cat-tabs-header">
                         <ul>
