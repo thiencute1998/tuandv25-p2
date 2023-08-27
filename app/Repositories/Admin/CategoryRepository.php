@@ -33,7 +33,7 @@ class CategoryRepository extends BaseRepository {
         $categories->getCollection()->transform(function ($item) {
             $item->parent_name = "";
             if ($item->parent_id) {
-                $parentCate = $this->model->where('id', $item->parent_id)->firstOrFail();
+                $parentCate = $this->model->where('id', $item->parent_id)->first();
                 if ($parentCate) {
                     $item->parent_name = $parentCate->name;
                 }
@@ -53,7 +53,7 @@ class CategoryRepository extends BaseRepository {
             $params['level'] = 1;
             $params['detail'] = 1;
             if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->firstOrFail();
+                $parent = $this->model->where('id', $params['parent_id'])->first();
                 if ($parent) {
                     $params['level'] = $parent->level + 1;
                     $parent->detail = 0;
@@ -61,7 +61,7 @@ class CategoryRepository extends BaseRepository {
                 }
             }
             $params['slug'] = Str::slug($params['name'], '-');
-            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->first();
             if($slugs){
                 $params['slug'] = $params['slug'].'-1';
             }
@@ -86,7 +86,7 @@ class CategoryRepository extends BaseRepository {
         try {
             $params['level'] = 1;
             if (isset($params['parent_id'])) {
-                $parent = $this->model->where('id', $params['parent_id'])->firstOrFail();
+                $parent = $this->model->where('id', $params['parent_id'])->first();
                 if ($parent) {
                     $params['level'] = $parent->level + 1;
                 }
@@ -126,7 +126,7 @@ class CategoryRepository extends BaseRepository {
 
     public function findCategory($id) {
         if ($id) {
-            return $this->model->where('id', $id)->firstOrFail();
+            return $this->model->where('id', $id)->first();
         }
         return "";
     }

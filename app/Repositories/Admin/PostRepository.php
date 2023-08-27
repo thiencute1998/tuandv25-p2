@@ -47,7 +47,7 @@ class PostRepository extends BaseRepository {
         try {
             $post = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
-            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->first();
             if($slugs){
                 $params['slug'] = $params['slug'].'-1';
             }

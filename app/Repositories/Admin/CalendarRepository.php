@@ -45,7 +45,7 @@ class CalendarRepository extends BaseRepository {
         try {
             $calendar = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
-            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->first();
             if($slugs){
                 $params['slug'] = $params['slug'].'-1';
             }
