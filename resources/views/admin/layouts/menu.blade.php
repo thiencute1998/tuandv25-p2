@@ -12,6 +12,9 @@
                     <li class="{{Request::path() == 'admin' ? 'active' : ''}}">
                         <a href="#" aria-expanded="true"><i class="ti-dashboard"></i><span>Trang chủ</span></a>
                     </li>
+                    <li class="{{str_contains(Request::path(), 'admin/about') ? 'active' : ''}}">
+                        <a href="{{route('admin-about')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý Liên hệ</span></a>
+                    </li>
                     <li class="{{str_contains(Request::path(), 'admin/banner') ? 'active' : ''}}">
                         <a href="{{route('admin-banner')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý banner</span></a>
                     </li>

@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\LinkController;
 use App\Http\Controllers\Viewer\IndexController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\TabHomeController;
+use App\Http\Controllers\Admin\AboutController;
 
 use App\Http\Controllers\Viewer\HomeController;
 use App\Http\Controllers\PhotoEditingViewerController;
@@ -158,6 +159,11 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
     Route::prefix('configs')->group(function () {
         Route::get('/', [ConfigController::class, 'index'])->name('admin-configs');
         Route::post('/update', [ConfigController::class, 'update'])->name('admin-configs-update');
+    });
+
+    Route::prefix('about')->group(function () {
+        Route::get('/', [AboutController::class, 'index'])->name('admin-about');
+        Route::post('/update', [AboutController::class, 'update'])->name('admin-about-update');
     });
 
 });
