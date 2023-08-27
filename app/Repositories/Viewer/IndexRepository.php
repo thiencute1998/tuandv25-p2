@@ -2,6 +2,7 @@
 
 namespace App\Repositories\Viewer;
 
+use App\Models\About;
 use App\Models\CalenderEvent;
 use App\Models\Category;
 use App\Models\Homepage;
@@ -187,5 +188,9 @@ class IndexRepository extends BaseRepository {
                 break;
         }
         return $fullMonth;
+    }
+
+    public function getMap() {
+        return About::first();
     }
 }

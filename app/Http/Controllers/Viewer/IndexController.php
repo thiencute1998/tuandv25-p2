@@ -64,4 +64,9 @@ class IndexController extends Controller
         $videoRelated = $this->repository->getVideoRelated($video);
         return view('viewer.pages.video', compact('video', 'videoRelated'));
     }
+
+    public function getMap() {
+        $map = $this->repository->getMap();
+        return view('viewer.pages.map', compact('map'));
+    }
 }

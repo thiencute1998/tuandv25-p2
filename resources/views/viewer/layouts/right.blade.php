@@ -60,61 +60,26 @@
             </div>
             <div class="widget-container">
                 <ul>
+                    @foreach($postNew as $post)
                     <li>
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/"
+                        <div class="post-thumbnail em-news-img">
+                            <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                                   data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
                                                    class="attachment-tie-small size-tie-small wp-post-image lazyload"
                                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                                 <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                               src="{{asset("upload/admin/post/image/" . $post->image)}}"
                                                class="attachment-tie-small size-tie-small wp-post-image"
                                                alt="" loading="lazy"/></noscript>
                                 <span class="fa overlay-icon"></span></a>
                         </div><!-- post-thumbnail /-->
                         <h3><a
-                                href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/">Thông
-                                báo lễ quan thầy bảo trợ ông bà cố</a></h3>
+                                href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
 
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>16 giờ ago</span>
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
                     </li>
-                    <li>
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/"
-                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
-                                               class="attachment-tie-small size-tie-small wp-post-image"
-                                               alt="" loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
-                        <h3><a
-                                href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/">Thông
-                                báo tập huấn về truyền thông cấp giáo xứ &#8211; giáo hạt 2023</a></h3>
-
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>9 Tháng Bảy, 2023</span>
-                    </li>
-                    <li>
-                        <div class="post-thumbnail">
-                            <a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/"
-                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                   data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                <noscript><img width="110" height="75"
-                                               src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
-                                               class="attachment-tie-small size-tie-small wp-post-image"
-                                               alt="" loading="lazy"/></noscript>
-                                <span class="fa overlay-icon"></span></a>
-                        </div><!-- post-thumbnail /-->
-                        <h3><a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/">Cáo
-                                phó cha Giuse Trần Đăng Can</a></h3>
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2023</span>
-                    </li>
+                    @endforeach
                 </ul>
                 <div class="clear"></div>
             </div>
@@ -142,61 +107,26 @@
                 </div>
                 <div class="widget-container">
                     <ul>
+                        @foreach($postNotify as $post)
                         <li>
-                            <div class="post-thumbnail">
-                                <a href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/"
+                            <div class="post-thumbnail em-news-img">
+                                <a href="{{route('get-post', ['post'=> $post->slug])}}"
                                    rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                       data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                                       data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
                                                        class="attachment-tie-small size-tie-small wp-post-image lazyload"
                                                        src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                                     <noscript><img width="110" height="75"
-                                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/08/Thanh-Anre-Nguyen-Kim-Thong-va-Thanh-Phero-Nguyen-Ba-Tuan-110x75.jpeg"
+                                                   src="{{asset("upload/admin/post/image/" . $post->image)}}"
                                                    class="attachment-tie-small size-tie-small wp-post-image"
                                                    alt="" loading="lazy"/></noscript>
                                     <span class="fa overlay-icon"></span></a>
                             </div><!-- post-thumbnail /-->
                             <h3><a
-                                    href="https://giaophanbacninh.org/thong-bao-le-thanh-anre-nguyen-kim-thong-bon-mang-quy-ong-ba-co-2/">Thông
-                                    báo lễ quan thầy bảo trợ ông bà cố</a></h3>
+                                    href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
 
-                            <span class="tie-date"><i class="fa fa-clock-o"></i>16 giờ ago</span>
+                            <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
                         </li>
-                        <li>
-                            <div class="post-thumbnail">
-                                <a href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/"
-                                   rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                       data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
-                                                       class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                    <noscript><img width="110" height="75"
-                                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/07/truyenthongbacninh-110x75.jpeg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image"
-                                                   alt="" loading="lazy"/></noscript>
-                                    <span class="fa overlay-icon"></span></a>
-                            </div><!-- post-thumbnail /-->
-                            <h3><a
-                                    href="https://giaophanbacninh.org/thong-bao-tap-huan-ve-truyen-thong-he-2023/">Thông
-                                    báo tập huấn về truyền thông cấp giáo xứ &#8211; giáo hạt 2023</a></h3>
-
-                            <span class="tie-date"><i class="fa fa-clock-o"></i>9 Tháng Bảy, 2023</span>
-                        </li>
-                        <li>
-                            <div class="post-thumbnail">
-                                <a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/"
-                                   rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                       data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
-                                                       class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                    <noscript><img width="110" height="75"
-                                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/07/z4490818865248_6c02dea785d434cfe79812735c6b2277-110x75.jpg"
-                                                   class="attachment-tie-small size-tie-small wp-post-image"
-                                                   alt="" loading="lazy"/></noscript>
-                                    <span class="fa overlay-icon"></span></a>
-                            </div><!-- post-thumbnail /-->
-                            <h3><a href="https://giaophanbacninh.org/cao-pho-cha-giuse-tran-dang-can/">Cáo
-                                    phó cha Giuse Trần Đăng Can</a></h3>
-                            <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2023</span>
-                        </li>
+                        @endforeach
                     </ul>
                     <div class="clear"></div>
                 </div>
@@ -206,7 +136,7 @@
                     <div class="stripe-line"></div>
                 </div>
                 <div class="widget-container">
-                    <div><a href="http://giaophanbacninh.org/39811-2/"><img width="315"
+                    <div><a href="{{route('get-map')}}"><img width="315"
                                                                             data-src="https://giaophanbacninh.org/wp-content/uploads/2023/01/BandoGPBN.jpg"
                                                                             class="tie-appear lazyload"
                                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">

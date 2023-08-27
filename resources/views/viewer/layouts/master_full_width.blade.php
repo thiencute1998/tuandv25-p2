@@ -143,9 +143,8 @@
                 </script>
 
             </div> <!-- .breaking-news -->
-            <div id="main-content" class="container">
+            <div id="main-content" class="container full-width">
                 @yield('main-content')
-                @include('viewer.layouts.right')
             </div>
 
             @include('viewer.layouts.footer')

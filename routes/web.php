@@ -176,6 +176,7 @@ Route::get('/events', [IndexController::class, 'events'])->name('events');
 Route::get('/tag/{post}', [IndexController::class, 'getTag'])->name('tag');
 Route::get('/tim-nha-tho-gan-day', [IndexController::class, 'findChurch'])->name('find-church');
 Route::get('/video/{video}', [IndexController::class, 'getVideo'])->name('get-video');
+Route::get('/danh-sach-giao-hat-xu-ho', [IndexController::class, 'getMap'])->name('get-map');
 Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
 
 
