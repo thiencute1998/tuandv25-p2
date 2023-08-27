@@ -166,7 +166,35 @@
                                        srcset="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-500x85.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01.jpg 654w"
                                        sizes="(max-width: 300px) 100vw, 300px"/></noscript>
                     </a></div>
-            </div><!-- .widget /-->    </div><!-- .theiaStickySidebar /-->
+            </div><!-- .widget /-->
+            <div id="text-9" class="footer-widget widget_text">
+                <div class="footer-widget-top"><h4 style="color: #258101">Liên kết websites</h4></div>
+                <div class="footer-widget-container">
+                    <div class="textwidget">
+                        @foreach($linkWebsites as $link)
+                            <p><a href="{{$link->link}}" target="_blank"
+                                  rel="noopener">{{$link->name}}</a></p>
+                        @endforeach
+                    </div>
+                </div>
+            </div><!-- .widget /-->
+            <div id="text-4" class="footer-widget widget_text">
+                {{--                <div class="footer-widget-top"><h4> </h4></div>--}}
+                <div class="footer-widget-container">
+                    <div class="textwidget"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img height="60"
+                                                                                                             width="154"
+                                                                                                             data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
+                                                                                                             class="lazyload"
+                                                                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                            <noscript><img src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
+                                           height="60" width="154"/></noscript>
+                        </a>
+
+
+                    </div>
+                </div>
+            </div><!-- .widget /-->
+        </div><!-- .theiaStickySidebar /-->
 </aside><!-- #sidebar /-->
 <div class="clear"></div>
 <!-- Trigger/Open The Modal -->

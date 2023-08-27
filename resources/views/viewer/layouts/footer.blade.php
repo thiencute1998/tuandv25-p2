@@ -27,6 +27,10 @@
                     </div>
                 </div>
             </div><!-- .widget /-->
+        </div><!-- #second .widget-area -->
+
+
+        <div id="footer-third" class="footer-widgets-box">
             <div id="custom_html-4" class="widget_text footer-widget widget_custom_html">
                 <div class="footer-widget-top"><h4>Đăng ký kênh youtube</h4></div>
                 <div class="footer-widget-container">
@@ -37,37 +41,20 @@
                              data-count="default"></div>
                     </div>
                 </div>
-            </div><!-- .widget /-->        </div><!-- #second .widget-area -->
-
-
-        <div id="footer-third" class="footer-widgets-box">
-            <div id="text-9" class="footer-widget widget_text">
-                <div class="footer-widget-top"><h4>Liên kết websites</h4></div>
-                <div class="footer-widget-container">
-                    <div class="textwidget">
-                        @foreach($linkWebsites as $link)
-                            <p><a href="{{$link->link}}" target="_blank"
-                                                  rel="noopener">{{$link->name}}</a></p>
-                        @endforeach
-                    </div>
-                </div>
             </div><!-- .widget /-->
-            <div id="text-4" class="footer-widget widget_text">
-                {{--                <div class="footer-widget-top"><h4> </h4></div>--}}
-                <div class="footer-widget-container">
-                    <div class="textwidget"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img height="60"
-                                                                                                             width="154"
-                                                                                                             data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
-                                                                                                             class="lazyload"
-                                                                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                            <noscript><img src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
-                                           height="60" width="154"/></noscript>
-                        </a>
+{{--            <div id="text-9" class="footer-widget widget_text">--}}
+{{--                <div class="footer-widget-top"><h4>Liên kết websites</h4></div>--}}
+{{--                <div class="footer-widget-container">--}}
+{{--                    <div class="textwidget">--}}
+{{--                        @foreach($linkWebsites as $link)--}}
+{{--                            <p><a href="{{$link->link}}" target="_blank"--}}
+{{--                                                  rel="noopener">{{$link->name}}</a></p>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div><!-- .widget /-->--}}
 
-
-                    </div>
-                </div>
-            </div><!-- .widget /-->        </div><!-- #third .widget-area -->
+        </div><!-- #third .widget-area -->
 
 
     </div><!-- #footer-widget-area -->
