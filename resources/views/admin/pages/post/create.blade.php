@@ -214,7 +214,10 @@
         // });
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();
-
+            $("input[name='name']").keypress(function(evt) {
+                var name = $("input[name='name']").val();
+                $("input[name='title']").val(name);
+            });
             $('#category-link').select2({
                 multiple: false,
                 allowClear: true,

@@ -45,6 +45,10 @@ class CalendarRepository extends BaseRepository {
         try {
             $calendar = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            if($slugs){
+                $params['slug'] = $params['slug'].'-1';
+            }
             if (isset($params['d_date'])) {
                 $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
             }

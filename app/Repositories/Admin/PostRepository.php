@@ -47,6 +47,10 @@ class PostRepository extends BaseRepository {
         try {
             $post = new $this->model;
             $params['slug'] = Str::slug($params['name'], '-');
+            $slugs = $this->model->where('slug', ''.$params['slug'].'')->firstOrFail();
+            if($slugs){
+                $params['slug'] = $params['slug'].'-1';
+            }
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }

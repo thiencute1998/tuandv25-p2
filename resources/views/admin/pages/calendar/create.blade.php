@@ -133,7 +133,10 @@
 
         $(document).ready(function() {
             $('.action-message').delay(5000).fadeOut();
-
+            $("input[name='name']").keypress(function(evt) {
+                var name = $("input[name='name']").val();
+                $("input[name='title']").val(name);
+            });
             $( "#my-date" ).datepicker({
             });
         });
