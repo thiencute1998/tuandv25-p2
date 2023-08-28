@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <label for="type" class="col-form-label">Loại ảnh</label>
-                                            <select class="form-control" name="type" data-value="{{ $banner->type }}">
+                                            <select class="form-control banner-type" name="type" data-value="{{ $banner->type }}">
                                                 <option value="0">Chọn loại ảnh</option>
                                                 <option value="1">Banner</option>
                                                 <option value="2">Slide</option>
@@ -85,6 +85,9 @@
 
             let status = $('.banner-status').data('value');
             $('.banner-status').val(status);
+
+            let type = $('.banner-type').data('value');
+            $('.banner-type').val(type);
         });
     </script>
 @endsection
