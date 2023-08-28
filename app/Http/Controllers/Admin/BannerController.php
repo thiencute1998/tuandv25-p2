@@ -25,7 +25,7 @@ class BannerController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('image', 'status');
+        $params = $request->only('image', 'status', 'type', 'link', 'name');
         $this->repository->store($params, $request);
         return redirect()->back()->with('add-success', 'Thêm banner thành công !!!');
     }
@@ -36,7 +36,7 @@ class BannerController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('image','status');
+        $params = $request->only('image','status', 'type', 'link', 'name');
         $this->repository->update($params, $id, $request);
         return redirect()->back()->with('edit-success', 'Cập nhật banner thành công !!!');
     }

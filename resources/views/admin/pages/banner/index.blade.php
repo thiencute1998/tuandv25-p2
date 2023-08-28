@@ -41,6 +41,7 @@
                                     <thead class="text-uppercase">
                                     <tr>
                                         <th scope="col">Banner</th>
+                                        <th scope="col">Loại ảnh</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
@@ -52,6 +53,17 @@
                                                 @if($banner->image)
                                                     <img class="work-img" width="325" height="158"
                                                          src="{{asset('upload/admin/banner/image/' . $banner->image)}}" alt="">
+                                                @endif
+                                            </td>
+                                            <td class="text-left">
+                                                @if($banner->type==1)
+                                                    <span class="text-success">Banner</span>
+                                                @elseif($banner->type==2)
+                                                    <span class="text-success">Slide</span>
+                                                @elseif($banner->type==3)
+                                                    <span class="text-success">Menu Right</span>
+                                                @else
+                                                    <span class="text-danger" style="color: #28a745">...</span>
                                                 @endif
                                             </td>
                                             <td style="vertical-align: middle;">

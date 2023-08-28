@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class InsertToAboutUsTable extends Migration
+class AddTitleColumnToBannersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class InsertToAboutUsTable extends Migration
      */
     public function up()
     {
-        Schema::table('about_us', function (Blueprint $table) {
+        Schema::table('banners', function (Blueprint $table) {
             //
-            //Illuminate\Support\Facades\DB::statement("INSERT INTO `about_us` (`id`, `gioithieu`) VALUES(1, '');");
+            $table->string('type',2)->nullable();
+            $table->string('link')->nullable();
         });
     }
 
@@ -26,7 +27,7 @@ class InsertToAboutUsTable extends Migration
      */
     public function down()
     {
-        Schema::table('about_us', function (Blueprint $table) {
+        Schema::table('banners', function (Blueprint $table) {
             //
         });
     }

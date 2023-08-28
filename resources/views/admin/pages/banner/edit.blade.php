@@ -36,16 +36,37 @@
                                         </div>
                                     </div>
                                     <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Tên(*)</label>
+                                            <input type="text" class="form-control" name="name" placeholder="Nhập tên" required value="{{$banner->name}}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Hinh anh</label>
                                             <input type="file" name="image" class="form-control">
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
+                                            <label for="type" class="col-form-label">Loại ảnh</label>
+                                            <select class="form-control" name="type" data-value="{{ $banner->type }}">
+                                                <option value="0">Chọn loại ảnh</option>
+                                                <option value="1">Banner</option>
+                                                <option value="2">Slide</option>
+                                                <option value="3">Menu Right</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
                                             <label for="services" class="col-form-label">Trạng thái</label>
                                             <select class="form-control banner-status" name="status" data-value="{{ $banner->status }}">
                                                 <option value="1">Hoạt động</option>
                                                 <option value="0">Không hoạt động</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Link</label>
+                                            <input type="text" name="link" class="form-control" value="{{ $banner->link }}">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mt-4 pr-4 pl-4">Sửa</button>

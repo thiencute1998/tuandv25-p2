@@ -32,7 +32,7 @@ class BannerRepository extends BaseRepository {
         try {
             $banner = new $this->model;
             if ($params['status']) {
-                $this->model->query()->update(['status'=> 0]);
+                //$this->model->query()->update(['status'=> 0]);
             }
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
@@ -57,7 +57,7 @@ class BannerRepository extends BaseRepository {
         DB::beginTransaction();
         try {
             if ($params['status']) {
-                $this->model->query()->update(['status'=> 0]);
+                //$this->model->query()->update(['status'=> 0]);
             }
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);

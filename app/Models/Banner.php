@@ -13,7 +13,7 @@ class Banner extends Model
 
     protected $table = 'banners';
 
-    protected $fillable = ['image', 'status'];
+    protected $fillable = ['name','image', 'status', 'type', 'link'];
 
     public $timestamps = true;
 
