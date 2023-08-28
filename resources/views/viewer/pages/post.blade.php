@@ -1,4 +1,11 @@
 @extends('viewer.layouts.master')
+@section('meta')
+    <meta property="og:title" content="{{$post->title}}"/>
+    <meta property="og:keyword" content="{{$post->keywords}}"/>
+    <meta property="og:description" content="{{$post->description}}"/>
+    <meta property="og:url" content="{{route('get-post', ['post'=> $post->slug])}}"/>
+    <meta property="og:site_name" content="{{$post->name}}"/>
+@endsection
 @section('main-content')
     <div class="content">
 

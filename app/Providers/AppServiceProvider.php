@@ -44,6 +44,11 @@ class AppServiceProvider extends ServiceProvider
                 ->orderBy('created_at', 'desc')
                 ->take(10)->get();
 
+//            $slideWebsites = Post::where('status', 1)
+//                ->orderBy('created_at', 'desc')
+//                ->takle(10)
+//                ->get();
+
             // menu
             $cates1 = Category::where('status', 1)->where('level', 1)->orderBy('order', 'asc')->get();
             $cates2 = Category::where('status', 1)->where('level', 2)->orderBy('order', 'asc')->get();
@@ -62,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
 
             // Thong bao
             $postNotify = Post::where('status', 1)
-                ->with('category', function($q) {
+                ->whereHas('category', function($q) {
                     $q->where('slug', 'thong-bao');
                 })
                 ->orderBy('created_at', 'desc')
@@ -71,7 +76,6 @@ class AppServiceProvider extends ServiceProvider
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
                 });
-
 
             // Lien he
             $contactWebsite = About::first();
@@ -82,6 +86,7 @@ class AppServiceProvider extends ServiceProvider
                 'userLogin'=> $user,
                 'bannerWebsite'=> $bannerWebsite,
                 'breakNews'=> $breakNews,
+//                'slideWebsites'=> $slideWebsites,
                 'cates1'=>$cates1,
                 'cates2'=>$cates2,
                 'cates3'=>$cates3,

@@ -1,4 +1,10 @@
 @extends('viewer.layouts.master_full_width')
+@section('meta')
+    <meta property="og:title" content="Giáo phận Bắc Ninh"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content="https://giaophanbacninh.org/"/>
+    <meta property="og:site_name" content="Giáo phận Bắc Ninh"/>
+@endsection
 @section('main-content')
     <div class="content post-cover">
 
@@ -127,12 +133,12 @@
 
         <section id="author-box">
 
-            <div class="block-head">
+{{--            <div class="block-head">--}}
 
-                <h3>About admingdbn </h3>
-                <div class="stripe-line"></div>
+{{--                <h3>About admingdbn </h3>--}}
+{{--                <div class="stripe-line"></div>--}}
 
-            </div>
+{{--            </div>--}}
 
             <div class="post-listing">
 

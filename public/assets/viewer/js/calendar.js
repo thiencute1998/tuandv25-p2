@@ -242,13 +242,14 @@ function showCalendarPopup(date) {
         data: {
             date: date
         },
-        success: function(data){
+        success: function(res){
             $('#myModal').addClass('active');
             $('.em-modal-popup').addClass('active');
-            if (data.length) {
+            $('.em-full-date').text(res.formatFullDate);
+            if (res.data.length) {
                 let vm = this;
-                data.forEach(value=> {
-                    $('.em-full-date').text(value.full_date);
+                res.data.forEach(value=> {
+
                     $('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
                     $('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
 

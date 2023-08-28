@@ -80,16 +80,19 @@ class IndexRepository extends BaseRepository {
     public function getEvent($params) {
         $query = CalenderEvent::query();
         $query->where('status', 1);
+        $formatFullDate = "";
         if ($params['date']){
             $date = Carbon::createFromFormat('d/m/Y', $params['date'])->format('Y-m-d');
+            $formatFullDate = $this->formatVNFullDate($date);
             $query->where('d_date', $date);
         }
 
-        return $query->get()->map(function ($value) {
+        $data = $query->get()->map(function ($value) {
             $value->full_date = $this->formatVNFullDate($value->d_date);
             $value->d_date = $this->formatVNDate($value->d_date);
             return $value;
         });
+        return ['formatFullDate'=> $formatFullDate, 'data'=> $data];
     }
 
     public function events() {

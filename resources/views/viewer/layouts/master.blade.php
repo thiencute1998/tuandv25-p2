@@ -6,11 +6,8 @@
     <link rel="pingback" href="https://giaophanbacninh.org/xmlrpc.php" />
     <title>Giáo phận Bắc Ninh</title>
 
-    <meta property="og:title" content="Giáo phận Bắc Ninh"/>
+    @yield('meta')
     <meta property="og:type" content="website"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:url" content="https://giaophanbacninh.org/"/>
-    <meta property="og:site_name" content="Giáo phận Bắc Ninh"/>
     <meta name='robots' content='max-image-preview:large' />
 
     <link rel='dns-prefetch' href='//fonts.googleapis.com' />

@@ -1,4 +1,10 @@
 @extends('viewer.layouts.master')
+@section('meta')
+    <meta property="og:title" content="Giáo phận Bắc Ninh"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content="https://giaophanbacninh.org/"/>
+    <meta property="og:site_name" content="Giáo phận Bắc Ninh"/>
+@endsection
 @section('main-content')
     <div class="content">
 
