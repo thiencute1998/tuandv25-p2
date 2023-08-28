@@ -230,7 +230,7 @@ function CalendarControl() {
 
 function showCalendarPopup(date) {
     $('.event-calendar').remove();
-
+    $('.em-full-date').text(res.formatFullDate);
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -243,9 +243,9 @@ function showCalendarPopup(date) {
             date: date
         },
         success: function(res){
+            console.log(res)
             $('#myModal').addClass('active');
             $('.em-modal-popup').addClass('active');
-            $('.em-full-date').text(res.formatFullDate);
             if (res.data.length) {
                 let vm = this;
                 res.data.forEach(value=> {
