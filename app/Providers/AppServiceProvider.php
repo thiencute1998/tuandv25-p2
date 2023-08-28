@@ -37,17 +37,15 @@ class AppServiceProvider extends ServiceProvider
             $user = auth()->user();
 
             // banner
-            $bannerWebsite = Banner::where('status', 1)->first();
+            $bannerWebsite = Banner::where('status', 1)->where('type', 1)->first();
 
             // breaking news
             $breakNews = Post::where('status', 1)
                 ->orderBy('created_at', 'desc')
                 ->take(10)->get();
 
-//            $slideWebsites = Post::where('status', 1)
-//                ->orderBy('created_at', 'desc')
-//                ->takle(10)
-//                ->get();
+            $slideWebsites = Banner::where('status', 1)->where('type', 2)->take(10)->get();
+            $tagRight = Banner::where('status', 1)->where('type', 3)->first();
 
             // menu
             $cates1 = Category::where('status', 1)->where('level', 1)->orderBy('order', 'asc')->get();
@@ -86,7 +84,8 @@ class AppServiceProvider extends ServiceProvider
                 'userLogin'=> $user,
                 'bannerWebsite'=> $bannerWebsite,
                 'breakNews'=> $breakNews,
-//                'slideWebsites'=> $slideWebsites,
+                'slideWebsites'=> $slideWebsites,
+                'tagRight'=> $tagRight,
                 'cates1'=>$cates1,
                 'cates2'=>$cates2,
                 'cates3'=>$cates3,

@@ -20,17 +20,23 @@ class IndexController extends Controller
         return $this->repository->index();
     }
 
-    public function getCate($cate) {
-        $data = $this->repository->getCate($cate);
-        $category = $data['category'];
-        $posts = $data['posts'];
-        return view('viewer.pages.category', compact('category', 'posts'));
-    }
+//    public function getCate($cate) {
+//        $data = $this->repository->getCate($cate);
+//        $category = $data['category'];
+//        $posts = $data['posts'];
+//        return view('viewer.pages.category', compact('category', 'posts'));
+//    }
 
     public function getPost($post) {
-        $post = $this->repository->getPost($post);
-        $postRelated = $this->repository->getPostRelated($post);
-        return view('viewer.pages.post', compact('post', 'postRelated'));
+        $category = $this->repository->getCate($post);
+        if ($category) {
+            $posts = $this->repository->paginatePost($category);
+            return view('viewer.pages.category', compact('category', 'posts'));
+        } else {
+            $post = $this->repository->getPost($post);
+            $postRelated = $this->repository->getPostRelated($post);
+            return view('viewer.pages.post', compact('post', 'postRelated'));
+        }
     }
 
     public function getEventCalendar($event) {

@@ -16,7 +16,7 @@
                 <div class="stripe-line"></div>
             </div>
             <div class="widget-container"><a
-                    href="https://giaophanbacninh.org/tag/huong-toi-dai-hoi-gioi-tre-giao-tinh-ha-noi-2023/"><img
+                    href="{{$tagRight ? $tagRight->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
                         data-srcset="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-500x184.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-768x283.jpg 768w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01.jpg 1281w"
                         data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg"

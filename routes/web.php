@@ -169,7 +169,7 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
 });
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
-Route::get('category/{cate}', [IndexController::class, 'getCate'])->name('get-cate');
+//Route::get('category/{cate}', [IndexController::class, 'getCate'])->name('get-cate');
 Route::get('event/{event}', [IndexController::class, 'getEventCalendar'])->name('get-event-calendar');
 Route::post('/get-event', [IndexController::class, 'getEvent'])->name('get-event');
 Route::get('/events', [IndexController::class, 'events'])->name('events');

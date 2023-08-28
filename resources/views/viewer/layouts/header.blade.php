@@ -95,7 +95,7 @@
                         <a href="{{route('index')}}">Trang chủ</a></li>
                     @foreach($cates1 as $cate1)
                         <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-48128">
-                            <a href="{{$cate1->link ?  : route('get-cate', ['cate'=> $cate1->slug])}}">{{$cate1->name}}</a>
+                            <a href="{{$cate1->link ?  : route('get-post', ['post'=> $cate1->slug])}}">{{$cate1->name}}</a>
                             <ul class="sub-menu menu-sub-content">
                                 @foreach($cates2 as $cate2)
                                     @if($cate1->id == $cate2->parent_id)
@@ -109,7 +109,7 @@
                                         @endforeach
 
                                         class="{{$detail == 0 ? "menu-item-has-children" : "" }} menu-item menu-item-type-taxonomy menu-item-object-category  menu-item-22">
-                                            <a href="{{$cate2->link ?  : route('get-cate', ['cate'=> $cate2->slug])}}">{{$cate2->name}}</a>
+                                            <a href="{{$cate2->link ?  : route('get-post', ['post'=> $cate2->slug])}}">{{$cate2->name}}</a>
                                             @if($detail == 0)
                                                 <ul class="sub-menu menu-sub-content">
                                                     @foreach($cates3 as $cate3)
@@ -117,7 +117,7 @@
                                                                 <?php $detail = 0; ?>
                                                             <li
                                                                 class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-48095">
-                                                                <a href="{{$cate3->link ?  : route('get-cate', ['cate'=> $cate3->slug])}}">{{$cate3->name}}</a>
+                                                                <a href="{{$cate3->link ?  : route('get-post', ['post'=> $cate3->slug])}}">{{$cate3->name}}</a>
                                                             </li>
                                                         @endif
                                                     @endforeach

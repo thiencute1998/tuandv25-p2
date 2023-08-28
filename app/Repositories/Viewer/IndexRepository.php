@@ -37,7 +37,11 @@ class IndexRepository extends BaseRepository {
         $query = Category::where('status', 1);
         $query->where('slug', $cate);
         $query->with('posts');
-        $category = $query->firstOrFail();
+        $category = $query->first();
+        return $category;
+    }
+
+    public function paginatePost($category) {
         $posts = collect();
         if ($category) {
             $queryPost = Post::where('status', 1);
@@ -45,8 +49,7 @@ class IndexRepository extends BaseRepository {
             $queryPost->with('category');
             $posts = $queryPost->paginate(10);
         }
-
-        return ['category'=> $category, 'posts'=> $posts];
+        return $posts;
     }
     public function getPost($post) {
         $query = Post::where('status', 1);

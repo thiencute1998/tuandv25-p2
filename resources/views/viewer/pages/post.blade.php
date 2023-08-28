@@ -15,7 +15,7 @@
                                                                                                    href="{{route('index')}}">Home</a></span>
             @if($post->category)
                 <span class="delimiter">/</span> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
-                                                                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}">{{$post->category->name}}</a></span>
+                                                                                href="{{route('get-post', ['post'=> $post->category->slug])}}">{{$post->category->name}}</a></span>
             @endif
             <span class="delimiter">/</span> <span class="current">{{$post->name}}</span></div>
 
@@ -37,7 +37,7 @@
 
 {{--                    @if($post->category)--}}
 {{--                        <span class="post-cats"><i class="fa fa-folder"></i><a--}}
-{{--                                href="{{route('get-cate', ['cate'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>--}}
+{{--                                href="{{route('get-post', ['post'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>--}}
 {{--    --}}{{--                                , <a--}}
 {{--                            --}}{{--                                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
 {{--                            --}}{{--                                rel="category tag">Tin tức</a>--}}

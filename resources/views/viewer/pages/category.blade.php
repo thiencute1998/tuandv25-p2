@@ -40,7 +40,7 @@
                         <span class="post-cats"><i class="fa fa-folder"></i>
                                 @if($post->category)
                                 <a
-                                    href="{{route('get-cate', ['cate'=> $category->slug])}}" rel="category tag">{{$post->category->name}}
+                                    href="{{route('get-post', ['post'=> $category->slug])}}" rel="category tag">{{$post->category->name}}
                                     </a>
                             @endif
                             {{--                                    , <a--}}
