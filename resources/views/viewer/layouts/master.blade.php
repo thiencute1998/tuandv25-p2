@@ -106,27 +106,9 @@
             @include('viewer.layouts.footer')
 
             <div class="clear"></div>
-            <div class="footer-bottom" style="display:none;">
+            <div class="footer-bottom" style="display:block;">
                 <div class="container">
-                    <!--
-		<div class="alignright">
-			Powered by <a href="http://wordpress.org">WordPress</a> | Designed by <a href="http://tielabs.com/">TieLabs</a>		</div>
-
-		<div class="social-icons">
-
-		<a class="ttip-none" title="Rss" href="https://giaophanbacninh.org/feed/" target="_blank"><i class="fa fa-rss"></i></a>
-
-
-
-	</div>
-
-
-
-
-
-		<div class="alignleft">
-			&#169; Copyright 2023, All Rights Reserved		</div>
-		-->
+		             <div class="alignleft">© 2023 – Giáo Phận Bắc Ninh	</div>
                     <div class="clear"></div>
                 </div><!-- .Container -->
             </div><!-- .Footer bottom -->

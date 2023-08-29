@@ -34,7 +34,7 @@
 
 
     <div class="header-content" style="padding:0px; position: relative;">
-        <div class="search-block" style="position: absolute; right: 10px; bottom: 22px;">
+        <div class="search-block" style="position: absolute; right: 50px; bottom: 22px;">
 
             <button class="search-button" type="submit" value="Search"><i class="fa fa-search"></i></button>
             <input class="search-live" type="text" id="s-header" name="search" title="Tìm kiếm" value="Tìm kiếm..."

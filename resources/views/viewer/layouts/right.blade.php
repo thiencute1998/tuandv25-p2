@@ -12,9 +12,9 @@
 <aside id="sidebar">
     <div class="theiaStickySidebar">
         <div id="media_image-13" class="widget widget_media_image">
-            <div class="widget-top"><h4></h4>
-                <div class="stripe-line"></div>
-            </div>
+{{--            <div class="widget-top"><h4></h4>--}}
+{{--                <div class="stripe-line"></div>--}}
+{{--            </div>--}}
             <div class="widget-container"><a
                     href="{{$tagRight ? $tagRight->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
@@ -170,7 +170,7 @@
             <div id="text-9" class="footer-widget widget_text">
                 <div class="footer-widget-top"><h4 style="color: #258101">Liên kết websites</h4></div>
                 <div class="footer-widget-container">
-                    <div class="textwidget">
+                    <div class="textwidget linkw">
                         @foreach($linkWebsites as $link)
                             <p><a href="{{$link->link}}" target="_blank"
                                   rel="noopener">{{$link->name}}</a></p>
