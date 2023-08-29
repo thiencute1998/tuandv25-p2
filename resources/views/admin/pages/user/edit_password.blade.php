@@ -15,7 +15,7 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <form id="user-form" name="user-form" action="{{ route('configs-update') }}" method="POST">
+                                <form id="user-form" name="user-form" action="{{ route('update-password') }}" method="POST">
                                     @csrf
                                     <h4 class="header-title user-add-title">Change password</h4>
                                     <h6 class="user-message mb-2"></h6>
