@@ -15,7 +15,6 @@
                     <div class="col-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-
                                 <form id="user-form" name="user-form" action="{{ route('admin-configs-update') }}" method="POST">
                                     @csrf
                                     @if (session('edit-success'))

@@ -517,13 +517,19 @@ blockquote:before,
 	margin: 0 auto;
 }
 
-#wrapper.boxed #theme-header,
 #wrapper.boxed .breaking-news,
 #wrapper.boxed #main-content {
 	width: 1045px;
 	-webkit-box-shadow: 0 0 3px #CACACA;
 	   -moz-box-shadow: 0 0 3px #cacaca;
 			box-shadow: 0 0 3px #CACACA;
+}
+
+#wrapper.boxed #theme-header{
+    width: 100%;
+    -webkit-box-shadow: 0 0 3px #CACACA;
+    -moz-box-shadow: 0 0 3px #cacaca;
+    box-shadow: 0 0 3px #CACACA;
 }
 
 #wrapper.boxed #main-content{
@@ -621,7 +627,7 @@ blockquote:before,
 
 #theme-header {
 	background: #FFF;
-	margin: 20px auto 25px;
+	margin: 15px auto 25px;
 	border-top: 3px solid #f88c00;
 	position: relative;
 }
@@ -958,11 +964,15 @@ blockquote:before,
 }
 
 .logo {
-	float: left;
+	/*float: left;*/
+    width: 100%;
+    margin: auto;
 }
 
 .logo img {
-	max-width: 100%;
+	/*max-width: 100%;*/
+    width: 100%;
+    margin: auto;
 }
 
 .logo h1,
@@ -9003,9 +9013,9 @@ body.dark-skin .tie-instagram.default-skin a:hover{
 	.post-edit-link {
 		display: none !important;
 	}
-
 	.content {
 		float: none;
 		width: 100%;
 	}
+
 }

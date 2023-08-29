@@ -7,90 +7,25 @@
 @endsection
 @section('main-content')
     <div class="content">
-
-        <div id="flexslider" class="flexslider">
-
-            <ul class="slides">
-                @foreach($slideWebsites as $slide)
-                    <li>
-                        <a href="{{$slide->link}}">
-
-                            <img width="660" height="330" alt="" loading="lazy"
-                                 data-src="{{asset("upload/admin/banner/image/" . $slide->image)}}"
-                                 class="attachment-slider size-slider wp-post-image lazyload"
-                                 src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                            <noscript><img width="660" height="330"
-                                           src="{{asset("upload/admin/banner/image/" . $slide->image)}}"
-                                           class="attachment-slider size-slider wp-post-image" alt="" loading="lazy"/>
-                            </noscript>
-                        </a>
-
-
-                        <div class="slider-caption">
-
-                            <h2>
-                                <a href="{{$slide->link}}">{{$slide->name}}</a></h2>
-
-
-                        </div>
-
-                    </li>
-                @endforeach
-
-
-            </ul>
-
-        </div>
-
-
+        <link rel='stylesheet' href="{{ asset('assets/viewer/style/pgwslider.css') }}" type='text/css' media='all' />
+        <ul class="pgwSlider">
+            @foreach($slideWebsites as $slide)
+                <li>
+                    <a href="{{$slide->link}}">
+                        <img width="660" height="330" alt="{{$slide->name}}" loading="lazy"
+                             src="{{asset("upload/admin/banner/image/" . $slide->image)}}"/>
+                        <span>{{$slide->name}}</span>
+                    </a>
+                </li>
+            @endforeach
+        </ul>
+        <script type='text/javascript' src="{{ asset('assets/viewer/js/pgwSlider.js') }}" ></script>
         <script>
-
-            jQuery(document).ready(function () {
-
-                jQuery('#flexslider').flexslider({
-
-                    animation: "slide",
-
-                    direction: "vertical",
-                    slideshowSpeed: 7000,
-
-                    animationSpeed: 600,
-
-                    randomize: false,
-
-                    pauseOnHover: true,
-
-                    prevText: "",
-
-                    nextText: "",
-
-                    after: function (slider) {
-
-                        jQuery('#flexslider .slider-caption').animate({bottom: 12,}, 400)
-
-                    },
-
-                    before: function (slider) {
-
-                        jQuery('#flexslider .slider-caption').animate({bottom: -105,}, 400)
-
-                    },
-
-                    start: function (slider) {
-
-                        var slide_control_width = 100 / 10;
-
-                        jQuery('#flexslider .flex-control-nav li').css('width', slide_control_width + '%');
-
-                        jQuery('#flexslider .slider-caption').animate({bottom: 12,}, 400)
-
-                    }
-
-                });
-
+            $(document).ready(function() {
+                $('.pgwSlider').pgwSlider();
             });
-
         </script>
+
         <?php $liTab = 1 ?>
         <?php $idTab = 1 ?>
         @foreach($homes as $home)

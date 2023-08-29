@@ -170,7 +170,7 @@
             <div id="text-9" class="footer-widget widget_text">
                 <div class="footer-widget-top"><h4 style="color: #258101">Liên kết websites</h4></div>
                 <div class="footer-widget-container">
-                    <div class="textwidget">
+                    <div class="textwidget linkw">
                         @foreach($linkWebsites as $link)
                             <p><a href="{{$link->link}}" target="_blank"
                                   rel="noopener">{{$link->name}}</a></p>
