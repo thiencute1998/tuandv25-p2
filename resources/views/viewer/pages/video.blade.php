@@ -5,6 +5,11 @@
     <meta property="og:url" content="https://giaophanbacninh.org/"/>
     <meta property="og:site_name" content="Giáo phận Bắc Ninh"/>
 @endsection
+<style type="text/css">
+    .em-entry .fluid-width-video-wrapper {
+        height: 348px;
+    }
+</style>
 @section('main-content')
     <div class="content">
 
@@ -46,7 +51,7 @@
                 }
                 $idVideo = end($linkVideo);
                 ?>
-                <div class="entry">
+                <div class="entry em-entry">
                     <iframe width="420" height="315"
                             src="{{"https://www.youtube.com/embed/" . $idVideo}}">
                     </iframe>
