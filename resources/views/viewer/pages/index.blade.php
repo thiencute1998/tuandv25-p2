@@ -8,17 +8,20 @@
 @section('main-content')
     <div class="content">
         <link rel='stylesheet' href="{{ asset('assets/viewer/style/pgwslider.css') }}" type='text/css' media='all' />
-        <ul class="pgwSlider">
-            @foreach($slideWebsites as $slide)
-                <li>
-                    <a href="{{$slide->link}}">
-                        <img width="660" height="330" alt="{{$slide->name}}" loading="lazy"
-                             src="{{asset("upload/admin/banner/image/" . $slide->image)}}"/>
-                        <span>{{$slide->name}}</span>
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        <div class="flexslider">
+            <ul class="pgwSlider">
+                @foreach($slideWebsites as $slide)
+                    <li>
+                        <a href="{{$slide->link}}">
+                            <img width="660" height="330" alt="{{$slide->name}}" loading="lazy"
+                                 src="{{asset("upload/admin/banner/image/" . $slide->image)}}"/>
+                            <span>{{$slide->name}}</span>
+                        </a>
+                    </li>
+                @endforeach
+            </ul>
+            <div class="clear"></div>
+        </div>
         <script type='text/javascript' src="{{ asset('assets/viewer/js/pgwSlider.js') }}" ></script>
         <script>
             $(document).ready(function() {
@@ -62,12 +65,9 @@
                                             <h2 class="post-box-title"><a
                                                     href="{{route('get-post', ['post'=> $post->slug])}}"
                                                     rel="bookmark">{{$post->name}}</a></h2>
-
-
                                             <p class="post-meta">
 
                                             </p>
-
 
                                             <div class="entry">
                                                 <p>{{substr(strip_tags($post->content), 0, 50)}} &hellip;</p>

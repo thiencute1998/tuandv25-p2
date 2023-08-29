@@ -120,3 +120,5 @@ img.emoji {
 .linkw p{ border-bottom: #ccdcee solid  1px; padding-top: 10px;}
 .linkw a{ color: #578bae}
 .footer-bottom { height: 20px !important}
+#sidebar { margin-top: 10px;}
+.content .flexslider{ height: 244px !important;}

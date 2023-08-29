@@ -627,7 +627,7 @@ blockquote:before,
 
 #theme-header {
 	background: #FFF;
-	margin: 15px auto 25px;
+	margin: 15px auto 0px;
 	border-top: 3px solid #f88c00;
 	position: relative;
 }
