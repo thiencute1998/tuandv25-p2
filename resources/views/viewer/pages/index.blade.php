@@ -22,7 +22,7 @@
             </ul>
             <div class="clear"></div>
         </div>
-        <script type='text/javascript' src="{{ asset('assets/viewer/js/pgwSlider.js') }}" ></script>
+        <script type='text/javascript' src="{{ asset('assets/viewer/js/pgwslider.js') }}" ></script>
         <script>
             $(document).ready(function() {
                 $('.pgwSlider').pgwSlider();
