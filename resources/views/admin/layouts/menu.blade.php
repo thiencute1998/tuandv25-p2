@@ -42,6 +42,9 @@
                     <li class="{{str_contains(Request::path(), 'admin/link') ? 'active' : ''}}">
                         <a href="{{route('admin-link')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý liên kết website</span></a>
                     </li>
+                    <li class="{{str_contains(Request::path(), 'admin/email') ? 'active' : ''}}">
+                        <a href="{{route('admin-email')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý Email đăng ký</span></a>
+                    </li>
                     <li class="{{str_contains(Request::path(), 'admin/manage') ? 'active' : ''}}">
                         <a href="admin/banners" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản trị</span></a>
                         <ul class="collapse">

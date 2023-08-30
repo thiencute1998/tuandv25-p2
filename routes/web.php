@@ -166,6 +166,10 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
         Route::post('/update', [AboutController::class, 'update'])->name('admin-about-update');
     });
 
+    Route::prefix('email')->group(function () {
+        Route::get('/', [\App\Http\Controllers\Admin\EmailSignUpController::class, 'index'])->name('admin-email');
+    });
+
 });
 
 Route::get('/', [IndexController::class, 'index'])->name('index');
@@ -180,6 +184,7 @@ Route::get('/danh-sach-giao-hat-xu-ho', [IndexController::class, 'getMap'])->nam
 Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
 Route::post('/search-post', [IndexController::class, 'searchPost'])->name('search-post');
 Route::get('/search-all-post/{post}', [IndexController::class, 'searchAllPost'])->name('search-all-post');
+Route::post('sign-up-email', [IndexController::class, 'signUpEmail'])->name('sign-up-email');
 
 
 

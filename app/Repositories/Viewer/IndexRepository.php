@@ -5,6 +5,7 @@ namespace App\Repositories\Viewer;
 use App\Models\About;
 use App\Models\CalenderEvent;
 use App\Models\Category;
+use App\Models\EmailSignUp;
 use App\Models\Homepage;
 use App\Models\Post;
 use App\Models\Tag;
@@ -233,5 +234,18 @@ class IndexRepository extends BaseRepository {
             }
             return $value;
         });
+    }
+
+    public function signUpEmail($params) {
+        if (isset($params['email'])) {
+            $email = EmailSignUp::where('email', $params['email'])->first();
+            if (!$email) {
+                $email = new EmailSignUp;
+                $email->fill($params);
+                $email->save();
+            }
+        }
+
+        return 1;
     }
 }

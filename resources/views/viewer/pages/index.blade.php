@@ -201,7 +201,7 @@
 
         <section class="cat-box list-box tie-cat-184">
             <div class="cat-box-title">
-                <h2><a href="https://giaophanbacninh.org/category/video/" style="color: #258101">Video</a></h2>
+                <h2><a href="#" style="color: #258101">Video</a></h2>
                 <div class="stripe-line"></div>
             </div>
             <div class="cat-box-content">
@@ -251,7 +251,7 @@
                         <li class="other-news">
 
                             <div class="post-thumbnail em-side-img">
-                                <a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/" rel="bookmark"><img
+                                <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark"><img
                                         width="110" height="75" alt="" loading="lazy"
                                         data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
                                         class="attachment-tie-small size-tie-small wp-post-image lazyload"
@@ -263,7 +263,7 @@
                                     <span class="fa overlay-icon"></span></a>
                             </div><!-- post-thumbnail /-->
 
-                            <h3 class="post-box-title"><a href="https://giaophanbacninh.org/cong-dan-nuoc-troi/"
+                            <h3 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}"
                                                           rel="bookmark">{{$video->name}}</a></h3>
 
                             <p class="post-meta">

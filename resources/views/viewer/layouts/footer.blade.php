@@ -41,7 +41,21 @@
                              data-count="default"></div>
                     </div>
                 </div>
-            </div><!-- .widget /-->
+            </div>
+            <div id="custom_html-5" class="widget_text footer-widget widget_custom_html" style="margin-top: 10px;">
+                <div class="footer-widget-top"><h4>Nhận bản tin</h4></div>
+                <div class="footer-widget-container">
+                    <div style="display: flex">
+                        <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit;">
+                        <span>
+                            <button type="button" class="btn em-sign-up" style="padding: 9px;     color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2;">Đăng ký</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- .widget /-->
 {{--            <div id="text-9" class="footer-widget widget_text">--}}
 {{--                <div class="footer-widget-top"><h4>Liên kết websites</h4></div>--}}
 {{--                <div class="footer-widget-container">--}}
@@ -59,9 +73,61 @@
 
     </div><!-- #footer-widget-area -->
     <div class="clear"></div>
+    <div id="emailModal" class="em pixelbones em-calendar-preview em-modal em-cal-date-content">
+        <div class="em-modal-popup">
+            <header>
+                <a class="em-close-modal"></a><!-- close modal -->
+                <div class="em-modal-title">
+                    ĐĂNG KÝ NHẬN TIN
+                </div>
+            </header>
+            <div>
+                <div class="em-item-info">
+                    <div class="em-item-email">
+                        <div class="em-item">
+                            <span class="em-address">Đăng ký nhận tin <b>thành công</b>.</span>
+                        </div>
+                        <div class="em-item" style="margin-top: 10px;">
+                            <span class="em-address">Chúng tôi sẽ gửi bài viết mới nhất và Lời chúa hằng ngày qua email của bạn.</span>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- content -->
+        </div><!-- modal -->
+    </div>
 </footer><!-- .Footer /-->
 <style type="text/css">
     .fluid-width-video-wrapper {
         padding-top: 10% !important;
     }
+    .em-item-email {
+        padding: 15px;
+    }
 </style>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.em-sign-up').on('click', function() {
+            let email = $('.email-input').val();
+            if (email) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: "{{route('sign-up-email')}}",
+                    type: "post",
+                    data: {
+                        email: $('.email-input').val()
+                    },
+                    success: function(res){
+                        $('#emailModal').addClass('active');
+                        var emailPopup = $('.em-modal-popup');
+                        $(emailPopup[1]).addClass('active');
+                    }
+                })
+            }
+
+        })
+    })
+</script>

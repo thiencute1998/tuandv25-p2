@@ -244,7 +244,8 @@ function showCalendarPopup(date) {
         },
         success: function(res){
             $('#myModal').addClass('active');
-            $('.em-modal-popup').addClass('active');
+            var emPopup = $('.em-modal-popup');
+            $(emPopup[0]).addClass('active');
             $('.em-full-date').text(res.formatFullDate);
             if (res.data.length) {
                 let vm = this;

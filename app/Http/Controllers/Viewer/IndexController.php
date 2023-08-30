@@ -84,4 +84,9 @@ class IndexController extends Controller
         $posts = $this->repository->searchAllPost($post);
         return view('viewer.pages.find_post', compact('posts'));
     }
+
+    public function signUpEmail(Request $request) {
+        $params = $request->only('email');
+        return $this->repository->signUpEmail($params);
+    }
 }
