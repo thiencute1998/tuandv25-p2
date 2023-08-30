@@ -184,7 +184,7 @@
             <div class="block-head">
 
                 <h3>Tin liên quan</h3>
-                <div class="stripe-line"></div>
+{{--                <div class="stripe-line"></div>--}}
 
             </div>
 

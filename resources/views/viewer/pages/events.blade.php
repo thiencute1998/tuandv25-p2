@@ -25,7 +25,7 @@
                href="#"
                original-title="Feed Subscription"><i class="fa fa-rss"></i></a>
 
-            <div class="stripe-line"></div>
+{{--            <div class="stripe-line"></div>--}}
 
         </div>
 

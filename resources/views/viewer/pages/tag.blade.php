@@ -22,7 +22,7 @@
                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/feed/"
                original-title="Feed Subscription"><i class="fa fa-rss"></i></a>
 
-            <div class="stripe-line"></div>
+{{--            <div class="stripe-line"></div>--}}
 
         </div>
 
