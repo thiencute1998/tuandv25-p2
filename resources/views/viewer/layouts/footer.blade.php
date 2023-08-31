@@ -19,39 +19,25 @@
                 </div>
             </div><!-- .widget /-->        </div>
 
-        <div id="footer-second" class="footer-widgets-box">
-            <div id="facebook-widget-4" class="footer-widget facebook-widget">
-                <div class="footer-widget-top"><h4>Kết nối </h4></div>
-                <div class="footer-widget-container">
-                    <div class="facebook-box">
-                        <iframe scrolling="no" frameborder="0"
-                                style="border:none; overflow:hidden; width:300px; height:250px;"
-                                allowTransparency="true"
-                                data-src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/gpbacninh/?eid=ARCjSgUuTfExaFbPsWXrkPEnCJwi0tPRU1Sn8pJ6x0uH6b-TJ88VjShClPqyDDZ0gw197uYzqdn7ofYt&amp;width=300&amp;height=125&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
-                                class="lazyload"
-                                src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
-                    </div>
-                </div>
-            </div><!-- .widget /-->
-        </div><!-- #second .widget-area -->
+
 
 
         <div id="footer-third" class="footer-widgets-box">
-            <div id="custom_html-4" class="widget_text footer-widget widget_custom_html">
-                <div class="footer-widget-top"><h4>Đăng ký kênh youtube</h4></div>
-                <div class="footer-widget-container">
-                    <div class="textwidget custom-html-widget">
-                        <script src="https://apis.google.com/js/platform.js"></script>
+{{--            <div id="custom_html-4" class="widget_text footer-widget widget_custom_html">--}}
+{{--                <div class="footer-widget-top"><h4>Đăng ký kênh youtube</h4></div>--}}
+{{--                <div class="footer-widget-container">--}}
+{{--                    <div class="textwidget custom-html-widget">--}}
+{{--                        <script src="https://apis.google.com/js/platform.js"></script>--}}
 
-                        <div class="g-ytsubscribe" data-channelid="UCUptnRy9DiV5brpsyJQFORg" data-layout="default"
-                             data-count="default"></div>
-                    </div>
-                </div>
-            </div>
-            <div id="custom_html-5" class="widget_text footer-widget widget_custom_html" style="margin-top: 10px;">
-                <div class="footer-widget-top"><h4>Nhận bản tin</h4></div>
+{{--                        <div class="g-ytsubscribe" data-channelid="UCUptnRy9DiV5brpsyJQFORg" data-layout="default"--}}
+{{--                             data-count="default"></div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+            <div id="custom_html-5" class="widget_text footer-widget widget_custom_html">
+                <div class="footer-widget-top"><h4 style="text-transform: uppercase">Nhận bản tin</h4></div>
                 <div class="footer-widget-container">
-                    <div style="display: flex">
+                    <div style="display: flex; margin-top: 30px;">
                         <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit; height: 39px;">
                         <span>
                             <button type="button" class="btn em-sign-up" style="padding: 10px;     color: #FFF;
@@ -59,6 +45,7 @@
     border-color: #32c5d2;">Đăng ký</button>
                         </span>
                     </div>
+                    <p><small>Chúng tôi sẽ gửi bài viết mới và Lời Chúa qua email của bạn.</small></p>
                 </div>
             </div>
             <!-- .widget /-->
