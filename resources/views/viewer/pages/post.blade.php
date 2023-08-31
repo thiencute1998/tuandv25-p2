@@ -192,37 +192,33 @@
             </div>
 
             <div class="post-listing">
-
-                @foreach ($postRelated as $related)
-                    <div class="related-item">
-
-                        <div class="post-thumbnail tie-appear em-related-img">
-
-                            <a href="{{route('get-post', ['post'=> $related->slug])}}">
-
-                                <img width="310" height="165" alt=""
-                                     data-src="{{asset("upload/admin/post/image/" . $related->image)}}"
-                                     class="attachment-tie-medium size-tie-medium wp-post-image ls-is-cached lazyloaded tie-appear"
-                                     src="{{asset("upload/admin/post/image/" . $related->image)}}">
-                                <noscript><img width="310" height="165"
-                                               src="{{asset("upload/admin/post/image/" . $related->image)}}"
-                                               class="attachment-tie-medium size-tie-medium wp-post-image" alt=""/>
-                                </noscript>
-                                <span class="fa overlay-icon"></span>
-
-                            </a>
-
-                        </div><!-- post-thumbnail /-->
-
-                        <h3>
-                            <a href="{{route('get-post', ['post'=> $related->slug])}}"
-                               rel="bookmark">{{$related->name}}</a>
-                        </h3>
-
-                        <p class="post-meta"><span class="tie-date"><i class="fa fa-clock-o"></i>1 ngày ago</span></p>
-
-                    </div>
-                @endforeach
+                <ul class="list-unstyled">
+                    @foreach ($postRelated as $related)
+                    <li style="padding-bottom:10px;"><a href="{{route('get-post', ['post'=> $related->slug])}}"><i class="fa fa-angle-right" aria-hidden="true"></i> {{$related->name}}</a> <small>( {{$related->created_at}})</small></li>
+                    @endforeach
+                </ul>
+{{--                @foreach ($postRelated as $related)--}}
+{{--                    <div class="related-item">--}}
+{{--                        <div class="post-thumbnail tie-appear em-related-img">--}}
+{{--                            <a href="{{route('get-post', ['post'=> $related->slug])}}">--}}
+{{--                                <img width="310" height="165" alt=""--}}
+{{--                                     data-src="{{asset("upload/admin/post/image/" . $related->image)}}"--}}
+{{--                                     class="attachment-tie-medium size-tie-medium wp-post-image ls-is-cached lazyloaded tie-appear"--}}
+{{--                                     src="{{asset("upload/admin/post/image/" . $related->image)}}">--}}
+{{--                                <noscript><img width="310" height="165"--}}
+{{--                                               src="{{asset("upload/admin/post/image/" . $related->image)}}"--}}
+{{--                                               class="attachment-tie-medium size-tie-medium wp-post-image" alt=""/>--}}
+{{--                                </noscript>--}}
+{{--                                <span class="fa overlay-icon"></span>--}}
+{{--                            </a>--}}
+{{--                        </div><!-- post-thumbnail /-->--}}
+{{--                        <h3>--}}
+{{--                            <a href="{{route('get-post', ['post'=> $related->slug])}}"--}}
+{{--                               rel="bookmark">{{$related->name}}</a>--}}
+{{--                        </h3>--}}
+{{--                        <p class="post-meta"><span class="tie-date"><i class="fa fa-clock-o"></i>1 ngày ago</span></p>--}}
+{{--                    </div>--}}
+{{--                @endforeach--}}
                 <div class="clear"></div>
 
             </div>

@@ -1048,6 +1048,7 @@ blockquote:before,
 	border-width: 0 0 0 1px;
 	*/
 	height: 42px;
+    text-transform: uppercase;
 }
 
 #main-nav ul li:first-child,

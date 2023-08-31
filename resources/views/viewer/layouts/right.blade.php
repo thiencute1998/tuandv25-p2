@@ -55,47 +55,47 @@
         </div><!-- .widget /-->
 
         <div id="categort-posts-widget-2" class="widget categort-posts">
-            <div class="cat-box-content">
-            <div class="cat-tabs-header-right">
-                <ul class="ul-right">
-                    <li class="active"><a href="#catablf1">Tin mới</a></li>
-                    <li><a href="#catablf2">Tin xem nhiều</a></li>
+            <div class="tab-wrapper widget-container">
+                <ul class="tab">
+                    <li>
+                        <a href="#tab-main-info">Tin mới</a>
+                    </li>
+                    <li>
+                        <a href="#tab-image">Tin xem nhiều</a>
+                    </li>
                 </ul>
-            </div>
-            <div id="catablf1" class="cat-tabs-wrap cat-tabs-wrap1" style="">
-                <div class="widget-container">
-                    <ul>
-                        @foreach($postNew as $post)
-                        <li>
-                            <div class="post-thumbnail em-news-img">
-                                <a href="{{route('get-post', ['post'=> $post->slug])}}"
-                                   rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                       data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                       class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                    <noscript><img width="110" height="75"
-                                                   src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                   class="attachment-tie-small size-tie-small wp-post-image"
-                                                   alt="" loading="lazy"/></noscript>
-                                    <span class="fa overlay-icon"></span></a>
-                            </div><!-- post-thumbnail /-->
-                            <h3><a
-                                    href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
+                <div class="tab-content">
+                    <div class="tab-item" id="tab-main-info">
+                        <div class="">
+                            <ul>
+                                @foreach($postNew as $post)
+                                <li>
+                                    <div class="post-thumbnail em-news-img">
+                                        <a href="{{route('get-post', ['post'=> $post->slug])}}"
+                                           rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                               data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                               class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                               src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                            <noscript><img width="110" height="75"
+                                                           src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                           class="attachment-tie-small size-tie-small wp-post-image"
+                                                           alt="" loading="lazy"/></noscript>
+                                            <span class="fa overlay-icon"></span></a>
+                                    </div><!-- post-thumbnail /-->
+                                    <h3><a
+                                            href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
 
-                            <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
-                        </li>
-                        @endforeach
-                    </ul>
-                    <div class="clear"></div>
+                                    <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
+                                </li>
+                                @endforeach
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="tab-item" id="tab-image">
+                        Tin xem nhiều
+                    </div>
                 </div>
-                <div class="clear"></div>
-            </div>
-            <div id="catablf2" class="cat-tabs-wrap cat-tabs-wrap1" style="display: none;">
-
-                <ul>2222222222222
-                </ul>
-                <div class="clear"></div>
-            </div>
             </div>
 {{--            <div class="widget-top"><h4>Tin mới </h4>--}}
 {{--                <div class="stripe-line"></div>--}}
