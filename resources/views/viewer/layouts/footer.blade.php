@@ -52,9 +52,9 @@
                 <div class="footer-widget-top"><h4>Nhận bản tin</h4></div>
                 <div class="footer-widget-container">
                     <div style="display: flex">
-                        <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit;">
+                        <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit; height: 39px;">
                         <span>
-                            <button type="button" class="btn em-sign-up" style="padding: 7px;     color: #FFF;
+                            <button type="button" class="btn em-sign-up" style="padding: 10px;     color: #FFF;
     background-color: #32c5d2;
     border-color: #32c5d2;">Đăng ký</button>
                         </span>
