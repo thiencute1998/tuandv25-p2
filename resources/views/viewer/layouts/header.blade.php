@@ -68,7 +68,7 @@
         </div><!-- .search-block /-->
         <a id="slide-out-open" class="slide-out-open" href="#"><span></span></a>
 
-        <div class="logo" style=" margin-top:15px; margin-bottom:15px;">
+        <div class="logo" style=" /*margin-top:15px; margin-bottom:15px;*/">
             <h1><a title="Giáo phận Bắc Ninh" href="{{route('index')}}">
                     <img width="1120px" alt="Giáo phận Bắc Ninh"
                          data-src="{{$bannerWebsite ? asset("upload/admin/banner/image/" . $bannerWebsite->image) : ""}}"

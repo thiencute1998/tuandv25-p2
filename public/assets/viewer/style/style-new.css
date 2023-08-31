@@ -520,9 +520,9 @@ blockquote:before,
 #wrapper.boxed .breaking-news,
 #wrapper.boxed #main-content {
 	width: 1170px;
-	-webkit-box-shadow: 0 0 3px #CACACA;
-	   -moz-box-shadow: 0 0 3px #cacaca;
-			box-shadow: 0 0 3px #CACACA;
+	/*-webkit-box-shadow: 0 0 3px #CACACA;*/
+	/*   -moz-box-shadow: 0 0 3px #cacaca;*/
+	/*		box-shadow: 0 0 3px #CACACA;*/
 }
 
 #wrapper.boxed #theme-header{
@@ -533,8 +533,8 @@ blockquote:before,
 }
 
 #wrapper.boxed #main-content{
-	padding-right: 24px;
-	padding-left: 24px;
+	padding-right: 8px;
+	padding-left: 8px;
 }
 
 #wrapper.boxed .post-cover-head {
@@ -1025,9 +1025,9 @@ blockquote:before,
 #main-nav {
 	margin: 0 auto;
 	background: #085948;
-	box-shadow: inset -1px -5px 0px -1px #ffffff;
+	/*box-shadow: inset -1px -5px 0px -1px #ffffff;*/
 	min-height: 52px;
-	border-bottom: 5px solid #085948;
+	/*border-bottom: 5px solid #085948;*/
 }
 
 #main-nav .container,
@@ -1736,9 +1736,9 @@ ul.newsticker a {
 
 #main-content {
 	background: #FFF;
-	margin: 20px auto 25px;
+	margin: 10px auto 25px;
 	position: relative;
-	padding: 24px 0;
+	padding: 10px 0;
 	-webkit-transform: none;
 }
 
@@ -1756,7 +1756,7 @@ ul.newsticker a {
 
 .content {
 	float: left;
-	width: 785px;
+	width: 810px;
 }
 
 #crumbs,
@@ -1893,7 +1893,8 @@ li.first-news p.post-meta,
 }
 
 .cat-box .entry {
-	font-size: 12px;
+	font-size: 14px;
+    font-family: "Open Sans",sans-serif;
 }
 
 .cat-box .entry p,
@@ -1912,10 +1913,10 @@ li.first-news p.post-meta,
 .post-listing,
 #commentform {
 	background: #FFF;
-	border-bottom: 2px solid #258101;
-	-webkit-box-shadow: 0 0 3px #CACACA;
-	   -moz-box-shadow: 0 0 3px #cacaca;
-			box-shadow: 0 0 3px #CACACA;
+	border-bottom: 1px solid #e7ecf1;
+	-webkit-box-shadow: 0 0 3px #e7ecf1;
+	   -moz-box-shadow: 0 0 3px #e7ecf1;
+			box-shadow: 0 0 3px #e7ecf1;
 }
 
 .cat-box li.first-news .inner-content {
@@ -3592,6 +3593,7 @@ blockquote p {
 .widget-top h4 {
 	float: left;
 	margin-right: 10px;
+    margin-bottom: 10px;
 	font-size: 20px;
 	font-family: BebasNeueRegular, arial, Georgia, serif;
     color: #258101;

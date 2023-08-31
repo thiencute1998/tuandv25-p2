@@ -55,7 +55,7 @@
                 $(window).bind("resize", ScaleSlider);
                 $(window).bind("orientationchange", ScaleSlider);
                 /*#endregion responsive code end*/
-                $('.img-slider').css("height", "auto");
+                // $('.img-slider').css("height", "auto");
             });
         </script>
         <link rel='stylesheet' href="{{ asset('assets/viewer/style/jssor.slider.css') }}" type='text/css' media='all' />
@@ -64,7 +64,7 @@
             <div data-u="loading" class="jssorl-009-spin" style="position: absolute; top: 0px; left: 0px; width: 660px; height: 390px; text-align: center; background-color: rgba(0, 0, 0, 0.7); display: none;">
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg">
             </div>
-            <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 660px; height: 390px; overflow: hidden;">
+            <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 480px; height: 300px; overflow: hidden;">
                 @foreach($slideWebsites as $slide)
                 <div>
                     <img class="img-slider" data-u="image" src="{{asset("upload/admin/banner/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">
@@ -100,7 +100,7 @@
         <?php $idTab = 1 ?>
         @foreach($homes as $home)
         @if(count($home->categories) == 1)
-                <section class="cat-box list-box tie-cat-13">
+                <section class="cat-box list-box tie-cat-13" style="margin-top: 10px;">
                     <div class="cat-box-title">
                         @foreach($home->categories as $category)
                             <h2><a href="{{route('get-post', ['post'=> $category->slug])}}" style="color: #258101">{{$category->name}}</a></h2>
@@ -219,9 +219,9 @@
 
                                             <div class="entry">
                                                 <p>{{substr(strip_tags($post->content), 0, 50)}} &hellip;</p>
-                                                <a class="more-link"
-                                                   href="{{route('get-post', ['post'=> $post->slug])}}">Read More
-                                                    &raquo;</a>
+{{--                                                <a class="more-link"--}}
+{{--                                                   href="{{route('get-post', ['post'=> $post->slug])}}">Read More--}}
+{{--                                                    &raquo;</a>--}}
                                             </div>
                                         </li><!-- .first-news -->
                                     @else
@@ -310,8 +310,8 @@
 
                             <div class="entry">
                                 <p></p>
-                                <a class="more-link" href="{{route('get-video', ['video'=> $video->slug])}}">Read More
-                                    &raquo;</a>
+{{--                                <a class="more-link" href="{{route('get-video', ['video'=> $video->slug])}}">Read More--}}
+{{--                                    &raquo;</a>--}}
                             </div>
                         </li><!-- .first-news -->
                         @else
