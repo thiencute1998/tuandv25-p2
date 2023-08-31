@@ -47,7 +47,21 @@
                              data-count="default"></div>
                     </div>
                 </div>
-            </div><!-- .widget /-->
+            </div>
+            <div id="custom_html-5" class="widget_text footer-widget widget_custom_html" style="margin-top: 10px;">
+                <div class="footer-widget-top"><h4>Nhận bản tin</h4></div>
+                <div class="footer-widget-container">
+                    <div style="display: flex">
+                        <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit;">
+                        <span>
+                            <button type="button" class="btn em-sign-up" style="padding: 7px;     color: #FFF;
+    background-color: #32c5d2;
+    border-color: #32c5d2;">Đăng ký</button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- .widget /-->
 {{--            <div id="text-9" class="footer-widget widget_text">--}}
 {{--                <div class="footer-widget-top"><h4>Liên kết websites</h4></div>--}}
 {{--                <div class="footer-widget-container">--}}
