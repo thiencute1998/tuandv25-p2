@@ -34,7 +34,7 @@
 
         <div id="em_calendar-2" class="widget widget_em_calendar">
             <div class="widget-top"><h4>Lịch phụng vụ</h4>
-                <div class="stripe-line"></div>
+{{--                <div class="stripe-line"></div>--}}
             </div>
             <div class="widget-container">
                 <div id="calendar" class="calendar"></div>
@@ -56,7 +56,7 @@
 
         <div id="categort-posts-widget-2" class="widget categort-posts">
             <div class="widget-top"><h4>Tin mới </h4>
-                <div class="stripe-line"></div>
+{{--                <div class="stripe-line"></div>--}}
             </div>
             <div class="widget-container">
                 <ul>
@@ -103,7 +103,7 @@
         <div class="widget categort-posts">
             <div id="categort-posts-widget-3" class="widget categort-posts">
                 <div class="widget-top"><h4>Thông Báo </h4>
-                    <div class="stripe-line"></div>
+{{--                    <div class="stripe-line"></div>--}}
                 </div>
                 <div class="widget-container">
                     <ul>
@@ -133,7 +133,7 @@
             </div><!-- .widget /-->
             <div id="text-html-widget-3" class="widget text-html">
                 <div class="widget-top"><h4></h4>
-                    <div class="stripe-line"></div>
+{{--                    <div class="stripe-line"></div>--}}
                 </div>
                 <div class="widget-container">
                     <div><a href="{{route('get-map')}}"><img width="315"
@@ -150,7 +150,7 @@
             </div><!-- .widget /-->
             <div id="media_image-9" class="widget widget_media_image">
                 <div class="widget-top"><h4></h4>
-                    <div class="stripe-line"></div>
+{{--                    <div class="stripe-line"></div>--}}
                 </div>
                 <div class="widget-container"><a href="{{route('find-church')}}"><img
                             width="300" height="51" alt="" style="max-width: 100%; height: auto;"
@@ -178,6 +178,21 @@
                     </div>
                 </div>
             </div><!-- .widget /-->
+            <div id="footer-second" class="footer-widgets-box">
+                <div id="facebook-widget-4" class="footer-widget facebook-widget">
+                    <div class="footer-widget-top"><h4 style="color: #258101">Kết nối </h4></div>
+                    <div class="footer-widget-container">
+                        <div class="facebook-box">
+                            <iframe scrolling="no" frameborder="0"
+                                    style="border:none; overflow:hidden; width:300px; height:250px;"
+                                    allowTransparency="true"
+                                    data-src="https://www.facebook.com/plugins/likebox.php?href=https://www.facebook.com/gpbacninh/?eid=ARCjSgUuTfExaFbPsWXrkPEnCJwi0tPRU1Sn8pJ6x0uH6b-TJ88VjShClPqyDDZ0gw197uYzqdn7ofYt&amp;width=300&amp;height=125&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false"
+                                    class="lazyload"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></iframe>
+                        </div>
+                    </div>
+                </div><!-- .widget /-->
+            </div><!-- #second .widget-area -->
             <div id="text-4" class="footer-widget widget_text">
                 {{--                <div class="footer-widget-top"><h4> </h4></div>--}}
                 <div class="footer-widget-container">

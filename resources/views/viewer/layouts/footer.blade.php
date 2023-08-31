@@ -2,8 +2,14 @@
     <div id="footer-widget-area" class="footer-3c">
 
         <div id="footer-first" class="footer-widgets-box">
+            <div class="footer-widget-top" style="text-transform: uppercase"><h4>Giáo Phận Bắc Ninh</h4></div>
+            <p style="margin-top: 10px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="200px;"></p>
+        </div>
+
+
+        <div id="footer-second1" class="footer-widgets-box">
             <div id="text-8" class="footer-widget widget_text">
-                <div class="footer-widget-top"><h4>Liên hệ</h4></div>
+                <div class="footer-widget-top"><h4>LIÊN HỆ</h4></div>
                 <div class="footer-widget-container">
                     <div class="textwidget">
                         @if($contactWebsite)
@@ -41,21 +47,7 @@
                              data-count="default"></div>
                     </div>
                 </div>
-            </div>
-            <div id="custom_html-5" class="widget_text footer-widget widget_custom_html" style="margin-top: 10px;">
-                <div class="footer-widget-top"><h4>Nhận bản tin</h4></div>
-                <div class="footer-widget-container">
-                    <div style="display: flex">
-                        <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit;">
-                        <span>
-                            <button type="button" class="btn em-sign-up" style="padding: 9px;     color: #FFF;
-    background-color: #32c5d2;
-    border-color: #32c5d2;">Đăng ký</button>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <!-- .widget /-->
+            </div><!-- .widget /-->
 {{--            <div id="text-9" class="footer-widget widget_text">--}}
 {{--                <div class="footer-widget-top"><h4>Liên kết websites</h4></div>--}}
 {{--                <div class="footer-widget-container">--}}
