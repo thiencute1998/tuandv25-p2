@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Repositories\BaseRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use PhpParser\Node\Expr\AssignOp\Concat;
 
 class CategoryRepository extends BaseRepository {
 
@@ -121,6 +122,7 @@ class CategoryRepository extends BaseRepository {
         if (isset($params['self_id'])) {
             $query->where('id', '!=', $params['self_id']);
         }
+        $query->orderByRaw('CONCAT(level, id, parent_id)');
         return $query->get();
     }
 
