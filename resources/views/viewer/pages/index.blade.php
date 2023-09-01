@@ -111,61 +111,60 @@
                         <ul>
                             @foreach($home->categories as $category)
                                 @foreach($category->posts as $keyPost=> $post)
-                                    @if($keyPost == 0)
-                                        <li class="first-news">
+                                    @if($keyPost < 4)
+                                        @if($keyPost == 0)
+                                            <li class="first-news">
 
-                                            <div class="post-thumbnail em-list-img">
-                                                <a href="{{route('get-post', ['post'=> $post->slug])}}"
-                                                   rel="bookmark">
-                                                    <img width="310" height="165" alt="" loading="lazy"
-                                                         data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                         class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
-                                                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                                    <noscript><img width="310" height="165"
-                                                                   src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                                   class="attachment-tie-medium size-tie-medium wp-post-image"
-                                                                   alt="" loading="lazy"/></noscript>
-                                                    <span class="fa overlay-icon"></span>
-                                                </a>
-                                            </div><!-- post-thumbnail /-->
+                                                <div class="post-thumbnail em-list-img">
+                                                    <a href="{{route('get-post', ['post'=> $post->slug])}}"
+                                                       rel="bookmark">
+                                                        <img width="310" height="165" alt="" loading="lazy"
+                                                             data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                             class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
+                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                                        <noscript><img width="310" height="165"
+                                                                       src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                                       class="attachment-tie-medium size-tie-medium wp-post-image"
+                                                                       alt="" loading="lazy"/></noscript>
+                                                        <span class="fa overlay-icon"></span>
+                                                    </a>
+                                                </div><!-- post-thumbnail /-->
 
-                                            <h2 class="post-box-title"><a
-                                                    href="{{route('get-post', ['post'=> $post->slug])}}"
-                                                    rel="bookmark">{{$post->name}}</a></h2>
-                                            <p class="post-meta">
+                                                <h2 class="post-box-title"><a
+                                                        href="{{route('get-post', ['post'=> $post->slug])}}"
+                                                        rel="bookmark">{{$post->name}}</a></h2>
+                                                <p class="post-meta">
 
-                                            </p>
+                                                </p>
 
-                                            <div class="entry em-read-more-3 ">
-                                                <p>{{strip_tags($post->content)}}</p>
-                                                <a class="more-link"
-                                                   href="{{route('get-post', ['post'=> $post->slug])}}">Read
-                                                    More &raquo;</a>
-                                            </div>
-                                        </li><!-- .first-news -->
-                                    @else
-                                        <li class="other-news">
+                                                <div class="entry em-read-more-3 ">
+                                                    <p>{{strip_tags($post->content)}}</p>
+                                                </div>
+                                            </li><!-- .first-news -->
+                                        @else
+                                            <li class="other-news">
 
-                                            <div class="post-thumbnail em-side-img">
-                                                <a href="{{route('get-post', ['post'=> $post->slug])}}"
-                                                   rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
-                                                                       data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                                       class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                                                       src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                                    <noscript><img width="110" height="75"
-                                                                   src="{{asset("upload/admin/post/image/" . $post->image)}}"
-                                                                   class="attachment-tie-small size-tie-small wp-post-image"
-                                                                   alt="" loading="lazy"/></noscript>
-                                                    <span class="fa overlay-icon"></span></a>
-                                            </div><!-- post-thumbnail /-->
+                                                <div class="post-thumbnail em-side-img">
+                                                    <a href="{{route('get-post', ['post'=> $post->slug])}}"
+                                                       rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                                           data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                                           class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                                           src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                                        <noscript><img width="110" height="75"
+                                                                       src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                                       class="attachment-tie-small size-tie-small wp-post-image"
+                                                                       alt="" loading="lazy"/></noscript>
+                                                        <span class="fa overlay-icon"></span></a>
+                                                </div><!-- post-thumbnail /-->
 
-                                            <h3 class="post-box-title"><a
-                                                    href="{{route('get-post', ['post'=> $post->slug])}}"
-                                                    rel="bookmark">{{$post->name}}</a></h3>
+                                                <h3 class="post-box-title"><a
+                                                        href="{{route('get-post', ['post'=> $post->slug])}}"
+                                                        rel="bookmark">{{$post->name}}</a></h3>
 
-                                            <p class="post-meta">
-                                            </p>
-                                        </li>
+                                                <p class="post-meta">
+                                                </p>
+                                            </li>
+                                        @endif
                                     @endif
                                 @endforeach
                             @endforeach
