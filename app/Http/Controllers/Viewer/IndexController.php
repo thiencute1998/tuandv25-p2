@@ -89,4 +89,14 @@ class IndexController extends Controller
         $params = $request->only('email');
         return $this->repository->signUpEmail($params);
     }
+
+    public function plusViewPost(Request $request) {
+        $params = $request->only('slug');
+        $this->repository->plusViewPost($params);
+    }
+
+    public function plusViewEvent(Request $request) {
+        $params = $request->only('slug');
+        $this->repository->plusViewEvent($params);
+    }
 }

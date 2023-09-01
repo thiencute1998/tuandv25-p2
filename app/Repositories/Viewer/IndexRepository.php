@@ -49,6 +49,13 @@ class IndexRepository extends BaseRepository {
             $queryPost->where('category_id', $category->id);
             $queryPost->with('category');
             $posts = $queryPost->paginate(10);
+            return $posts->through(function ($value) {
+                $value->fullDate = $value->created_at;
+                if ($value->created_at) {
+                    $value->fullDate = $this->formatVNFullDate($value->created_at, "Y-m-d H:i:s");
+                }
+                return $value;
+            });
         }
         return $posts;
     }
@@ -102,7 +109,14 @@ class IndexRepository extends BaseRepository {
     public function events() {
         $query = CalenderEvent::where('status', 1);
         $query->orderBy('created_at', 'asc');
-        return $query->paginate(10);
+        $data = $query->paginate(10);
+        return $data->through(function ($value) {
+            $value->fullDate = $value->created_at;
+            if ($value->created_at) {
+                $value->fullDate = $this->formatVNFullDate($value->created_at, "Y-m-d H:i:s");
+            }
+            return $value;
+        });
     }
 
     public function getTag($tag) {
@@ -247,5 +261,29 @@ class IndexRepository extends BaseRepository {
         }
 
         return 1;
+    }
+
+    public function plusViewPost($params) {
+        if(isset($params['slug'])) {
+            $post = Post::where('status', 1)->where('slug', $params['slug'])->first();
+            if($post) {
+                $post->view_count = $post->view_count + 1;
+                $post->save();
+            }
+        }
+    }
+
+    public function plusViewEvent($params) {
+        if(isset($params['slug'])) {
+            $event = CalenderEvent::where('status', 1)->where('slug', $params['slug'])->first();
+            if($event) {
+                if ($event->view_count === null) {
+                    $event->view_count = 0;
+                } else {
+                    $event->view_count = $event->view_count + 1;
+                }
+                $event->save();
+            }
+        }
     }
 }

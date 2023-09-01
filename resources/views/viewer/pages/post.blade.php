@@ -8,7 +8,7 @@
 @endsection
 @section('main-content')
     <div class="content">
-
+        <input type="text" class="em-post-slug" value="{{$post->slug}}">
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a rel="v:url"
                                                                                                    property="v:title"
                                                                                                    class="crumbs-home"
@@ -283,3 +283,25 @@
     </div>
     <!-- .content -->
 @endsection
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            url: "{{route('plus-view-post')}}",
+            type: "post",
+            data: {
+                slug: $('.em-post-slug').val()
+            },
+            success: function(res){
+
+            }
+        })
+    })
+</script>

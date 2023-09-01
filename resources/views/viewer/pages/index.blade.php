@@ -136,8 +136,8 @@
 
                                             </p>
 
-                                            <div class="entry">
-                                                <p>{{substr(strip_tags($post->content), 0, 50)}} &hellip;</p>
+                                            <div class="entry em-read-more-3 ">
+                                                <p>{{strip_tags($post->content)}}</p>
                                                 <a class="more-link"
                                                    href="{{route('get-post', ['post'=> $post->slug])}}">Read
                                                     More &raquo;</a>
@@ -217,8 +217,8 @@
                                             </p>
 
 
-                                            <div class="entry">
-                                                <p>{{substr(strip_tags($post->content), 0, 50)}} &hellip;</p>
+                                            <div class="entry em-read-more-3">
+                                                <p>{{strip_tags($post->content)}}</p>
 {{--                                                <a class="more-link"--}}
 {{--                                                   href="{{route('get-post', ['post'=> $post->slug])}}">Read More--}}
 {{--                                                    &raquo;</a>--}}

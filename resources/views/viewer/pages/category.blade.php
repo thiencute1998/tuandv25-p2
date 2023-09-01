@@ -36,7 +36,7 @@
                     </h2>
 
                     <p class="post-meta">
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->fullDate}}</span>
                         <span class="post-cats"><i class="fa fa-folder"></i>
                                 @if($post->category)
                                 <a
@@ -65,8 +65,8 @@
                         </a>
                     </div><!-- post-thumbnail /-->
 
-                    <div class="entry">
-                        <p>{{substr(strip_tags($post->content), 0, 100)}} …</p>
+                    <div class="entry em-read-more-5">
+                        <p>{{strip_tags($post->content)}}</p>
                         <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Read
                             More »</a>
                     </div>

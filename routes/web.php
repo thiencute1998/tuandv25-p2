@@ -185,6 +185,8 @@ Route::get('/{post}', [IndexController::class, 'getPost'])->name('get-post');
 Route::post('/search-post', [IndexController::class, 'searchPost'])->name('search-post');
 Route::get('/search-all-post/{post}', [IndexController::class, 'searchAllPost'])->name('search-all-post');
 Route::post('sign-up-email', [IndexController::class, 'signUpEmail'])->name('sign-up-email');
+Route::post('/plus-view-post', [IndexController::class, 'plusViewPost'])->name('plus-view-post');
+Route::post('/plus-view-event', [IndexController::class, 'plusViewEvent'])->name('plus-view-event');
 
 
 

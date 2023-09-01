@@ -39,7 +39,7 @@
                     </h2>
 
                     <p class="post-meta">
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>
+                        <span class="tie-date"><i class="fa fa-clock-o"></i>{{$event->fullDate}}</span>
                         <span class="post-cats"><i class="fa fa-folder"></i>
                             <span class="post-comments"><i class="fa fa-comments"></i><a
                                     href="#">0</a></span>
@@ -59,8 +59,8 @@
                         </a>
                     </div><!-- post-thumbnail /-->
 
-                    <div class="entry">
-                        <p>{{substr(strip_tags($event->content), 0, 100)}} …</p>
+                    <div class="entry em-read-more-5">
+                        <p>{{strip_tags($event->content)}}</p>
                         <a class="more-link" href="{{route('get-event-calendar', ['event'=> $event->slug])}}">Read
                             More »</a>
                     </div>

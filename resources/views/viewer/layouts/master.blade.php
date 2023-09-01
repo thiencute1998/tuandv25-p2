@@ -47,6 +47,21 @@
     <link rel="apple-touch-icon" href="{{ asset('assets/viewer/style/images/cropped-icon-180x180.png') }}" />
     <meta name="msapplication-TileImage" content="{{ asset('assets/viewer/style/images/cropped-icon-270x270.png') }}" />
     <style type="text/css">
+        .em-read-more-3 p{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .em-read-more-5 p{
+            display: -webkit-box;
+            -webkit-line-clamp: 5;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+
         .em-list-img{
             width: 310px !important;
             height: 165px !important;
