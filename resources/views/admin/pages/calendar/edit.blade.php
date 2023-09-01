@@ -86,7 +86,7 @@
                                     <div class="row form-group">
                                         <div class="col-md-12">
                                             <label for="services" class="col-form-label">Title</label>
-                                            <input type="text" class="form-control" name="title" placeholder="Nhập title" required value="{{$calendar->title}}">
+                                            <input type="text" class="form-control" name="title" placeholder="Nhập title"  value="{{$calendar->title}}">
                                         </div>
                                     </div>
                                     <div class="row form-group">

@@ -61,8 +61,7 @@
 
                     <div class="entry em-read-more-5">
                         <p>{{strip_tags($event->content)}}</p>
-                        <a class="more-link" href="{{route('get-event-calendar', ['event'=> $event->slug])}}">Read
-                            More »</a>
+                        <a class="more-link" href="{{route('get-event-calendar', ['event'=> $event->slug])}}">Chi tiết »</a>
                     </div>
 
                     <div class="clear"></div>

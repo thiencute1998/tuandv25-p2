@@ -90,7 +90,7 @@
                                     <div class="row form-group">
                                         <div class="col-md-12">
                                             <label for="services" class="col-form-label">Title</label>
-                                            <input type="text" class="form-control" name="title" placeholder="Nhập title"  value="{{$post->title}}" required>
+                                            <input type="text" class="form-control" name="title" placeholder="Nhập title"  value="{{$post->title}}" >
                                         </div>
                                     </div>
                                     <div class="row form-group">

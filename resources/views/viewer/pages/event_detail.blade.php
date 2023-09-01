@@ -7,7 +7,7 @@
 @endsection
 @section('main-content')
     <div class="content">
-        <input type="text" class="em-post-slug" value="{{$event->slug}}">
+        <input type="hidden" class="em-post-slug" value="{{$event->slug}}">
 
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a rel="v:url"
                                                                                                    property="v:title"

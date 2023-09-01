@@ -85,7 +85,7 @@
                                     <h3><a
                                             href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
 
-                                    <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
+{{--                                    <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>--}}
                                 </li>
                                 @endforeach
                             </ul>
@@ -93,7 +93,31 @@
                         </div>
                     </div>
                     <div class="tab-item" id="tab-image">
-                        Tin xem nhiều
+                        <div class="">
+                            <ul>
+                                @foreach($postTopView as $post)
+                                    <li>
+                                        <div class="post-thumbnail em-news-img">
+                                            <a href="{{route('get-post', ['post'=> $post->slug])}}"
+                                               rel="bookmark"><img width="110" height="75" alt="" loading="lazy"
+                                                                   data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                                   class="attachment-tie-small size-tie-small wp-post-image lazyload"
+                                                                   src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
+                                                <noscript><img width="110" height="75"
+                                                               src="{{asset("upload/admin/post/image/" . $post->image)}}"
+                                                               class="attachment-tie-small size-tie-small wp-post-image"
+                                                               alt="" loading="lazy"/></noscript>
+                                                <span class="fa overlay-icon"></span></a>
+                                        </div><!-- post-thumbnail /-->
+                                        <h3><a
+                                                href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
+
+{{--                                        <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>--}}
+                                    </li>
+                                @endforeach
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,7 +190,7 @@
                             <h3><a
                                     href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
 
-                            <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>
+{{--                            <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>--}}
                         </li>
                         @endforeach
                     </ul>

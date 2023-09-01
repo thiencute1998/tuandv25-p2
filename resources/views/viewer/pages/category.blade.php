@@ -67,8 +67,7 @@
 
                     <div class="entry em-read-more-5">
                         <p>{{strip_tags($post->content)}}</p>
-                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Read
-                            More »</a>
+                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Chi tiết »</a>
                     </div>
 
                     <div class="clear"></div>

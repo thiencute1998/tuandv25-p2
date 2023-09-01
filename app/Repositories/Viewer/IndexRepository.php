@@ -45,8 +45,20 @@ class IndexRepository extends BaseRepository {
     public function paginatePost($category) {
         $posts = collect();
         if ($category) {
+            //Lấy tất cả Category con
+            $arrcategory_id = [];
+            $childCategory = Category::where('parent_id', $category->id)->get();
+            if($childCategory){
+                foreach($childCategory as $item){
+                    $arrcategory_id[] = $item->id;
+                }
+            }
             $queryPost = Post::where('status', 1);
-            $queryPost->where('category_id', $category->id);
+            //$queryPost->where('category_id', $category->id);
+            $queryPost->where(function($q) use ($category, $arrcategory_id) {
+                $q->where('category_id', '=', $category->id)
+                    ->orWhereIn('category_id', $arrcategory_id);
+            });
             $queryPost->with('category');
             $posts = $queryPost->paginate(10);
             return $posts->through(function ($value) {
@@ -60,6 +72,10 @@ class IndexRepository extends BaseRepository {
         return $posts;
     }
     public function getPost($post) {
+        //Update View
+        $postNew = Post::where('slug', $post)->first();
+        $postNew->views = $postNew->views +1 ;
+        $postNew->update();
         $query = Post::where('status', 1);
         $query->where('slug', $post);
         $query->with('category');
@@ -73,7 +89,13 @@ class IndexRepository extends BaseRepository {
             $query->where('category_id', $post->category_id);
         }
         $query->orderBy('created_at', 'desc');
-        return $query->limit(3)->get();
+        return $query->limit(10)->get()->map(function($value) {
+            $value->fullDate = $value->created_at;
+            if ($value->created_at) {
+                $value->fullDate = $this->formatDate($value->created_at, 'Y-m-d H:i:s');
+            }
+            return $value;
+        });
     }
 
     public function getEventCalendar($event) {
@@ -146,6 +168,16 @@ class IndexRepository extends BaseRepository {
         $query->where('id', '!=',$video->id);
         $query->orderBy('created_at', 'desc');
         return $query->limit(3)->get();
+    }
+
+    public function formatDate($date, $format = 'Y-m-d') {
+        if ($date) {
+            $day = Carbon::createFromFormat($format,$date)->format('d');
+            $month = Carbon::createFromFormat($format,$date)->format('m');
+            $year = Carbon::createFromFormat($format,$date)->format('Y');
+            $date = $day . "/". $month . "/" . $year;
+        }
+        return $date;
     }
 
     public function formatVNDate($date) {

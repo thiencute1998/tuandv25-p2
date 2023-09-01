@@ -1,10 +1,7 @@
 <header id="theme-header" class="theme-header">
 
     {{--    <div id="top-nav" class="top-nav">--}}
-
     {{--        <div class="container">--}}
-
-
     {{--            <div class="top-menu">--}}
     {{--                <ul id="menu-linh-muc-da-qua-doi" class="menu">--}}
     {{--                    <li id="menu-item-51422"--}}
@@ -20,16 +17,11 @@
     {{--                           onblur="if (this.value == '') {this.value = 'Search';}"/>--}}
     {{--                </form>--}}
     {{--            </div><!-- .search-block /-->--}}
-
     {{--            <div class="social-icons">--}}
-
     {{--                <a class="ttip-none" title="Rss" href="https://giaophanbacninh.org/feed/" target="_blank"><i--}}
     {{--                        class="fa fa-rss"></i></a>--}}
-
-
     {{--            </div>--}}
     {{--        </div><!-- .container /-->--}}
-
     {{--    </div><!-- .top-menu /-->--}}
 
 

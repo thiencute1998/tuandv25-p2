@@ -57,19 +57,27 @@ class AppServiceProvider extends ServiceProvider
 //                ->where('created_at', '>=', date('Y-m-d 00:00:00'))
 //                ->where('created_at', '<=', date('Y-m-d 23:59:59'))
                 ->orderBy('created_at', 'desc')
-                ->take(3)->get()
+                ->take(6)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
                 });
-
+            // Tin Xem nhiều
+            $postTopView = Post::where('status', 1)
+                ->orderBy('views', 'desc')
+                ->orderBy('created_at', 'desc')
+                ->take(6)->get()
+                ->map(function($value){
+                    $value->dateDiff = getDateDiff($value->created_at);
+                    return $value;
+                });
             // Thong bao
             $postNotify = Post::where('status', 1)
                 ->whereHas('category', function($q) {
                     $q->where('slug', 'thong-bao');
                 })
                 ->orderBy('created_at', 'desc')
-                ->take(3)->get()
+                ->take(6)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
@@ -90,6 +98,7 @@ class AppServiceProvider extends ServiceProvider
                 'cates2'=>$cates2,
                 'cates3'=>$cates3,
                 'postNew'=> $postNew,
+                'postTopView'=> $postTopView,
                 'postNotify'=> $postNotify,
                 'contactWebsite'=> $contactWebsite,
                 'linkWebsites'=> $linkWebsites,

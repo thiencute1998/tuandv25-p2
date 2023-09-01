@@ -8,7 +8,7 @@
 @endsection
 @section('main-content')
     <div class="content">
-        <input type="text" class="em-post-slug" value="{{$post->slug}}">
+        <input type="hidden" class="em-post-slug" value="{{$post->slug}}">
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a rel="v:url"
                                                                                                    property="v:title"
                                                                                                    class="crumbs-home"
@@ -194,7 +194,7 @@
             <div class="post-listing">
                 <ul class="list-unstyled">
                     @foreach ($postRelated as $related)
-                    <li style="padding-bottom:10px;"><a href="{{route('get-post', ['post'=> $related->slug])}}"><i class="fa fa-angle-right" aria-hidden="true"></i> {{$related->name}}</a> <small>( {{$related->created_at}})</small></li>
+                    <li style="padding-bottom:10px;"><a href="{{route('get-post', ['post'=> $related->slug])}}"><i class="fa fa-angle-right" aria-hidden="true"></i> {{$related->name}}</a> <small>( {{$related->fullDate}})</small></li>
                     @endforeach
                 </ul>
 {{--                @foreach ($postRelated as $related)--}}
