@@ -47,8 +47,8 @@
                             {{--                                    href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
                             {{--                                    rel="category tag">Tin tức</a>--}}
 
-{{--                            <span class="post-comments"><i class="fa fa-comments"></i><a--}}
-{{--                                    href="#">0</a></span>--}}
+                            <span class="post-comments"><i class="fa fa-comments"></i><a
+                                    href="#">0</a></span>
 
                     </p>
                     <div class="post-thumbnail tie-appear em-list-img">
@@ -67,7 +67,7 @@
 
                     <div class="entry em-read-more-5">
                         <p>{{strip_tags($post->content)}}</p>
-{{--                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Chi tiết »</a>--}}
+                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Chi tiết »</a>
                     </div>
 
                     <div class="clear"></div>

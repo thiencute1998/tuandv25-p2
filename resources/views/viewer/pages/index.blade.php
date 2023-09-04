@@ -78,7 +78,7 @@
             <!-- Thumbnail Navigator -->
             <div data-u="thumbnavigator" class="jssort121" style="position: absolute; display: block; top: 0px; left: 0px; width: 280px !important; height: 290.041px;" data-autocenter="2" data-scale-left="0.75" >
                 <div data-u="slides" style="position: absolute; overflow: hidden; width: 320px; height: 380px; left: 0px; top: 0px; z-index: 0;">
-                    <div data-u="prototype" class="p" style="width: 260px; height: 60px; left: 0px; top: 0px; " data-jssor-button="1">
+                    <div data-u="prototype" class="p" style="width: 280px; height: 60px; left: 0px; top: 0px; " data-jssor-button="1">
                         <div data-u="thumbnailtemplate" class="t"></div>
                     </div>
                 </div>
