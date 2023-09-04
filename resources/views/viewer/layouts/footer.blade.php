@@ -3,7 +3,7 @@
 
         <div id="footer-first" class="footer-widgets-box">
             <div class="footer-widget-top" style="text-transform: uppercase"><h4>Giáo Phận Bắc Ninh</h4></div>
-            <p style="margin-top: 10px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="200px;"></p>
+            <p style="margin-top: 10px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="150px;"></p>
         </div>
 
 
@@ -99,6 +99,10 @@
 </style>
 <script type="text/javascript">
     $(document).ready(function() {
+
+        if ($(window).width > 375) {
+            $(body).bind('scroll', 'fixedMenu');
+        }
         $('.em-sign-up').on('click', function() {
             let email = $('.email-input').val();
             if (email) {
@@ -138,5 +142,16 @@
         activeTab($('.tab li:first-child'));
     })
 
+    var navbar = document.getElementById("main-nav");
+    var sticky = navbar.offsetTop;
+    function fixedMenu() {
+        if ($(window).width() > 640) {
+            if (window.scrollY >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    }
 
 </script>
