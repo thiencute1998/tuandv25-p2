@@ -56,7 +56,7 @@
 
         .em-read-more-5 p{
             display: -webkit-box;
-            -webkit-line-clamp: 5;
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
@@ -95,9 +95,15 @@
                 overflow: hidden;
             }
         }
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+        }
     </style>
 </head>
-<body id="top" class="home page-template-default page page-id-35237 lazy-enabled">
+<body id="top" class="home page-template-default page page-id-35237 lazy-enabled"  onscroll="fixedMenu();">
 
 <div class="wrapper-outer">
 

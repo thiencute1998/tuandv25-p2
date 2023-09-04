@@ -1,6 +1,6 @@
 /* CSS Document */
 body {
-    background: #FFF;
+    background: #eff3f8;
     color: #333;
     font-family: Arial;
     font-size: 13px;
@@ -210,4 +210,5 @@ img.emoji {
     padding-left: 0;
     list-style: none;
 }
+.post-box-title a, .tab-item a, .linkw a { font-weight: 600; }
 

@@ -30,30 +30,9 @@
         <div class="post-listing archive-box">
             @foreach($posts as $post)
                 <article class="item-list">
-
-                    <h2 class="post-box-title">
-                        <a href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a>
-                    </h2>
-
-                    <p class="post-meta">
-                        <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->fullDate}}</span>
-                        <span class="post-cats"><i class="fa fa-folder"></i>
-                                @if($post->category)
-                                <a
-                                    href="{{route('get-post', ['post'=> $category->slug])}}" rel="category tag">{{$post->category->name}}
-                                    </a>
-                            @endif
-                            {{--                                    , <a--}}
-                            {{--                                    href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
-                            {{--                                    rel="category tag">Tin tức</a>--}}
-
-                            <span class="post-comments"><i class="fa fa-comments"></i><a
-                                    href="#">0</a></span>
-
-                    </p>
                     <div class="post-thumbnail tie-appear em-list-img">
                         <a href="{{route('get-post', ['post'=> $post->slug])}}">
-                            <img width="310" height="165" alt=""
+                            <img width="230" height="100%" alt=""
                                  data-src="{{asset("upload/admin/post/image/" . $post->image)}}"
                                  class="attachment-tie-medium size-tie-medium wp-post-image tie-appear ls-is-cached lazyloaded"
                                  src="{{asset("upload/admin/post/image/" . $post->image)}}">
@@ -66,8 +45,18 @@
                     </div><!-- post-thumbnail /-->
 
                     <div class="entry em-read-more-5">
+                        <h2 class="post-box-title">
+                            <a href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a>
+                        </h2>
+                        <p class="post-meta">
+                            <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->fullDate}}</span>
+                            <span class="post-cats"><i class="fa fa-folder"></i>
+                        @if($post->category)
+                                    <a href="{{route('get-post', ['post'=> $category->slug])}}" rel="category tag">{{$post->category->name}}</a>
+                            @endif
+                        </p>
                         <p>{{strip_tags($post->content)}}</p>
-                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Chi tiết »</a>
+{{--                        <a class="more-link" href="{{route('get-post', ['post'=> $post->slug])}}">Chi tiết »</a>--}}
                     </div>
 
                     <div class="clear"></div>

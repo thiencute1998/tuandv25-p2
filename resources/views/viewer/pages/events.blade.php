@@ -41,8 +41,8 @@
                     <p class="post-meta">
                         <span class="tie-date"><i class="fa fa-clock-o"></i>{{$event->fullDate}}</span>
                         <span class="post-cats"><i class="fa fa-folder"></i>
-                            <span class="post-comments"><i class="fa fa-comments"></i><a
-                                    href="#">0</a></span>
+{{--                            <span class="post-comments"><i class="fa fa-comments"></i><a--}}
+{{--                                    href="#">0</a></span>--}}
 
                     </p>
                     <div class="post-thumbnail tie-appear em-list-img">
@@ -61,7 +61,7 @@
 
                     <div class="entry em-read-more-5">
                         <p>{{strip_tags($event->content)}}</p>
-                        <a class="more-link" href="{{route('get-event-calendar', ['event'=> $event->slug])}}">Chi tiết »</a>
+{{--                        <a class="more-link" href="{{route('get-event-calendar', ['event'=> $event->slug])}}">Chi tiết »</a>--}}
                     </div>
 
                     <div class="clear"></div>
