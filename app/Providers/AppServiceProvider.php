@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Category;
+use App\Models\Config;
 use App\Models\Link;
 use App\Models\Post;
 use Illuminate\Support\ServiceProvider;
@@ -85,7 +86,8 @@ class AppServiceProvider extends ServiceProvider
 
             // Lien he
             $contactWebsite = About::first();
-
+            //Config
+            $config = Config::first();
             // Lien ket website
             $linkWebsites = Link::where('status', 1)->get();
             $data = [
@@ -102,6 +104,7 @@ class AppServiceProvider extends ServiceProvider
                 'postNotify'=> $postNotify,
                 'contactWebsite'=> $contactWebsite,
                 'linkWebsites'=> $linkWebsites,
+                'config'=> $config
             ];
             $view->with($data);
         });
