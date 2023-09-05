@@ -810,7 +810,7 @@ blockquote:before,
 	float: right;
 	font: normal 11px tahoma;
 	padding: 9px 12px 8px 12px;
-	width: 90px;
+	width: 151px;
 	color: #C5C5C5;
 	border: 0 none;
 	border: 1px solid #258101;
@@ -827,7 +827,7 @@ blockquote:before,
 
 .search-block #s-header:focus {
 	color: #000;
-	width: 150px;
+	width: 180px;
 }
 
 .search-block .search-button {
@@ -1736,7 +1736,7 @@ ul.newsticker a {
  */
 
 #main-content {
-	background: #FFF;
+	/*background: #FFF;*/
 	margin: 10px auto 25px;
 	position: relative;
 	padding: 10px 0;
@@ -1831,11 +1831,12 @@ body.error404 .post-title {
  */
 
 .cat-box {
-	margin-bottom: 35px;
+    background: #FFF;
+	margin-bottom: 25px;
 }
 
 .cat-box-title {
-	padding: 3px 0;
+	padding: 15px 0;
 	overflow: hidden;
 }
 
@@ -1981,7 +1982,7 @@ a.more-link {
 
 .column2 li.other-news,
 .list-box li.other-news {
-	background: #f7f7f7;
+	/*background: #f7f7f7;*/
 	overflow: hidden;
 	padding: 17px 20px;
 	border-top: 1px solid #FFF;
@@ -2422,7 +2423,7 @@ a.more-link {
 .page-title {
 	float: left;
 	margin-right: 10px;
-	font-size: 26px;
+	font-size: 22px;
 	font-family: BebasNeueRegular, arial, Georgia, serif;
 	color: #000;
 }
@@ -3599,6 +3600,7 @@ blockquote p {
 	font-size: 20px;
 	font-family: BebasNeueRegular, arial, Georgia, serif;
     color: #258101;
+    padding-left: 20px;
 }
 
 .widget-top h4 a {

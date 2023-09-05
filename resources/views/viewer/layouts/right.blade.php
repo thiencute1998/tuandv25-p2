@@ -234,11 +234,11 @@
                     </a></div>
             </div><!-- .widget /-->
             <div id="text-9" class="footer-widget widget_text">
-                <div class="footer-widget-top"><h4 style="color: #258101">Liên kết websites</h4></div>
+                <div class="footer-widget-top"><h4 style="color: #258101; padding-left: 20px;">Liên kết websites</h4></div>
                 <div class="footer-widget-container">
                     <div class="textwidget linkw">
                         @foreach($linkWebsites as $link)
-                            <p><a href="{{$link->link}}" target="_blank"
+                            <p><i class="fa fa-angle-right" aria-hidden="true"></i><a href="{{$link->link}}" target="_blank"
                                   rel="noopener">{{$link->name}}</a></p>
                         @endforeach
                     </div>
@@ -246,7 +246,7 @@
             </div><!-- .widget /-->
             <div id="footer-second" class="footer-widgets-box">
                 <div id="facebook-widget-4" class="footer-widget facebook-widget">
-                    <div class="footer-widget-top"><h4 style="color: #258101">Kết nối </h4></div>
+                    <div class="footer-widget-top"><h4 style="color: #258101; padding-left: 20px;">Kết nối </h4></div>
                     <div class="footer-widget-container">
                         <div class="facebook-box">
                             <iframe scrolling="no" frameborder="0"
@@ -262,7 +262,7 @@
             <div id="text-4" class="footer-widget widget_text">
                 {{--                <div class="footer-widget-top"><h4> </h4></div>--}}
                 <div class="footer-widget-container">
-                    <div class="textwidget"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img height="60"
+                    <div class="textwidget" style="text-align: center; margin-bottom: 25px;"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img height="60"
                                                                                                              width="154"
                                                                                                              data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
                                                                                                              class="lazyload"

@@ -7,7 +7,7 @@
     <meta property="og:site_name" content="{{$post->name}}"/>
 @endsection
 @section('main-content')
-    <div class="content">
+    <div class="content background-this">
         <input type="hidden" class="em-post-slug" value="{{$post->slug}}">
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a rel="v:url"
                                                                                                    property="v:title"
@@ -182,7 +182,7 @@
         {{--            </div><!-- .post-navigation -->--}}
 
 
-        <section id="related_posts">
+        <section id="related_posts" class=" background-this">
 
             <div class="block-head">
 

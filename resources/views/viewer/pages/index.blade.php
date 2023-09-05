@@ -64,7 +64,7 @@
             <div data-u="loading" class="jssorl-009-spin" style="position: absolute; top: 0px; left: 0px; width: 660px; height: 390px; text-align: center; background-color: rgba(0, 0, 0, 0.7); display: none;">
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg">
             </div>
-            <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 480px; height: 300px; overflow: hidden;">
+            <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 490px; height: 300px; overflow: hidden;">
                 @foreach($slideWebsites as $slide)
                 <div>
                     <img class="img-slider" data-u="image" src="{{asset("upload/admin/banner/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">
@@ -76,7 +76,7 @@
                 @endforeach
             </div>
             <!-- Thumbnail Navigator -->
-            <div data-u="thumbnavigator" class="jssort121" style="position: absolute; display: block; top: 0px; left: 0px; width: 280px !important; height: 290.041px;" data-autocenter="2" data-scale-left="0.75" >
+            <div data-u="thumbnavigator" class="jssort121" style="position: absolute; display: block; top: 0px; left: 0px !important; width: 280px !important; height: 290.041px;" data-autocenter="2" data-scale-left="0.75" >
                 <div data-u="slides" style="position: absolute; overflow: hidden; width: 320px; height: 380px; left: 0px; top: 0px; z-index: 0;">
                     <div data-u="prototype" class="p" style="width: 260px; height: 60px; left: 0px; top: 0px; " data-jssor-button="1">
                         <div data-u="thumbnailtemplate" class="t"></div>
@@ -100,7 +100,7 @@
         <?php $idTab = 1 ?>
         @foreach($homes as $home)
         @if(count($home->categories) == 1)
-                <section class="cat-box list-box tie-cat-13" style="margin-top: 10px;">
+                <section class="cat-box list-box tie-cat-13" style="margin-top: 25px;">
                     <div class="cat-box-title">
                         @foreach($home->categories as $category)
                             <h2><a href="{{route('get-post', ['post'=> $category->slug])}}" style="color: #258101">{{$category->name}}</a></h2>

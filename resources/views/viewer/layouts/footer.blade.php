@@ -3,7 +3,7 @@
 
         <div id="footer-first" class="footer-widgets-box">
             <div class="footer-widget-top" style="text-transform: uppercase"><h4>Giáo Phận Bắc Ninh</h4></div>
-            <p style="margin-top: 10px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="150px;"></p>
+            <p style="margin-top: 10px; margin-left: 50px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="110px;"></p>
         </div>
 
 
@@ -89,6 +89,7 @@
         </div><!-- modal -->
     </div>
 </footer><!-- .Footer /-->
+
 <style type="text/css">
     .fluid-width-video-wrapper {
         padding-top: 10% !important;

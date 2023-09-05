@@ -6,7 +6,7 @@
     <meta property="og:site_name" content="Giáo phận Bắc Ninh"/>
 @endsection
 @section('main-content')
-    <div class="content">
+    <div class="content background-this">
 
 
         <div xmlns:v="http://rdf.data-vocabulary.org/#" id="crumbs"><span typeof="v:Breadcrumb"><a rel="v:url" property="v:title" class="crumbs-home" href="https://giaophanbacninh.org">Home</a></span> <span class="delimiter">/</span> <span class="current">Tìm nhà thờ gần đây</span></div>

@@ -139,6 +139,17 @@
 </div><!-- .Wrapper-outer -->
 <div id="topcontrol" class="fa fa-angle-up" title="Scroll To Top"></div>
 <div id="fb-root"></div>
+<div id="socialMedia" class="moduleContainer moduleSocialMedia">
+    <div class="moduleInner moduleTitleHidden moduleSubtitleHidden">
+        <div id="socialMediaBody" class="socialMediaBody">
+            <a class="facebookSocialMedia" href="https://www.facebook.com/" target="_blank" title="Facebook" alt="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a class="instagramSocialMedia" href="https://www.instagram.com/" target="_blank" title="Instagram" alt="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a class="twitterSocialMedia" href="https://www.twitter.com/" target="_blank" title="Twitter" alt="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a class="youtubeSocialMedia" href="https://www.youtube.com/channel/UCuStS8Aoh7ORp7RRdgMhtBg" target="_blank" title="YouTube" alt="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+            <a class="linkedinSocialMedia" href="https://www.linkedin.com/" target="_blank" title="LinkedIn" alt="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</div>
 <script type='text/javascript' id='tie-scripts-js-extra'>
     /* <![CDATA[ */
     var tie = {"mobile_menu_active":"1","mobile_menu_top":"","lightbox_all":"1","lightbox_gallery":"1","woocommerce_lightbox":"","lightbox_skin":"dark","lightbox_thumb":"","lightbox_arrows":"","sticky_sidebar":"1","is_singular":"1","SmothScroll":"1","reading_indicator":"","lang_no_results":"No Results","lang_results_found":"Results Found"};

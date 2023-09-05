@@ -31,7 +31,7 @@
             <button class="search-button" type="submit" value="Search"><i class="fa fa-search"></i></button>
             <input class="search-live" type="text" id="s-header" name="search" title="Tìm kiếm" value="Tìm kiếm..."
                    onfocus="if (this.value == 'Tìm kiếm...') {this.value = '';}"
-                   onblur="if (this.value == '') {this.value = 'Tìm kiếm... ';}"/>
+                   onblur="if (this.value == '') {this.value = 'Tìm kiếm...';}"/>
             <div id="live-search_sb" class="live-search_sb"
                  style="position: absolute; width: 315px; z-index: 9999; top: 32px;">
                 <div class="live-search_sb_cont">
