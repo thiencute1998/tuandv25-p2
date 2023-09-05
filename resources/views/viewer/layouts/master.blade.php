@@ -53,32 +53,26 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
         .em-read-more-5 p{
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-
-
         .em-list-img{
             width: 310px !important;
             height: 165px !important;
             overflow: hidden;
         }
-
         .em-side-img {
             width: 90px !important;
             height: 50.69px !important;
             overflow: hidden;
         }
-
         .em-related-img {
             height: 110px;
             overflow: hidden;
         }
-
         .em-news-img {
             width: 100px !important;
             height: 68.17px !important;
@@ -113,19 +107,14 @@
 
     <div id="wrapper" class="boxed">
         <div class="inner-wrapper">
-
             @include('viewer.layouts.header')
-
             <div class="clear"></div>
-
             @include('viewer.layouts.breaking_news')
             <div id="main-content" class="container">
                 @yield('main-content')
                 @include('viewer.layouts.right')
             </div>
-
             @include('viewer.layouts.footer')
-
             <div class="clear"></div>
             <div class="footer-bottom" style="display:block;">
                 <div class="container">
