@@ -1,0 +1,34 @@
+version: "3.7"
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: mysql
+        ports:
+            - "3305:3306"
+        restart: unless-stopped
+        environment:
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+
+    web:
+        image: giao-phan-web
+        container_name: web
+        ports:
+            - "8001:80"
+        restart: unless-stopped
+        working_dir: /var/www/html/tuandv25-p2
+        volumes:
+            -   ./app:/var/www/html/tuandv25-p2/app
+            -   ./public:/var/www/html/tuandv25-p2/public
+            -   ./resources:/var/www/html/tuandv25-p2/resources
+            -   ./routes:/var/www/html/tuandv25-p2/routes
+            -   ./storage:/var/www/html/tuandv25-p2/storage
+            -   ./docker/nginx:/var/log/nginx
+            -   ./docker/php-fpm/php-fpm.log:/var/log/php-fpm.log
+
+        links:
+            -   mysql
+        depends_on:
+            -   mysql
