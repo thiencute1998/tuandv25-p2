@@ -6253,9 +6253,9 @@ ul.timeline li.timeline-post:before {
 	padding: 20px 0;
 	border-top: 8px solid #FF8500;
 	margin-top: 20px;
-	-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, .1);
-	-moz-box-shadow: 0 -8px 0 rgba(0, 0, 0, .1);
-	box-shadow: 0 -8px 0 rgba(0, 0, 0, .1);
+	/*-webkit-box-shadow: 0 -5px 0 rgba(0, 0, 0, .1);*/
+	/*-moz-box-shadow: 0 -8px 0 rgba(0, 0, 0, .1);*/
+	/*box-shadow: 0 -8px 0 rgba(0, 0, 0, .1);*/
 }
 
 #theme-footer a {

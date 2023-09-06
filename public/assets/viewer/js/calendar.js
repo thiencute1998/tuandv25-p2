@@ -11,18 +11,18 @@ function CalendarControl() {
       prevMonthLastDate: null,
       calWeekDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
       calMonthName: [
-		 "Tháng Một",
-		 "Tháng Hai",
-		 "Tháng Ba",
-		 "Tháng Tư",
-		 "Tháng Năm",
-		 "Tháng Sáu",
-		 "Tháng Bảy",
-		 "Tháng Tám",
-		 "Tháng Chín",
-		 "Tháng Mười",
-		 "Tháng Mười Một",
-		 "Tháng Mười Hai"
+		 "January",
+		 "February",
+		 "March",
+		 "April",
+		 "May",
+		 "June",
+		 "July",
+		 "August",
+		 "September",
+		 "October",
+		 "November",
+		 "December"
       ],
       daysInMonth: function (month, year) {
         return new Date(year, month, 0).getDate();

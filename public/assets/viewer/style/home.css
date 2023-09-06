@@ -214,6 +214,21 @@ img.emoji {
 }
 .post-box-title a, .tab-item a, .linkw a { font-weight: 600; }
 .jssort121{ left: 0px !important}
+@media(max-width: 767px) {
+    .jssort121{ left: -47.5668px !important}
+}
+@media(max-width: 320px) {
+    .jssort121{ left: -32.5668px !important}
+}
+@media(max-width: 480px) {
+    .jssort121{ left: -65.4599px !important}
+}
+@media(min-width: 768px) {
+    .jssort121{ left: -32.5668px !important}
+}
+@media (min-width: 576px) {
+    .jssort121{ left: -15.5668px !important}
+}
 .background-this{ background:  #FFF;}
 .background-this #crumbs{ padding: 5px;}
 .background-this .page-head, .background-this h3{ padding-left: 10px;}
@@ -221,10 +236,10 @@ img.emoji {
 element.style {
 }
 #socialMedia {
-    position: fixed;
+    position: absolute;
     right: 0px;
     margin-right: 0px;
-    top: 220px;
+    top: 320px;
     z-index: 10;
     filter: drop-shadow(0 4px 4px rgba(0,0,0,0.25));
 }
