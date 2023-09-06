@@ -11,6 +11,8 @@ services:
             MYSQL_PASSWORD: ${DB_PASSWORD}
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        networks:
+            - giao-phan-network
 
     web:
         image: giao-phan-web
@@ -28,7 +30,12 @@ services:
             -   ./docker/nginx:/var/log/nginx
             -   ./docker/php-fpm/php-fpm.log:/var/log/php-fpm.log
 
+        networks:
+            - giao-phan-network
         links:
             -   mysql
         depends_on:
             -   mysql
+networks:
+    giao-phan-network:
+        driver: bridge
