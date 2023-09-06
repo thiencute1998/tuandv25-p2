@@ -16,7 +16,7 @@ services:
         image: giao-phan-web
         container_name: web
         ports:
-            - "8001:80"
+            - "8002:80"
         restart: unless-stopped
         working_dir: /var/www/html/tuandv25-p2
         volumes:
