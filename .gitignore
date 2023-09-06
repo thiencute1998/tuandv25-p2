@@ -16,3 +16,4 @@ yarn-error.log
 /.vscode
 /docker/nginx
 /docker/php-fpm
+/docker/mysql

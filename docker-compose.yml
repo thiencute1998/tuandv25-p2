@@ -12,8 +12,10 @@ services:
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
         networks:
-            - giao-phan-network
+            -   giao-phan-network
 
+        volumes:
+            -   ./docker/mysql:/var/lib/mysql
     web:
         image: giao-phan-web
         container_name: web
