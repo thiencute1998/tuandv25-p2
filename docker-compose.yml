@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     mysql:
-        image: mysql:8.0
+        image: mariadb
         container_name: mysql
         ports:
             - "3305:3306"
@@ -16,6 +16,7 @@ services:
 
         volumes:
             -   ./docker/mysql:/var/lib/mysql
+
     web:
         image: giao-phan-web
         container_name: web
