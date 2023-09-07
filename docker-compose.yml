@@ -1,0 +1,43 @@
+version: "3.3"
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: mysql
+        ports:
+            - "3305:3306"
+        restart: unless-stopped
+        environment:
+            MYSQL_USER: ${DB_USERNAME}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
+            MYSQL_DATABASE: ${DB_DATABASE}
+            MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        networks:
+            -   giao-phan-network
+
+        volumes:
+            -   ./docker/mysql:/var/lib/mysql
+    web:
+        image: giao-phan-web
+        container_name: web
+        ports:
+            - "8002:80"
+        restart: unless-stopped
+        working_dir: /var/www/html/tuandv25-p2
+        volumes:
+            -   ./app:/var/www/html/tuandv25-p2/app
+            -   ./public:/var/www/html/tuandv25-p2/public
+            -   ./resources:/var/www/html/tuandv25-p2/resources
+            -   ./routes:/var/www/html/tuandv25-p2/routes
+            -   ./storage:/var/www/html/tuandv25-p2/storage
+            -   ./docker/nginx:/var/log/nginx
+            -   ./docker/php-fpm/php-fpm.log:/var/log/php-fpm.log
+
+        networks:
+            - giao-phan-network
+        links:
+            -   mysql
+        depends_on:
+            -   mysql
+networks:
+    giao-phan-network:
+        driver: bridge
