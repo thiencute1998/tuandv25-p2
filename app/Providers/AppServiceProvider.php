@@ -39,7 +39,8 @@ class AppServiceProvider extends ServiceProvider
 
             // banner
             $bannerWebsite = Banner::where('status', 1)->where('type', 1)->first();
-
+            // Logo
+            $logoWebsite = Banner::where('status', 1)->where('type', 5)->first();
             // breaking news
             $breakNews = Post::where('status', 1)
                 ->orderBy('created_at', 'desc')
@@ -104,7 +105,8 @@ class AppServiceProvider extends ServiceProvider
                 'postNotify'=> $postNotify,
                 'contactWebsite'=> $contactWebsite,
                 'linkWebsites'=> $linkWebsites,
-                'config'=> $config
+                'config'=> $config,
+                'logoWebsite'=>$logoWebsite
             ];
             $view->with($data);
         });

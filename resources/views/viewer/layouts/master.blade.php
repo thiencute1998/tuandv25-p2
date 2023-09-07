@@ -134,8 +134,9 @@
             <a class="facebookSocialMedia" href="{{$config->facebook}}" target="_blank" title="Facebook" alt="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="youtubeSocialMedia" href="{{$config->youtube}}" target="_blank" title="YouTube" alt="YouTube"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
 {{--            <a class="instagramSocialMedia" href="https://www.instagram.com/" target="_blank" title="Instagram" alt="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>--}}
-            <a class="twitterSocialMedia" href="https://www.twitter.com/" target="_blank" title="Twitter" alt="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+{{--            <a class="twitterSocialMedia" href="https://www.twitter.com/" target="_blank" title="Twitter" alt="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>--}}
 {{--            <a class="linkedinSocialMedia" href="https://www.linkedin.com/" target="_blank" title="LinkedIn" alt="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a>--}}
+            <a class="linkedinSocialMedia" href="" target="_blank" title="Donate" alt="Donate" style="padding-top: 0px;"><img src="{{asset("assets/viewer/style/images/donate.png")}}" width="50" height="50"></a>
         </div>
     </div>
 </div>

@@ -62,6 +62,8 @@
                                                     <span class="text-success">Slide</span>
                                                 @elseif($banner->type==3)
                                                     <span class="text-success">Menu Right</span>
+                                                @elseif($banner->type==5)
+                                                    <span class="text-success">Logo</span>
                                                 @else
                                                     <span class="text-danger" style="color: #28a745">...</span>
                                                 @endif

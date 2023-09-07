@@ -3,7 +3,7 @@
 
         <div id="footer-first" class="footer-widgets-box">
             <div class="footer-widget-top" style="text-transform: uppercase"><h4>Giáo Phận Bắc Ninh</h4></div>
-            <p style="margin-top: 10px; margin-left: 50px;"> <img src="{{asset("assets/viewer/style/images/cropped-icon-270x270.png")}}" width="110px;"></p>
+            <p style="margin-top: 10px; margin-left: 50px;"> <img src="{{$logoWebsite ? asset("upload/admin/banner/image/" . $logoWebsite->image) : "assets/viewer/style/images/cropped-icon-180x180.png"}}" width="110px;"></p>
         </div>
 
 

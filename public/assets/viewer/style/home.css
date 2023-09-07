@@ -224,10 +224,10 @@ img.emoji {
     .jssort121{ left: -65.4599px !important}
 }
 @media(min-width: 768px) {
-    .jssort121{ left: -32.5668px !important}
+    /*.jssort121{ left: -32.5668px !important}*/
 }
 @media (min-width: 576px) {
-    .jssort121{ left: -15.5668px !important}
+    /*.jssort121{ left: -15.5668px !important}*/
 }
 .background-this{ background:  #FFF;}
 .background-this #crumbs{ padding: 5px;}

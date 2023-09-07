@@ -806,15 +806,16 @@ blockquote:before,
 }
 
 .search-block #s-header {
-	background: #FFF;
+	background: transparent;
 	float: right;
 	font: normal 11px tahoma;
-	padding: 9px 12px 8px 12px;
+	padding: 9px 12px 6px 12px;
 	width: 151px;
-	color: #C5C5C5;
-	border: 0 none;
+	color: #000000;
+    font-weight: 600;
+	/*border: 0 none;*/
 	border: 1px solid #258101;
-	border-width: 0 0 0 1px;
+	/*border-width: 0 0 0 1px;*/
 	-webkit-transition: width .7s, color .4s;
 	   -moz-transition: width .7s, color .4s;
 		 -o-transition: width .7s, color .4s;
