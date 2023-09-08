@@ -1041,7 +1041,7 @@ blockquote:before,
 }
 
 #main-nav ul li {
-	font-size: 13px;
+	font-size: 14px;
 	position: relative;
 	display: inline-block;
 	float: left;
@@ -2182,7 +2182,7 @@ a.more-link {
 	height: 46px;
 	/*border-bottom: 3px solid #EAEAEA;*/
 	padding: 5px 10px 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
     border-bottom: 1px solid #eef1f5;
 }
 
@@ -6270,7 +6270,7 @@ ul.timeline li.timeline-post:before {
 /* Footer Widgets */
 
 #footer-widget-area {
-	width: 1045px;
+	width: 1172px;
 	margin: 0 auto;
 }
 
@@ -7672,7 +7672,7 @@ h3.toggle-head-close i {
 	display: block;
 	height: 3px;
 	width: 28px;
-	background: #333;
+	background: #FFF;
 	-webkit-border-radius: 10px;
 	   -moz-border-radius: 10px;
 			border-radius: 10px;

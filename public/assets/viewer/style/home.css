@@ -283,3 +283,13 @@ element.style {
 #socialMedia a.linkedinSocialMedia {
     background-color: #0077b5;
 }
+#footer-second1 p i{ margin-right: 6px;
+    width: 15px;
+    float: left;
+    height: 20px;}
+#footer-widget-area{ height: 200px ;background: url("images/LogoF1.png") 68% no-repeat;}
+@media only screen and (max-width: 900px){
+    .search-block {
+        display: none;
+    }
+}

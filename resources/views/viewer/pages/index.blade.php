@@ -265,89 +265,72 @@
             @endif
         @endforeach
 
-        <section class="cat-box list-box tie-cat-184">
-            <div class="cat-box-title">
-                <h2><a href="#" style="color: #258101">Video</a></h2>
+{{--        <section class="cat-box list-box tie-cat-184">--}}
+{{--            <div class="cat-box-title">--}}
+{{--                <h2><a href="#" style="color: #258101">Video</a></h2>--}}
 {{--                <div class="stripe-line"></div>--}}
-            </div>
-            <div class="cat-box-content">
+{{--            </div>--}}
+{{--            <div class="cat-box-content">--}}
+{{--                <ul>--}}
+{{--                    @foreach($videos as $key=> $video)--}}
+{{--                        <?php--}}
+{{--                            $linkImg = explode("=", $video->link);--}}
+{{--                            if (!isset($linkImg[1])) {--}}
+{{--                                $linkImg = explode("/", $video->link);--}}
+{{--                            }--}}
+{{--                            $srcImg = end($linkImg);--}}
+{{--                            ?>--}}
+{{--                        @if($key < 4)--}}
+{{--                            @if($key == 0)--}}
+{{--                                <li class="first-news">--}}
+{{--                                <div class="post-thumbnail em-list-img">--}}
+{{--                                    <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">--}}
+{{--                                        <img width="310" height="165" alt="" loading="lazy"--}}
+{{--                                             data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"--}}
+{{--                                             class="attachment-tie-medium size-tie-medium wp-post-image lazyload"--}}
+{{--                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>--}}
+{{--                                        <noscript><img width="310" height="165"--}}
+{{--                                                       src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"--}}
+{{--                                                       class="attachment-tie-medium size-tie-medium wp-post-image" alt=""--}}
+{{--                                                       loading="lazy"/></noscript>--}}
+{{--                                        <span class="fa overlay-icon"></span>--}}
+{{--                                    </a>--}}
+{{--                                </div><!-- post-thumbnail /-->--}}
+{{--                                <h2 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">{{$video->name}}</a></h2>--}}
+{{--                                <p class="post-meta"></p>--}}
+{{--                                <div class="entry">--}}
+{{--                                    <p></p>--}}
+{{--    --}}{{--                                <a class="more-link" href="{{route('get-video', ['video'=> $video->slug])}}">Read More--}}
+{{--    --}}{{--                                    &raquo;</a>--}}
+{{--                                </div>--}}
+{{--                            </li><!-- .first-news -->--}}
+{{--                            @else--}}
+{{--                            <li class="other-news">--}}
 
-                <ul>
-                    @foreach($videos as $key=> $video)
-                        <?php
-                            $linkImg = explode("=", $video->link);
-                            if (!isset($linkImg[1])) {
-                                $linkImg = explode("/", $video->link);
-                            }
-                            $srcImg = end($linkImg);
-                            ?>
+{{--                                <div class="post-thumbnail em-side-img">--}}
+{{--                                    <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark"><img--}}
+{{--                                            width="110" height="75" alt="" loading="lazy"--}}
+{{--                                            data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"--}}
+{{--                                            class="attachment-tie-small size-tie-small wp-post-image lazyload"--}}
+{{--                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>--}}
+{{--                                        <noscript><img width="110" height="75"--}}
+{{--                                                       src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"--}}
+{{--                                                       class="attachment-tie-small size-tie-small wp-post-image" alt=""--}}
+{{--                                                       loading="lazy"/></noscript>--}}
+{{--                                        <span class="fa overlay-icon"></span></a>--}}
+{{--                                </div><!-- post-thumbnail /-->--}}
 
-                        @if($key < 4)
-                            @if($key == 0)
-                                <li class="first-news">
-
-                                <div class="post-thumbnail em-list-img">
-                                    <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">
-                                        <img width="310" height="165" alt="" loading="lazy"
-                                             data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
-                                             class="attachment-tie-medium size-tie-medium wp-post-image lazyload"
-                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                        <noscript><img width="310" height="165"
-                                                       src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
-                                                       class="attachment-tie-medium size-tie-medium wp-post-image" alt=""
-                                                       loading="lazy"/></noscript>
-                                        <span class="fa overlay-icon"></span>
-                                    </a>
-                                </div><!-- post-thumbnail /-->
-
-                                <h2 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark">{{$video->name}}</a></h2>
-
-
-                                <p class="post-meta">
-
-
-                                </p>
-
-
-                                <div class="entry">
-                                    <p></p>
-    {{--                                <a class="more-link" href="{{route('get-video', ['video'=> $video->slug])}}">Read More--}}
-    {{--                                    &raquo;</a>--}}
-                                </div>
-                            </li><!-- .first-news -->
-                            @else
-                            <li class="other-news">
-
-                                <div class="post-thumbnail em-side-img">
-                                    <a href="{{route('get-video', ['video'=> $video->slug])}}" rel="bookmark"><img
-                                            width="110" height="75" alt="" loading="lazy"
-                                            data-src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
-                                            class="attachment-tie-small size-tie-small wp-post-image lazyload"
-                                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                                        <noscript><img width="110" height="75"
-                                                       src="https://img.youtube.com/vi/{{$srcImg}}/0.jpg"
-                                                       class="attachment-tie-small size-tie-small wp-post-image" alt=""
-                                                       loading="lazy"/></noscript>
-                                        <span class="fa overlay-icon"></span></a>
-                                </div><!-- post-thumbnail /-->
-
-                                <h3 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}"
-                                                              rel="bookmark">{{$video->name}}</a></h3>
-
-                                <p class="post-meta">
-
-
-                                </p>
-
-                            </li>
-                            @endif
-                        @endif
-                    @endforeach
-                </ul>
-                <div class="clear"></div>
-
-            </div><!-- .cat-box-content /-->
-        </section><!-- List Box -->
+{{--                                <h3 class="post-box-title"><a href="{{route('get-video', ['video'=> $video->slug])}}"--}}
+{{--                                                              rel="bookmark">{{$video->name}}</a></h3>--}}
+{{--                                <p class="post-meta"></p>--}}
+{{--                            </li>--}}
+{{--                            @endif--}}
+{{--                        @endif--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
+{{--                <div class="clear"></div>--}}
+{{--            </div><!-- .cat-box-content /-->--}}
+{{--        </section><!-- List Box -->--}}
 
     </div><!-- .content /-->
 @endsection
