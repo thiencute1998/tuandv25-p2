@@ -86,7 +86,7 @@
                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-68">
                         <a href="{{route('index')}}">Trang chủ</a></li>
                     @foreach($cates1 as $cate1)
-                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48128">
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-48128">
                             <a href="{{$cate1->link ?  : route('get-post', ['post'=> $cate1->slug])}}">{{$cate1->name}}</a>
                             <ul class="sub-menu menu-sub-content">
                                 @foreach($cates2 as $cate2)

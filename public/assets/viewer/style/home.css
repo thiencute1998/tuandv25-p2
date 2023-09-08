@@ -288,8 +288,12 @@ element.style {
     float: left;
     height: 20px;}
 #footer-widget-area{ height: 200px ;background: url("images/LogoF1.png") 68% no-repeat;}
+#main-nav ul li.menu-item-has-children:after, #main-nav ul li.mega-menu:after, .top-menu ul li.menu-item-has-children:after{ display: none;}
 @media only screen and (max-width: 900px){
     .search-block {
         display: none;
+    }
+    #main-nav ul li.menu-item-has-children:after, #main-nav ul li.mega-menu:after, .top-menu ul li.menu-item-has-children:after{
+        display: block;
     }
 }
