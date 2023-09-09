@@ -155,4 +155,15 @@
         }
     }
 
+    $(function() {
+        $(".btn-group").click(function() {
+            //$(this).addClass("open");
+            $(this).toggleClass("open");
+            $(".dropdown-menu").show();
+        });
+        $(".dropdown-menu li").click(function() {
+            $(".dropdown-menu").hide();
+        });
+
+    });
 </script>

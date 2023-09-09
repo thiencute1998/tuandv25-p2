@@ -289,6 +289,8 @@ element.style {
     height: 20px;}
 #footer-widget-area{ height: 200px ;background: url("images/LogoF1.png") 68% no-repeat;}
 #main-nav ul li.menu-item-has-children:after, #main-nav ul li.mega-menu:after, .top-menu ul li.menu-item-has-children:after{ display: none;}
+.cat-tabs-header{ display: block;}
+.cat-box .actions{ display: none;}
 @media only screen and (max-width: 900px){
     .search-block {
         display: none;
@@ -296,4 +298,83 @@ element.style {
     #main-nav ul li.menu-item-has-children:after, #main-nav ul li.mega-menu:after, .top-menu ul li.menu-item-has-children:after{
         display: block;
     }
+    .cat-tabs-header{ display: none;}
+    .cat-box .actions{ display: block;}
+    .cat-box>.actions {
+        float: right;
+        display: inline-block;
+        padding: 15px 0 15px;
+        margin-right: 20px;
+    }
 }
+
+.cat-box>.actions .btn-group a{ font-size: 16px; font-weight: 500;}
+.cat-box>.nav-tabs {
+    background: 0 0;
+    margin: 1px 0 0;
+    float: right;
+    display: inline-block;
+    border: 0;
+}
+.dropdown-menu {
+    box-shadow: 5px 5px rgba(102,102,102,.1);
+    left: 0;
+    min-width: 175px;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    float: left;
+    list-style: none;
+    text-shadow: none;
+    padding: 0;
+    background-color: #fff;
+    margin: 10px 0 0;
+    border: 1px solid #eee;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+.dropdown-menu-right, .dropdown-menu.pull-right {
+    left: auto;
+    right: 0;
+}
+.pull-right {
+    float: right!important;
+}
+.open>.dropdown-menu{ display: block;}
+.dropdown-menu>li>a {
+    padding: 8px 16px;
+    color: #6f6f6f;
+    text-decoration: none;
+    display: block;
+    clear: both;
+    font-weight: 300;
+    line-height: 18px;
+    white-space: nowrap;
+}
+.btn-group>.dropdown-menu:after, .dropdown-toggle>.dropdown-menu:after, .dropdown>.dropdown-menu:after {
+    position: absolute;
+    top: -7px;
+    right: 16px;
+    left: auto;
+    display: inline-block!important;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #fff;
+    border-left: 7px solid transparent;
+    content: '';
+}
+.btn-group>.dropdown-menu:before, .dropdown-toggle>.dropdown-menu:before, .dropdown>.dropdown-menu:before {
+    position: absolute;
+    top: -8px;
+    right: 15px;
+    left: auto;
+    display: inline-block!important;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #e0e0e0;
+    border-left: 8px solid transparent;
+    content: '';
+}
+.btn-group ul li.active a{ color: #00000094}

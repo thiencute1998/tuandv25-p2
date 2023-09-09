@@ -2208,7 +2208,9 @@ a.more-link {
 	/*-webkit-box-shadow: 0 -1px 2px #d4d4d4;*/
     font-weight: bold;
 }
-
+.cat-tabs-header li.active a{
+    color: #00000094 !important;
+}
 .cat-tabs-wrap li {
 	overflow: hidden;
 	padding: 12px 0;

@@ -97,6 +97,7 @@
         <div class="clear"></div>
 
         <?php $liTab = 1 ?>
+        <?php $liTabMobile = 1 ?>
         <?php $idTab = 1 ?>
         @foreach($homes as $home)
         @if(count($home->categories) == 1)
@@ -185,6 +186,19 @@
                                     <?php $liTab ++ ?>
                         @endforeach
                         </ul>
+                    </div>
+                    <div class="actions">
+                        <div class="btn-group">
+                            <a href="javascript:;" class="clickable" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                @foreach($home->categories as $keyCate=> $category)
+                                    <li><a href="{{"#catab" . $liTabMobile}}">{{$category->name}}</a></li>
+                                    <?php $liTabMobile ++ ?>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                     @foreach($home->categories as $keyCate=> $category)
                         <div id="{{"catab" . $idTab}}" class="cat-tabs-wrap cat-tabs-wrap1">
