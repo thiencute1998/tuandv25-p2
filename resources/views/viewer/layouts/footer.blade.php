@@ -159,10 +159,10 @@
         $(".btn-group").click(function() {
             //$(this).addClass("open");
             $(this).toggleClass("open");
-            $(".dropdown-menu").show();
         });
-        $(".dropdown-menu li").click(function() {
-            $(".dropdown-menu").hide();
+        $("ul.dropdown-menu li a").click(function(event) {
+            event.preventDefault();
+            $( this ).parent().parent().parent().removeClass("open");
         });
 
     });
