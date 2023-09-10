@@ -276,7 +276,7 @@ function showCalendarPopup(date) {
                     $(otherEvent).addClass('event-calendar');
                     let imgEvent = $(otherEvent).find('.em-item-name')
                     imgEvent.find('span').text(value.name);
-                    imgEvent.find('a').attr('href', value.slug);
+                    imgEvent.find('a').attr('href', window.location.origin + "/" + value.slug);
                     $(otherEvent).removeClass('event-none');
                     $(otherEvent).find('.em-date').text(value.d_date);
                     $(otherEvent).find('.em-address').text(value.address);
