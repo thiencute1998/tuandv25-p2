@@ -125,7 +125,9 @@ class IndexRepository extends BaseRepository {
             $value->d_date = $this->formatVNDate($value->d_date);
             return $value;
         });
-        return ['formatFullDate'=> $formatFullDate, 'data'=> $data];
+
+        $posts = Post::where('status', 1)->whereDate('created_at', Carbon::createFromFormat("d/m/Y", $params['date'])->format('Y-m-d'))->get();
+        return ['formatFullDate'=> $formatFullDate, 'data'=> $data, 'posts'=> $posts];
     }
 
     public function events() {

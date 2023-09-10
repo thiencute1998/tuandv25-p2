@@ -266,6 +266,24 @@ function showCalendarPopup(date) {
                     $('.em-modal-content').append(otherEvent);
                 });
             }
+
+            if (res.posts.length) {
+                res.posts.forEach(value=> {
+
+                    $('.em-img-data').attr("data-src", '/upload/admin/post/image/' + value.image);
+                    $('.em-img').attr("src", '/upload/admin/post/image/' + value.image);
+
+                    let otherEvent = $('.event-none').clone();
+                    $(otherEvent).addClass('event-calendar');
+                    let imgEvent = $(otherEvent).find('.em-item-name')
+                    imgEvent.find('span').text(value.name);
+                    imgEvent.find('a').attr('href', value.slug);
+                    $(otherEvent).removeClass('event-none');
+                    $(otherEvent).find('.em-date').text(value.d_date);
+                    $(otherEvent).find('.em-address').text(value.address);
+                    $('.em-modal-content').append(otherEvent);
+                });
+            }
         }
     })
 
