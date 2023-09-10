@@ -59,7 +59,7 @@ class IndexRepository extends BaseRepository {
                 $q->where('category_id', '=', $category->id)
                     ->orWhereIn('category_id', $arrcategory_id);
             });
-            $queryPost->with('category');
+            $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
             return $posts->through(function ($value) {
                 $value->fullDate = $value->created_at;
@@ -78,7 +78,7 @@ class IndexRepository extends BaseRepository {
         $postNew->update();
         $query = Post::where('status', 1);
         $query->where('slug', $post);
-        $query->with('category');
+        $query->with('categories');
         return $query->firstOrFail();
     }
 
@@ -154,7 +154,7 @@ class IndexRepository extends BaseRepository {
             $queryPost->whereHas('tags', function($q) use($tag){
                 $q->where('tag_id', $tag->id);
             });
-            $queryPost->with('category');
+            $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
         }
         return ['tag'=> $tag, 'posts'=> $posts];
@@ -272,7 +272,7 @@ class IndexRepository extends BaseRepository {
         if (isset($post)) {
             $query->where('name', 'like', "%$post%");
         }
-        $query->with('category');
+        $query->with('categories');
         $query->orderBy('created_at', 'desc');
         $data = $query->paginate(10);
         return $data->through(function ($value) {

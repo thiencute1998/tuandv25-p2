@@ -104,7 +104,12 @@
                                                 {{$post->name}}
                                             </td>
                                             <td class="text-left">
-                                                {{$post->category ? $post->category->name : ""}}
+                                                @foreach($post->categories as $keyCate=> $category)
+                                                    @if($keyCate != 0)
+                                                        <span> ,</span>
+                                                    @endif
+                                                    {{$category->name}}
+                                                @endforeach
                                             </td>
                                             <td class="text-left">
                                                 @if($post->tags)

@@ -62,9 +62,11 @@
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Danh mục</label>
-                                            <select id="category-link" class="category-link form-control" name="category_id" multiple>
-                                                @if($post->category)
-                                                    <option value="{{$post->category_id}}">{{$post->category->name}}</option>
+                                            <select id="category-link" class="category-link form-control" name="categories" multiple>
+                                                @if($post->categories)
+                                                    @foreach($post->categories as $category)
+                                                        <option value="{{$category->id}}" selected>{{$category->name}}</option>
+                                                    @endforeach
                                                 @endif
                                             </select>
                                         </div>
@@ -146,7 +148,7 @@
             $('.item-status').val(status);
 
             $('#category-link').select2({
-                multiple: false,
+                multiple: true,
                 allowClear: true,
                 placeholder: "Chọn danh muc",
                 ajax: {

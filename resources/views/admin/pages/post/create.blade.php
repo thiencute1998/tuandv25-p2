@@ -62,7 +62,7 @@
                                     <div class="row form-group">
                                         <div class="col-md-6">
                                             <label for="services" class="col-form-label">Danh mục</label>
-                                            <select id="category-link" class="category-link form-control" name="category_id" multiple>
+                                            <select id="category-link" class="category-link form-control" name="categories[]" multiple>
                                             </select>
                                         </div>
                                         <div class="col-md-6">
@@ -219,7 +219,7 @@
                 $("input[name='title']").val(name);
             });
             $('#category-link').select2({
-                multiple: false,
+                multiple: true,
                 allowClear: true,
                 placeholder: "Chọn danh muc",
                 ajax: {

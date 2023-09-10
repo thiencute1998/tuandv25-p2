@@ -13,10 +13,15 @@
                                                                                                    property="v:title"
                                                                                                    class="crumbs-home"
                                                                                                    href="{{route('index')}}">Home</a></span>
-            @if($post->category)
-                <span class="delimiter">/</span> <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
-                                                                                href="{{route('get-post', ['post'=> $post->category->slug])}}">{{$post->category->name}}</a></span>
-            @endif
+            @foreach($post->categories as $keyCate=> $category)
+                <span class="delimiter">/</span>
+                @if($keyCate != 0)
+                    <span> ,</span>
+                @endif
+                <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
+                                                                                href="{{route('get-post', ['post'=> $category->slug])}}">{{$category->name}}</a></span>
+            @endforeach
+
             <span class="delimiter">/</span> <span class="current">{{$post->name}}</span></div>
 
         <article

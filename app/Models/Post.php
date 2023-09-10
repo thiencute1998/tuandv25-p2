@@ -15,10 +15,12 @@ class Post extends Model
     protected $fillable = ['name', 'slug', 'status', 'content', 'image', 'category_id', 'views', 'author', 'title', 'keywords', 'description'];
 
     public $timestamps = true;
-    public function category() {
-        return $this->belongsTo(Category::class, 'category_id', 'id');
-    }
+
     public function tags(){
         return $this->belongsToMany(Tag::class, 'post_tags', 'post_id', 'tag_id');
+    }
+
+    public function categories() {
+        return $this->belongsToMany(Category::class, 'post_categories', 'post_id', 'category_id');
     }
 }

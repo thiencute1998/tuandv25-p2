@@ -75,7 +75,7 @@ class AppServiceProvider extends ServiceProvider
                 });
             // Thong bao
             $postNotify = Post::where('status', 1)
-                ->whereHas('category', function($q) {
+                ->whereHas('categories', function($q) {
                     $q->where('slug', 'thong-bao');
                 })
                 ->orderBy('created_at', 'desc')

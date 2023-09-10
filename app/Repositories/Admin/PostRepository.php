@@ -33,7 +33,7 @@ class PostRepository extends BaseRepository {
             $status = $searchParams['status'];
             $query->where('status', '=', "$status");
         }
-        $query->with('category')->with('tags');
+        $query->with('categories')->with('tags');
         $query->orderBy('updated_at', 'desc');
         $posts = $query->paginate(10);
         return view('admin.pages.post.index', compact('posts'));
@@ -57,6 +57,12 @@ class PostRepository extends BaseRepository {
             $post->fill($params);
 
             if ($post->save()) {
+                if (isset($params['categories'])) {
+                    foreach ($params['categories'] as $data) {
+                        $post->categories()->attach($data);
+                    }
+                }
+
                 if (isset($params['tags'])) {
                     foreach ($params['tags'] as $data) {
                         $post->tags()->attach($data);
@@ -73,7 +79,7 @@ class PostRepository extends BaseRepository {
 
     public function edit($id) {
         $query = $this->model->where('id', $id)
-            ->with('category')
+            ->with('categories')
             ->with('tags');
         return $query->firstOrFail();
     }
@@ -88,6 +94,13 @@ class PostRepository extends BaseRepository {
             }
             $post->fill($params);
             if ($post->save()) {
+                $post->categories()->detach();
+                if (isset($params['categories'])) {
+                    foreach ($params['categories'] as $data) {
+                        $post->categories()->attach($data);
+                    }
+                }
+
                 $post->tags()->detach();
                 if (isset($params['tags'])) {
                     foreach ($params['tags'] as $data) {
