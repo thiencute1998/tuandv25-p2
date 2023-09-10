@@ -251,10 +251,11 @@ function showCalendarPopup(date) {
                 let vm = this;
                 res.data.forEach(value=> {
 
-                    $('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
-                    $('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
+
 
                     let otherEvent = $('.event-none').clone();
+                    $(otherEvent).find('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
+                    $(otherEvent).find('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
                     $(otherEvent).addClass('event-calendar');
                     let imgEvent = $(otherEvent).find('.em-item-name')
                     imgEvent.find('span').text(value.name);
@@ -269,11 +270,9 @@ function showCalendarPopup(date) {
 
             if (res.posts.length) {
                 res.posts.forEach(value=> {
-
-                    $('.em-img-data').attr("data-src", '/upload/admin/post/image/' + value.image);
-                    $('.em-img').attr("src", '/upload/admin/post/image/' + value.image);
-
                     let otherEvent = $('.event-none').clone();
+                    $(otherEvent).find('.em-img-data').attr("data-src", '/upload/admin/post/image/' + value.image);
+                    $(otherEvent).find('.em-img').attr("src", '/upload/admin/post/image/' + value.image);
                     $(otherEvent).addClass('event-calendar');
                     let imgEvent = $(otherEvent).find('.em-item-name')
                     imgEvent.find('span').text(value.name);

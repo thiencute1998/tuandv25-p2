@@ -12,6 +12,7 @@ use App\Models\Tag;
 use App\Models\Video;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class IndexRepository extends BaseRepository {
     public function model()
@@ -55,7 +56,7 @@ class IndexRepository extends BaseRepository {
             }
             $queryPost = Post::where('status', 1);
             //$queryPost->where('category_id', $category->id);
-            $queryPost->where(function($q) use ($category, $arrcategory_id) {
+            $queryPost->whereHas('categories', function($q) use ($category, $arrcategory_id) {
                 $q->where('category_id', '=', $category->id)
                     ->orWhereIn('category_id', $arrcategory_id);
             });
@@ -73,7 +74,7 @@ class IndexRepository extends BaseRepository {
     }
     public function getPost($post) {
         //Update View
-        $postNew = Post::where('slug', $post)->first();
+        $postNew = Post::where('slug', $post)->firstOrFail();
         $postNew->views = $postNew->views +1 ;
         $postNew->update();
         $query = Post::where('status', 1);
@@ -86,7 +87,9 @@ class IndexRepository extends BaseRepository {
         $query = Post::where('status', 1);
         $query->where('id', '!=',$post->id);
         if ($post->category_id) {
-            $query->where('category_id', $post->category_id);
+            $query->whereHas('categories', function($q) use($post){
+                $q->where('category_id', $post->category_id);
+            });
         }
         $query->orderBy('created_at', 'desc');
         return $query->limit(10)->get()->map(function($value) {
@@ -126,7 +129,12 @@ class IndexRepository extends BaseRepository {
             return $value;
         });
 
-        $posts = Post::where('status', 1)->whereDate('created_at', Carbon::createFromFormat("d/m/Y", $params['date'])->format('Y-m-d'))->get();
+        $posts = Post::where('status', 1)
+            ->whereHas('categories', function($q) {
+                $q->where('slug', 'suy-niem-hang-ngay');
+            })
+            ->where(DB::raw('date(posts.created_at)'), Carbon::createFromFormat("d/m/Y", $params['date'])->format('Y-m-d'))
+            ->get();
         return ['formatFullDate'=> $formatFullDate, 'data'=> $data, 'posts'=> $posts];
     }
 
