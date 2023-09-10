@@ -4890,6 +4890,7 @@ img.alignleft {
 	color: #FFF;
 	background-color: #F88C00;
 	padding: 4px 10px 6px;
+    margin-top: 10px;
 }
 
 .pagination .pages {
