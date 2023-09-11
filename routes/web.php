@@ -188,20 +188,6 @@ Route::post('sign-up-email', [IndexController::class, 'signUpEmail'])->name('sig
 Route::post('/plus-view-post', [IndexController::class, 'plusViewPost'])->name('plus-view-post');
 Route::post('/plus-view-event', [IndexController::class, 'plusViewEvent'])->name('plus-view-event');
 
-Route::get('/test/data', function() {
-    $data = \App\Models\Post::whereNotNull('category_id')->get();
-    $arr = [];
-    foreach ($data as $item) {
-        $arr[] = [
-            "category_id"=> $item->category_id,
-            "post_id"=> $item->id
-        ];
-    }
-
-    \App\Models\PostCategory::insert($arr);
-
-    return 1;
-});
 
 
 
