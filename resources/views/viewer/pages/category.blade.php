@@ -65,24 +65,66 @@
             @endforeach
         </div>
 
-        <div class="pagination">
-            <span class="pages">Page {{$posts->currentPage()}} of {{$posts->lastPage()}}</span>
-            {{--                <a--}}
-            {{--                    href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/">&laquo;--}}
-            {{--                </a>--}}
-            @for ($i = 1; $i <= $posts->lastPage(); $i++)
-                @if($posts->currentPage() == $i)
-                    <span class="current">{{$i}}</span>
+        @if ($posts->hasPages())
+            <ul class="pagination pagination">
+                {{-- Previous Page Link --}}
+                @if ($posts->onFirstPage())
+                    <li class="disabled"><span>«</span></li>
                 @else
-                    <a
-                        href="{{ $posts->url($i) }}" class="page" title="{{$i}}">{{$i}}</a>
+                    <li><a href="{{ $posts->previousPageUrl() }}" rel="prev">«</a></li>
                 @endif
-            @endfor
 
-            {{--                <span id="tie-next-page">   --}}
-            {{--					<a href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/page/3/">&raquo;</a>--}}
-            {{--                </span>--}}
-        </div>
+                @if($posts->currentPage() > 3)
+                    <li class="hidden-xs"><a href="{{ $posts->url(1) }}">1</a></li>
+                @endif
+                @if($posts->currentPage() > 4)
+                    <li><span>...</span></li>
+                @endif
+                @foreach(range(1, $posts->lastPage()) as $i)
+                    @if($i >= $posts->currentPage() - 2 && $i <= $posts->currentPage() + 2)
+                        @if ($i == $posts->currentPage())
+                            <li class="active"><span>{{ $i }}</span></li>
+                        @else
+                            <li><a href="{{ $posts->url($i) }}">{{ $i }}</a></li>
+                        @endif
+                    @endif
+                @endforeach
+                @if($posts->currentPage() < $posts->lastPage() - 3)
+                    <li><span>...</span></li>
+                @endif
+                @if($posts->currentPage() < $posts->lastPage() - 2)
+                    <li class="hidden-xs"><a href="{{ $posts->url($posts->lastPage()) }}">{{ $posts->lastPage() }}</a></li>
+                @endif
+
+                {{-- Next Page Link --}}
+                @if ($posts->hasMorePages())
+                    <li><a href="{{ $posts->nextPageUrl() }}" rel="next">»</a></li>
+                @else
+                    <li class="disabled"><span>»</span></li>
+                @endif
+            </ul>
+        @endif
+
+
+
+        {{--        <div class="pagination">--}}
+{{--            <span class="pages">Page {{$posts->currentPage()}} of {{$posts->lastPage()}}</span>--}}
+{{--            --}}{{--                <a--}}
+{{--            --}}{{--                    href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/">&laquo;--}}
+{{--            --}}{{--                </a>--}}
+{{--            @for ($i = 1; $i <= $posts->lastPage(); $i++)--}}
+{{--                @if($posts->currentPage() == $i)--}}
+{{--                    <span class="current">{{$i}}</span>--}}
+{{--                @else--}}
+{{--                    <a--}}
+{{--                        href="{{ $posts->url($i) }}" class="page" title="{{$i}}">{{$i}}</a>--}}
+{{--                @endif--}}
+{{--            @endfor--}}
+
+{{--            --}}{{--                <span id="tie-next-page">   --}}
+{{--            --}}{{--					<a href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/page/3/">&raquo;</a>--}}
+{{--            --}}{{--                </span>--}}
+{{--        </div>--}}
         {{--            @if ($posts->lastPage() > 1)--}}
         {{--                <ul class="pagination">--}}
         {{--                    <li class="{{ ($posts->currentPage() == 1) ? ' disabled' : '' }}">--}}
