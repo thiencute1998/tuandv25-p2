@@ -30,6 +30,7 @@ services:
             -   ./resources:/var/www/html/tuandv25-p2/resources
             -   ./routes:/var/www/html/tuandv25-p2/routes
             -   ./storage:/var/www/html/tuandv25-p2/storage
+            -   ./database:/var/www/html/tuandv25-p2/database
             -   ./docker/nginx:/var/log/nginx
             -   ./docker/php-fpm/php-fpm.log:/var/log/php-fpm.log
 
