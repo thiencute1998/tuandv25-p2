@@ -131,7 +131,7 @@ class IndexRepository extends BaseRepository {
 
         $posts = Post::where('status', 1)
             ->whereHas('categories', function($q) {
-                $q->where('slug', 'suy-niem-hang-ngay');
+                $q->where('slug', 'loi-chua-hang-ngay');
             })
             ->where(DB::raw('date(posts.created_at)'), Carbon::createFromFormat("d/m/Y", $params['date'])->format('Y-m-d'))
             ->get();

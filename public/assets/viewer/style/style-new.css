@@ -1767,6 +1767,7 @@ ul.newsticker a {
 	clear: both;
 	padding-bottom: 5px;
 	border-bottom: 1px solid #eee;
+    font-size: 14px;
 }
 
 #crumbs span.delimiter {

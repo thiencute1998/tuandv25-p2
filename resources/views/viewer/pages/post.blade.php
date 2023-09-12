@@ -32,31 +32,34 @@
 
                 <h1 class="name post-title entry-title" itemprop="itemReviewed" itemscope=""
                     itemtype="http://schema.org/Thing"><span itemprop="name">{{$post->name}}</span></h1>
+                <p class="post-meta">
 
-{{--                <p class="post-meta">--}}
-
-{{--                        <span class="post-meta-author"><i class="fa fa-user"></i><a--}}
+{{--                    <span class="post-meta-author"><i class="fa fa-user"></i><a--}}
 {{--                                href="https://giaophanbacninh.org/author/tomavavi/" title="">{{$post->author}} </a></span>--}}
 
-{{--                    <span class="tie-date"><i class="fa fa-clock-o"></i>5 Tháng Bảy, 2022</span>--}}
+                    <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->created_at->format('d/m/Y')}}</span>
 
 {{--                    @if($post->category)--}}
 {{--                        <span class="post-cats"><i class="fa fa-folder"></i><a--}}
 {{--                                href="{{route('get-post', ['post'=> $post->category->slug])}}" rel="category tag">{{$post->category->name}}</a>--}}
-{{--    --}}{{--                                , <a--}}
-{{--                            --}}{{--                                href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
-{{--                            --}}{{--                                rel="category tag">Tin tức</a>--}}
-{{--                            --}}{{--                                , <a--}}
-{{--                            --}}{{--                                href="https://giaophanbacninh.org/category/uncategorized/" rel="category tag">Uncategorized</a>--}}
+{{--                                    , <a--}}
+{{--                                                            href="https://giaophanbacninh.org/category/gia-dinh-bac-ninh-hoa-ky/"--}}
+{{--                                                            rel="category tag">Tin tức</a>--}}
+{{--                                                            , <a--}}
+{{--                                                            href="https://giaophanbacninh.org/category/uncategorized/" rel="category tag">Uncategorized</a>--}}
 {{--                            </span>--}}
 {{--                    @endif--}}
 
 {{--                    <span class="post-comments"><i class="fa fa-comments"></i><a--}}
 {{--                            href="#">Leave a comment</a></span>--}}
 
-{{--                    <span class="post-views"><i class="fa fa-eye"></i>{{$post->views}} Views</span>--}}
-
-{{--                </p>--}}
+                    <span class="post-views"><i class="fa fa-eye"></i>{{$post->views}} Views</span>
+                    <span class="mxh-right">
+                        <a target="_blank" href="https://facebook.com/sharer/sharer.php?src=sdkpreparse&amp;u={{route('get-post', ['post'=> $post->slug])}}" class="socialShare facebook"></a>
+                        <a target="_blank" href="https://twitter.com/intent/tweet?url={{route('get-post', ['post'=> $post->slug])}}" class="socialShare twitter"></a>
+                        <a target="_blank" href="https://api.whatsapp.com/send?text={{$post->name}} {{route('get-post', ['post'=> $post->slug])}}" class="whatsapp"></a>
+                    </span>
+                </p>
 
                 <div class="clear"></div>
 
@@ -76,51 +79,32 @@
 
 
                 <div class="share-post">
-
                     <span class="share-text">Share</span>
-
-
                     <ul class="flat-social">
-
-
-                        <li><a href="http://www.facebook.com/sharer.php?u=https://giaophanbacninh.org/?p=47177"
+                        <li><a href="http://www.facebook.com/sharer.php?u={{route('get-post', ['post'=> $post->slug])}}"
                                class="social-facebook" rel="external" target="_blank"><i class="fa fa-facebook"></i>
                                 <span>Facebook</span></a></li>
-
-
                         <li>
-                            <a href="https://twitter.com/intent/tweet?text=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;url=https://giaophanbacninh.org/?p=47177"
+                            <a href="https://twitter.com/intent/tweet?text=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;url={{route('get-post', ['post'=> $post->slug])}}"
                                class="social-twitter" rel="external" target="_blank"><i class="fa fa-twitter"></i>
                                 <span>Twitter</span></a></li>
-
-
                         <li>
-                            <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url=https://giaophanbacninh.org/?p=47177&amp;name=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
+                            <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;name=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
                                class="social-google-plus" rel="external" target="_blank"><i
                                     class="fa fa-google-plus"></i> <span>Google +</span></a></li>
-
-
                         <li>
-                            <a href="http://www.stumbleupon.com/submit?url=https://giaophanbacninh.org/?p=47177&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
+                            <a href="http://www.stumbleupon.com/submit?url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
                                class="social-stumble" rel="external" target="_blank"><i
                                     class="fa fa-stumbleupon"></i> <span>Stumbleupon</span></a></li>
-
-
                         <li>
-                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://giaophanbacninh.org/?p=47177&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
+                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
                                class="social-linkedin" rel="external" target="_blank"><i class="fa fa-linkedin"></i>
                                 <span>LinkedIn</span></a></li>
-
-
                         <li>
-                            <a href="http://pinterest.com/pin/create/button/?url=https://giaophanbacninh.org/?p=47177&amp;description=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;media=https://giaophanbacninh.org/wp-content/uploads/2022/07/congbologonamthanh20251-660x330.jpeg"
+                            <a href="http://pinterest.com/pin/create/button/?url={{route('get-post', ['post'=> $post->slug])}}&amp;description=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;media=https://giaophanbacninh.org/wp-content/uploads/2022/07/congbologonamthanh20251-660x330.jpeg"
                                class="social-pinterest" rel="external" target="_blank"><i
                                     class="fa fa-pinterest"></i> <span>Pinterest</span></a></li>
-
-
                     </ul>
-
-
                     <div class="clear"></div>
 
                 </div> <!-- .share-post -->
@@ -231,59 +215,55 @@
         </section>
 
 
-        <section id="check-also-box" class="post-listing check-also-right">
+{{--        <section id="check-also-box" class="post-listing check-also-right">--}}
 
-            <a href="#" id="check-also-close"><i class="fa fa-close"></i></a>
-
-
-            <div class="block-head">
-
-                <h3>Check Also</h3>
-
-            </div>
+{{--            <a href="#" id="check-also-close"><i class="fa fa-close"></i></a>--}}
 
 
-            <div class="check-also-post">
+{{--            <div class="block-head">--}}
+
+{{--                <h3>Check Also</h3>--}}
+
+{{--            </div>--}}
 
 
-                <div class="post-thumbnail tie-appear">
-
-                    <a href="https://giaophanbacninh.org/ruoc-kieu-va-thanh-le-mung-kinh-duc-me-hon-xac-len-troi-tai-la-vang/">
-
-                        <img width="310" height="165" alt="" loading="lazy"
-                             data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg"
-                             class="attachment-tie-medium size-tie-medium wp-post-image tie-appear lazyloaded"
-                             src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg">
-                        <noscript><img width="310" height="165"
-                                       src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg"
-                                       class="attachment-tie-medium size-tie-medium wp-post-image" alt=""
-                                       loading="lazy"/></noscript>
-                        <span class="fa overlay-icon"></span>
-
-                    </a>
-
-                </div><!-- post-thumbnail /-->
+{{--            <div class="check-also-post">--}}
 
 
-                <h2 class="post-title"><a
-                        href="https://giaophanbacninh.org/ruoc-kieu-va-thanh-le-mung-kinh-duc-me-hon-xac-len-troi-tai-la-vang/"
-                        rel="bookmark">Rước kiệu và Thánh lễ mừng kính Đức Mẹ Hồn Xác Lên Trời tại La Vang</a></h2>
+{{--                <div class="post-thumbnail tie-appear">--}}
 
-                <p>“Qua cuộc rước kiệu này, chúng con muốn bày tỏ lòng yêu mến và tâm …</p>
+{{--                    <a href="https://giaophanbacninh.org/ruoc-kieu-va-thanh-le-mung-kinh-duc-me-hon-xac-len-troi-tai-la-vang/">--}}
 
-            </div>
+{{--                        <img width="310" height="165" alt="" loading="lazy"--}}
+{{--                             data-src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg"--}}
+{{--                             class="attachment-tie-medium size-tie-medium wp-post-image tie-appear lazyloaded"--}}
+{{--                             src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg">--}}
+{{--                        <noscript><img width="310" height="165"--}}
+{{--                                       src="https://giaophanbacninh.org/wp-content/uploads/2023/08/16082023_ngay15_lavang_1-310x165.jpeg"--}}
+{{--                                       class="attachment-tie-medium size-tie-medium wp-post-image" alt=""--}}
+{{--                                       loading="lazy"/></noscript>--}}
+{{--                        <span class="fa overlay-icon"></span>--}}
+
+{{--                    </a>--}}
+
+{{--                </div><!-- post-thumbnail /-->--}}
 
 
-        </section>
+{{--                <h2 class="post-title"><a--}}
+{{--                        href="https://giaophanbacninh.org/ruoc-kieu-va-thanh-le-mung-kinh-duc-me-hon-xac-len-troi-tai-la-vang/"--}}
+{{--                        rel="bookmark">Rước kiệu và Thánh lễ mừng kính Đức Mẹ Hồn Xác Lên Trời tại La Vang</a></h2>--}}
+
+{{--                <p>“Qua cuộc rước kiệu này, chúng con muốn bày tỏ lòng yêu mến và tâm …</p>--}}
+
+{{--            </div>--}}
 
 
-        <div id="comments">
+{{--        </section>--}}
 
 
-            <div class="clear"></div>
-
-
-        </div><!-- #comments -->
+{{--        <div id="comments">--}}
+{{--            <div class="clear"></div>--}}
+{{--        </div><!-- #comments -->--}}
 
     </div>
     <!-- .content -->
@@ -308,5 +288,6 @@
 
             }
         })
+
     })
 </script>
