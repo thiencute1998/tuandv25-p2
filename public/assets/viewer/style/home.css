@@ -287,8 +287,9 @@ element.style {
     width: 15px;
     float: left;
     height: 20px;}
-#footer-widget-area{ height: 100% ;background: url("images/LogoF1.png") 68% no-repeat;}
+#footer-widget-area{ min-height: 200px ;background: url("images/LogoF1.png") 68% no-repeat;}
 #main-nav ul li.menu-item-has-children:after, #main-nav ul li.mega-menu:after, .top-menu ul li.menu-item-has-children:after{ display: none;}
+#main-nav ul ul li.menu-item-has-children:after, #main-nav ul ul li.mega-menu:after, .top-menu ul ul li.menu-item-has-children:after{ display: block;}
 .cat-tabs-header{ display: block;}
 .cat-box .actions{ display: none;}
 @media only screen and (max-width: 900px){
