@@ -292,6 +292,7 @@ element.style {
 #main-nav ul ul li.menu-item-has-children:after, #main-nav ul ul li.mega-menu:after, .top-menu ul ul li.menu-item-has-children:after{ display: block;}
 .cat-tabs-header{ display: block;}
 .cat-box .actions{ display: none;}
+.cat-tabs-title{ display: none;}
 @media only screen and (max-width: 900px){
     .search-block {
         display: none;
@@ -307,8 +308,25 @@ element.style {
         padding: 15px 0 15px;
         margin-right: 20px;
     }
+    .cat-tabs-title{ display: block;}
 }
-
+.cat-tabs-header ul > li:nth-child(1) {
+    position: absolute;
+    left: 11px;
+}
+.cat-tabs-header ul > li:nth-child(1) a {
+    margin-right: 10px;
+    font-size: 18px;
+    font-family: BebasNeueRegular, arial, Georgia, serif;
+    padding-left: 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding-top: 5px;
+    color: #258101;
+}
+.cat-tabs-header li:nth-child(1).active a {
+    color: #258101 !important;
+}
 .cat-box>.actions .btn-group a{ font-size: 16px; font-weight: 500;}
 .cat-box>.nav-tabs {
     background: 0 0;
