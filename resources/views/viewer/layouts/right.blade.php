@@ -197,7 +197,7 @@
                     <div class="clear"></div>
                 </div>
             </div><!-- .widget /-->
-            <div id="text-html-widget-3" class="widget text-html">
+            <div id="text-html-widget-3" class="widget text-html" style="margin-bottom: 0px">
                 <div class="widget-top"><h4></h4>
 {{--                    <div class="stripe-line"></div>--}}
                 </div>
@@ -214,24 +214,21 @@
                     <div class="clear"></div>
                 </div>
             </div><!-- .widget /-->
-            <div id="media_image-9" class="widget widget_media_image">
+
+            <div id="media_image-9" class="widget widget_media_image" style="margin-bottom: 0px">
                 <div class="widget-top"><h4></h4>
 {{--                    <div class="stripe-line"></div>--}}
                 </div>
-                <div class="widget-container"><a href="{{route('find-church')}}"><img
-                            width="300" height="51" alt="" style="max-width: 100%; height: auto;"
-                            data-srcset="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-500x85.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01.jpg 654w"
-                            data-src="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg"
-                            data-sizes="(max-width: 300px) 100vw, 300px"
-                            class="image wp-image-51231  attachment-medium size-medium lazyload"
-                            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                        <noscript><img width="300" height="51"
-                                       src="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg"
-                                       class="image wp-image-51231  attachment-medium size-medium" alt=""
-                                       style="max-width: 100%; height: auto;"
-                                       srcset="https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-300x51.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01-500x85.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/01/timnhatho-01.jpg 654w"
-                                       sizes="(max-width: 300px) 100vw, 300px"/></noscript>
-                    </a></div>
+                <div class="widget-container">
+                    <a href="{{$tagRight ? $tagRight->link : "#"}}" target="_blank"> <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-02.jpg')}}" width="300" height="51"></a>
+                </div>
+                <div class="widget-container">
+                    <a href="https://giole.vn/" target="_blank"> <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-01.jpg')}}" width="300" height="51"></a>
+                </div>
+                <div class="widget-container"><a href="{{route('find-church')}}">
+                        <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-03.jpg')}}" width="300" height="51">
+                    </a>
+                </div>
             </div><!-- .widget /-->
             <div id="text-9" class="footer-widget widget_text">
                 <div class="footer-widget-top"><h4 style="color: #258101; padding-left: 20px;">Liên kết websites</h4></div>
@@ -310,35 +307,35 @@
         </header>
         <div class="em-modal-content em pixelbones em-calendar-preview em-list-widget em-events-widget">
             <div class="em-item em-event event-none" style="--default-border:#a8d144;">
-                <div class="em-item-image" style="max-width:150px">
+                <div class="em-item-image" >
 
                     <img width="150" height="150" alt="Thứ Bảy tuần 17 Thường niên" loading="lazy"
                          data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/5thang8-150x150.jpeg"
                          class="attachment-150x150 size-150x150 wp-post-image lazyload em-img-data"
                          src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                    <noscript><img width="150" height="150"
-                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/07/5thang8-150x150.jpeg"
-                                   class="attachment-150x150 size-150x150 wp-post-image em-img"
-                                   alt="" loading="lazy"/></noscript>
+{{--                    <noscript><img width="150" height="150"--}}
+{{--                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/07/5thang8-150x150.jpeg"--}}
+{{--                                   class="attachment-150x150 size-150x150 wp-post-image em-img"--}}
+{{--                                   alt="" loading="lazy"/></noscript>--}}
 
 
                 </div>
                 <div class="em-item-info">
                     <div class="em-item-name">
-                        <a href="https://giaophanbacninh.org/events/thu-bay-tuan-17-thuong-nien/">
-                            <span>Thứ Bảy tuần 17 Thường niên</span>
+                        <a href="">
+                            <span></span>
                         </a>
                     </div>
-                    <div class="em-item-meta">
-                        <div class="em-item-meta-line em-event-date em-event-meta-datetime">
-                            <span class="em-icon em-icon-calendar"></span>
-                            <span class="em-date">5 Th8 23</span>
-                        </div>
-                        <div class="em-item-meta-line em-event-location em-event-meta-location">
-                            <span class="em-icon em-icon-location"></span>
-                            <span class="em-address">Cung hiến thánh đường Đức Maria (Tr). Lv 25,1.8-17 ; Mt 14,1-12. (Lễ Đức Mẹ: Kh 21,1-5a ; Lc 11,27-28).</span>
-                        </div>
-                    </div>
+{{--                    <div class="em-item-meta">--}}
+{{--                        <div class="em-item-meta-line em-event-date em-event-meta-datetime">--}}
+{{--                            <span class="em-icon em-icon-calendar"></span>--}}
+{{--                            <span class="em-date">5 Th8 23</span>--}}
+{{--                        </div>--}}
+{{--                        <div class="em-item-meta-line em-event-location em-event-meta-location">--}}
+{{--                            <span class="em-icon em-icon-location"></span>--}}
+{{--                            <span class="em-address">Cung hiến thánh đường Đức Maria (Tr). Lv 25,1.8-17 ; Mt 14,1-12. (Lễ Đức Mẹ: Kh 21,1-5a ; Lc 11,27-28).</span>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div><!-- content -->

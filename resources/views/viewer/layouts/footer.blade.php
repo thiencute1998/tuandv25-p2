@@ -40,9 +40,7 @@
                     <div style="display: flex; margin-top: 30px;">
                         <input class="email-input" type="text" placeholder="Nhập email nhận tin" style="border-radius: inherit; height: 39px;">
                         <span>
-                            <button type="button" class="btn em-sign-up" style="padding: 10px;     color: #FFF;
-    background-color: #32c5d2;
-    border-color: #32c5d2;">Đăng ký</button>
+                            <button type="button" class="btn em-sign-up" style="padding: 10px; color: #FFF; background-color: #7DBB64; border-color: #32c5d2;">Đăng ký</button>
                         </span>
                     </div>
                     <p><small>Chúng tôi sẽ gửi bài viết mới và Lời Chúa qua email của bạn.</small></p>

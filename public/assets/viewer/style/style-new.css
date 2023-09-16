@@ -7498,7 +7498,8 @@ h3.toggle-head-close i {
  */
 
 #slide-out {
-	background: #222;
+	/*background: #222;*/
+    background: #258101;
 	position: absolute;
 	display: block;
 	left: 0;
@@ -7506,7 +7507,8 @@ h3.toggle-head-close i {
 	z-index: 1;
 	height: 100%;
 	width: 80%;
-	color: #ddd;
+	/*color: #ddd;*/
+    color: #FFF;
 	-webkit-transform: translate3d(-101%, 0, 0);
 	   -moz-transform: translate3d(-100%, 0, 0);
 		-ms-transform: translate3d(-100%, 0, 0);
@@ -7580,7 +7582,8 @@ h3.toggle-head-close i {
 }
 
 #mobile-menu {
-	border-top: 1px solid #2D2D2D;
+	/*border-top: 1px solid #2D2D2D;*/
+    border-top: 1px solid #ccdcee;
 	display: none;
 }
 
@@ -7597,7 +7600,8 @@ h3.toggle-head-close i {
 #slide-out #mobile-menu ul ul,
 #slide-out #mobile-menu .sub-menu-columns-item{
 	display: none;
-	background: #333;
+	/*background: #333;*/
+    background: #258101;
 }
 
 #slide-out #mobile-menu li {
@@ -7610,19 +7614,21 @@ h3.toggle-head-close i {
 	top: 0;
 	right: 0;
 	padding: 13px;
-	border-left: 1px solid #333;
+	border-left: 1px solid #ccdcee;
 	margin: 0;
 	cursor: pointer;
 	display: block;
 }
 
 #slide-out #mobile-menu a {
-	color: #ccc;
+	/*color: #ccc;*/
+    color: #FFF;
 	display: block;
 	font-size: 16px;
 	padding: 10px;
 	padding-right: 0;
-	border-bottom: 1px solid #2D2D2D;
+	/*border-bottom: 1px solid #2D2D2D;*/
+    border-bottom: 1px solid #ccdcee;
 }
 
 #slide-out #mobile-menu a:hover {

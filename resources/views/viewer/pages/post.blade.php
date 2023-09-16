@@ -78,36 +78,36 @@
                             rel="author">nguyen</a></strong></div>
 
 
-                <div class="share-post">
-                    <span class="share-text">Share</span>
-                    <ul class="flat-social">
-                        <li><a href="http://www.facebook.com/sharer.php?u={{route('get-post', ['post'=> $post->slug])}}"
-                               class="social-facebook" rel="external" target="_blank"><i class="fa fa-facebook"></i>
-                                <span>Facebook</span></a></li>
-                        <li>
-                            <a href="https://twitter.com/intent/tweet?text=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;url={{route('get-post', ['post'=> $post->slug])}}"
-                               class="social-twitter" rel="external" target="_blank"><i class="fa fa-twitter"></i>
-                                <span>Twitter</span></a></li>
-                        <li>
-                            <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;name=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
-                               class="social-google-plus" rel="external" target="_blank"><i
-                                    class="fa fa-google-plus"></i> <span>Google +</span></a></li>
-                        <li>
-                            <a href="http://www.stumbleupon.com/submit?url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
-                               class="social-stumble" rel="external" target="_blank"><i
-                                    class="fa fa-stumbleupon"></i> <span>Stumbleupon</span></a></li>
-                        <li>
-                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"
-                               class="social-linkedin" rel="external" target="_blank"><i class="fa fa-linkedin"></i>
-                                <span>LinkedIn</span></a></li>
-                        <li>
-                            <a href="http://pinterest.com/pin/create/button/?url={{route('get-post', ['post'=> $post->slug])}}&amp;description=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;media=https://giaophanbacninh.org/wp-content/uploads/2022/07/congbologonamthanh20251-660x330.jpeg"
-                               class="social-pinterest" rel="external" target="_blank"><i
-                                    class="fa fa-pinterest"></i> <span>Pinterest</span></a></li>
-                    </ul>
-                    <div class="clear"></div>
+{{--                <div class="share-post">--}}
+{{--                    <span class="share-text">Share</span>--}}
+{{--                    <ul class="flat-social">--}}
+{{--                        <li><a href="http://www.facebook.com/sharer.php?u={{route('get-post', ['post'=> $post->slug])}}"--}}
+{{--                               class="social-facebook" rel="external" target="_blank"><i class="fa fa-facebook"></i>--}}
+{{--                                <span>Facebook</span></a></li>--}}
+{{--                        <li>--}}
+{{--                            <a href="https://twitter.com/intent/tweet?text=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;url={{route('get-post', ['post'=> $post->slug])}}"--}}
+{{--                               class="social-twitter" rel="external" target="_blank"><i class="fa fa-twitter"></i>--}}
+{{--                                <span>Twitter</span></a></li>--}}
+{{--                        <li>--}}
+{{--                            <a href="https://plusone.google.com/_/+1/confirm?hl=en&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;name=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"--}}
+{{--                               class="social-google-plus" rel="external" target="_blank"><i--}}
+{{--                                    class="fa fa-google-plus"></i> <span>Google +</span></a></li>--}}
+{{--                        <li>--}}
+{{--                            <a href="http://www.stumbleupon.com/submit?url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"--}}
+{{--                               class="social-stumble" rel="external" target="_blank"><i--}}
+{{--                                    class="fa fa-stumbleupon"></i> <span>Stumbleupon</span></a></li>--}}
+{{--                        <li>--}}
+{{--                            <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{route('get-post', ['post'=> $post->slug])}}&amp;title=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025"--}}
+{{--                               class="social-linkedin" rel="external" target="_blank"><i class="fa fa-linkedin"></i>--}}
+{{--                                <span>LinkedIn</span></a></li>--}}
+{{--                        <li>--}}
+{{--                            <a href="http://pinterest.com/pin/create/button/?url={{route('get-post', ['post'=> $post->slug])}}&amp;description=C%C3%B4ng+b%E1%BB%91+Logo+N%C4%83m+Th%C3%A1nh+2025&amp;media=https://giaophanbacninh.org/wp-content/uploads/2022/07/congbologonamthanh20251-660x330.jpeg"--}}
+{{--                               class="social-pinterest" rel="external" target="_blank"><i--}}
+{{--                                    class="fa fa-pinterest"></i> <span>Pinterest</span></a></li>--}}
+{{--                    </ul>--}}
+{{--                    <div class="clear"></div>--}}
 
-                </div> <!-- .share-post -->
+{{--                </div> <!-- .share-post -->--}}
                 <div class="clear"></div>
 
             </div><!-- .post-inner -->
