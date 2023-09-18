@@ -475,6 +475,7 @@ element.style {
 }
 .em.em-list-widget .em-item .em-item-info .em-item-name{
     padding-top: 33px;
+    font-weight: bold;
 }
 #slide-out #mobile-menu ul li a{ text-transform: uppercase}
 #slide-out #mobile-menu ul ul li a{ text-transform: none}

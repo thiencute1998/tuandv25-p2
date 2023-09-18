@@ -206,7 +206,7 @@ class IndexRepository extends BaseRepository {
             $month = Carbon::createFromFormat($format,$date)->format('m');
             $year = Carbon::createFromFormat($format,$date)->format('Y');
             //$date = $day . " " . $this->getMonth($month) . ", " . $year;
-            $date = $day . "/" .$month . "/" . $year;
+            $date = 'Lời Chúa '.$day . "/" .$month . "/" . $year;
         }
         return $date;
     }
