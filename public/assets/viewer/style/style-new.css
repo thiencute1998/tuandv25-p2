@@ -7614,7 +7614,7 @@ h3.toggle-head-close i {
 	top: 0;
 	right: 0;
 	padding: 13px;
-	border-left: 1px solid #ccdcee;
+	/*border-left: 1px solid #ccdcee;*/
 	margin: 0;
 	cursor: pointer;
 	display: block;
