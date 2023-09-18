@@ -252,8 +252,6 @@ function showCalendarPopup(date) {
                 let vm = this;
                 res.data.forEach(value=> {
 
-
-
                     let otherEvent = $('.event-none').clone();
                     $(otherEvent).find('.em-img-data').attr("data-src", '/upload/admin/calendar/image/' + value.image);
                     $(otherEvent).find('.em-img').attr("src", '/upload/admin/calendar/image/' + value.image);
