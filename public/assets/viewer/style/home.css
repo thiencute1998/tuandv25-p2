@@ -312,7 +312,7 @@ element.style {
     .cat-tabs-title{ display: block;}
     .em.em-list-widget .em-item .em-item-image{ width: 100%; min-width: auto; height: auto}
     .em.em-list-widget .em-item { flex-wrap: wrap}
-
+    .calendar .calendar-inner .calendar-body div{ padding: 7px !important;}
 }
 .cat-tabs-header ul > li:nth-child(1) {
     position: absolute;
