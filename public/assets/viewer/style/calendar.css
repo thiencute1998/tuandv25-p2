@@ -114,8 +114,9 @@
 }
 
 .calendar .calendar-inner .calendar-body .calendar-today {
-    background: var(--calendar-today-color);
+    /*background: var(--calendar-today-color);*/
     border-radius: 22px;
+    border: #258101 solid 1px;
 }
 
 .calendar .calendar-inner .calendar-body .calendar-today:hover {
