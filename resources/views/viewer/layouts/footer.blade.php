@@ -95,6 +95,7 @@
     .em-item-email {
         padding: 15px;
     }
+    {{$config->code_facebook}}
 </style>
 <script type="text/javascript">
     $(document).ready(function() {

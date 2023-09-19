@@ -42,8 +42,8 @@
                                         </textarea>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-form-label">Code facebook analytics</label>
-                                        <textarea class="form-control" name="code_facebook" type="text" >
+                                        <label class="col-form-label">Config Style</label>
+                                        <textarea class="form-control" name="code_facebook" type="text" rows="20">
                                             {{ $config->code_facebook }}
                                         </textarea>
                                     </div>
