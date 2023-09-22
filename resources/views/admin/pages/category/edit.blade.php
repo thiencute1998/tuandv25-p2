@@ -61,6 +61,7 @@
                                             <select class="form-control category-status" name="status" data-value="{{ $category->status }}">
                                                 <option value="1">Hoạt động</option>
                                                 <option value="0">Không hoạt động</option>
+                                                <option value="2">Không hiện Menu</option>
                                             </select>
                                         </div>
                                     </div>

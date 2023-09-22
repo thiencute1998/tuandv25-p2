@@ -16,13 +16,15 @@
             @foreach($post->categories as $keyCate=> $category)
                 <span class="delimiter">/</span>
                 @if($keyCate != 0)
-                    <span> ,</span>
+{{--                    <span> ,</span>--}}
+                    <span></span>
                 @endif
                 <span typeof="v:Breadcrumb"><a rel="v:url" property="v:title"
                                                                                 href="{{route('get-post', ['post'=> $category->slug])}}">{{$category->name}}</a></span>
             @endforeach
 
-            <span class="delimiter">/</span> <span class="current">{{$post->name}}</span></div>
+{{--            <span class="delimiter">/</span> <span class="current">{{$post->name}}</span>--}}
+        </div>
 
         <article
             class="post-listing post-47177 post type-post status-publish format-standard has-post-thumbnail hentry category-giao-hoi-hoan-cau category-gia-dinh-bac-ninh-hoa-ky category-uncategorized"

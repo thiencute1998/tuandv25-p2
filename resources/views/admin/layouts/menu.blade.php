@@ -36,6 +36,9 @@
                     <li class="{{str_contains(Request::path(), 'admin/calendar') ? 'active' : ''}}">
                         <a href="{{route('admin-calendar')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý lịch phụng vụ</span></a>
                     </li>
+                    <li class="{{str_contains(Request::path(), 'admin/church') ? 'active' : ''}}">
+                        <a href="{{route('admin-church')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý nhà thờ</span></a>
+                    </li>
 {{--                    <li class="{{str_contains(Request::path(), 'admin/video') ? 'active' : ''}}">--}}
 {{--                        <a href="{{route('admin-video')}}" aria-expanded="true"><i class="ti-dashboard"></i><span>Quản lý Video</span></a>--}}
 {{--                    </li>--}}

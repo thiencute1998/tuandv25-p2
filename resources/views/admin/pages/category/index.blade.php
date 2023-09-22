@@ -39,6 +39,7 @@
                                     <option value="">Chọn trạng thái</option>
                                     <option value="1">Hoạt động</option>
                                     <option value="0">Không hoạt động</option>
+                                    <option value="2">Không hiện Menu</option>
                                 </select>
                             </div>
                             {{--                            <div class="col-md-4">--}}
@@ -108,8 +109,10 @@
                                                 {{$category->order}}
                                             </td>
                                             <td style="vertical-align: middle;">
-                                                @if($category->status)
+                                                @if($category->status==1)
                                                     <span class="text-success">Hoạt động</span>
+                                                @elseif($category->status==2)
+                                                    <span class="text-danger">Không hiện Menu</span>
                                                 @else
                                                     <span class="text-danger">Không hoạt động</span>
                                                 @endif

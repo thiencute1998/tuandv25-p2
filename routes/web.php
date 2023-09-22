@@ -19,6 +19,7 @@ use App\Http\Controllers\Viewer\IndexController;
 use App\Http\Controllers\Admin\VideoController;
 use App\Http\Controllers\Admin\TabHomeController;
 use App\Http\Controllers\Admin\AboutController;
+use App\Http\Controllers\Admin\ChurchController;
 
 use App\Http\Controllers\Viewer\HomeController;
 use App\Http\Controllers\PhotoEditingViewerController;
@@ -168,6 +169,15 @@ Route::prefix('admin')->middleware(['checkLogin'])->group(function () {
 
     Route::prefix('email')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\EmailSignUpController::class, 'index'])->name('admin-email');
+    });
+
+    Route::prefix('church')->group(function () {
+        Route::get('/', [ChurchController::class, 'index'])->name('admin-church');
+        Route::get('/create', [ChurchController::class, 'create'])->name('admin-church-create');
+        Route::post('/store', [ChurchController::class, 'store'])->name('admin-church-store');
+        Route::get('/edit/{id}', [ChurchController::class, 'edit'])->name('admin-church-edit');
+        Route::post('/update/{id}', [ChurchController::class, 'update'])->name('admin-church-update');
+        Route::get('/delete/{id}', [ChurchController::class, 'delete'])->name('admin-church-delete');
     });
 
 });

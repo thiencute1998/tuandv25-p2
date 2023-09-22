@@ -57,6 +57,7 @@
                                             <select class="form-control" name="status">
                                                 <option value="1" selected>Hoạt động</option>
                                                 <option value="0">Không hoạt động</option>
+                                                <option value="2">Không hiện Menu</option>
                                             </select>
                                         </div>
                                     </div>

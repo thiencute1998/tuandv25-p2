@@ -50,9 +50,9 @@ class AppServiceProvider extends ServiceProvider
             $tagRight = Banner::where('status', 1)->where('type', 3)->first();
 
             // menu
-            $cates1 = Category::where('status', 1)->where('level', 1)->orderBy('order', 'asc')->get();
-            $cates2 = Category::where('status', 1)->where('level', 2)->orderBy('order', 'asc')->get();
-            $cates3 = Category::where('status', 1)->where('level', 3)->orderBy('order', 'asc')->get();
+            $cates1 = Category::where('status', 1)->where('status', '!=', 2)->where('level', 1)->orderBy('order', 'asc')->get();
+            $cates2 = Category::where('status', 1)->where('status', '!=', 2)->where('level', 2)->orderBy('order', 'asc')->get();
+            $cates3 = Category::where('status', 1)->where('status', '!=', 2)->where('level', 3)->orderBy('order', 'asc')->get();
 
             // Tim moi
             $postNew = Post::where('status', 1)
