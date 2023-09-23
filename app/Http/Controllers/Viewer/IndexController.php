@@ -54,6 +54,11 @@ class IndexController extends Controller
         return view('viewer.pages.events', compact('events'));
     }
 
+    public function churchs() {
+//        $churchs = $this->repository->churchs();
+//        return view('viewer.pages.find_church', compact('churchs'));
+    }
+
     public function getTag($tag) {
         $data = $this->repository->getTag($tag);
         $tag = $data['tag'];
@@ -62,7 +67,9 @@ class IndexController extends Controller
     }
 
     public function findChurch() {
-        return view('viewer.pages.find_church');
+        $churchs = $this->repository->churchs();
+        return view('viewer.pages.find_church', compact('churchs'));
+        //return view('viewer.pages.find_church');
     }
 
     public function getVideo($video) {

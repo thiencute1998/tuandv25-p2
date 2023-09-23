@@ -5,6 +5,7 @@ namespace App\Repositories\Viewer;
 use App\Models\About;
 use App\Models\CalenderEvent;
 use App\Models\Category;
+use App\Models\Church;
 use App\Models\EmailSignUp;
 use App\Models\Homepage;
 use App\Models\Post;
@@ -149,6 +150,12 @@ class IndexRepository extends BaseRepository {
             }
             return $value;
         });
+    }
+
+    public function churchs() {
+        $query = Church::where('status', 1);
+        $query->orderBy('created_at', 'desc');
+        return $query->get();
     }
 
     public function getTag($tag) {
