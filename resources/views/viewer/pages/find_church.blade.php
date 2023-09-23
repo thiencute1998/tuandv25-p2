@@ -137,5 +137,6 @@
     <style>
         div.dataTables_wrapper div.dataTables_filter input{ background: #fff}
         .dataTables_info{ margin-top: 20px;}
+        .entry table thead th{ background: #FFF; font-weight: bold;}
     </style>
 @endsection
