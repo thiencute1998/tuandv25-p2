@@ -136,5 +136,6 @@
     </script>
     <style>
         div.dataTables_wrapper div.dataTables_filter input{ background: #fff}
+        .dataTables_info{ margin-top: 20px;}
     </style>
 @endsection
