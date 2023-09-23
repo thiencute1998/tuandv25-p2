@@ -27,7 +27,7 @@
                             <section>
                                 <div class="bg-white border rounded-5">
                                     <div id="dtBasicExample_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                                        <div class="row"><div class="col-sm-12"><table id="dtBasicExample" class="table table-striped table-bordered table-sm dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dtBasicExample_info" style="width: 100%;">
+                                        <div class="row"><div class="col-sm-12" style="overflow-x:auto;"><table id="dtBasicExample" class="table table-striped table-bordered table-sm dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dtBasicExample_info" style="width: 100%;">
                                                     <thead>
                                                     <tr role="row"><th class="th-sm sorting_asc" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name
           : activate to sort column descending" style="width: 118.2px;">Tỉnh
@@ -51,7 +51,7 @@
                                                         <td>{{$church->commune}}</td>
                                                         <td>{{$church->village}}</td>
                                                         <td>{{$church->parish}}</td>
-                                                        <td><a href="{{$church->linkgmap}}" target="_blank">{!! $church->linkgmap !!}</a> </td>
+                                                        <td><a style="color: #007bff;white-space: break-spaces;" href="{{$church->linkgmap}}" target="_blank">{!! $church->commune !!}, {{$church->district}}, {{$church->province}}</a> </td>
                                                     </tr>
                                                     @endforeach
                                                     </tbody>
@@ -138,5 +138,6 @@
         div.dataTables_wrapper div.dataTables_filter input{ background: #fff}
         .dataTables_info{ margin-top: 20px;}
         .entry table thead th{ background: #FFF; font-weight: bold;}
+        .border{ border: none !important;}
     </style>
 @endsection
