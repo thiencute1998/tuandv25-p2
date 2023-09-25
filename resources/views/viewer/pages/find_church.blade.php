@@ -21,8 +21,9 @@
 {{--                        <iFrame src="https://script.google.com/macros/s/AKfycbwTVsJ8umX3VEbMt-W0vwS7gdFocJb4IIItoBUMSNksw_8cch7xa9Q7QvFEEE_Hu8vLtA/exec" width="680" height="860" allowfullscreen></iFrame>--}}
 {{--                    </p>--}}
                     <div style="overflow: hidden;">
-                        <link rel="stylesheet" href="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/css/compiled-4.20.0.min.css">
+{{--                        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">--}}
                         <link rel='stylesheet' id='tie-insta-style-css' href="{{ asset('assets/viewer/style/dataTables.css') }}" type='text/css' media='all' />
+                        <link rel="stylesheet" href="{{ asset('assets/viewer/style/dataTables.bootstrap4.min.css') }}">
                         <section class="section-no-border">
                             <section>
                                 <div class="bg-white border rounded-5">
@@ -30,17 +31,17 @@
                                         <div class="row"><div class="col-sm-12" style="overflow-x:auto;"><table id="dtBasicExample" class="table table-striped table-bordered table-sm dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dtBasicExample_info" style="width: 100%;">
                                                     <thead>
                                                     <tr role="row"><th class="th-sm sorting_asc" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name
-          : activate to sort column descending" style="width: 118.2px;">Tỉnh
+          : activate to sort column descending" style="width: 98.2px;">Tỉnh
                                                         </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Position
-          : activate to sort column ascending" style="width: 118.2px;">Huyện
+          : activate to sort column ascending" style="width: 98.2px;">Huyện
                                                         </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Office
-          : activate to sort column ascending" style="width: 138.2px;">Xã
+          : activate to sort column ascending" style="width: 118.2px;">Xã
                                                         </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Age
-          : activate to sort column ascending" style="width: 138.2px;">Thôn
+          : activate to sort column ascending" style="width: 118.2px;">Thôn
                                                         </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Start date
-          : activate to sort column ascending" style="width: 122.2px;">Giáo xứ
+          : activate to sort column ascending" style="width: 102.2px;">Giáo xứ
                                                         </th><th class="th-sm sorting" tabindex="0" aria-controls="dtBasicExample" rowspan="1" colspan="1" aria-label="Salary
-          : activate to sort column ascending" style="width: 266.2px;">Địa chỉ - Googlemap Nhà thờ xứ
+          : activate to sort column ascending" style="width: 286.2px;" title="Địa chỉ - Googlemap Nhà thờ xứ">Địa chỉ - Googlemap
                                                         </th></tr>
                                                     </thead>
                                                     <tbody>
@@ -88,7 +89,8 @@
             <div class="clear"></div>
         </div><!-- #comments -->
     </div>
-    <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/bundles/4.20.0/compiled.min.js"></script>
+{{--    <script type="text/javascript" src="https://mdbcdn.b-cdn.net/wp-content/themes/mdbootstrap4/docs-app/js/bundles/4.20.0/compiled.min.js"></script>--}}
+    <script type='text/javascript' src="{{ asset('assets/viewer/js/compiled.min.js') }}" id='jquery-ui-resizable-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/dataTables.js') }}" id='jquery-ui-resizable-js'></script>
 
     <script>
@@ -139,5 +141,8 @@
         .dataTables_info{ margin-top: 20px;}
         .entry table thead th{ background: #FFF; font-weight: bold;}
         .border{ border: none !important;}
+        .fa, .far, .fas {
+            font-family: 'FontAwesome';
+        }
     </style>
 @endsection
