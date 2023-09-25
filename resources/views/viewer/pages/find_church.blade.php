@@ -138,7 +138,7 @@
     </script>
     <style>
         div.dataTables_wrapper div.dataTables_filter input{ background: #fff}
-        .dataTables_info{ margin-top: 20px;}
+        .dataTables_info{ margin-top: 15px;}
         .entry table thead th{ background: #FFF; font-weight: bold;}
         .border{ border: none !important;}
         .fa, .far, .fas {
