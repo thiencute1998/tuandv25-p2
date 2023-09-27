@@ -84,7 +84,8 @@ class AppServiceProvider extends ServiceProvider
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
                 });
-
+            //slide Home
+            $slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(5)->get();
             // Lien he
             $contactWebsite = About::first();
             //Config
@@ -96,6 +97,7 @@ class AppServiceProvider extends ServiceProvider
                 'bannerWebsite'=> $bannerWebsite,
                 'breakNews'=> $breakNews,
                 'slideWebsites'=> $slideWebsites,
+                'slideHome'=> $slideHome,
                 'tagRight'=> $tagRight,
                 'cates1'=>$cates1,
                 'cates2'=>$cates2,

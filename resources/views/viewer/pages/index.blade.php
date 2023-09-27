@@ -65,12 +65,12 @@
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg">
             </div>
             <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 510px; height: 300px; overflow: hidden;">
-                @foreach($slideWebsites as $slide)
+                @foreach($slideHome as $slide)
                 <div>
-                    <img class="img-slider" data-u="image" src="{{asset("upload/admin/banner/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">
+                    <img class="img-slider" data-u="image" src="{{asset("upload/admin/post/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">
                     <div data-u="thumb" style="display: none;">
-                        <img data-u="thumb" class="i" src="{{asset("upload/admin/banner/image/" . $slide->image)}}">
-                        <span class="ti" style=""><a href="{{$slide->link}}" >{{$slide->name}}</a></span>
+                        <img data-u="thumb" class="i" src="{{asset("upload/admin/post/image/" . $slide->image)}}">
+                        <span class="ti" style=""><a href="{{route('get-post', ['post'=> $slide->slug])}}" >{{$slide->name}}</a></span>
                     </div>
                 </div>
                 @endforeach
