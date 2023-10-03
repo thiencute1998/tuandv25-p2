@@ -46,9 +46,8 @@
                                         </ul>
                                     </div>
                                 </li>
-                                <li class="live-search_lnk live-search_more"><a href="#">View
-                                        All Results</a></li>
-                                <li class="live-search_lnk live-search_no">No Result</li>
+                                <li class="live-search_lnk live-search_more"><a href="#">Xem tất cả kết quả</a></li>
+                                <li class="live-search_lnk live-search_no">Không có kết quả</li>
                             </ul>
                         </div>
                         <div id="live-search_more"></div>
