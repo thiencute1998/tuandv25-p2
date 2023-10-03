@@ -24,7 +24,9 @@ class IndexRepository extends BaseRepository {
     public function index() {
         $query = $this->model->query();
         $query->where('status', 1);
-        $query->with('categories.posts');
+        $query->with(['categories.posts'=> function($q) {
+            $q->orderBy('created_at', 'desc');
+        }]);
         $query->orderBy('order', 'asc');
         $homes = $query->get();
         $videos = $this->getVideoIndex();
