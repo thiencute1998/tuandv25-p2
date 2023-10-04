@@ -114,7 +114,7 @@ class CategoryRepository extends BaseRepository {
     }
 
     public function getParent($params) {
-        $query = $this->model->where('status', 1);
+        $query = $this->model->where('status', '!=', 0);
         if (isset($params['name'])) {
             $name = $params['name'];
             $query->where('name', 'like', "%$name%");

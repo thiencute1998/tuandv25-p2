@@ -59,7 +59,7 @@ class AppServiceProvider extends ServiceProvider
 //                ->where('created_at', '>=', date('Y-m-d 00:00:00'))
 //                ->where('created_at', '<=', date('Y-m-d 23:59:59'))
                 ->orderBy('created_at', 'desc')
-                ->take(6)->get()
+                ->take(5)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
@@ -68,7 +68,7 @@ class AppServiceProvider extends ServiceProvider
             $postTopView = Post::where('status', 1)
                 ->orderBy('views', 'desc')
                 ->orderBy('created_at', 'desc')
-                ->take(6)->get()
+                ->take(5)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);
                     return $value;
