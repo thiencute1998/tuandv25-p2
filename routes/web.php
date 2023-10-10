@@ -46,15 +46,6 @@ use Illuminate\Support\Facades\Storage;
 //    return view('admin.pages.product.products', compact('products'));
 //});
 
-Route::get('tuandv25-test-db', function() {
-    $posts = \App\Models\Post::all();
-    foreach ($posts as $post) {
-        \Illuminate\Support\Facades\DB::table('posts')
-            ->where('id', $post->id)
-            ->update(['d_date'=> Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('Y-m-d')]);
-    }
-});
-
 Route::get('/login', [AuthController::class, 'index'])->name('login-index');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login-auth');
