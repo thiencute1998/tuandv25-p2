@@ -6,6 +6,7 @@ use App\Models\Post;
 use App\Models\PostTag;
 use App\Models\Tag;
 use App\Repositories\BaseRepository;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -54,6 +55,9 @@ class PostRepository extends BaseRepository {
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
+            if (isset($params['d_date'])) {
+                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
+            }
             $post->fill($params);
 
             if ($post->save()) {
@@ -91,6 +95,9 @@ class PostRepository extends BaseRepository {
             $params['slug'] = Str::slug($params['name'], '-');
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
+            }
+            if (isset($params['d_date'])) {
+                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
             }
             $post->fill($params);
             if ($post->save()) {

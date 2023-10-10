@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
           integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href=
+              'https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css'
+          rel='stylesheet'>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 @endsection
 
@@ -70,7 +73,7 @@
                                                 @endif
                                             </select>
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-3">
                                             <label for="services" class="col-form-label">Tag</label>
                                             <select id="tag-link" class="tag-link form-control" name="tags[]" multiple>
                                                 @if($post->tags)
@@ -79,6 +82,10 @@
                                                     @endforeach
                                                 @endif
                                             </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label for="services" class="col-form-label">Ngày đăng</label>
+                                            <input type="text" id="my-date" name="d_date" value="{{ $post->d_date ? \Carbon\Carbon::createFromFormat('Y-m-d', $post->d_date)->format('m/d/Y') : null}}" class="form-control" placeholder="Ngày">
                                         </div>
                                     </div>
                                     <div class="row form-group">
@@ -123,6 +130,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
             integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
             crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+    <script src=
+                "https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer>
+    </script>
     <link rel="stylesheet" href="{{ asset('richtexteditor/rte_theme_default.css') }}" />
     <script type="text/javascript" src="{{ asset('richtexteditor/rte.js') }}"></script>
     <script type="text/javascript" src='{{ asset('richtexteditor/plugins/all_plugins.js') }}'></script>
@@ -201,6 +211,9 @@
                         }
                     }
                 }
+            });
+
+            $( "#my-date" ).datepicker({
             });
         });
     </script>
