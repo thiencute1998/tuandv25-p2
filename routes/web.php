@@ -51,7 +51,7 @@ Route::get('tuandv25-test-db', function() {
     foreach ($posts as $post) {
         \Illuminate\Support\Facades\DB::table('posts')
             ->where('id', $post->id)
-            ->update(['post_date'=> Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('Y-m-d H:i:00')]);
+            ->update(['post_date'=> Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->created_at)->format('Y-m-d 00:00:00')]);
     }
 });
 
