@@ -55,8 +55,8 @@ class PostRepository extends BaseRepository {
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
-            if (isset($params['d_date'])) {
-                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
+            if (isset($params['post_date'])) {
+                $params['post_date'] = Carbon::createFromFormat('Y/m/d H:i', $params['post_date'])->format('Y-m-d H:i:00');
             }
             $post->fill($params);
 
@@ -96,8 +96,8 @@ class PostRepository extends BaseRepository {
             if($request->hasFile('image')) {
                 $params['image'] = $this->saveFile($request->file('image'), $this->pathImage);
             }
-            if (isset($params['d_date'])) {
-                $params['d_date'] = Carbon::createFromFormat('m/d/Y', $params['d_date'])->format('Y-m-d');
+            if (isset($params['post_date'])) {
+                $params['post_date'] = Carbon::createFromFormat('Y/m/d H:i', $params['post_date'])->format('Y-m-d H:i:00');
             }
             $post->fill($params);
             if ($post->save()) {

@@ -25,7 +25,7 @@ class IndexRepository extends BaseRepository {
         $query = $this->model->query();
         $query->where('status', 1);
         $query->with(['categories.posts'=> function($q) {
-            $q->where('d_date', '<=', date('Y-m-d'));
+            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
             $q->orderBy('created_at', 'desc');
         }]);
         $query->orderBy('order', 'asc');
@@ -43,7 +43,7 @@ class IndexRepository extends BaseRepository {
         $query = Category::where('status', 1);
         $query->where('slug', $cate);
         $query->with(['posts'=> function($q) {
-            $q->where('d_date', '<=', date('Y-m-d'));
+            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
         }]);
         $category = $query->first();
         return $category;
@@ -61,7 +61,7 @@ class IndexRepository extends BaseRepository {
                 }
             }
             $queryPost = Post::where('status', 1);
-            $queryPost->where('d_date', '<=', date('Y-m-d'));
+            $queryPost->where('post_date', '<=', date('Y-m-d H:i:s'));
             //$queryPost->where('category_id', $category->id);
             $queryPost->whereHas('categories', function($q) use ($category, $arrcategory_id) {
                 $q->where('category_id', '=', $category->id)
@@ -86,14 +86,14 @@ class IndexRepository extends BaseRepository {
         $postNew->update();
         $query = Post::where('status', 1);
         $query->where('slug', $post);
-        $query->where('d_date', '<=', date('Y-m-d'));
+        $query->where('post_date', '<=', date('Y-m-d H:i:s'));
         $query->with('categories');
         return $query->firstOrFail();
     }
 
     public function getPostRelated($post) {
         $query = Post::where('status', 1);
-        $query->where('d_date', '<=', date('Y-m-d'));
+        $query->where('post_date', '<=', date('Y-m-d H:i:s'));
         $query->where('id', '!=',$post->id);
         if ($post->category_id) {
             $query->whereHas('categories', function($q) use($post){
@@ -118,7 +118,7 @@ class IndexRepository extends BaseRepository {
 
     public function getEventRelated() {
         $query = Post::where('status', 1);
-        $query->where('d_date', '<=', date('Y-m-d'));
+        $query->where('post_date', '<=', date('Y-m-d H:i:s'));
         $query->orderBy('created_at', 'desc');
         return $query->limit(3)->get();
     }
@@ -140,7 +140,7 @@ class IndexRepository extends BaseRepository {
         });
 
         $posts = Post::where('status', 1)
-            ->where('d_date', '<=', date('Y-m-d'))
+            ->where('post_date', '<=', date('Y-m-d H:i:s'))
             ->whereHas('categories', function($q) {
                 $q->where('slug', 'loi-chua-hang-ngay');
             })
@@ -176,7 +176,7 @@ class IndexRepository extends BaseRepository {
         $posts = collect();
         if($tag) {
             $queryPost = Post::where('status', 1);
-            $queryPost->where('d_date', '<=', date('Y-m-d'));
+            $queryPost->where('post_date', '<=', date('Y-m-d H:i:s'));
             $queryPost->whereHas('tags', function($q) use($tag){
                 $q->where('tag_id', $tag->id);
             });
@@ -278,7 +278,7 @@ class IndexRepository extends BaseRepository {
 
     public function searchPost($params) {
         $query = Post::where('status', 1);
-        $query->where('d_date', '<=', date('Y-m-d'));
+        $query->where('post_date', '<=', date('Y-m-d H:i:s'));
         if (isset($params['post'])) {
             $post = $params['post'];
             $query->where('name', 'like', "%$post%");
@@ -297,7 +297,7 @@ class IndexRepository extends BaseRepository {
 
     public function searchAllPost($post) {
         $query = Post::where('status', 1);
-        $query->where('d_date', '<=', date('Y-m-d'));
+        $query->where('post_date', '<=', date('Y-m-d H:i:s'));
         if (isset($post)) {
             $query->where('name', 'like', "%$post%");
         }
@@ -329,7 +329,7 @@ class IndexRepository extends BaseRepository {
     public function plusViewPost($params) {
         if(isset($params['slug'])) {
             $post = Post::where('status', 1)
-                ->where('d_date', '<=', date('Y-m-d'))
+                ->where('post_date', '<=', date('Y-m-d H:i:s'))
                 ->where('slug', $params['slug'])->first();
             if($post) {
                 $post->view_count = $post->view_count + 1;

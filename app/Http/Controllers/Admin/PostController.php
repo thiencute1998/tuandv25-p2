@@ -26,7 +26,7 @@ class PostController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('name', 'image', 'category', 'tags', 'content', 'status', 'categories', 'd_date', 'title', 'keywords', 'description');
+        $params = $request->only('name', 'image', 'category', 'tags', 'content', 'status', 'categories', 'post_date', 'title', 'keywords', 'description');
         $this->repository->store($params, $request);
         return redirect()->back()->with('add-success', 'Thêm bài viết thành công !!!');
     }
@@ -37,7 +37,7 @@ class PostController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('name', 'image', 'category', 'tags', 'content', 'status', 'categories', 'd_date','title', 'keywords', 'description');
+        $params = $request->only('name', 'image', 'category', 'tags', 'content', 'status', 'categories', 'post_date','title', 'keywords', 'description');
         $this->repository->update($params, $request, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật bài viết thành công !!!');
     }

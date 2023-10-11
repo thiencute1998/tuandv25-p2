@@ -93,6 +93,7 @@
                                         <th scope="col">Tên bài viết</th>
                                         <th scope="col">Danh mục</th>
                                         <th scope="col">Tag</th>
+                                        <th scope="col">Ngày đăng</th>
                                         <th>Trạng thái</th>
                                         <th scope="col">Hành động</th>
                                     </tr>
@@ -119,6 +120,9 @@
                                                         </div>
                                                     @endforeach
                                                 @endif
+                                            </td>
+                                            <td>
+                                                {{ $post->post_date ? \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $post->post_date)->format('Y/m/d H:i') : null }}
                                             </td>
                                             <td style="vertical-align: middle;">
                                                 @if($post->status==1)
