@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <label for="services" class="col-form-label">Tên xã</label>
-                                            <input type="text" name="commune" class="form-control" required>
+                                            <input type="text" name="commune" class="form-control" >
                                         </div>
                                         <div class="col-md-3">
                                             <label for="services" class="col-form-label">Thôn</label>
@@ -53,6 +53,12 @@
                                         <div class="col-md-2">
                                             <label for="services" class="col-form-label">Giáo xứ</label>
                                             <input type="text" name="parish" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Địa chỉ</label>
+                                            <input type="text" name="address" class="form-control" >
                                         </div>
                                     </div>
                                     <div class="row form-group">

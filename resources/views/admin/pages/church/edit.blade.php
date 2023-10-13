@@ -47,15 +47,21 @@
                                         </div>
                                         <div class="col-md-3">
                                             <label for="services" class="col-form-label">Tên xã</label>
-                                            <input type="text" name="commune" class="form-control" required value="{{$church->commune}}">
+                                            <input type="text" name="commune" class="form-control"  value="{{$church->commune}}">
                                         </div>
                                         <div class="col-md-3">
                                             <label for="services" class="col-form-label">Thôn</label>
-                                            <input type="text" name="village" class="form-control" required value="{{$church->village}}">
+                                            <input type="text" name="village" class="form-control"  value="{{$church->village}}">
                                         </div>
                                         <div class="col-md-2">
                                             <label for="services" class="col-form-label">Giáo xứ</label>
-                                            <input type="text" name="parish" class="form-control" required value="{{$church->parish}}">
+                                            <input type="text" name="parish" class="form-control"  value="{{$church->parish}}">
+                                        </div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <div class="col-md-12">
+                                            <label for="services" class="col-form-label">Địa chỉ</label>
+                                            <input type="text" name="address" class="form-control" value="{{$church->address}}" >
                                         </div>
                                     </div>
                                     <div class="row form-group">

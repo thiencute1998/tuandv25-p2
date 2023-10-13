@@ -52,7 +52,11 @@
                                                         <td>{{$church->commune}}</td>
                                                         <td>{{$church->village}}</td>
                                                         <td>{{$church->parish}}</td>
-                                                        <td><a style="color: #007bff;white-space: break-spaces;" href="{{$church->linkgmap}}" target="_blank">{!! $church->commune !!}, {{$church->district}}, {{$church->province}}</a> </td>
+                                                        @if($church->address)
+                                                            <td><a style="color: #007bff;white-space: break-spaces;" href="{{$church->linkgmap}}" target="_blank">{!! $church->address !!}</a> </td>
+                                                        @else
+                                                            <td><a style="color: #007bff;white-space: break-spaces;" href="{{$church->linkgmap}}" target="_blank">{!! $church->commune !!}, {{$church->district}}, {{$church->province}}</a> </td>
+                                                        @endif
                                                     </tr>
                                                     @endforeach
                                                     </tbody>

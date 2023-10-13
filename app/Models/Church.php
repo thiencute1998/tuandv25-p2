@@ -12,7 +12,7 @@ class Church extends Model
     // Quan ly Nhà thờ
     protected $table = 'churchs';
 
-    protected $fillable = ['province', 'district', 'commune', 'village', 'parish', 'linkgmap', 'status'];
+    protected $fillable = ['province', 'district', 'commune', 'village', 'parish', 'address', 'linkgmap', 'status'];
 
     public $timestamps = true;
 }

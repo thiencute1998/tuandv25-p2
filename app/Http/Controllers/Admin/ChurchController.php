@@ -26,7 +26,7 @@ class ChurchController extends Controller
     }
 
     public function store(Request $request) {
-        $params = $request->only('province', 'district', 'commune', 'village', 'parish', 'linkgmap', 'status');
+        $params = $request->only('province', 'district', 'commune', 'village', 'parish', 'address', 'linkgmap', 'status');
         $this->repository->store($params);
         return redirect()->back()->with('add-success', 'Thêm tin thành công !!!');
     }
@@ -37,7 +37,7 @@ class ChurchController extends Controller
     }
 
     public function update(Request $request, $id) {
-        $params = $request->only('province', 'district', 'commune', 'village', 'parish', 'linkgmap','status');
+        $params = $request->only('province', 'district', 'commune', 'village', 'parish', 'address', 'linkgmap','status');
         $this->repository->update($params, $id);
         return redirect()->back()->with('edit-success', 'Cập nhật tin thành công !!!');
     }
