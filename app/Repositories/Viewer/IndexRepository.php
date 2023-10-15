@@ -67,6 +67,7 @@ class IndexRepository extends BaseRepository {
                 $q->where('category_id', '=', $category->id)
                     ->orWhereIn('category_id', $arrcategory_id);
             });
+            $queryPost->orderBy('created_at', 'desc');
             $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
             return $posts->through(function ($value) {
