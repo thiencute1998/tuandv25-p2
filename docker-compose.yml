@@ -1,7 +1,7 @@
 version: "3.3"
 services:
     mysql:
-        image: mariadb:11.0.3
+        image: mariadb:10.6
         container_name: mysql
         ports:
             - "3305:3306"
@@ -18,10 +18,12 @@ services:
             -   ./docker/mysql:/var/lib/mysql
 
     web:
-        image: giao-phan-web
+        image: giao-phan-web:v1
         container_name: web
+        cap_add:
+            -   NET_ADMIN
         ports:
-            - "8002:80"
+            - "80:80"
         restart: unless-stopped
         working_dir: /var/www/html/tuandv25-p2
         volumes:
