@@ -259,7 +259,7 @@
             <div id="text-4" class="footer-widget widget_text">
                 {{--                <div class="footer-widget-top"><h4> </h4></div>--}}
                 <div class="footer-widget-container">
-                    <div class="textwidget" style="text-align: center; margin-bottom: 25px;"><a href="https://giaophanbacninh.org/v1" title="Website cũ"><img height="60"
+                    <div class="textwidget" style="text-align: center; margin-bottom: 25px;"><a href="https://v2.giaophanbacninh.org" title="Website cũ"><img height="60"
                                                                                                              width="154"
                                                                                                              data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
                                                                                                              class="lazyload"

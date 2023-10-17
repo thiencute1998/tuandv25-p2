@@ -85,7 +85,7 @@ class AppServiceProvider extends ServiceProvider
                     return $value;
                 });
             //slide Home
-            $slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(5)->get();
+            $slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(8)->get();
             // Lien he
             $contactWebsite = About::first();
             //Config
