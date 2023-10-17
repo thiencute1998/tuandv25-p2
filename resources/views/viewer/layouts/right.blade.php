@@ -18,16 +18,16 @@
             <div class="widget-container"><a
                     href="{{$tagRight ? $tagRight->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
-                        data-srcset="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-500x184.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-768x283.jpg 768w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01.jpg 1281w"
-                        data-src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg"
+                        data-srcset="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 1281w"
+                        data-src="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}}"
                         data-sizes="(max-width: 300px) 100vw, 300px"
                         class="image wp-image-54212  attachment-medium size-medium lazyload"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                     <noscript><img width="300" height="111"
-                                   src="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg"
+                                   src="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}}"
                                    class="image wp-image-54212  attachment-medium size-medium" alt=""
                                    style="max-width: 100%; height: auto;"
-                                   srcset="https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-300x111.jpg 300w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-500x184.jpg 500w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01-768x283.jpg 768w, https://giaophanbacninh.org/wp-content/uploads/2023/07/AddHGT-01.jpg 1281w"
+                                   srcset="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 1281w"
                                    sizes="(max-width: 300px) 100vw, 300px"/></noscript>
                 </a></div>
         </div><!-- .widget /-->
@@ -203,11 +203,11 @@
                 </div>
                 <div class="widget-container">
                     <div><a href="{{route('get-map')}}"><img width="315"
-                                                                            data-src="https://giaophanbacninh.org/wp-content/uploads/2023/01/BandoGPBN.jpg"
+                                                                            data-src="{{asset('assets/viewer/style/images/BandoGPBN.jpg')}}"
                                                                             class="tie-appear lazyload"
                                                                             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
                             <noscript><img
-                                    src="https://giaophanbacninh.org/wp-content/uploads/2023/01/BandoGPBN.jpg"
+                                    src="{{asset('assets/viewer/style/images/BandoGPBN.jpg')}}"
                                     width="315" class="tie-appear"></noscript>
                         </a>
                     </div>
@@ -261,10 +261,10 @@
                 <div class="footer-widget-container">
                     <div class="textwidget" style="text-align: center; margin-bottom: 25px;"><a href="https://v2.giaophanbacninh.org" title="Website cũ"><img height="60"
                                                                                                              width="154"
-                                                                                                             data-src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
+                                                                                                             data-src="{{asset('assets/viewer/style/images/banner_webcu.gif')}}"
                                                                                                              class="lazyload"
                                                                                                              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
-                            <noscript><img src="http://giaophanbacninh.org/wp-content/uploads/2013/05/banner_webcu.gif"
+                            <noscript><img src="{{asset('assets/viewer/style/images/banner_webcu.gif')}}"
                                            height="60" width="154"/></noscript>
                         </a>
 
