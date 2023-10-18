@@ -149,7 +149,7 @@
                                                 </p>
 
                                                 <div class="entry em-read-more-3 ">
-                                                    <p>{{strip_tags($post->content)}}</p>
+                                                    <p>{{html_entity_decode(strip_tags($post->content))}}</p>
                                                 </div>
                                             </li><!-- .first-news -->
                                         @else
@@ -242,7 +242,7 @@
 
 
                                                 <div class="entry em-read-more-3">
-                                                    <p>{{strip_tags($post->content)}}</p>
+                                                    <p>{{html_entity_decode(strip_tags($post->content))}}</p>
     {{--                                                <a class="more-link"--}}
     {{--                                                   href="{{route('get-post', ['post'=> $post->slug])}}">Read More--}}
     {{--                                                    &raquo;</a>--}}
