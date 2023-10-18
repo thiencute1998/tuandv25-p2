@@ -149,7 +149,7 @@
                                                 </p>
 
                                                 <div class="entry em-read-more-3 ">
-                                                    <p>{!! $post->content !!}</p>
+                                                    <p>{{strip_tags($post->content)}}</p>
                                                 </div>
                                             </li><!-- .first-news -->
                                         @else
