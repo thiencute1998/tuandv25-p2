@@ -114,7 +114,7 @@ class IndexRepository extends BaseRepository {
     public function getEventCalendar($event) {
         $query = CalenderEvent::where('status', 1);
         $query->where('slug', $event);
-        $query->where('d_date', '<=' , date('Y-m-d'));
+        //$query->where('d_date', '<=' , date('Y-m-d'));
         return $query->firstOrFail();
     }
 
@@ -133,7 +133,7 @@ class IndexRepository extends BaseRepository {
             $date = Carbon::createFromFormat('d/m/Y', $params['date'])->format('Y-m-d');
             $formatFullDate = $this->formatVNFullDate($date);
             $query->where('d_date', $date);
-            $query->where('d_date', '<=', date('Y-m-d'));
+            //$query->where('d_date', '<=', date('Y-m-d'));
         }
 
         $data = $query->get()->map(function ($value) {
