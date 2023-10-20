@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Config;
 use App\Models\Link;
 use App\Models\Post;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
@@ -33,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        URL::forceScheme('https');
         Paginator::useBootstrap();
         View::composer('*', function ($view) {
             $user = auth()->user();
