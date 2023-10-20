@@ -84,7 +84,6 @@
                                     </div><!-- post-thumbnail /-->
                                     <h3><a
                                             href="{{route('get-post', ['post'=> $post->slug])}}">{{$post->name}}</a></h3>
-
 {{--                                    <span class="tie-date"><i class="fa fa-clock-o"></i>{{$post->dateDiff}} ago</span>--}}
                                 </li>
                                 @endforeach
