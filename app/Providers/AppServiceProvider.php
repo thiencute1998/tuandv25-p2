@@ -92,7 +92,7 @@ class AppServiceProvider extends ServiceProvider
             //slide Home
             //$slideHome = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
             //$slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(10)->get();
-            $slideHome = Post::where('status', 1)->where('DATE(post_date)', '<=', "'".date('Y-m-d')."'")->orderBy('post_date', 'desc')->limit(10)->get();
+            $slideHome = Post::where('status', 1)->where('DATE(post_date)', '<=', "'".date('Y-m-d')."'")->orderBy('DATE(post_date)', 'desc')->limit(10)->get();
             // Lien he
             $contactWebsite = About::first();
             //Config
