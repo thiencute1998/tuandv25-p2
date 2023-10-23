@@ -65,7 +65,7 @@
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg">
             </div>
             <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 510px; height: 300px; overflow: hidden;">
-                @foreach($slideHome1 as $slide)
+                @foreach($slideHomes as $slide)
                     @if($slide->image)
                         <div>
                             <img class="img-slider" data-u="image" src="{{asset("upload/admin/post/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">

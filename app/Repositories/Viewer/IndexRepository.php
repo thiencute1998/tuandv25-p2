@@ -31,7 +31,8 @@ class IndexRepository extends BaseRepository {
         $query->orderBy('order', 'asc');
         $homes = $query->get();
         $videos = $this->getVideoIndex();
-        return view('viewer.pages.index', compact('homes', 'videos'));
+        $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
+        return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 
     public function getVideoIndex() {
