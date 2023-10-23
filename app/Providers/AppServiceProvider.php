@@ -35,9 +35,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         URL::forceScheme('https');
-        if($this->app->environment('production')) {
+        //if($this->app->environment('production')) {
             //URL::forceScheme('https');
-        }
+        //}
         Paginator::useBootstrap();
         View::composer('*', function ($view) {
             $user = auth()->user();
