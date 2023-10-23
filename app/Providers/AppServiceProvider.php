@@ -90,8 +90,8 @@ class AppServiceProvider extends ServiceProvider
                     return $value;
                 });
             //slide Home
-            //$slideHome = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
-            $slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(10)->get();
+            $slideHome = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
+            //$slideHome = Post::where('status', 1)->orderBy('created_at', 'desc')->take(10)->get();
             // Lien he
             $contactWebsite = About::first();
             //Config
