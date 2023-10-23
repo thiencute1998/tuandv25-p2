@@ -34,7 +34,10 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        URL::forceScheme('https');
+        //URL::forceScheme('https');
+        if($this->app->environment('production')) {
+            URL::forceScheme('https');
+        }
         Paginator::useBootstrap();
         View::composer('*', function ($view) {
             $user = auth()->user();
@@ -87,7 +90,7 @@ class AppServiceProvider extends ServiceProvider
                     return $value;
                 });
             //slide Home
-            $slideHome = Post::where('status', 1)->where('d_date', '<=' , date('Y-m-d'))->orderBy('created_at', 'desc')->take(10)->get();
+            $slideHome = Post::where('status', 1)->where('post_date', '<=', date('Y-m-d H:i:s'))->orderBy('created_at', 'desc')->take(10)->get();
             // Lien he
             $contactWebsite = About::first();
             //Config
