@@ -18,16 +18,16 @@
             <div class="widget-container"><a
                     href="{{$tagRight ? $tagRight->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
-                        data-srcset="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 1281w"
-                        data-src="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}}"
+                        data-srcset="{{asset('assets/viewer/style/images/AddHGT.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 1281w"
+                        data-src="{{asset('assets/viewer/style/images/AddHGT.jpg')}}"
                         data-sizes="(max-width: 300px) 100vw, 300px"
                         class="image wp-image-54212  attachment-medium size-medium lazyload"
                         src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="/>
                     <noscript><img width="300" height="111"
-                                   src="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}}"
+                                   src="{{asset('assets/viewer/style/images/AddHGT.jpg')}}"
                                    class="image wp-image-54212  attachment-medium size-medium" alt=""
                                    style="max-width: 100%; height: auto;"
-                                   srcset="{{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT-01.jpg')}} 1281w"
+                                   srcset="{{asset('assets/viewer/style/images/AddHGT.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 1281w"
                                    sizes="(max-width: 300px) 100vw, 300px"/></noscript>
                 </a></div>
         </div><!-- .widget /-->
