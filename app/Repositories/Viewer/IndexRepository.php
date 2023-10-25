@@ -25,30 +25,31 @@ class IndexRepository extends BaseRepository {
     public function index() {
         $query = $this->model->query();
         $query->where('status', 1);
-//        $query->with(['categories.posts'=> function($q) {
-//            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
-//            $q->orderBy('created_at', 'desc');
-//        }]);
-        $query->with(['categories']);
+        $query->with(['categories.posts'=> function($q) {
+            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
+            $q->orderBy('created_at', 'desc');
+        }]);
+//        $query->with(['categories']);
         $query->orderBy('order', 'asc');
-        $homes = $query->get()->map(function($value) {
-            $categories =  $value->categories;
-            if($categories) {
-                $q = [];
-                foreach ($categories as $key=> $category) {
-                    $q = DB::table('posts')
-                        ->join('post_categories', 'posts.id', '=' ,'post_categories.id')
-                        ->where('category_id', $category->id)
-                        ->where('post_date', '<=', date('Y-m-d H:i:s'))
-                        ->orderBy('post_date', 'desc')
-                        ->get()
-                        ->take(5)
-                        ->toArray();
-                }
-                $categories[$key]->posts = $q;
-            }
-            return $value;
-        });
+        $homes = $query->get();
+//        $homes = $query->get()->map(function($value) {
+//            $categories =  $value->categories;
+//            if($categories) {
+//                $q = [];
+//                foreach ($categories as $key=> $category) {
+//                    $q = DB::table('posts')
+//                        ->join('post_categories', 'posts.id', '=' ,'post_categories.id')
+//                        ->where('category_id', $category->id)
+//                        ->where('post_date', '<=', date('Y-m-d H:i:s'))
+//                        ->orderBy('post_date', 'desc')
+//                        ->get()
+//                        ->take(5)
+//                        ->toArray();
+//                }
+//                $categories[$key]->posts = $q;
+//            }
+//            return $value;
+//        });
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
