@@ -40,7 +40,7 @@ class IndexRepository extends BaseRepository {
                         ->join('post_categories', 'posts.id', '=' ,'post_categories.id')
                         ->where('category_id', $category->id)
                         ->where('post_date', '<=', date('Y-m-d H:i:s'))
-                        ->orderBy('created_at', 'desc')
+                        ->orderBy('post_date', 'desc')
                         ->get()
                         ->take(5)
                         ->toArray();
