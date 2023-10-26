@@ -14,6 +14,7 @@
             overflow: hidden;
             margin: auto;
         }
+        .search-box input{ width: 100%;}
     </style>
 @endsection
 @section('main-content-inner')

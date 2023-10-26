@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        URL::forceScheme('https');
+        //URL::forceScheme('https');
         //if($this->app->environment('production')) {
             //URL::forceScheme('https');
         //}
@@ -63,7 +63,8 @@ class AppServiceProvider extends ServiceProvider
             $postNew = Post::where('status', 1)
 //                ->where('created_at', '>=', date('Y-m-d 00:00:00'))
 //                ->where('created_at', '<=', date('Y-m-d 23:59:59'))
-                ->orderBy('created_at', 'desc')
+                ->where('post_date', '<=', date('Y-m-d H:i:s'))
+                ->orderBy('post_date', 'desc')
                 ->take(5)->get()
                 ->map(function($value){
                     $value->dateDiff = getDateDiff($value->created_at);

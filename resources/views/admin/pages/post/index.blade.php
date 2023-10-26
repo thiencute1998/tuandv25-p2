@@ -1,5 +1,6 @@
 @extends('admin.layouts.master')
 @section('admin-css')
+    <link href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/ui-lightness/jquery-ui.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
           integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,6 +15,7 @@
             overflow: hidden;
             margin: auto;
         }
+        .search-box input{ width: 100%;}
     </style>
 @endsection
 @section('main-content-inner')
@@ -29,16 +31,20 @@
                 <div class="search-box pull-left w-100">
                     <form action="{{ route('admin-post') }}" method="GET" >
                         <div class="row form-group justify-content-between">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             <span> Tên: </span>
                             <input type="text" name="search" placeholder="Search..." value="{{ request()->input('search') }}">
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                             <span> Danh mục: </span>
                             <select id="category-link" class="category-link form-control" name="category_id" multiple>
                             </select>
                             </div>
                             <div class="col-md-3">
+                                <span> Ngày đăng: </span>
+                                <input type="text" id="my-date" name="post_date" class="form-control" placeholder="Ngày đăng">
+                            </div>
+                            <div class="col-md-2">
                                 <span> Trạng thái: </span>
                                 <select class="form-control" name="status">
                                     <option value="">Chọn trạng thái</option>
@@ -160,6 +166,7 @@
         </div>
     </div>
     <script src="{{ asset('assets/admin/js/jquery341.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
         integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
@@ -220,6 +227,8 @@
                         }
                     }
                 }
+            });
+            $( "#my-date" ).datepicker({
             });
         })
     </script>

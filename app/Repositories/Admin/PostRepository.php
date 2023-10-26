@@ -34,6 +34,10 @@ class PostRepository extends BaseRepository {
             $status = $searchParams['status'];
             $query->where('status', '=', "$status");
         }
+        if (isset($searchParams['post_date'])) {
+            $post_date = date("Y-m-d", strtotime($searchParams['post_date']));
+            $query->WhereRaw('str_to_date(post_date,"%Y-%m-%d") = "'.$post_date.'"');
+        }
         $query->with('categories')->with('tags');
         $query->orderBy('updated_at', 'desc');
         $posts = $query->paginate(10);
