@@ -38,6 +38,9 @@ class AppServiceProvider extends ServiceProvider
         //if($this->app->environment('production')) {
             //URL::forceScheme('https');
         //}
+        if($this->app->environment('development')) {
+            URL::forceScheme('https');
+        }
         Paginator::useBootstrap();
         View::composer('*', function ($view) {
             $user = auth()->user();
@@ -53,6 +56,7 @@ class AppServiceProvider extends ServiceProvider
 
             $slideWebsites = Banner::where('status', 1)->where('type', 2)->take(10)->get();
             $tagRight = Banner::where('status', 1)->where('type', 3)->first();
+            $tagRight1 = Banner::where('status', 1)->where('type', 4)->first();
 
             // menu
             $cates1 = Category::where('status', 1)->where('status', '!=', 2)->where('level', 1)->orderBy('order', 'asc')->get();
@@ -107,6 +111,7 @@ class AppServiceProvider extends ServiceProvider
                 'slideWebsites'=> $slideWebsites,
                 //'slideHome'=> $slideHome,
                 'tagRight'=> $tagRight,
+                'tagRight1'=> $tagRight1,
                 'cates1'=>$cates1,
                 'cates2'=>$cates2,
                 'cates3'=>$cates3,

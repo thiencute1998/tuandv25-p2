@@ -16,7 +16,7 @@
 {{--                <div class="stripe-line"></div>--}}
 {{--            </div>--}}
             <div class="widget-container"><a
-                    href="{{$tagRight ? $tagRight->link : "#"}}"><img
+                    href="{{$tagRight1 ? $tagRight1->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
                         data-srcset="{{asset('assets/viewer/style/images/AddHGT.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 1281w"
                         data-src="{{asset('assets/viewer/style/images/AddHGT.jpg')}}"

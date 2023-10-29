@@ -51,6 +51,7 @@
                                                 <option value="1">Banner</option>
                                                 <option value="2">Slide</option>
                                                 <option value="3">Menu Right</option>
+                                                <option value="4">Menu Right1</option>
                                                 <option value="5">Logo</option>
                                             </select>
                                         </div>
