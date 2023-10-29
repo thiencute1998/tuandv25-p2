@@ -16,7 +16,7 @@
 {{--                <div class="stripe-line"></div>--}}
 {{--            </div>--}}
             <div class="widget-container"><a
-                    href="{{$tagRight1 ? $tagRight1->link : "#"}}"><img
+                    href="{{$tagRight ? $tagRight->link : "#"}}"><img
                         width="300" height="111" alt="" style="max-width: 100%; height: auto;"
                         data-srcset="{{asset('assets/viewer/style/images/AddHGT.jpg')}} 300w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 500w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 768w, {{asset('assets/viewer/style/images/AddHGT.jpg')}} 1281w"
                         data-src="{{asset('assets/viewer/style/images/AddHGT.jpg')}}"
@@ -219,7 +219,7 @@
 {{--                    <div class="stripe-line"></div>--}}
                 </div>
                 <div class="widget-container">
-                    <a href="{{$tagRight ? $tagRight->link : "#"}}" target="_blank"> <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-02.jpg')}}" width="300" height="51"></a>
+                    <a href="{{$tagRight1 ? $tagRight1->link : "#"}}" target="_blank"> <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-02.jpg')}}" width="300" height="51"></a>
                 </div>
                 <div class="widget-container">
                     <a href="https://giole.vn/" target="_blank"> <img src="{{asset('assets/viewer/style/images/Iconcanhtrangweb-01.jpg')}}" width="300" height="51"></a>
