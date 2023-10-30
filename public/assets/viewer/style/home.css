@@ -216,12 +216,15 @@ img.emoji {
 .jssort121{ left: 0px !important}
 @media(max-width: 767px) {
     .jssort121{ left: -47.5668px !important}
+    .moduleSocialMedia a { width: 25px !important; height: 25px !important; font-size: 15px !important; padding-top: 6px !important}
 }
 @media(max-width: 320px) {
     .jssort121{ left: -32.5668px !important}
+    .moduleSocialMedia a { width: 25px !important; height: 25px !important; font-size: 15px !important; padding-top: 6px !important}
 }
 @media(max-width: 480px) {
     .jssort121{ left: -65.4599px !important}
+    .moduleSocialMedia a { width: 25px !important; height: 25px !important; font-size: 15px !important; padding-top: 6px !important}
 }
 @media(min-width: 768px) {
     /*.jssort121{ left: -32.5668px !important}*/
@@ -482,3 +485,5 @@ element.style {
 #slide-out #mobile-menu ul ul li a{ text-transform: none}
 #slide-out #mobile-menu ul ul ul a{ font-size: 14px !important}
 .em.em-modal .em-modal-popup header .em-modal-title{ font-weight: bold; font-size: 20px !important}
+.cat-tabs-header ul li a{ font-weight: bold; padding-left: 10px;}
+.em-news-img{ height: 80px !important;}

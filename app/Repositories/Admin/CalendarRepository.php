@@ -32,7 +32,7 @@ class CalendarRepository extends BaseRepository {
             $d_date = Carbon::createFromFormat('m/d/Y', $searchParams['d_date'])->format('Y-m-d');
             $query->where('d_date', '=', "$d_date");
         }
-        $query->orderBy('updated_at', 'desc');
+        $query->orderBy('post_date', 'desc');
         $calendars = $query->paginate(10);
         return view('admin.pages.calendar.index', compact('calendars'));
     }

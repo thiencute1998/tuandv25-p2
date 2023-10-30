@@ -68,9 +68,9 @@
                 @foreach($slideHomes as $slide)
                     @if($slide->image)
                         <div>
-                            <img class="img-slider" data-u="image" src="{{asset("upload/admin/post/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0">
+                            <a href="{{route('get-post', ['post'=> $slide->slug])}}" style="z-index: 99 !important;"><img class="img-slider" data-u="image" src="{{asset("upload/admin/post/image/" . $slide->image)}}" style="width: 660px; height: auto; top: 0px; left: 0px; position: absolute; display: block; z-index: 1" border="0"></a>
                             <div data-u="thumb" style="display: none;">
-                                    <img data-u="thumb" class="i" src="{{asset("upload/admin/post/image/" . $slide->image)}}">
+                                <img data-u="thumb" class="i" src="{{asset("upload/admin/post/image/" . $slide->image)}}">
                                 <span class="ti" style=""><a href="{{route('get-post', ['post'=> $slide->slug])}}" >{{$slide->name}}</a></span>
                             </div>
                         </div>
@@ -86,9 +86,9 @@
                 @endforeach
             </div>
             <!-- Thumbnail Navigator -->
-            <div data-u="thumbnavigator" class="jssort121" style="position: absolute; display: block; top: 0px; left: 0px !important; width: 280px !important; height: 290.041px;" data-autocenter="2" data-scale-left="0.75" >
-                <div data-u="slides" style="position: absolute; overflow: hidden; width: 320px; height: 380px; left: 0px; top: 0px; z-index: 0;">
-                    <div data-u="prototype" class="p" style="width: 239px; height: 60px; left: 0px; top: 0px; " data-jssor-button="1">
+            <div data-u="thumbnavigator" class="jssort121" style="position: absolute; display: block; top: 0px; left: 0px !important; width: 275px !important; height: 290.041px;" data-autocenter="2" data-scale-left="0.75" >
+                <div data-u="slides" style="position: absolute; overflow: hidden; width: 300px; height: 380px; left: 0px; top: 0px; z-index: 0;">
+                    <div data-u="prototype" class="p" style="width: 220px; height: 60px; left: 0px; top: 0px; " data-jssor-button="1">
                         <div data-u="thumbnailtemplate" class="t"></div>
                     </div>
                 </div>

@@ -1,9 +1,13 @@
 @extends('viewer.layouts.master')
 @section('meta')
-    <meta property="og:title" content="{{$post->title}}"/>
+    <meta property="og:rich_attachment" content="true"/>
+    <meta property="og:title" content="{{$post->title ? $post->title : $post->name}}"/>
     <meta property="og:keyword" content="{{$post->keywords}}"/>
     <meta property="og:description" content="{{$post->description}}"/>
     <meta property="og:url" content="{{route('get-post', ['post'=> $post->slug])}}"/>
+    <meta property="og:image" itemprop="thumbnailUrl" content="{{asset("upload/admin/post/image/" . $post->image)}}"/>
+    <meta property="og:image:width" content="800"/>
+    <meta property="og:image:height" content="354"/>
     <meta property="og:site_name" content="{{$post->name}}"/>
 @endsection
 @section('main-content')

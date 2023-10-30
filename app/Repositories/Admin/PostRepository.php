@@ -39,7 +39,7 @@ class PostRepository extends BaseRepository {
             $query->WhereRaw('str_to_date(post_date,"%Y-%m-%d") = "'.$post_date.'"');
         }
         $query->with('categories')->with('tags');
-        $query->orderBy('updated_at', 'desc');
+        $query->orderBy('post_date', 'desc');
         $posts = $query->paginate(10);
         return view('admin.pages.post.index', compact('posts'));
     }
