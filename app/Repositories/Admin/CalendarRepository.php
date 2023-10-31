@@ -22,7 +22,7 @@ class CalendarRepository extends BaseRepository {
         $query = $this->model->query();
         if (isset($searchParams['name'])) {
             $name = $searchParams['name'];
-            $query->where('name', 'like', "$name%");
+            $query->where('name', 'like', "%$name%");
         }
         if (isset($searchParams['status'])) {
             $status = $searchParams['status'];

@@ -24,7 +24,7 @@ class PostRepository extends BaseRepository {
         $query = $this->model->query();
         if (isset($searchParams['search'])) {
             $name = $searchParams['search'];
-            $query->where('name', 'like', "$name%");
+            $query->where('name', 'like', "%$name%");
         }
         if (isset($searchParams['category_id'])) {
             $id = $searchParams['category_id'];
