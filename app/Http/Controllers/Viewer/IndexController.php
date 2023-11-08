@@ -29,13 +29,10 @@ class IndexController extends Controller
 //    }
 
     public function getPost($post) {
-        Log::info('start category');
         ini_set('memory_limit', '-1');
         $category = $this->repository->getCate($post);
-        Log::info('middle category');
         if ($category) {
             $posts = $this->repository->paginatePost($category);
-            Log::info('end category');
             return view('viewer.pages.category', compact('category', 'posts'));
         } else {
             $post = $this->repository->getPost($post);

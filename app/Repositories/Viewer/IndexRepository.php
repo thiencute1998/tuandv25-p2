@@ -57,6 +57,7 @@ class IndexRepository extends BaseRepository {
     }
 
     public function paginatePost($category) {
+        Log::info('start post');
         $posts = collect();
         if ($category) {
             //Lấy tất cả Category con
@@ -77,13 +78,16 @@ class IndexRepository extends BaseRepository {
             $queryPost->orderBy('created_at', 'desc');
             $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
-            return $posts->through(function ($value) {
+            Log::info('middle post');
+            $data = $posts->through(function ($value) {
                 $value->fullDate = $value->created_at;
                 if ($value->created_at) {
                     $value->fullDate = $this->formatVNFullDate($value->created_at, "Y-m-d H:i:s");
                 }
                 return $value;
             });
+            Log::info('end post');
+            return $data;
         }
         return $posts;
     }
