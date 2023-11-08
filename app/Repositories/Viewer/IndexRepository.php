@@ -25,7 +25,6 @@ class IndexRepository extends BaseRepository {
     }
 
     public function index() {
-        Log::info('start');
         ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
@@ -40,18 +39,14 @@ class IndexRepository extends BaseRepository {
             if($categories) {
                 foreach ($categories as $key=> $category) {
                     if ($key == 0) {
-                        Log::info(222);
-                        $test = DB::table('posts')
+                        $q = DB::table('posts')
                             ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
                             ->where('post_categories.category_id', $category->id)
-                            ->where('post_date', '<=', date('Y-m-d H:i:s'));
-                        $q = $test
-//                        ->orderBy('post_date', 'desc')
+                            ->where('post_date', '<=', date('Y-m-d H:i:s'))
                             ->take(5)
                             ->get()
                             ->toArray();
                         $categories[$key]->posts = $q;
-                        Log::info($test->toSql() . "  " . $category->id . "    ". count($q));
                     } else {
                         break;
                     }
@@ -62,7 +57,6 @@ class IndexRepository extends BaseRepository {
         });
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
-        Log::info('end');
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 
@@ -82,7 +76,6 @@ class IndexRepository extends BaseRepository {
     }
 
     public function paginatePost($category) {
-        Log::info('start post :' . Request::ip());
         $posts = collect();
         if ($category) {
             //Lấy tất cả Category con
@@ -103,7 +96,6 @@ class IndexRepository extends BaseRepository {
             $queryPost->orderBy('created_at', 'desc');
 //            $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
-            Log::info('middle post: ' . request()->ip());
             $data = $posts->through(function ($value) {
                 $value->fullDate = $value->created_at;
                 if ($value->created_at) {
@@ -111,7 +103,6 @@ class IndexRepository extends BaseRepository {
                 }
                 return $value;
             });
-            Log::info('end post: ' . request()->ip());
             return $data;
         }
         return $posts;
