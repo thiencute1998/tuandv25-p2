@@ -62,7 +62,7 @@
         <div id="jssor_1" style="position: relative; margin: 0px auto; top: 0px; left: 0px; width: 748px; height: 290.041px; overflow: hidden; visibility: visible;" data-jssor-slider="1">
             <!-- Loading Screen -->
             <div data-u="loading" class="jssorl-009-spin" style="position: absolute; top: 0px; left: 0px; width: 660px; height: 390px; text-align: center; background-color: rgba(0, 0, 0, 0.7); display: none;">
-                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/spin.svg">
+                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="{{asset('assets/viewer/style/images/spin.svg')}}">
             </div>
             <div data-u="slides" style="cursor: default; position: absolute; top: 0px; right: 0px; width: 510px; height: 300px; overflow: hidden;">
                 @foreach($slideHomes as $slide)
