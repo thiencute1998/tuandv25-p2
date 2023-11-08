@@ -32,6 +32,7 @@ class IndexController extends Controller
         Log::info('start category');
         ini_set('memory_limit', '-1');
         $category = $this->repository->getCate($post);
+        Log::info('middle category');
         if ($category) {
             $posts = $this->repository->paginatePost($category);
             Log::info('end category');
