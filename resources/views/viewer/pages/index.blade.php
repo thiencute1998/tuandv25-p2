@@ -122,7 +122,7 @@
                         <ul>
                             @foreach($home->categories as $category)
                                 @foreach($category->posts as $keyPost=> $post)
-                                    @if($keyPost < 5)
+                                    @if($keyPost < 2)
                                         @if($keyPost == 0)
                                             <li class="first-news">
 
@@ -215,7 +215,7 @@
 
                             <ul>
                                 @foreach($category->posts as $keyPost=> $post)
-                                    @if($keyPost < 5)
+                                    @if($keyPost < 2)
                                         @if($keyPost == 0)
                                             <li class="first-news">
                                                 <div class="post-thumbnail em-list-img">
