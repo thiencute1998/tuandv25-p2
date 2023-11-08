@@ -40,6 +40,7 @@ class IndexRepository extends BaseRepository {
             if($categories) {
                 foreach ($categories as $key=> $category) {
                     if ($key == 0) {
+                        Log::info(222);
                         $test = DB::table('posts')
                             ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
                             ->where('post_categories.category_id', $category->id)
@@ -49,8 +50,8 @@ class IndexRepository extends BaseRepository {
                             ->get()
                             ->take(5)
                             ->toArray();
-                        Log::info($test->toSql() . "  " . $category->id);
                         $categories[$key]->posts = $q;
+                        Log::info($test->toSql() . "  " . $category->id);
                     } else {
                         break;
                     }
