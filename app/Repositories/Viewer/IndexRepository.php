@@ -50,9 +50,9 @@ class IndexRepository extends BaseRepository {
     public function getCate($cate) {
         $query = Category::where('status', 1);
         $query->where('slug', $cate);
-        $query->with(['posts'=> function($q) {
-            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
-        }]);
+//        $query->with(['posts'=> function($q) {
+//            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
+//        }]);
         $category = $query->first();
         return $category;
     }
@@ -77,7 +77,7 @@ class IndexRepository extends BaseRepository {
 //                    ->orWhereIn('category_id', $arrcategory_id);
             });
             $queryPost->orderBy('created_at', 'desc');
-            $queryPost->with('categories');
+//            $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
             Log::info('middle post: ' . request()->ip());
             $data = $posts->through(function ($value) {
