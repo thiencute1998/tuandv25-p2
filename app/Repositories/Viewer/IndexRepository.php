@@ -39,15 +39,20 @@ class IndexRepository extends BaseRepository {
             $categories =  $value->categories;
             if($categories) {
                 foreach ($categories as $key=> $category) {
-                    $q = DB::table('posts')
-                        ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
-                        ->where('post_categories.category_id', $category->id)
-                        ->where('post_date', '<=', date('Y-m-d H:i:s'))
-                        ->orderBy('post_date', 'desc')
-                        ->get()
-                        ->take(5)
-                        ->toArray();
-                    $categories[$key]->posts = $q;
+                    if ($key == 0) {
+                        Log::info($key);
+                        $q = DB::table('posts')
+                            ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
+                            ->where('post_categories.category_id', $category->id)
+                            ->where('post_date', '<=', date('Y-m-d H:i:s'))
+//                        ->orderBy('post_date', 'desc')
+                            ->get()
+                            ->take(5)
+                            ->toArray();
+                        $categories[$key]->posts = $q;
+                    } else {
+                        break;
+                    }
                 }
             }
             $value->categories = $categories;
@@ -80,18 +85,18 @@ class IndexRepository extends BaseRepository {
         if ($category) {
             //Lấy tất cả Category con
             $arrcategory_id = [];
-//            $childCategory = Category::where('parent_id', $category->id)->get();
-//            if($childCategory){
-//                foreach($childCategory as $item){
-//                    $arrcategory_id[] = $item->id;
-//                }
-//            }
+            $childCategory = Category::where('parent_id', $category->id)->get();
+            if($childCategory){
+                foreach($childCategory as $item){
+                    $arrcategory_id[] = $item->id;
+                }
+            }
             $queryPost = Post::where('status', 1);
             $queryPost->where('post_date', '<=', date('Y-m-d H:i:s'));
             //$queryPost->where('category_id', $category->id);
             $queryPost->whereHas('categories', function($q) use ($category, $arrcategory_id) {
-                $q->where('category_id', '=', $category->id);
-//                    ->orWhereIn('category_id', $arrcategory_id);
+                $q->where('category_id', '=', $category->id)
+                    ->orWhereIn('category_id', $arrcategory_id);
             });
             $queryPost->orderBy('created_at', 'desc');
 //            $queryPost->with('categories');

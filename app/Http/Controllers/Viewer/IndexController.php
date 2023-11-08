@@ -29,7 +29,6 @@ class IndexController extends Controller
 //    }
 
     public function getPost($post) {
-        Log::info('1111');
         ini_set('memory_limit', '-1');
         $category = $this->repository->getCate($post);
         if ($category) {
