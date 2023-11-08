@@ -15,6 +15,7 @@ use App\Models\Video;
 use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class IndexRepository extends BaseRepository {
     public function model()
@@ -23,6 +24,7 @@ class IndexRepository extends BaseRepository {
     }
 
     public function index() {
+        Log::info('Linh');
         $query = $this->model->query();
         $query->where('status', 1);
 //        $query->with(['categories.posts'=> function($q) {
@@ -34,6 +36,7 @@ class IndexRepository extends BaseRepository {
         $homes = $query->get();
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
+        Log::info('Tuan');
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 
