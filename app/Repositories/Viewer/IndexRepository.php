@@ -24,7 +24,7 @@ class IndexRepository extends BaseRepository {
     }
 
     public function index() {
-        Log::info('Linh');
+        ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
 //        $query->with(['categories.posts'=> function($q) {
@@ -33,10 +33,26 @@ class IndexRepository extends BaseRepository {
 //        }]);
         $query->with(['categories']);
         $query->orderBy('order', 'asc');
-        $homes = $query->get();
+        $homes = $query->get()->map(function($value) {
+            $categories =  $value->categories;
+            if($categories) {
+                foreach ($categories as $key=> $category) {
+                    $q = DB::table('posts')
+                        ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
+                        ->where('post_categories.category_id', $category->id)
+                        ->where('post_date', '<=', date('Y-m-d H:i:s'))
+                        ->orderBy('post_date', 'desc')
+                        ->get()
+                        ->take(5)
+                        ->toArray();
+                    $categories[$key]->posts = $q;
+                }
+            }
+            $value->categories = $categories;
+            return $value;
+        });
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
-        Log::info('Tuan');
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 

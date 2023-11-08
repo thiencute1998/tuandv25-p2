@@ -23,7 +23,7 @@ services:
         cap_add:
             -   NET_ADMIN
         ports:
-            - "80:80"
+            - "8888:80"
         restart: unless-stopped
         working_dir: /var/www/html/tuandv25-p2
         volumes:
