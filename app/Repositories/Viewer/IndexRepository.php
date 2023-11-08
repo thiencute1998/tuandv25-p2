@@ -61,18 +61,18 @@ class IndexRepository extends BaseRepository {
         if ($category) {
             //Lấy tất cả Category con
             $arrcategory_id = [];
-            $childCategory = Category::where('parent_id', $category->id)->get();
-            if($childCategory){
-                foreach($childCategory as $item){
-                    $arrcategory_id[] = $item->id;
-                }
-            }
+//            $childCategory = Category::where('parent_id', $category->id)->get();
+//            if($childCategory){
+//                foreach($childCategory as $item){
+//                    $arrcategory_id[] = $item->id;
+//                }
+//            }
             $queryPost = Post::where('status', 1);
             $queryPost->where('post_date', '<=', date('Y-m-d H:i:s'));
             //$queryPost->where('category_id', $category->id);
             $queryPost->whereHas('categories', function($q) use ($category, $arrcategory_id) {
-                $q->where('category_id', '=', $category->id)
-                    ->orWhereIn('category_id', $arrcategory_id);
+                $q->where('category_id', '=', $category->id);
+//                    ->orWhereIn('category_id', $arrcategory_id);
             });
             $queryPost->orderBy('created_at', 'desc');
             $queryPost->with('categories');
