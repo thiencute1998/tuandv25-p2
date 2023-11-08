@@ -280,6 +280,8 @@
                                                 </p>
                                             </li>
                                         @endif
+                                    @else
+                                        @break
                                     @endif
                                 @endforeach
                             </ul>

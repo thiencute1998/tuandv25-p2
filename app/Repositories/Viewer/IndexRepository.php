@@ -24,6 +24,7 @@ class IndexRepository extends BaseRepository {
     }
 
     public function index() {
+        Log::info('start');
         ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
@@ -36,6 +37,7 @@ class IndexRepository extends BaseRepository {
         $homes = $query->get();
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
+        Log::info('end');
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 
