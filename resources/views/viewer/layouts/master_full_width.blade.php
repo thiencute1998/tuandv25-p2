@@ -20,19 +20,12 @@
     <link rel='stylesheet' id='Droid+Sans-css'  href='https://fonts.googleapis.com/css?family=Droid+Sans%3Aregular%2C700' type='text/css' media='all' />
     <script type='text/javascript' src="{{ asset('assets/viewer/js/jquery.min.js') }}" id='jquery-core-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/jquery-migrate.min.js') }}" id='jquery-migrate-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/core.min.js') }}" id='jquery-ui-core-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/mouse.min.js') }}" id='jquery-ui-mouse-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/sortable.min.js') }}" id='jquery-ui-sortable-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/datepicker.min.js') }}" id='jquery-ui-datepicker-js'></script>
     <script type='text/javascript' id='jquery-ui-datepicker-js-after'>
         jQuery(function(jQuery){jQuery.datepicker.setDefaults({"closeText":"\u0110\u00f3ng","currentText":"H\u00f4m nay","monthNames":["Th\u00e1ng M\u1ed9t","Th\u00e1ng Hai","Th\u00e1ng Ba","Th\u00e1ng T\u01b0","Th\u00e1ng N\u0103m","Th\u00e1ng S\u00e1u","Th\u00e1ng B\u1ea3y","Th\u00e1ng T\u00e1m","Th\u00e1ng Ch\u00edn","Th\u00e1ng M\u01b0\u1eddi","Th\u00e1ng M\u01b0\u1eddi M\u1ed9t","Th\u00e1ng M\u01b0\u1eddi Hai"],"monthNamesShort":["Th1","Th2","Th3","Th4","Th5","Th6","Th7","Th8","Th9","Th10","Th11","Th12"],"nextText":"Ti\u1ebfp theo","prevText":"Quay v\u1ec1","dayNames":["Ch\u1ee7 Nh\u1eadt","Th\u1ee9 Hai","Th\u1ee9 Ba","Th\u1ee9 T\u01b0","Th\u1ee9 N\u0103m","Th\u1ee9 S\u00e1u","Th\u1ee9 B\u1ea3y"],"dayNamesShort":["CN","T2","T3","T4","T5","T6","T7"],"dayNamesMin":["C","H","B","T","N","S","B"],"dateFormat":"d MM, yy","firstDay":1,"isRTL":false});});
     </script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/resizable.min.js') }}" id='jquery-ui-resizable-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/draggable.min.js') }}" id='jquery-ui-draggable-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/controlgroup.min.js') }}" id='jquery-ui-controlgroup-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/checkboxradio.min.js') }}" id='jquery-ui-checkboxradio-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/button.min.js') }}" id='jquery-ui-button-js'></script>
-    <script type='text/javascript' src="{{ asset('assets/viewer/js/dialog.min.js') }}" id='jquery-ui-dialog-js'></script>
     <script type='text/javascript' src="{{ asset('assets/viewer/js/events-manager.js') }}" id='events-manager-js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
             integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
