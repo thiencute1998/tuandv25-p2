@@ -40,15 +40,16 @@ class IndexRepository extends BaseRepository {
             if($categories) {
                 foreach ($categories as $key=> $category) {
                     if ($key == 0) {
-                        Log::info($key);
-                        $q = DB::table('posts')
+                        $test = DB::table('posts')
                             ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
                             ->where('post_categories.category_id', $category->id)
-                            ->where('post_date', '<=', date('Y-m-d H:i:s'))
+                            ->where('post_date', '<=', date('Y-m-d H:i:s'));
+                        $q = $test
 //                        ->orderBy('post_date', 'desc')
                             ->get()
                             ->take(5)
                             ->toArray();
+                        Log::info($test->toSql() . "  " . $category->id);
                         $categories[$key]->posts = $q;
                     } else {
                         break;
