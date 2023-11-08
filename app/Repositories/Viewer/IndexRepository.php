@@ -51,7 +51,7 @@ class IndexRepository extends BaseRepository {
                             ->take(5)
                             ->toArray();
                         $categories[$key]->posts = $q;
-                        Log::info($test->toSql() . "  " . $category->id);
+                        Log::info($test->toSql() . "  " . $category->id . "    ". count($q));
                     } else {
                         break;
                     }
