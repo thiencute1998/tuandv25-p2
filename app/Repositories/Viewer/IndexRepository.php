@@ -16,6 +16,7 @@ use App\Repositories\BaseRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Request;
 
 class IndexRepository extends BaseRepository {
     public function model()
@@ -57,7 +58,7 @@ class IndexRepository extends BaseRepository {
     }
 
     public function paginatePost($category) {
-        Log::info('start post');
+        Log::info('start post :' . Request::ip());
         $posts = collect();
         if ($category) {
             //Lấy tất cả Category con
@@ -78,7 +79,7 @@ class IndexRepository extends BaseRepository {
             $queryPost->orderBy('created_at', 'desc');
             $queryPost->with('categories');
             $posts = $queryPost->paginate(10);
-            Log::info('middle post');
+            Log::info('middle post: ' . request()->ip());
             $data = $posts->through(function ($value) {
                 $value->fullDate = $value->created_at;
                 if ($value->created_at) {
@@ -86,7 +87,7 @@ class IndexRepository extends BaseRepository {
                 }
                 return $value;
             });
-            Log::info('end post');
+            Log::info('end post: ' . request()->ip());
             return $data;
         }
         return $posts;
