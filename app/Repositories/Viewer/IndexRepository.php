@@ -47,8 +47,8 @@ class IndexRepository extends BaseRepository {
                             ->where('post_date', '<=', date('Y-m-d H:i:s'));
                         $q = $test
 //                        ->orderBy('post_date', 'desc')
-                            ->get()
                             ->take(5)
+                            ->get()
                             ->toArray();
                         $categories[$key]->posts = $q;
                         Log::info($test->toSql() . "  " . $category->id . "    ". count($q));
