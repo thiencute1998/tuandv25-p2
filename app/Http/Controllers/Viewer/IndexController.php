@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Viewer;
 use App\Http\Controllers\Controller;
 use App\Repositories\Viewer\IndexRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class IndexController extends Controller
 {
@@ -28,9 +29,12 @@ class IndexController extends Controller
 //    }
 
     public function getPost($post) {
+        Log::info('start category');
+        ini_set('memory_limit', '-1');
         $category = $this->repository->getCate($post);
         if ($category) {
             $posts = $this->repository->paginatePost($category);
+            Log::info('end category');
             return view('viewer.pages.category', compact('category', 'posts'));
         } else {
             $post = $this->repository->getPost($post);
