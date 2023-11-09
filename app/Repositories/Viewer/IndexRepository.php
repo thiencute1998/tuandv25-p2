@@ -30,6 +30,7 @@ class IndexRepository extends BaseRepository {
         ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
+//        $query->with(['categories']);
 //        $query->with(['categories'=> function($q) {
 //            $q->with(['posts'=> function($q) {
 //                $q->where('post_date', '<=', date('Y-m-d H:i:s'));
@@ -44,16 +45,17 @@ class IndexRepository extends BaseRepository {
             if($categories) {
                 Log::info(11);
                 foreach ($categories as $key=> $category) {
+                    Log::info('start category_id: ' . $category->id);
                     $postIds = PostCategory::where('category_id', $category->id)->get()->toArray();
                     $postIds = array_column($postIds, 'post_id');
                     $q = DB::table('posts')
                         ->whereIn('id', $postIds)
                         ->where('post_date', '<=', date('Y-m-d H:i:s'))
                         ->orderBy('post_date', 'desc')
-                        ->take(5)
                         ->get()
                         ->toArray();
                     $categories[$key]->posts = $q;
+                    Log::info('end category_id: ' . $category->id);
                 }
                 Log::info(22);
             }
