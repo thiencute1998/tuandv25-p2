@@ -52,6 +52,7 @@ class IndexRepository extends BaseRepository {
                         ->whereIn('id', $postIds)
                         ->where('post_date', '<=', date('Y-m-d H:i:s'))
                         ->orderBy('post_date', 'desc')
+                        ->take(5)
                         ->get()
                         ->toArray();
                     $categories[$key]->posts = $q;
