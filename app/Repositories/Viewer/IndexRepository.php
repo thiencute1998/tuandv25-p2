@@ -10,6 +10,7 @@ use App\Models\EmailSignUp;
 use App\Models\Homepage;
 use App\Models\HomepageCategory;
 use App\Models\Post;
+use App\Models\PostCategory;
 use App\Models\Tag;
 use App\Models\Video;
 use App\Repositories\BaseRepository;
@@ -28,28 +29,29 @@ class IndexRepository extends BaseRepository {
         ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
-//        $query->with(['categories.posts'=> function($q) {
-//            $q->where('post_date', '<=', date('Y-m-d H:i:s'));
-//            $q->orderBy('created_at', 'desc');
+//        $query->with(['categories'=> function($q) {
+//            $q->with(['posts'=> function($q) {
+//                $q->where('post_date', '<=', date('Y-m-d H:i:s'));
+////                $q->orderBy('created_at', 'desc');
+//                $q->offset(0)->limit(5);
+//            }]);
 //        }]);
-        $query->with(['categories']);
+
         $query->orderBy('order', 'asc');
         $homes = $query->get()->map(function($value) {
             $categories =  $value->categories;
             if($categories) {
                 foreach ($categories as $key=> $category) {
-                    if ($key == 0) {
-                        $q = DB::table('posts')
-                            ->join('post_categories', 'posts.id', '=' ,'post_categories.post_id')
-                            ->where('post_categories.category_id', $category->id)
-                            ->where('post_date', '<=', date('Y-m-d H:i:s'))
-                            ->take(5)
-                            ->get()
-                            ->toArray();
-                        $categories[$key]->posts = $q;
-                    } else {
-                        break;
-                    }
+                    $postIds = PostCategory::where('category_id', $category->id)->get()->toArray();
+                    $postIds = array_column($postIds, 'post_id');
+                    $q = DB::table('posts')
+                        ->whereIn('id', $postIds)
+                        ->where('post_date', '<=', date('Y-m-d H:i:s'))
+                        ->orderBy('post_date', 'desc')
+                        ->take(5)
+                        ->get()
+                        ->toArray();
+                    $categories[$key]->posts = $q;
                 }
             }
             $value->categories = $categories;
