@@ -50,7 +50,8 @@ class AppServiceProvider extends ServiceProvider
             // Logo
             $logoWebsite = Banner::where('status', 1)->where('type', 5)->first();
             // breaking news
-            $breakNews = Post::where('status', 1)
+            $breakNews = Post::select('id', 'slug', 'name', 'summary', 'image')
+                ->where('status', 1)
                 ->orderBy('created_at', 'desc')
                 ->take(10)->get();
 
@@ -64,7 +65,7 @@ class AppServiceProvider extends ServiceProvider
             $cates3 = Category::where('status', 1)->where('status', '!=', 2)->where('level', 3)->orderBy('order', 'asc')->get();
 
             // Tim moi
-            $postNew = Post::where('status', 1)
+            $postNew = Post::select('id', 'slug', 'name', 'summary', 'image')
 //                ->where('created_at', '>=', date('Y-m-d 00:00:00'))
 //                ->where('created_at', '<=', date('Y-m-d 23:59:59'))
                 ->where('post_date', '<=', date('Y-m-d H:i:s'))
@@ -75,7 +76,8 @@ class AppServiceProvider extends ServiceProvider
                     return $value;
                 });
             // Tin Xem nhiều
-            $postTopView = Post::where('status', 1)
+            $postTopView = Post::select('id', 'slug', 'name', 'summary', 'image')
+                ->where('status', 1)
                 ->orderBy('views', 'desc')
                 ->orderBy('created_at', 'desc')
                 ->take(5)->get()
@@ -84,7 +86,8 @@ class AppServiceProvider extends ServiceProvider
                     return $value;
                 });
             // Thong bao
-            $postNotify = Post::where('status', 1)
+            $postNotify = Post::select('id', 'slug', 'name', 'summary', 'image')
+                ->where('status', 1)
                 ->whereHas('categories', function($q) {
                     $q->where('slug', 'thong-bao');
                 })

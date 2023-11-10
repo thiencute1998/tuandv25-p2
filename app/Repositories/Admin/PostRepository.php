@@ -62,6 +62,7 @@ class PostRepository extends BaseRepository {
             if (isset($params['post_date'])) {
                 $params['post_date'] = Carbon::createFromFormat('Y/m/d H:i', $params['post_date'])->format('Y-m-d H:i:00');
             }
+            $params['summary'] = Str::substr(html_entity_decode(strip_tags($params['content'])), 0, 254);
             $post->fill($params);
 
             if ($post->save()) {
@@ -103,6 +104,7 @@ class PostRepository extends BaseRepository {
             if (isset($params['post_date'])) {
                 $params['post_date'] = Carbon::createFromFormat('Y/m/d H:i', $params['post_date'])->format('Y-m-d H:i:00');
             }
+            $params['summary'] = Str::substr(html_entity_decode(strip_tags($params['content'])), 0, 254);
             $post->fill($params);
             if ($post->save()) {
                 $post->categories()->detach();

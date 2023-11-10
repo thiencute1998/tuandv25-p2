@@ -12,7 +12,7 @@ class Post extends Model
     // Table tin tuc
     protected $table = 'posts';
 
-    protected $fillable = ['name', 'slug', 'status', 'content', 'image', 'category_id', 'post_date', 'views', 'author', 'title', 'keywords', 'description'];
+    protected $fillable = ['name', 'slug', 'status', 'content', 'image', 'category_id', 'post_date', 'views', 'author', 'title', 'keywords', 'description', 'summary'];
 
     public $timestamps = true;
 

@@ -26,7 +26,6 @@ class IndexRepository extends BaseRepository {
     }
 
     public function index() {
-        Log::info('start');
         ini_set('memory_limit', '-1');
         $query = $this->model->query();
         $query->where('status', 1);
@@ -43,12 +42,11 @@ class IndexRepository extends BaseRepository {
         $homes = $query->get()->map(function($value) {
             $categories =  $value->categories;
             if($categories) {
-                Log::info(11);
                 foreach ($categories as $key=> $category) {
-                    Log::info('start category_id: ' . $category->id);
                     $postIds = PostCategory::where('category_id', $category->id)->get()->toArray();
                     $postIds = array_column($postIds, 'post_id');
                     $q = DB::table('posts')
+                        ->select('id', 'slug', 'name', 'summary', 'image')
                         ->whereIn('id', $postIds)
                         ->where('post_date', '<=', date('Y-m-d H:i:s'))
                         ->orderBy('post_date', 'desc')
@@ -56,16 +54,13 @@ class IndexRepository extends BaseRepository {
                         ->get()
                         ->toArray();
                     $categories[$key]->posts = $q;
-                    Log::info('end category_id: ' . $category->id);
                 }
-                Log::info(22);
             }
             $value->categories = $categories;
             return $value;
         });
         $videos = $this->getVideoIndex();
         $slideHomes = Post::where('status', 1)->whereRaw('post_date <= "'.date('Y-m-d H:i:s').'"')->orderBy('post_date', 'desc')->take(10)->get();
-        Log::info('end');
         return view('viewer.pages.index', compact('homes', 'videos', 'slideHomes'));
     }
 
